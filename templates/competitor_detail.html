@@ -2,7 +2,7 @@
 {% block title %}{{ competitor.name }} — PriceRadar{% endblock %}
 {% block content %}
 <div class="mb-6">
-    <a href="/dashboard" class="text-sm text-gray-500 hover:text-gray-300">&larr; Dashboard</a>
+    <a href="/competitors" class="text-sm text-gray-500 hover:text-gray-300">&larr; Concorrentes</a>
 </div>
 
 <div class="flex items-start justify-between mb-8">
@@ -17,65 +17,50 @@
         <p class="text-gray-500 text-sm mt-2">{{ competitor.notes }}</p>
         {% endif %}
         <p class="text-gray-600 text-xs mt-2">Cadastrado em {{ competitor.created_at[:16] }}</p>
+        <div class="flex gap-3 mt-2 text-sm text-gray-400">
+            <span>{{ snap_count }} snapshots</span>
+            <span>{{ alert_count }} alertas</span>
+        </div>
     </div>
     <div class="flex gap-3">
+        <a href="/competitors/{{ competitor.id }}/snapshots" class="btn-secondary">Ver snapshots</a>
         <form method="POST" action="/competitors/{{ competitor.id }}/check">
             <button type="submit" class="btn-primary">Verificar agora</button>
         </form>
-        <button hx-delete="/competitors/{{ competitor.id }}"
-                hx-confirm="Remover {{ competitor.name }} e todos os dados?"
-                hx-swap="none"
-                onclick="setTimeout(()=>window.location='/dashboard', 500)"
-                class="btn-danger">
-            Remover
-        </button>
     </div>
 </div>
 
-<!-- Changes history -->
-<div class="mb-10">
-    <h2 class="text-xl font-semibold mb-4">Historico de mudancas ({{ changes|length }})</h2>
-    {% if changes %}
-    <div class="space-y-3">
-        {% for ch in changes %}
-        <div class="card p-4 flex items-center justify-between">
+<!-- Edit form -->
+<div class="card p-6 mb-8">
+    <h2 class="text-lg font-semibold mb-4">Editar concorrente</h2>
+    <form method="POST" action="/competitors/{{ competitor.id }}" class="space-y-4">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-                <span class="badge-change">Mudanca</span>
-                <span class="text-gray-400 text-sm ml-2">{{ ch.old_date[:16] }} &rarr; {{ ch.new_date[:16] }}</span>
-                {% if ch.notified_at %}
-                <span class="text-xs text-green-500 ml-2">Email enviado</span>
-                {% endif %}
+                <label class="block text-xs text-gray-500 mb-1">Nome</label>
+                <input type="text" name="name" required class="input-field" value="{{ competitor.name }}">
             </div>
-            <a href="/changes/{{ ch.id }}" class="btn-secondary text-xs">Ver diff</a>
+            <div>
+                <label class="block text-xs text-gray-500 mb-1">URL de pricing</label>
+                <input type="url" name="pricing_url" required class="input-field" value="{{ competitor.pricing_url }}">
+            </div>
+            <div>
+                <label class="block text-xs text-gray-500 mb-1">Notas</label>
+                <input type="text" name="notes" class="input-field" value="{{ competitor.notes }}">
+            </div>
         </div>
-        {% endfor %}
-    </div>
-    {% else %}
-    <div class="card p-6 text-center text-gray-500">
-        Nenhuma mudanca detectada. Faca a primeira verificacao.
-    </div>
-    {% endif %}
+        <button type="submit" class="btn-primary">Salvar alteracoes</button>
+    </form>
 </div>
 
-<!-- Snapshots -->
-<div>
-    <h2 class="text-xl font-semibold mb-4">Snapshots ({{ snapshots|length }})</h2>
-    {% if snapshots %}
-    <div class="space-y-2">
-        {% for snap in snapshots %}
-        <div class="card p-4 flex items-center justify-between">
-            <div>
-                <span class="text-sm text-gray-300">{{ snap.captured_at[:19] }}</span>
-                <span class="text-xs text-gray-600 ml-3 font-mono">{{ snap.content_hash[:12] }}...</span>
-            </div>
-            <span class="text-xs text-gray-500">{{ (snap.content_text or '')|length }} chars</span>
-        </div>
-        {% endfor %}
-    </div>
-    {% else %}
-    <div class="card p-6 text-center text-gray-500">
-        Nenhum snapshot capturado ainda.
-    </div>
-    {% endif %}
+<!-- Delete -->
+<div class="card p-6 border-red-900">
+    <h2 class="text-lg font-semibold mb-2 text-red-400">Zona de perigo</h2>
+    <p class="text-sm text-gray-500 mb-4">Remover este concorrente e todos os seus snapshots e alertas.</p>
+    <form method="POST" action="/competitors/{{ competitor.id }}"
+          onsubmit="return confirm('Tem certeza que deseja remover {{ competitor.name }}?')">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="btn-danger">Remover concorrente</button>
+    </form>
 </div>
 {% endblock %}

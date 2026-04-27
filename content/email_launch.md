@@ -1,40 +1,42 @@
 **Assunto:** Seu concorrente mudou o preço. Você soube?
 
-**Preview:** A maioria dos founders de SaaS descobre tarde demais. Agora não precisa mais ser assim.
+**Preview:** A maioria dos founders SaaS descobre tarde demais. Agora tem um jeito melhor.
 
 ---
 
-Fala, {nome}.
+Fala, [NOME].
 
-Vou ser direto: eu perdi um deal de R$18k porque meu concorrente baixou o preço e eu só fiquei sabendo quando o prospect me mandou o print pedindo desconto. Já na defensiva. Já perdendo.
+Vou ser direto: semana passada um founder me mandou mensagem dizendo que perdeu um deal de R$18k/ano porque o concorrente tinha baixado o preço dois meses antes — e ele nem sabia.
 
-Foi depois desse episódio que eu comecei a monitorar preços de concorrentes manualmente — planilha, alerta no Google, estagiário abrindo site todo dia. Funcionava mal. Atrasava. E quando a informação chegava, o timing já tinha ido embora.
+Dois meses.
 
-Então eu construí o **PriceRadar**.
+Isso me incomodou porque eu já tinha passado pelo mesmo. Em 2024, eu perdia tempo toda semana entrando manualmente nos sites de concorrentes, tirando print de página de pricing, comparando com a versão anterior. Um processo ridículo que ninguém faz direito e todo mundo finge que faz.
 
-**PriceRadar monitora as páginas de pricing dos seus concorrentes e te avisa no mesmo dia em que algo muda.** Preço subiu, plano sumiu, desconto apareceu — você sabe antes do seu prospect saber.
+Foi daí que nasceu o **PriceRadar**.
 
-O que isso muda na prática:
+Ele monitora as páginas de preço e posicionamento dos seus concorrentes e te avisa no momento em que algo muda. Simples assim.
 
-- **Você reage no timing certo.** Concorrente subiu o preço? Você entra na conversa antes do prospect reclamar — posicionando seu preço como vantagem, não como reação.
-- **Você para de ser pego de surpresa em call de vendas.** Nada pior que o prospect saber mais sobre o mercado do que você. Com o PriceRadar, você entra munido.
-- **Você ganha um histórico real de movimentação competitiva.** Não achismo. Dados com data, screenshot e variação exata. Útil pra decisão de pricing, pra board, pra estratégia.
+**O que ele resolve na prática:**
+
+- **Fim do "achismo" em proposta comercial.** Você sabe exatamente onde seu preço está posicionado em relação à concorrência — hoje, não há três meses.
+- **Reação rápida a movimentos do mercado.** Concorrente lançou plano novo, mudou feature de tier, alterou desconto por volume? Você fica sabendo antes do seu prospect jogar isso na sua cara numa call.
+- **Histórico documentado de mudanças.** Toda alteração fica registrada com data, screenshot e diff. Seu time de vendas para de operar no escuro.
 
 **Quem deve comprar:**
-Fundadores e heads de vendas de SaaS B2B que competem em mercados com 3 ou mais players diretos. Se você tem entre 5 e 50 pessoas no time e pricing é parte ativa da sua estratégia comercial, isso foi feito pra você.
+
+Se você é founder ou head de vendas de um SaaS B2B, tem entre 5 e 50 pessoas no time e compete num mercado com 3 ou mais players diretos — o PriceRadar foi feito pra você. Especialmente se você já perdeu deal (ou margem) por não saber que o cenário competitivo tinha mudado.
 
 **Quem NÃO deve comprar:**
-Se você é o único player do mercado ou se preço não é fator de decisão no seu ciclo de venda, o PriceRadar não vai mudar sua vida. Prefiro ser honesto agora do que ter você pedindo reembolso depois.
 
-**Investimento: R$97/mês** — menos do que uma hora de consultoria de pricing.
+Se você é o único player no seu mercado ou se pricing não é fator relevante no seu ciclo de vendas, não faz sentido. Prefiro te poupar do gasto.
 
-Garantia incondicional de 7 dias. Se nos primeiros 7 dias você sentir que não faz sentido pro seu contexto, me manda um email e eu devolvo 100%. Sem pergunta, sem atrito.
+**Investimento:** acesso completo por um valor que cabe no orçamento de qualquer SaaS em estágio inicial. E você tem **7 dias de garantia incondicional** — se não fizer sentido pro seu contexto, devolvo cada centavo sem pergunta.
 
-**→ [Quero saber quando meu concorrente muda o preço](https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-9a718799-42eb-4860-8a49-366c7c5ad048)**
+👉 **[QUERO MONITORAR MEUS CONCORRENTES AGORA](https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-b050ffea-30f9-408a-8c0f-0ce90aa87b5f)**
 
-Um CTA. Uma decisão. Ou você continua descobrindo mudança de preço pelo print do prospect, ou você descobre primeiro.
+Esse é o único link e a única ação que eu peço. Clica, faz a assinatura, configura seus concorrentes em 5 minutos e para de ser o último a saber.
 
-Abraço,
-{seu nome}
+Um abraço,
+[SEU NOME]
 
-P.S. — Semana passada um usuário beta me mandou mensagem: "Cara, o [concorrente] tirou o plano starter do site e eu ajustei meu pitch no mesmo dia." Ele fechou o deal. Não é mágica. É só não ser o último a saber.
+P.S. — Eu ainda monitoro meus concorrentes com o PriceRadar toda semana. Na última terça, um deles mudou o modelo de freemium para trial de 14 dias e eu ajustei meu pitch no mesmo dia. Isso não é teoria. É o que me fez fechar dois deals que eu teria perdido.

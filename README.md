@@ -15,13 +15,14 @@ Acesse `http://localhost:5000`.
 ## Features implementadas
 
 - **Auth** — Cadastro e login com email+senha (hash Werkzeug), sessao Flask
-- **CRUD de concorrentes** — Adicione concorrentes com URL da pricing page e notas
+- **CRUD de concorrentes** — Adicione, edite e remova concorrentes com URL da pricing page e notas
 - **Scraper agendado** — APScheduler captura snapshots HTML/texto e detecta diffs automaticamente
-- **Alertas por email** — Notificacao automatica via SMTP quando mudanca e detectada
-- **Dashboard** — Timeline de mudancas recentes + lista de concorrentes com status
-- **Diff visual** — Comparacao lado a lado (antes/depois) com HtmlDiff
+- **Alertas por email** — Notificacao automatica via SMTP quando mudanca e detectada, com diff antes/depois
+- **Dashboard** — Painel com timeline de alertas, filtro por data e status lido/nao-lido
+- **Pagina de alertas** — Lista completa com filtro lido/nao-lido e marcacao via htmx
+- **Historico de snapshots** — Timeline de snapshots por concorrente com diff inline
 - **Verificacao manual** — Force um snapshot a qualquer momento
-- **htmx** — Delete de concorrentes inline, sem reload
+- **htmx** — Delete inline, marcar alerta como lido sem reload
 
 ## Stack
 
