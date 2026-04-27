@@ -5,42 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}PriceRadar{% endblock %}</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
     <style>
-        body { background: #0f0f1a; color: #e0e0e0; }
-        .flash-success { background: #064e3b; border: 1px solid #10b981; }
-        .flash-error { background: #7f1d1d; border: 1px solid #ef4444; }
-        .flash-warning { background: #78350f; border: 1px solid #f59e0b; }
-        .flash-info { background: #1e3a5f; border: 1px solid #3b82f6; }
-        .diff-add { background: #064e3b; color: #6ee7b7; }
-        .diff-remove { background: #7f1d1d; color: #fca5a5; }
+        body { background: #0a0a0f; color: #e2e8f0; font-family: 'Inter', system-ui, sans-serif; }
+        .card { background: #12121a; border: 1px solid #1e1e2e; border-radius: 12px; }
+        .btn-primary { background: #6366f1; color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; transition: background 0.2s; }
+        .btn-primary:hover { background: #4f46e5; }
+        .btn-danger { background: #dc2626; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600; }
+        .btn-danger:hover { background: #b91c1c; }
+        .btn-secondary { background: #1e1e2e; color: #94a3b8; padding: 8px 16px; border-radius: 8px; border: 1px solid #2e2e3e; }
+        .btn-secondary:hover { background: #2e2e3e; color: #e2e8f0; }
+        .input-field { background: #1a1a2e; border: 1px solid #2e2e3e; color: #e2e8f0; padding: 10px 14px; border-radius: 8px; width: 100%; }
+        .input-field:focus { outline: none; border-color: #6366f1; box-shadow: 0 0 0 2px rgba(99,102,241,0.2); }
+        .flash-success { background: #065f46; border: 1px solid #10b981; color: #6ee7b7; }
+        .flash-error { background: #7f1d1d; border: 1px solid #ef4444; color: #fca5a5; }
+        .flash-warning { background: #78350f; border: 1px solid #f59e0b; color: #fde68a; }
+        .flash-info { background: #1e3a5f; border: 1px solid #3b82f6; color: #93c5fd; }
+        .badge-change { background: #6366f1; color: white; font-size: 11px; padding: 2px 8px; border-radius: 9999px; }
     </style>
 </head>
 <body class="min-h-screen">
-    <nav class="border-b border-gray-800 px-6 py-3 flex items-center justify-between">
-        <a href="/" class="text-xl font-bold text-indigo-400">PriceRadar</a>
-        {% if session.get('user_id') %}
-        <div class="flex items-center gap-4 text-sm">
-            <a href="{{ url_for('dashboard') }}" class="hover:text-indigo-400">Dashboard</a>
-            <a href="{{ url_for('alerts_list') }}" class="hover:text-indigo-400">Alertas</a>
-            <span class="text-gray-500">{{ session.get('user_email') }}</span>
-            <a href="{{ url_for('logout') }}" class="text-red-400 hover:text-red-300">Sair</a>
+    <nav class="border-b border-gray-800 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <a href="/" class="text-xl font-bold text-indigo-400">PriceRadar</a>
+            <div class="flex items-center gap-4">
+                {% if session.get('user_id') %}
+                    <a href="/dashboard" class="text-sm text-gray-400 hover:text-white">Dashboard</a>
+                    <span class="text-sm text-gray-600">{{ session.get('user_email') }}</span>
+                    <a href="/logout" class="text-sm text-gray-400 hover:text-red-400">Sair</a>
+                {% else %}
+                    <a href="/login" class="text-sm text-gray-400 hover:text-white">Login</a>
+                    <a href="/register" class="btn-primary text-sm">Criar conta</a>
+                {% endif %}
+            </div>
         </div>
-        {% endif %}
     </nav>
 
-    <main class="max-w-5xl mx-auto px-6 py-8">
+    <main class="max-w-6xl mx-auto px-6 py-8">
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
-        <div class="mb-6 space-y-2">
             {% for category, message in messages %}
-            <div class="flash-{{ category }} px-4 py-2 rounded-lg text-sm">{{ message }}</div>
+            <div class="flash-{{ category }} px-4 py-3 rounded-lg mb-4 text-sm">
+                {{ message }}
+            </div>
             {% endfor %}
-        </div>
         {% endif %}
         {% endwith %}
 
         {% block content %}{% endblock %}
     </main>
+
+    <footer class="border-t border-gray-800 mt-16 py-6 text-center text-gray-600 text-xs">
+        PriceRadar &mdash; Saiba quando seu concorrente muda o preco.
+    </footer>
 </body>
 </html>

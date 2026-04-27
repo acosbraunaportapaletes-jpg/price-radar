@@ -1,0 +1,5 @@
+{
+  "pack_name": "PriceRadar",
+  "error": "parse fail",
+  "raw": "Pack **PriceRadar** criado com sucesso em `PriceRadar_pack.json`.\n\n**Resumo:**\n- **42 prompts** profissionais distribuídos em **6 categorias**:\n\n| Categoria | Prompts |\n|---|---|\n| Mapeamento e Coleta de Preços | 8 |\n| Análise Comparativa e Posicionamento | 7 |\n| Battlecards e Arsenal de Vendas | 7 |\n| Simulação e Resposta Estratégica | 8 |\n| Comunicação e Narrativa de Valor | 6 |\n| Automação e Processo Recorrente | 6 |\n\nTodos os prompts incluem placeholders (`[produto]`, `[nicho]`, `[concorrente]`, etc.), são prontos para colar, e têm `example_output_snippet` mostrando o tipo de output esperado."
+}

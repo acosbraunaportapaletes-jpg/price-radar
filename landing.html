@@ -1,114 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PriceRadar - Saiba quando seu concorrente muda os precos</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0a0a14;
-            color: #e0e0e0;
-            min-height: 100vh;
-        }
-        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-        nav { padding: 20px 0; border-bottom: 1px solid #1a1a2e; }
-        nav .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 20px; font-weight: 700; color: #818cf8; text-decoration: none; }
-        nav a.cta-sm {
-            font-size: 14px; color: #818cf8; text-decoration: none;
-            border: 1px solid #818cf8; padding: 8px 20px; border-radius: 8px;
-            transition: all .2s;
-        }
-        nav a.cta-sm:hover { background: #818cf8; color: #0a0a14; }
-        .hero { text-align: center; padding: 100px 0 60px; }
-        h1 { font-size: 48px; line-height: 1.15; margin-bottom: 20px; font-weight: 800; }
-        h1 span { color: #818cf8; }
-        .subtitle { font-size: 18px; color: #888; max-width: 560px; margin: 0 auto 40px; line-height: 1.6; }
-        .cta {
-            display: inline-block; background: #818cf8; color: #0a0a14;
-            font-weight: 700; font-size: 16px; padding: 14px 40px;
-            border-radius: 10px; text-decoration: none; transition: background .2s;
-        }
-        .cta:hover { background: #6366f1; }
-        .features { padding: 60px 0 80px; }
-        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .feature {
-            background: #111122; border: 1px solid #1a1a2e;
-            border-radius: 12px; padding: 32px 24px;
-        }
-        .feature-icon { font-size: 32px; margin-bottom: 12px; }
-        .feature h3 { font-size: 16px; margin-bottom: 8px; }
-        .feature p { font-size: 14px; color: #888; line-height: 1.5; }
-        .social-proof {
-            text-align: center; padding: 40px 0 80px;
-            border-top: 1px solid #1a1a2e;
-        }
-        .social-proof p { color: #555; font-size: 14px; line-height: 1.8; max-width: 500px; margin: 0 auto; }
-        .social-proof .quote { color: #aaa; font-style: italic; font-size: 16px; margin-bottom: 8px; }
-        footer {
-            text-align: center; padding: 30px 0;
-            border-top: 1px solid #1a1a2e; color: #555; font-size: 13px;
-        }
-        @media (max-width: 640px) {
-            h1 { font-size: 32px; }
-            .features-grid { grid-template-columns: 1fr; }
-            .hero { padding: 60px 0 40px; }
-        }
-    </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PriceRadar — Saiba quando seu concorrente muda o preço antes do seu prospect.</title>
+<meta name="description" content="Saiba quando seu concorrente muda o preço antes do seu prospect."/>
+<meta property="og:title" content="PriceRadar"/>
+<meta property="og:description" content="Saiba quando seu concorrente muda o preço antes do seu prospect."/>
+<meta property="og:image" content="og_image.png"/>
+<meta property="og:type" content="product"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="PriceRadar"/>
+<meta name="twitter:description" content="Saiba quando seu concorrente muda o preço antes do seu prospect."/>
+<meta name="twitter:image" content="og_image.png"/>
+<link rel="icon" href="logo.png"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {theme:{extend:{colors:{primary:'#8fd6a0',dark:'#0b0d10'}}}}
+</script>
+<style>
+body { background: #0b0d10; color: #d7dde3; font-family: 'Inter', system-ui, sans-serif; }
+.gradient-bg { background: radial-gradient(circle at 20% 20%, #1a3a2a 0%, #0b0d10 60%); }
+.fade-in { animation: fadeIn 0.8s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+</style>
 </head>
-<body>
-    <nav>
-        <div class="container">
-            <a href="#" class="logo">PriceRadar</a>
-            <a href="/register" class="cta-sm">Criar conta gratis</a>
-        </div>
-    </nav>
+<body class="min-h-screen">
 
-    <section class="hero">
-        <div class="container">
-            <h1>Saiba quando seu concorrente<br><span>muda os precos</span><br>antes do seu prospect.</h1>
-            <p class="subtitle">
-                Monitore paginas de pricing automaticamente.
-                Receba alertas com o diff exato do que mudou.
-                Nunca mais perca um deal por estar desatualizado.
-            </p>
-            <a href="/register" class="cta">Comece gratis</a>
-        </div>
-    </section>
+<!-- NAV -->
+<nav class="fixed top-0 w-full bg-dark/80 backdrop-blur-lg border-b border-gray-800 z-50">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="logo.png" alt="PriceRadar" class="w-8 h-8 rounded"/>
+      <span class="font-bold text-white">PriceRadar</span>
+    </div>
+    <a href="#comprar" class="bg-primary text-dark px-5 py-2 rounded-lg font-semibold hover:bg-green-400 transition">Comprar agora</a>
+  </div>
+</nav>
 
-    <section class="features">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-icon">&#128269;</div>
-                    <h3>Monitoramento 24h</h3>
-                    <p>Cadastre a URL de pricing dos seus concorrentes. Nosso bot verifica diariamente e detecta qualquer mudanca.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">&#9889;</div>
-                    <h3>Alertas instantaneos</h3>
-                    <p>Quando algo muda, voce recebe um email com o diff exato: o que saiu, o que entrou, o que mudou de preco.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">&#128200;</div>
-                    <h3>Timeline de mudancas</h3>
-                    <p>Historico completo de todas as alteracoes detectadas. Veja a evolucao de pricing de cada concorrente ao longo do tempo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="gradient-bg pt-32 pb-20 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <div class="fade-in">
+      <span class="inline-block bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-semibold mb-6">PRO</span>
+      <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">Saiba quando seu concorrente muda o preço antes do seu prospect.</h1>
+      <p class="text-xl text-gray-300 mb-8 leading-relaxed">Saiba quando seu concorrente muda o preço antes do seu prospect.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#comprar" class="bg-primary text-dark px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition inline-block text-center">Comprar por R$ 67</a>
+        <a href="#como-funciona" class="border border-gray-700 text-white px-8 py-4 rounded-lg font-semibold hover:border-primary transition inline-block text-center">Como funciona</a>
+      </div>
+      <div class="mt-6 flex items-center gap-2 text-sm text-gray-400">
+        <span>✓ Acesso imediato após pagamento</span>
+        <span>·</span>
+        <span>✓ Garantia de 7 dias</span>
+      </div>
+    </div>
+    <div class="fade-in">
+      <img src="cover.png" alt="PriceRadar" class="rounded-2xl shadow-2xl border border-gray-800"/>
+    </div>
+  </div>
+</section>
 
-    <section class="social-proof">
-        <div class="container">
-            <p class="quote">"Perdemos um deal porque o concorrente tinha baixado o preco 3 semanas antes. O prospect sabia. Nos nao."</p>
-            <p>- Founder de SaaS B2B</p>
-        </div>
-    </section>
+<!-- PROBLEMA -->
+<section class="py-20 px-6 border-t border-gray-800">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Você reconhece isso?</h2>
+    <p class="text-xl text-gray-400">SaaS founders não têm processo estruturado para detectar mudanças de preço de concorrentes, perdendo deals por falta de inteligência competitiva</p>
+  </div>
+</section>
 
-    <footer>
-        <div class="container">PriceRadar &mdash; Inteligencia competitiva de pricing para SaaS.</div>
-    </footer>
+<!-- FEATURES -->
+<section id="como-funciona" class="py-20 px-6 border-t border-gray-800">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-14">O que você recebe</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">login com email+senha, hash bcrypt, sessão Flask-Login</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">CRUD de concorrentes com URL da pricing page e notas</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">scraper agendado (APScheduler) que captura snapshot HTML/texto da pricing page e detecta diff vs último snapshot</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">email automático quando diff significativo é detectado, com highlight do que mudou</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">timeline de mudanças por concorrente com diff visual lado-a-lado (antes/depois)</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING / BUY -->
+<section id="comprar" class="py-20 px-6 border-t border-gray-800 gradient-bg">
+  <div class="max-w-2xl mx-auto">
+    <div class="bg-gray-900/80 backdrop-blur border border-gray-800 rounded-2xl p-10 text-center">
+      <h2 class="text-2xl font-bold text-white mb-2">PriceRadar</h2>
+      <p class="text-gray-400 mb-8">Saiba quando seu concorrente muda o preço antes do seu prospect.</p>
+      <div class="text-5xl font-extrabold text-primary mb-2">R$ 67</div>
+      <p class="text-sm text-gray-500 mb-8">Pagamento único · Acesso vitalício</p>
+      <ul class="text-left space-y-3 mb-10">
+        <li class="flex items-start gap-3 text-gray-300"><span class="text-primary mt-1">✓</span><span>login com email+senha, hash bcrypt, sessão Flask-Login</span></li>
+<li class="flex items-start gap-3 text-gray-300"><span class="text-primary mt-1">✓</span><span>CRUD de concorrentes com URL da pricing page e notas</span></li>
+<li class="flex items-start gap-3 text-gray-300"><span class="text-primary mt-1">✓</span><span>scraper agendado (APScheduler) que captura snapshot HTML/texto da pricing page e detecta diff vs último snapshot</span></li>
+<li class="flex items-start gap-3 text-gray-300"><span class="text-primary mt-1">✓</span><span>email automático quando diff significativo é detectado, com highlight do que mudou</span></li>
+<li class="flex items-start gap-3 text-gray-300"><span class="text-primary mt-1">✓</span><span>timeline de mudanças por concorrente com diff visual lado-a-lado (antes/depois)</span></li>
+      </ul>
+      <a href="https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-9a718799-42eb-4860-8a49-366c7c5ad048" class="block w-full bg-primary text-dark py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition">💳 Comprar agora — PIX, cartão, boleto</a>
+      <p class="text-xs text-gray-500 mt-4">Processado pelo Mercado Pago · Garantia incondicional de 7 dias</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-20 px-6 border-t border-gray-800">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-14">Perguntas frequentes</h2>
+    <div class="space-y-4">
+      <details class="bg-gray-900/50 border border-gray-800 rounded-xl px-6 py-4 group"><summary class="font-semibold text-white cursor-pointer list-none flex justify-between items-center"><span>Como recebo o produto?</span><span class="text-primary group-open:rotate-180 transition">▼</span></summary><p class="mt-4 text-gray-400">Após pagamento confirmado, você recebe email com link imediato. Também fica disponível na sua conta.</p></details>
+<details class="bg-gray-900/50 border border-gray-800 rounded-xl px-6 py-4 group"><summary class="font-semibold text-white cursor-pointer list-none flex justify-between items-center"><span>Tem garantia?</span><span class="text-primary group-open:rotate-180 transition">▼</span></summary><p class="mt-4 text-gray-400">Sim — 7 dias de garantia incondicional. Se não gostar, pedido de reembolso aceito sem perguntas.</p></details>
+<details class="bg-gray-900/50 border border-gray-800 rounded-xl px-6 py-4 group"><summary class="font-semibold text-white cursor-pointer list-none flex justify-between items-center"><span>Quais formas de pagamento?</span><span class="text-primary group-open:rotate-180 transition">▼</span></summary><p class="mt-4 text-gray-400">PIX, cartão de crédito em até 12x, boleto bancário — processado pelo Mercado Pago.</p></details>
+<details class="bg-gray-900/50 border border-gray-800 rounded-xl px-6 py-4 group"><summary class="font-semibold text-white cursor-pointer list-none flex justify-between items-center"><span>Preciso de conhecimento técnico?</span><span class="text-primary group-open:rotate-180 transition">▼</span></summary><p class="mt-4 text-gray-400">Não — o produto é self-serve e desenhado pra qualquer pessoa usar sem suporte.</p></details>
+<details class="bg-gray-900/50 border border-gray-800 rounded-xl px-6 py-4 group"><summary class="font-semibold text-white cursor-pointer list-none flex justify-between items-center"><span>Atualizações futuras?</span><span class="text-primary group-open:rotate-180 transition">▼</span></summary><p class="mt-4 text-gray-400">Incluso — atualizações gratuitas enquanto o produto existir.</p></details>
+<details class="bg-gray-900/50 border border-gray-800 rounded-xl px-6 py-4 group"><summary class="font-semibold text-white cursor-pointer list-none flex justify-between items-center"><span>Posso compartilhar com minha equipe?</span><span class="text-primary group-open:rotate-180 transition">▼</span></summary><p class="mt-4 text-gray-400">Licença pessoal até 3 pessoas. Planos maiores sob consulta.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-gray-800 py-10 px-6">
+  <div class="max-w-6xl mx-auto text-center text-gray-500 text-sm">
+    <p>&copy; 2026 PriceRadar. Gerado com 🤖 Bot24H Autopilot.</p>
+  </div>
+</footer>
+
 </body>
 </html>

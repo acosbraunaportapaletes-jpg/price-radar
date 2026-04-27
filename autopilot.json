@@ -1,0 +1,69 @@
+{
+  "slug": "price-radar",
+  "started_at": "2026-04-27T16:24:25.128697+00:00",
+  "finished_at": "2026-04-27T16:33:16.462686+00:00",
+  "target_dir": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar",
+  "build": {
+    "ok": true,
+    "files": 14
+  },
+  "content_pack": {
+    "files": {
+      "thread_x": "content\\thread_x.txt",
+      "linkedin": "content\\linkedin.txt",
+      "reddit": "content\\reddit.txt",
+      "tweet_single": "content\\tweet_single.txt",
+      "yt_short": "content\\yt_short.txt",
+      "image_prompt": "content\\image_prompt.txt"
+    },
+    "content_dir": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\content"
+  },
+  "deployment": {
+    "steps": [
+      {
+        "stage": "git_commit",
+        "ok": true,
+        "stdout": "[main (root-commit) af8820c] initial build: price-radar\n 20 files changed, 1460 insertions(+)\n create mode 100644 .env.example\n create mode 100644 .gitignore\n create mode 100644 README.md\n create mode 100644 app.py\n create mode 100644 content/image_prompt.txt\n create mode 100644 content/linkedin.txt\n create mode 100644 content/reddit.txt\n create mode 100644 content/thread_x.txt\n create mode 100644 content/tweet_single.txt\n create mode 100644 content/yt_short.txt\n create mode 100644 landing.html\n create mode 100644 meta.json\n create mode 100644 requirements.txt\n create mode 100644 templates/alerts.html\n create mode 100644 templates/base.html\n create mode 100644 templates/dashboard.html\n create mode 100644 templates/history.html\n create mode 100644 templates/index.html\n create mode 100644 templates/login.html\n create mode 100644 templates/register.html",
+        "stderr": ""
+      },
+      {
+        "stage": "github_push",
+        "ok": true,
+        "repo_url": "https://github.com/acosbraunaportapaletes-jpg/price-radar",
+        "clone_url": "https://github.com/acosbraunaportapaletes-jpg/price-radar.git"
+      },
+      {
+        "stage": "vercel",
+        "ok": false,
+        "reason": "PROJECT_CREATE",
+        "detail": {
+          "error": {
+            "code": "bad_request",
+            "message": "Failed to link acosbraunaportapaletes-jpg/price-radar. You need to add a Login Connection to your GitHub account first.",
+            "action": "Add a Login Connection",
+            "link": "https://vercel.com/docs/accounts/create-an-account#login-methods-and-connections",
+            "repo": "acosbraunaportapaletes-jpg/price-radar"
+          }
+        }
+      }
+    ],
+    "repo_url": "https://github.com/acosbraunaportapaletes-jpg/price-radar",
+    "expected_url": null,
+    "ok": true
+  },
+  "outreach": {
+    "ok": true,
+    "n_candidates": 0,
+    "n_messages": 0,
+    "outreach_dir": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\outreach"
+  },
+  "auto_listings": {
+    "gumroad": {
+      "ok": false,
+      "error": "could not convert string to float: '47/mês'"
+    }
+  },
+  "verdict": "CAUTION",
+  "pitch": "Saiba quando seu concorrente muda os preços. Antes do seu prospect.",
+  "name": "PriceRadar"
+}

@@ -1,0 +1,13 @@
+Seu concorrente baixou o preço ontem e você só vai descobrir quando perder o deal.
+
+Isso acontece mais do que qualquer founder de SaaS gosta de admitir. O prospect manda aquele email "estamos avaliando outras opções", você entra na call achando que é objeção de feature, e na verdade o concorrente lançou um plano 30% mais barato na semana passada. Você nem sabia.
+
+O problema não é falta de competência. É falta de processo. Ninguém no seu time de 15, 20, 40 pessoas tem como responsabilidade abrir o site de cada concorrente todo dia e comparar pricing. E mesmo que tivesse, mudanças em páginas de preço muitas vezes são sutis — um plano que some, um "a partir de" que muda, um toggle anual/mensal que aparece do nada.
+
+É exatamente isso que o PriceRadar resolve. Ele monitora as páginas de pricing dos seus concorrentes e te avisa no momento em que algo muda. Não estou falando de um relatório mensal que ninguém lê. Estou falando de um alerta no Slack às 9h da manhã dizendo "Concorrente X removeu o plano Enterprise e reduziu o Pro de R$299 para R$199/mês". Antes que seu time de vendas entre na primeira call do dia, todo mundo já sabe o cenário competitivo atualizado.
+
+O impacto prático é brutal. Seu closer entra na negociação sabendo que o concorrente acabou de ficar mais barato e já tem o contra-argumento pronto. Seu head de vendas ajusta o desconto máximo autorizado antes de perder 3 deals seguidos sem entender por quê. Seu founder decide se reposiciona o pricing ou reforça a narrativa de valor, mas decide com dados, não com achismo duas semanas depois.
+
+Se você compete em um mercado com 3, 5, 10 players diretos e ainda depende de "alguém viu no LinkedIn que o fulano mudou o preço", você está trazendo uma planilha para uma briga de dashboards.
+
+Quantos deals você perdeu no último trimestre sem saber que o real motivo era preço?

@@ -1,42 +1,36 @@
 {% extends "base.html" %}
-{% block title %}PriceRadar - Monitore precos da concorrencia{% endblock %}
+{% block title %}PriceRadar — Monitore precos da concorrencia{% endblock %}
 {% block content %}
 <div class="text-center py-20">
     <h1 class="text-5xl font-bold mb-4">
-        Saiba quando seu concorrente <span class="text-indigo-400">muda o preco</span>
-        <br>antes do seu prospect.
+        Saiba quando seu concorrente<br>
+        <span class="text-indigo-400">muda o preco</span> antes do seu prospect.
     </h1>
     <p class="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-        Monitore paginas de pricing automaticamente. Receba alertas instantaneos quando algo mudar.
-        Nunca mais perca uma oportunidade por estar desatualizado.
+        Monitore paginas de pricing automaticamente. Receba alertas quando algo mudar.
+        Veja exatamente o que mudou com diff visual lado a lado.
     </p>
-    <div class="flex gap-4 justify-center">
-        <a href="{{ url_for('register') }}"
-           class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3 rounded-lg transition">
-            Criar conta gratis
-        </a>
-        <a href="{{ url_for('login') }}"
-           class="border border-gray-600 hover:border-gray-400 text-gray-300 px-8 py-3 rounded-lg transition">
-            Fazer login
-        </a>
+    <div class="flex justify-center gap-4">
+        <a href="/register" class="btn-primary text-lg px-8 py-3">Comecar gratis</a>
+        <a href="/login" class="btn-secondary text-lg px-8 py-3">Ja tenho conta</a>
     </div>
+</div>
 
-    <div class="grid md:grid-cols-3 gap-8 mt-20 text-left">
-        <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
-            <div class="text-indigo-400 text-2xl mb-2">1.</div>
-            <h3 class="font-semibold text-lg mb-2">Cadastre concorrentes</h3>
-            <p class="text-gray-400 text-sm">Adicione a URL da pagina de pricing de cada concorrente que voce quer monitorar.</p>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
-            <div class="text-indigo-400 text-2xl mb-2">2.</div>
-            <h3 class="font-semibold text-lg mb-2">Monitoramento automatico</h3>
-            <p class="text-gray-400 text-sm">Nosso bot verifica a cada 24h cada pagina e detecta qualquer alteracao no conteudo.</p>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
-            <div class="text-indigo-400 text-2xl mb-2">3.</div>
-            <h3 class="font-semibold text-lg mb-2">Alertas por email</h3>
-            <p class="text-gray-400 text-sm">Receba um email com o diff exato do que mudou, antes que seu prospect descubra.</p>
-        </div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+    <div class="card p-6">
+        <div class="text-3xl mb-3">&#128269;</div>
+        <h3 class="text-lg font-semibold mb-2">Monitoramento automatico</h3>
+        <p class="text-gray-400 text-sm">Scraper agendado captura snapshots das paginas de pricing dos seus concorrentes automaticamente.</p>
+    </div>
+    <div class="card p-6">
+        <div class="text-3xl mb-3">&#9889;</div>
+        <h3 class="text-lg font-semibold mb-2">Alertas por email</h3>
+        <p class="text-gray-400 text-sm">Receba notificacao por email assim que uma mudanca significativa for detectada.</p>
+    </div>
+    <div class="card p-6">
+        <div class="text-3xl mb-3">&#128200;</div>
+        <h3 class="text-lg font-semibold mb-2">Diff visual</h3>
+        <p class="text-gray-400 text-sm">Veja exatamente o que mudou com comparacao lado a lado — antes e depois.</p>
     </div>
 </div>
 {% endblock %}

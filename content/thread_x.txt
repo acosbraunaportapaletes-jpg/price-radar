@@ -1,27 +1,28 @@
-Aqui está a thread:
+Here's the thread:
 
 ---
 
 **1/8**
-Semana passada um founder perdeu um deal de R$120k. O prospect disse: "achei uma opção mais barata". O concorrente tinha baixado o preço 3 dias antes. Ele nem sabia.
+Semana passada um founder perdeu um deal de R$18k/mês. O motivo? O concorrente tinha baixado o preço 3 dias antes e ele nem sabia. Isso acontece mais do que você imagina.
 
 **2/8**
-Isso acontece mais do que você imagina. A maioria dos SaaS B2B não tem nenhum processo pra monitorar preço de concorrente. Zero. É tudo manual, esporádico, ou simplesmente não existe.
+A verdade é que 90% dos SaaS B2B não tem nenhum processo pra monitorar preço de concorrente. Zero. O "processo" é alguém do time tropeçar na informação por acaso.
 
 **3/8**
-Você descobre que o concorrente mudou o pricing quando? Quando o prospect joga na sua cara durante a negociação. Aí já era.
+Enquanto isso, seu prospect já recebeu a proposta do concorrente com o preço novo. E você entra na call achando que tá competitivo, mas já perdeu antes de começar.
 
 **4/8**
-Construímos o PriceRadar pra resolver exatamente isso. Ele monitora as páginas de pricing dos seus concorrentes e te avisa no momento em que algo muda.
+Inteligência competitiva não é luxo de empresa grande. Se você compete num mercado com 3+ players diretos, ignorar movimentação de preço é jogar no escuro.
 
 **5/8**
-Não é scraping genérico. Ele detecta mudança de valor, remoção de plano, adição de feature em tier específico, alteração de modelo (mensal pra anual). Tudo que impacta como você posiciona sua oferta.
+PriceRadar resolve isso. Ele monitora as páginas de pricing dos seus concorrentes e te avisa no momento que qualquer mudança acontece. Simples assim.
 
 **6/8**
-O alerta chega antes do seu prospect descobrir. Isso te dá tempo pra ajustar pitch, atualizar battlecard, ou reposicionar sem parecer reativo.
+Você recebe o alerta, ajusta seu posicionamento e entra na negociação sabendo exatamente o cenário. Em vez de reagir tarde, você age antes.
 
 **7/8**
-Se você é founder ou head de revenue de um SaaS B2B e compete com 3+ players diretos, ficar no escuro sobre pricing é um risco que você escolhe correr todo dia 🎯
+Pra quem tem time de vendas pequeno (5-50 pessoas), cada deal conta. Uma única negociação salva por mês já paga o investimento 🎯
 
 **8/8**
-Quer parar de ser o último a saber? Acessa o PriceRadar e entra na lista de acesso antecipado → https://price-radar.vercel.app
+Quer parar de perder deal por falta de informação? Acessa aqui e testa o PriceRadar agora 👇
+https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-9a718799-42eb-4860-8a49-366c7c5ad048
