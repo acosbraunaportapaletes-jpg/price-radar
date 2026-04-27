@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}PriceRadar{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <style>
+        body { background: #0f0f1a; color: #e0e0e0; }
+        .flash-success { background: #064e3b; border: 1px solid #10b981; }
+        .flash-error { background: #7f1d1d; border: 1px solid #ef4444; }
+        .flash-warning { background: #78350f; border: 1px solid #f59e0b; }
+        .flash-info { background: #1e3a5f; border: 1px solid #3b82f6; }
+        .diff-add { background: #064e3b; color: #6ee7b7; }
+        .diff-remove { background: #7f1d1d; color: #fca5a5; }
+    </style>
+</head>
+<body class="min-h-screen">
+    <nav class="border-b border-gray-800 px-6 py-3 flex items-center justify-between">
+        <a href="/" class="text-xl font-bold text-indigo-400">PriceRadar</a>
+        {% if session.get('user_id') %}
+        <div class="flex items-center gap-4 text-sm">
+            <a href="{{ url_for('dashboard') }}" class="hover:text-indigo-400">Dashboard</a>
+            <a href="{{ url_for('alerts_list') }}" class="hover:text-indigo-400">Alertas</a>
+            <span class="text-gray-500">{{ session.get('user_email') }}</span>
+            <a href="{{ url_for('logout') }}" class="text-red-400 hover:text-red-300">Sair</a>
+        </div>
+        {% endif %}
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 py-8">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="mb-6 space-y-2">
+            {% for category, message in messages %}
+            <div class="flash-{{ category }} px-4 py-2 rounded-lg text-sm">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

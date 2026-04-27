@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}{{ competitor.name }} - PriceRadar{% endblock %}
+{% block content %}
+<div class="flex items-center justify-between mb-6">
+    <div>
+        <a href="{{ url_for('dashboard') }}" class="text-sm text-gray-500 hover:text-indigo-400">&larr; Dashboard</a>
+        <h1 class="text-2xl font-bold mt-1">{{ competitor.name }}</h1>
+        <p class="text-sm text-gray-500 mt-1">{{ competitor.pricing_url }}</p>
+    </div>
+    <div class="flex gap-3">
+        <form method="POST" action="{{ url_for('manual_check', comp_id=competitor.id) }}">
+            <button type="submit"
+                    class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">
+                Verificar agora
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Alerts for this competitor -->
+{% if alerts %}
+<h2 class="text-lg font-semibold mb-3">Alertas</h2>
+<div class="space-y-3 mb-8">
+    {% for alert in alerts %}
+    <div class="bg-gray-900 border border-gray-800 rounded-xl p-4">
+        <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2">
+                {% if alert.seen == 0 %}
+                <span class="bg-amber-900 text-amber-300 text-xs px-2 py-0.5 rounded">Novo</span>
+                {% else %}
+                <span class="text-xs text-gray-500">Lido</span>
+                {% endif %}
+                <span class="text-sm text-gray-400">{{ alert.sent_at }}</span>
+            </div>
+            {% if alert.seen == 0 %}
+            <button hx-post="{{ url_for('mark_alert_read', alert_id=alert.id) }}"
+                    hx-swap="outerHTML"
+                    class="text-xs text-indigo-400 hover:underline">
+                Marcar como lido
+            </button>
+            {% endif %}
+        </div>
+        {% if alert.diff_summary %}
+        <pre class="bg-gray-950 rounded-lg p-3 text-xs overflow-x-auto whitespace-pre-wrap mt-2">{% for line in alert.diff_summary.splitlines() %}{% if line.startswith('+') and not line.startswith('+++') %}<span class="diff-add">{{ line }}</span>
+{% elif line.startswith('-') and not line.startswith('---') %}<span class="diff-remove">{{ line }}</span>
+{% else %}{{ line }}
+{% endif %}{% endfor %}</pre>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- Snapshot timeline -->
+<h2 class="text-lg font-semibold mb-4">Timeline de snapshots</h2>
+{% if snapshots %}
+<div class="space-y-3">
+    {% for snap in snapshots %}
+    <div class="bg-gray-900 border border-gray-800 rounded-xl p-4">
+        <div class="flex items-center justify-between mb-2">
+            <div class="text-sm text-gray-400">{{ snap.captured_at }}</div>
+            <div class="text-xs font-mono text-gray-600">{{ snap.content_hash[:12] }}...</div>
+        </div>
+        {% if snap.prev_text and snap.prev_text != snap.text_content %}
+        <details>
+            <summary class="text-sm text-amber-400 cursor-pointer hover:underline">Mudanca detectada - ver diff</summary>
+            <pre class="mt-2 bg-gray-950 rounded-lg p-3 text-xs overflow-x-auto whitespace-pre-wrap">{% set old_lines = snap.prev_text.splitlines() %}{% set new_lines = snap.text_content.splitlines() %}{% for line in snap.text_content.splitlines()[:50] %}{{ line }}
+{% endfor %}{% if snap.text_content.splitlines()|length > 50 %}
+... (truncado){% endif %}</pre>
+        </details>
+        {% elif loop.last %}
+        <div class="text-xs text-gray-600">Snapshot inicial</div>
+        {% else %}
+        <div class="text-xs text-green-600">Sem alteracoes</div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="text-center py-12 text-gray-500">
+    <p class="mb-4">Nenhum snapshot ainda.</p>
+    <form method="POST" action="{{ url_for('manual_check', comp_id=competitor.id) }}">
+        <button type="submit" class="text-indigo-400 hover:underline">Fazer primeiro snapshot</button>
+    </form>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PriceRadar - Saiba quando seu concorrente muda os precos</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a14;
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        nav { padding: 20px 0; border-bottom: 1px solid #1a1a2e; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 20px; font-weight: 700; color: #818cf8; text-decoration: none; }
+        nav a.cta-sm {
+            font-size: 14px; color: #818cf8; text-decoration: none;
+            border: 1px solid #818cf8; padding: 8px 20px; border-radius: 8px;
+            transition: all .2s;
+        }
+        nav a.cta-sm:hover { background: #818cf8; color: #0a0a14; }
+        .hero { text-align: center; padding: 100px 0 60px; }
+        h1 { font-size: 48px; line-height: 1.15; margin-bottom: 20px; font-weight: 800; }
+        h1 span { color: #818cf8; }
+        .subtitle { font-size: 18px; color: #888; max-width: 560px; margin: 0 auto 40px; line-height: 1.6; }
+        .cta {
+            display: inline-block; background: #818cf8; color: #0a0a14;
+            font-weight: 700; font-size: 16px; padding: 14px 40px;
+            border-radius: 10px; text-decoration: none; transition: background .2s;
+        }
+        .cta:hover { background: #6366f1; }
+        .features { padding: 60px 0 80px; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .feature {
+            background: #111122; border: 1px solid #1a1a2e;
+            border-radius: 12px; padding: 32px 24px;
+        }
+        .feature-icon { font-size: 32px; margin-bottom: 12px; }
+        .feature h3 { font-size: 16px; margin-bottom: 8px; }
+        .feature p { font-size: 14px; color: #888; line-height: 1.5; }
+        .social-proof {
+            text-align: center; padding: 40px 0 80px;
+            border-top: 1px solid #1a1a2e;
+        }
+        .social-proof p { color: #555; font-size: 14px; line-height: 1.8; max-width: 500px; margin: 0 auto; }
+        .social-proof .quote { color: #aaa; font-style: italic; font-size: 16px; margin-bottom: 8px; }
+        footer {
+            text-align: center; padding: 30px 0;
+            border-top: 1px solid #1a1a2e; color: #555; font-size: 13px;
+        }
+        @media (max-width: 640px) {
+            h1 { font-size: 32px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .hero { padding: 60px 0 40px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">PriceRadar</a>
+            <a href="/register" class="cta-sm">Criar conta gratis</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Saiba quando seu concorrente<br><span>muda os precos</span><br>antes do seu prospect.</h1>
+            <p class="subtitle">
+                Monitore paginas de pricing automaticamente.
+                Receba alertas com o diff exato do que mudou.
+                Nunca mais perca um deal por estar desatualizado.
+            </p>
+            <a href="/register" class="cta">Comece gratis</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">&#128269;</div>
+                    <h3>Monitoramento 24h</h3>
+                    <p>Cadastre a URL de pricing dos seus concorrentes. Nosso bot verifica diariamente e detecta qualquer mudanca.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">&#9889;</div>
+                    <h3>Alertas instantaneos</h3>
+                    <p>Quando algo muda, voce recebe um email com o diff exato: o que saiu, o que entrou, o que mudou de preco.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">&#128200;</div>
+                    <h3>Timeline de mudancas</h3>
+                    <p>Historico completo de todas as alteracoes detectadas. Veja a evolucao de pricing de cada concorrente ao longo do tempo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-proof">
+        <div class="container">
+            <p class="quote">"Perdemos um deal porque o concorrente tinha baixado o preco 3 semanas antes. O prospect sabia. Nos nao."</p>
+            <p>- Founder de SaaS B2B</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">PriceRadar &mdash; Inteligencia competitiva de pricing para SaaS.</div>
+    </footer>
+</body>
+</html>

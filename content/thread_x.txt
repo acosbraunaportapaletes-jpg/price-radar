@@ -1,0 +1,27 @@
+Aqui está a thread:
+
+---
+
+**1/8**
+Semana passada um founder perdeu um deal de R$120k. O prospect disse: "achei uma opção mais barata". O concorrente tinha baixado o preço 3 dias antes. Ele nem sabia.
+
+**2/8**
+Isso acontece mais do que você imagina. A maioria dos SaaS B2B não tem nenhum processo pra monitorar preço de concorrente. Zero. É tudo manual, esporádico, ou simplesmente não existe.
+
+**3/8**
+Você descobre que o concorrente mudou o pricing quando? Quando o prospect joga na sua cara durante a negociação. Aí já era.
+
+**4/8**
+Construímos o PriceRadar pra resolver exatamente isso. Ele monitora as páginas de pricing dos seus concorrentes e te avisa no momento em que algo muda.
+
+**5/8**
+Não é scraping genérico. Ele detecta mudança de valor, remoção de plano, adição de feature em tier específico, alteração de modelo (mensal pra anual). Tudo que impacta como você posiciona sua oferta.
+
+**6/8**
+O alerta chega antes do seu prospect descobrir. Isso te dá tempo pra ajustar pitch, atualizar battlecard, ou reposicionar sem parecer reativo.
+
+**7/8**
+Se você é founder ou head de revenue de um SaaS B2B e compete com 3+ players diretos, ficar no escuro sobre pricing é um risco que você escolhe correr todo dia 🎯
+
+**8/8**
+Quer parar de ser o último a saber? Acessa o PriceRadar e entra na lista de acesso antecipado → https://price-radar.vercel.app

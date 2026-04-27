@@ -1,0 +1,54 @@
+# Roteiro YouTube Short — PriceRadar
+
+**Duração estimada:** 50s
+
+---
+
+**[0-3s] PATTERN INTERRUPT**
+
+*(Falando direto pra câmera, expressão de choque)*
+
+"Seu concorrente BAIXOU o preço e você só descobriu quando perdeu o cliente."
+
+[CORTE]
+
+---
+
+**[3-18s] BEAT 1 — O Problema**
+
+"Isso acontece todo dia. Enquanto você tá focado no seu negócio, o concorrente muda o preço — e o prospect compara, encontra mais barato, e vai embora. Sem te dar chance."
+
+[B-ROLL: tela de e-commerce com preços mudando / notificação de venda perdida]
+
+[CORTE]
+
+---
+
+**[18-35s] BEAT 2 — A Solução**
+
+"O PriceRadar monitora os preços dos seus concorrentes 24 horas por dia. Mudou? Você recebe um alerta **antes** do seu prospect perceber."
+
+[B-ROLL: dashboard do PriceRadar com alerta de mudança de preço aparecendo em tempo real]
+
+"Você ajusta sua oferta, manda a proposta na hora certa, e fecha."
+
+[CORTE]
+
+---
+
+**[35-50s] BEAT 3 — Prova + CTA**
+
+"Tem empresa usando isso pra reagir em minutos, não em dias. A diferença entre perder e ganhar o deal é informação — e velocidade."
+
+*(Aponta pra câmera)*
+
+"Link na bio. Testa o PriceRadar grátis e para de ser o último a saber."
+
+[B-ROLL: dedo clicando no link / tela de cadastro rápido]
+
+---
+
+**Notas de produção:**
+- Ritmo rápido, cortes secos entre cada beat
+- Legenda grande e bold nos ganchos-chave ("BAIXOU o preço", "antes do seu prospect", "em minutos, não em dias")
+- Música de fundo tensa nos primeiros 3s, transição pra algo confiante no beat 2

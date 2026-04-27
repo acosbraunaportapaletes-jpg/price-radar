@@ -1,0 +1,27 @@
+**How do you actually keep tabs on competitor pricing changes?**
+
+I've been thinking about this a lot lately and wanted to hear how other SaaS founders handle it.
+
+Last quarter we lost a deal we were 90% sure we'd close. Turns out the competitor had quietly dropped their price by 20% about two weeks before our prospect signed. Our sales team had no idea. The prospect didn't even mention it — they just said they "went another direction." We only found out when someone casually checked the competitor's pricing page weeks later.
+
+That stung. But what stung more was realizing we had zero process for this. None. We were basically relying on our sales reps to occasionally Google competitors, or hoping prospects would volunteer pricing info during calls. That's not a strategy, that's luck.
+
+So I started digging into how other B2B SaaS teams (especially in the 5-50 person range) handle competitive pricing intelligence. And honestly, what I found was kind of depressing:
+
+- **The spreadsheet approach**: Someone on the team manually checks competitor pricing pages weekly/monthly. Works until that person gets busy (so, immediately). Data goes stale within days.
+
+- **The "our sales team knows" approach**: Relying on reps to pick up intel from conversations. Problem is, by the time a prospect mentions a competitor's new price, it's already too late to adjust your positioning.
+
+- **The enterprise CI tool approach**: Tools like Klue or Crayon exist but they're built for 500+ person companies. Overkill in features, overkill in price. We looked at a couple and the quotes were laughable for our stage.
+
+- **The "we don't" approach**: Surprisingly common. Founders just... don't track it. They assume competitor pricing is stable or that their differentiation is enough to not worry about it.
+
+None of these felt great.
+
+The more I talked to other founders, the more I realized this is a weird blind spot. We obsess over our own pricing — A/B testing plans, tweaking tiers, reading all the Patrick Campbell content. But we treat competitor pricing as this static thing, when in reality SaaS companies change pricing way more often than most people think. I saw a study that said the average SaaS company makes meaningful pricing changes every 6-8 months. In competitive markets, it's more frequent.
+
+What really surprised me is the downstream impact. It's not just about losing deals on price. When a competitor drops prices or restructures tiers, it shifts the whole conversation. Your sales team's battlecards are suddenly wrong. Your positioning deck is off. Even your marketing messaging might need adjustment. And if you find out 3-4 weeks late, that's 3-4 weeks of your team operating with bad intel.
+
+I think part of the problem is that "competitive intelligence" sounds like something only big companies do. But for a small B2B SaaS competing against 3-5 direct players, knowing when a competitor changes prices within 24 hours vs. finding out a month later could genuinely be the difference between winning and losing a chunk of pipeline.
+
+For those of you in competitive B2B SaaS markets — do you have an actual system for tracking competitor pricing, or is it mostly ad hoc? And if you do have something that works, how much of it is automated vs. manual?
