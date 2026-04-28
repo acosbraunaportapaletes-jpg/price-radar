@@ -43,11 +43,11 @@ body { background: #0b0d10; color: #d7dde3; font-family: 'Inter', system-ui, san
 <section class="gradient-bg pt-32 pb-20 px-6">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
     <div class="fade-in">
-      <span class="inline-block bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-semibold mb-6">JUST LAUNCHED</span>
+      <span class="inline-block bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-semibold mb-6">PRO</span>
       <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">Know when your competitor changes pricing before your prospect does.</h1>
       <p class="text-xl text-gray-300 mb-8 leading-relaxed">Know when your competitor changes pricing before your prospect does.</p>
       <div class="flex flex-col sm:flex-row gap-4">
-        <a href="#buy" class="bg-primary text-dark px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition inline-block text-center">Buy for $9</a>
+        <a href="#buy" class="bg-primary text-dark px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition inline-block text-center">Buy for $14</a>
         <a href="#how-it-works" class="border border-gray-700 text-white px-8 py-4 rounded-lg font-semibold hover:border-primary transition inline-block text-center">How it works</a>
       </div>
       <div class="mt-6 flex items-center gap-2 text-sm text-gray-400">
@@ -66,7 +66,7 @@ body { background: #0b0d10; color: #d7dde3; font-family: 'Inter', system-ui, san
 <section class="py-20 px-6 border-t border-gray-800">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Sound familiar?</h2>
-    <p class="text-xl text-gray-400">SaaS founders have no idea when competitors like Stripe, Notion, or Linear change their pricing or positioning — and they lose deals because of it.</p>
+    <p class="text-xl text-gray-400">SaaS founders have no systematic way to detect competitor pricing changes — and they're losing deals because of it.</p>
   </div>
 </section>
 
@@ -76,10 +76,10 @@ body { background: #0b0d10; color: #d7dde3; font-family: 'Inter', system-ui, san
     <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-14">What you get</h2>
     <div class="grid md:grid-cols-3 gap-6">
       <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Email + password auth with bcrypt hashing and Flask-Login sessions</p></div>
-<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Full CRUD for competitors: name, pricing page URL, and notes</p></div>
-<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Scheduled job that scrapes pricing pages, captures HTML snapshots, and detects diffs against the previous version</p></div>
-<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Email alerts when a change is detected, with a visual before/after diff highlighted</p></div>
-<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Snapshot history per competitor with a visual timeline of every detected change</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Full CRUD for competitors — just add their pricing page URL and the plan name to monitor</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Scheduled job (APScheduler) that scrapes registered pricing pages, extracts prices via configurable CSS selector + regex fallback, and saves a snapshot to the database</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Compares the latest snapshot with the previous one — if there's a price change, it flags an alert and fires off an email via SMTP</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Dashboard with a timeline of detected changes per competitor, current vs. previous price, and date of change</p></div>
     </div>
   </div>
 </section>
@@ -90,8 +90,6 @@ body { background: #0b0d10; color: #d7dde3; font-family: 'Inter', system-ui, san
     <div class="bg-gray-900/80 backdrop-blur border border-gray-800 rounded-2xl p-10 text-center">
       <h2 class="text-2xl font-bold text-white mb-2">PriceRadar</h2>
       <p class="text-gray-400 mb-8">Know when your competitor changes pricing before your prospect does.</p>
-      <div class="text-5xl font-extrabold text-primary mb-2">$9</div>
+      <div class="text-5xl font-extrabold text-primary mb-2">$14</div>
       <p class="text-sm text-gray-500 mb-8">One-time payment · Lifetime access</p>
-      <ul class="text-left space-y-3 mb-10">
-        <li class="flex items-start gap-3 text-gray-300"><span class="text-primary mt-1
 ```

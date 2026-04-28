@@ -1,21 +1,44 @@
-1/7
-Semana passada perdi um deal de R$18k porque o prospect disse: "achei mais barato". O concorrente tinha baixado o preço 3 dias antes e eu nem sabia.
+Here's the thread:
 
-2/7
-Fui investigar e descobri que isso já tinha acontecido outras 2 vezes no trimestre. Três deals perdidos pelo mesmo motivo: eu estava no escuro.
+---
 
-3/7
-O problema não é perder no preço. É perder sem saber que o jogo mudou. Quando você descobre pelo prospect, já perdeu a negociação.
+**1/8**
+Semana passada um founder me disse: "Perdi um deal de R$48k porque o prospect mostrou que o concorrente tinha baixado 30% no preço. Eu nem sabia."
 
-4/7
-Comecei a monitorar manualmente. Abria o site de 4 concorrentes todo dia, comparava planos, printava tela. Durou 11 dias. Inviável.
+Isso acontece mais do que você imagina.
 
-5/7
-Aí encontrei o PriceRadar. Ele monitora as páginas de pricing dos seus concorrentes e te avisa no momento que algo muda. Preço, plano, feature — qualquer alteração.
+**2/8**
+A verdade é que a maioria dos SaaS B2B descobre mudança de preço do concorrente pelo prospect — no meio da negociação.
 
-6/7
-Agora quando um concorrente baixa preço, eu sei antes do meu prospect. Ajusto o pitch, reposiciono a oferta ou acelero o deal antes que o desconto do outro chegue no radar do lead 🎯
+Ou seja: você já perdeu antes de saber que estava perdendo.
 
-7/7
-Se você vende SaaS B2B e compete com 3+ players, precisa dessa inteligência. Teste o PriceRadar e pare de perder deal no escuro 👇
-https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-26546402-57c7-4821-93f8-a69598540bb7
+**3/8**
+Pensa no seu processo hoje. Alguém do time entra no site do concorrente de vez em quando, tira print, compara numa planilha.
+
+Isso não é inteligência competitiva. Isso é arqueologia.
+
+**4/8**
+PriceRadar monitora os preços dos seus concorrentes e te avisa no momento em que algo muda.
+
+Antes do próximo call de vendas. Antes do próximo deal escapar.
+
+**5/8**
+Seu head de vendas recebe o alerta e ajusta o pitch na hora. Seu time entra na call sabendo exatamente onde está posicionado.
+
+A diferença entre reagir e antecipar é o deal fechado.
+
+**6/8**
+Se você compete num mercado com 3, 5, 10 players diretos, preço é informação de guerra.
+
+E guerra se vence com inteligência, não com achismo.
+
+**7/8**
+Funciona pra SaaS B2B de 5 a 50 pessoas que não pode se dar ao luxo de perder deal por falta de informação básica.
+
+Sem setup complexo. Sem planilha. Sem estagiário monitorando site. 🎯
+
+**8/8**
+Quer parar de ser o último a saber quando seu concorrente muda o preço?
+
+Teste o PriceRadar agora 👇
+https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-8dbadabd-db6b-460d-82b5-26f60957d94f

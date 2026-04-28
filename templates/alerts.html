@@ -9,19 +9,19 @@
 {% if alerts %}
 <div class="space-y-3">
     {% for a in alerts %}
-    <a href="/competitors/{{ a.competitor_id }}/snapshots" class="card p-4 block hover:border-yellow-800 transition">
+    <a href="/competitors/{{ a.competitor_id }}" class="card p-4 block hover:border-yellow-800 transition">
         <div class="flex items-center justify-between">
             <div>
                 <span class="text-yellow-400 font-medium">{{ a.competitor_name }}</span>
                 <span class="text-gray-500 mx-2">|</span>
-                <span class="text-red-400 line-through font-mono">{{ a.old_price }}</span>
-                <span class="text-gray-400 mx-1">&rarr;</span>
-                <span class="text-green-400 font-mono font-bold">{{ a.new_price }}</span>
+                <span class="text-gray-300 text-sm">{{ a.diff_summary }}</span>
             </div>
             <div class="text-right">
-                <span class="text-xs text-gray-500">{{ a.created_at[:16] if a.created_at else '' }}</span>
-                {% if a.notified_at %}
-                <span class="text-xs text-emerald-600 block">email enviado</span>
+                <span class="text-xs text-gray-500">{{ a.sent_at[:16] if a.sent_at else '' }}</span>
+                {% if a.read %}
+                <span class="text-xs text-gray-700 block">lido</span>
+                {% else %}
+                <span class="text-xs text-yellow-600 block">novo</span>
                 {% endif %}
             </div>
         </div>
@@ -30,7 +30,7 @@
 </div>
 {% else %}
 <div class="card p-8 text-center text-gray-500">
-    Nenhum alerta de mudanca de preco ainda. Os alertas aparecem quando o scraper detecta uma diferenca.
+    Nenhum alerta de mudanca de preco ainda. Os alertas aparecem quando o scraper detecta uma diferenca entre snapshots.
 </div>
 {% endif %}
 {% endblock %}

@@ -3,15 +3,15 @@
     {% for comp in competitors %}
     <div class="card p-4 flex items-center justify-between" id="comp-{{ comp.id }}">
         <div class="flex-1">
-            <a href="/competitors/{{ comp.id }}/snapshots" class="text-lg font-semibold text-emerald-400 hover:underline">{{ comp.name }}</a>
-            {% if comp.css_selector %}
-            <span class="text-gray-600 text-xs ml-2">{{ comp.css_selector }}</span>
+            <a href="/competitors/{{ comp.id }}" class="text-lg font-semibold text-emerald-400 hover:underline">{{ comp.name }}</a>
+            {% if comp.notes %}
+            <span class="text-gray-600 text-xs ml-2">{{ comp.notes }}</span>
             {% endif %}
             <p class="text-sm text-gray-500 mt-1 truncate max-w-lg">{{ comp.pricing_url }}</p>
         </div>
         <div class="flex items-center gap-3 text-sm text-gray-400">
-            {% if comp.last_price %}
-            <span class="text-white font-mono bg-emerald-900/40 px-2 py-0.5 rounded text-xs">{{ comp.last_price }}</span>
+            {% if comp.last_prices and comp.last_prices != '[]' %}
+            <span class="text-white font-mono bg-emerald-900/40 px-2 py-0.5 rounded text-xs">{{ comp.last_prices }}</span>
             {% endif %}
             <span>{{ comp.snap_count }} snap{{ 's' if comp.snap_count != 1 else '' }}</span>
             {% if comp.last_check %}
@@ -26,7 +26,7 @@
                     <span class="htmx-indicator">...</span>
                 </button>
             </span>
-            <button hx-delete="/competitors/{{ comp.id }}/delete"
+            <button hx-delete="/competitors/{{ comp.id }}"
                     hx-target="#comp-{{ comp.id }}"
                     hx-swap="outerHTML"
                     hx-confirm="Remover {{ comp.name }}?"

@@ -1,47 +1,45 @@
 **Assunto:** Seu concorrente mudou o preço. Você soube?
 
-**Preview:** A maioria dos founders SaaS descobre tarde demais. Agora tem um jeito melhor.
+**Preview:** A maioria dos founders de SaaS descobre tarde demais. Agora tem um jeito melhor.
 
 ---
 
 Fala, [NOME].
 
-Vou ser direto: semana passada um founder me contou que perdeu um deal de R$48k/ano porque o concorrente baixou o preço e ele só ficou sabendo quando o prospect jogou na cara dele na call de negociação.
+Vou ser direto: semana passada um founder me mandou mensagem dizendo que perdeu um deal de R$38k porque o concorrente tinha baixado o preço 20 dias antes — e ele nem sabia.
 
-Ele não tinha resposta. Perdeu o deal.
-
-Isso me incomodou porque eu já passei por isso. Mais de uma vez.
+Aquilo me incomodou. Porque eu já passei por isso.
 
 **Como o PriceRadar nasceu**
 
-Eu cansei de entrar em call de vendas sem saber que o concorrente tinha mudado a página de pricing na semana anterior. Tentei monitorar manualmente — abrir 5, 10 sites por semana, tirar print, comparar. Durou 3 semanas. Aí construí uma ferramenta pra fazer isso por mim. Funcionou tão bem que outros founders começaram a pedir acesso. Agora estou abrindo pro mercado.
+Eu cansei de entrar em call de vendas e ouvir "mas o [concorrente] tá cobrando menos". Cansei de monitorar pricing page manualmente. Cansei de planilha. Então construí uma ferramenta que faz uma coisa só, e faz bem: monitora os preços dos seus concorrentes e te avisa no minuto que algo muda.
 
-**O que o PriceRadar faz por você:**
+Sem dashboard bonito que ninguém abre. Sem relatório de 47 páginas. Um alerta direto no seu Slack ou email. Simples assim.
 
-- **Monitora as páginas de preço dos seus concorrentes 24/7** e te avisa no momento em que algo muda — plano novo, desconto, reposicionamento, qualquer alteração.
-- **Te dá contexto pra negociação.** Você entra na call sabendo exatamente o cenário competitivo. Seu prospect menciona o concorrente? Você já tem a resposta pronta.
-- **Cria um histórico de pricing do seu mercado.** Em 3 meses você tem dados que ninguém mais tem — tendências, padrões sazonais, movimentos estratégicos dos competidores.
+**O que o PriceRadar resolve:**
 
-**Pra quem é (e pra quem não é)**
+- **Você para de perder deal por desinformação.** Sabe na hora quando um concorrente mexe no pricing — e ajusta seu posicionamento antes da próxima reunião, não depois.
+- **Seu time de vendas negocia com dados, não com achismo.** Em vez de "acho que eles cobram X", seu closer entra na call sabendo exatamente o cenário competitivo atualizado.
+- **Você identifica padrões de precificação do mercado.** Histórico completo de mudanças. Dá pra ver sazonalidade, tendências e movimentos estratégicos dos concorrentes ao longo do tempo.
 
-O PriceRadar é pra você se:
-→ Você é founder ou Head de Sales de um SaaS B2B
-→ Tem pelo menos 3 concorrentes diretos
-→ Perde tempo (ou deveria perder e não perde) acompanhando pricing da concorrência
+**Quem deve comprar:**
 
-**Não é pra você** se você é o único player do mercado ou se pricing não é um fator relevante nas suas negociações. Sem ressentimentos.
+Fundador ou head de vendas de SaaS B2B que compete com pelo menos 3 players diretos. Que tem time de 5 a 50 pessoas. Que já perdeu (ou quase perdeu) deal por não ter inteligência competitiva de preço atualizada.
 
-**Investimento**
+**Quem NÃO deve comprar:**
 
-O acesso ao PriceRadar custa menos do que um almoço de negócios por mês. E se em 7 dias você achar que não vale, eu devolvo 100% — sem pergunta, sem formulário, sem atrito.
+Se você é o único player do seu mercado, ou se pricing não é fator decisivo no seu ciclo de venda — não precisa disso. Guarda seu dinheiro.
 
-Preferi não colocar preço aqui no e-mail porque tenho condições diferentes dependendo do volume de concorrentes monitorados. Tudo transparente na página de compra.
+**Preço e garantia:**
 
-**→ [Quero monitorar meus concorrentes agora](https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-26546402-57c7-4821-93f8-a69598540bb7)**
+O PriceRadar custa **R$297/mês**.
 
-É só isso. Um link, uma decisão.
+Sem contrato anual. Sem pegadinha. E com **garantia incondicional de 7 dias** — se nos primeiros 7 dias você achar que não vale, pede reembolso e devolvemos 100%. Sem pergunta, sem formulário, sem "por que você está cancelando".
 
-Abraço,
-[SEU NOME]
+**→ [QUERO COMEÇAR A MONITORAR MEUS CONCORRENTES](https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-8dbadabd-db6b-460d-82b5-26f60957d94f)**
 
-P.S. — Se você leu até aqui e pensou "eu deveria estar fazendo isso há meses"… é porque deveria. A boa notícia é que o próximo movimento do seu concorrente, você vai saber primeiro.
+Um link. Uma decisão. Acesso imediato.
+
+---
+
+P.S. — Eu sei que email de lançamento sempre parece que vai mudar sua vida. Não vou prometer isso. O que eu prometo é que na próxima vez que seu concorrente mexer no preço, você vai saber antes do seu time de vendas precisar perguntar. E isso, sozinho, já paga o investimento.

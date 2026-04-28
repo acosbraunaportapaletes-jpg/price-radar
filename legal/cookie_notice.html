@@ -1,12 +1,19 @@
 ```html
-<div id="cookie-banner" style="position:fixed;bottom:0;width:100%;background:#1a1a2e;color:#fff;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;font:14px sans-serif;z-index:9999">
-  <span>O PriceRadar usa cookies essenciais para o funcionamento do site e cookies analíticos para melhorar sua experiência. Saiba mais na nossa <a href="/politica-de-privacidade" style="color:#4fc3f7;text-decoration:underline">Política de Privacidade</a>.</span>
-  <span style="display:flex;gap:8px;flex-shrink:0">
-    <button onclick="document.getElementById('cookie-banner').remove();localStorage.setItem('cookies','essential')" style="padding:8px 16px;background:transparent;border:1px solid #fff;color:#fff;border-radius:4px;cursor:pointer">Apenas essenciais</button>
-    <button onclick="document.getElementById('cookie-banner').remove();localStorage.setItem('cookies','all')" style="padding:8px 16px;background:#4fc3f7;border:none;color:#1a1a2e;border-radius:4px;cursor:pointer;font-weight:bold">Aceitar todos</button>
-  </span>
+<div id="cookie-banner" style="position:fixed;bottom:0;width:100%;background:#1a1a2e;color:#eee;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;font:14px sans-serif;z-index:9999;gap:12px">
+  <p style="margin:0">O PriceRadar usa cookies essenciais para o funcionamento do site e cookies de analytics para melhorar sua experiência. Saiba mais na nossa <a href="/privacidade" style="color:#4fc3f7">Política de Privacidade</a>.</p>
+  <div style="display:flex;gap:8px;flex-shrink:0">
+    <button onclick="document.getElementById('cookie-banner').remove()" style="padding:8px 16px;border:1px solid #888;background:transparent;color:#eee;border-radius:4px;cursor:pointer">Apenas essenciais</button>
+    <button onclick="document.getElementById('cookie-banner').remove()" style="padding:8px 16px;border:none;background:#4fc3f7;color:#1a1a2e;border-radius:4px;cursor:pointer;font-weight:bold">Aceitar todos</button>
+  </div>
 </div>
-<script>if(localStorage.getItem('cookies'))document.getElementById('cookie-banner')?.remove()</script>
 ```
 
-**Como usar:** cole antes do `</body>`. O banner persiste via `localStorage` — depois de clicar, não aparece mais. No seu script de analytics, verifique `localStorage.getItem('cookies') === 'all'` antes de carregar tags de rastreamento.
+**O que cobre (LGPD art. 7º, IX e art. 8º):**
+
+- **Transparência** — informa quais categorias de cookies são usados (essenciais vs analytics)
+- **Consentimento granular** — duas opções claras, sem dark pattern
+- **Link para política completa** — aponta pra `/privacidade` (ajuste a URL conforme necessário)
+- **Cookies essenciais sem opt-in** — permitidos por legítimo interesse (base legal art. 7º, IX)
+- **Analytics só com consentimento** — o botão "Aceitar todos" é que libera
+
+Na prática, conecte os `onclick` à sua lógica real de consent (ex: setar um cookie `consent=all` vs `consent=essential` e condicionar o carregamento do GA/analytics a essa flag).

@@ -6,37 +6,36 @@
     <a href="/competitors" class="btn-secondary text-sm">Gerenciar concorrentes</a>
 </div>
 
-<!-- Stats -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
     <div class="card p-5">
         <p class="text-sm text-gray-500">Concorrentes</p>
         <p class="text-3xl font-bold text-emerald-400">{{ competitors|length }}</p>
     </div>
     <div class="card p-5">
-        <p class="text-sm text-gray-500">Alertas recentes</p>
-        <p class="text-3xl font-bold text-yellow-400">{{ alerts|length }}</p>
+        <p class="text-sm text-gray-500">Alertas nao lidos</p>
+        <p class="text-3xl font-bold text-yellow-400">{{ unread_count }}</p>
     </div>
     <div class="card p-5">
-        <p class="text-sm text-gray-500">Proximo check</p>
-        <p class="text-lg font-semibold text-gray-300 mt-1">Automatico (6h)</p>
+        <p class="text-sm text-gray-500">Total de alertas</p>
+        <p class="text-3xl font-bold text-gray-300">{{ alerts|length }}</p>
     </div>
 </div>
 
-<!-- Competitors quick list -->
 <h2 class="text-xl font-semibold mb-4">Concorrentes monitorados</h2>
 {% if competitors %}
 <div class="grid gap-3 mb-10">
     {% for comp in competitors %}
     <div class="card p-4 flex items-center justify-between">
         <div class="flex-1">
-            <a href="/competitors/{{ comp.id }}/snapshots" class="text-lg font-semibold text-emerald-400 hover:underline">{{ comp.name }}</a>
+            <a href="/competitors/{{ comp.id }}" class="text-lg font-semibold text-emerald-400 hover:underline">{{ comp.name }}</a>
             <p class="text-sm text-gray-500 mt-1 truncate max-w-lg">{{ comp.pricing_url }}</p>
         </div>
         <div class="flex items-center gap-4 text-sm">
-            {% if comp.last_price %}
-            <span class="text-white font-mono bg-emerald-900/40 px-3 py-1 rounded">{{ comp.last_price }}</span>
+            {% if comp.last_prices %}
+            {% set prices = comp.last_prices | default('[]') %}
+            <span class="text-white font-mono bg-emerald-900/40 px-3 py-1 rounded text-xs">{{ prices }}</span>
             {% else %}
-            <span class="text-gray-600">sem preco</span>
+            <span class="text-gray-600">sem dados</span>
             {% endif %}
             <span class="text-gray-500">{{ comp.snap_count }} snap{{ 's' if comp.snap_count != 1 else '' }}</span>
             <span id="check-{{ comp.id }}">
@@ -58,21 +57,18 @@
 </div>
 {% endif %}
 
-<!-- Recent alerts -->
 {% if alerts %}
 <h2 class="text-xl font-semibold mb-4 text-yellow-400">Alertas recentes</h2>
 <div class="space-y-3">
     {% for a in alerts %}
-    <a href="/competitors/{{ a.competitor_id }}/snapshots" class="card p-4 block hover:border-yellow-800 transition">
+    <a href="/competitors/{{ a.competitor_id }}" class="card p-4 block hover:border-yellow-800 transition">
         <div class="flex items-center justify-between">
             <div>
                 <span class="text-yellow-400 font-medium">{{ a.competitor_name }}</span>
-                <span class="text-gray-400 mx-2">mudou de</span>
-                <span class="text-red-400 line-through font-mono">{{ a.old_price }}</span>
-                <span class="text-gray-400 mx-1">&rarr;</span>
-                <span class="text-green-400 font-mono font-bold">{{ a.new_price }}</span>
+                <span class="text-gray-400 mx-2">—</span>
+                <span class="text-gray-300 text-sm">{{ a.diff_summary }}</span>
             </div>
-            <span class="text-xs text-gray-500">{{ a.created_at[:16] if a.created_at else '' }}</span>
+            <span class="text-xs text-gray-500">{{ a.sent_at[:16] if a.sent_at else '' }}</span>
         </div>
     </a>
     {% endfor %}

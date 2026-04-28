@@ -7,26 +7,31 @@
 
 Assunto: Bem-vindo(a) ao PriceRadar! 🎉
 
-Boa, sua conta tá ativa! 🚀
+Fala, {primeiro_nome}! 👋
 
-A partir de agora, toda vez que um concorrente mudar preço ou posicionamento, você vai ser o primeiro a saber. Chega de perder deal por falta de inteligência competitiva.
+Sua conta no PriceRadar tá ativa. A partir de agora, você vai saber quando qualquer concorrente mexer nos preços — antes do seu prospect perceber.
 
 **Seu acesso:** [Entrar no PriceRadar →]
 
-**3 passos pra começar (leva 5min):**
+---
 
-1. **Adicione seus concorrentes** — cadastre as páginas de pricing dos players que você mais encontra em deals. Recomendo começar com os 3 principais.
+**3 passos pra começar (leva 5 min):**
 
-2. **Configure seus alertas** — escolha se quer receber notificações por email, Slack ou os dois. Defina a frequência que faz sentido pro seu time.
+**1. Adicione seus concorrentes**
+Cadastre as páginas de pricing dos concorrentes que você quer monitorar. Recomendo começar pelos 3 principais.
 
-3. **Conecte seu time de vendas** — convide seu SDR ou AE principal. Quando o alerta chegar, vocês já vão saber exatamente como ajustar o pitch.
+**2. Configure seus alertas**
+Escolha como quer ser notificado: email, Slack ou ambos. Você define a frequência.
 
-Pronto. Na próxima mudança de preço da concorrência, você vai ter a informação antes do seu prospect.
+**3. Conecte seu time de vendas**
+Convide seu Head de Sales ou SDRs pra receberem os alertas junto com você. Quanto mais rápido o time souber, mais deal fecha.
 
-**Uma dica:** os founders que mais extraem valor do PriceRadar são os que cadastram concorrentes no primeiro dia. Não deixa pra depois.
+---
 
-Precisa de ajuda com alguma coisa? Responde esse email direto — sou eu quem lê e respondo.
+Pronto. Na próxima vez que um concorrente mudar de preço, você vai ser o primeiro a saber — e vai poder usar isso na conversa com o prospect.
 
-Boas vendas,
+**Precisa de ajuda com o setup?** Responde esse email. Eu leio e respondo pessoalmente.
+
+Bora,
 [Nome]
 Fundador do PriceRadar

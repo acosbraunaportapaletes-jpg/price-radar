@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}{{ competitor.name }} — PriceRadar{% endblock %}
+{% block content %}
+<div class="mb-6">
+    <a href="/competitors" class="text-sm text-gray-500 hover:text-gray-300">&larr; Concorrentes</a>
+</div>
+
+<div class="flex items-center justify-between mb-8">
+    <div>
+        <h1 class="text-2xl font-bold">{{ competitor.name }}</h1>
+        <p class="text-sm text-gray-500 mt-1 truncate">{{ competitor.pricing_url }}</p>
+        {% if competitor.notes %}
+        <p class="text-xs text-gray-600 mt-1">{{ competitor.notes }}</p>
+        {% endif %}
+    </div>
+    <div class="flex items-center gap-3">
+        <span id="check-live">
+            <button hx-post="/competitors/{{ competitor.id }}/check"
+                    hx-target="#check-live"
+                    hx-swap="innerHTML"
+                    class="btn-primary text-sm">
+                Verificar agora
+                <span class="htmx-indicator">...</span>
+            </button>
+        </span>
+        <button hx-delete="/competitors/{{ competitor.id }}"
+                hx-confirm="Remover {{ competitor.name }}? Todos os snapshots serao perdidos."
+                hx-target="body"
+                hx-on::after-request="if(event.detail.successful) window.location='/competitors'"
+                class="btn-danger text-sm">
+            Remover
+        </button>
+    </div>
+</div>
+
+{% if alerts %}
+<h2 class="text-xl font-semibold mb-4 text-yellow-400">Mudancas de preco detectadas</h2>
+<div class="space-y-3 mb-10">
+    {% for alert in alerts %}
+    <div class="card p-4 border-yellow-800/50">
+        <div class="flex items-center justify-between">
+            <span class="text-gray-300 text-sm">{{ alert.diff_summary }}</span>
+            <span class="text-xs text-gray-500">{{ alert.sent_at[:16] if alert.sent_at else '' }}</span>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<h2 class="text-xl font-semibold mb-4">Historico de snapshots ({{ snapshots|length }})</h2>
+{% if snapshots %}
+<div class="space-y-3">
+    {% for snap in snapshots %}
+    <div class="card p-4">
+        <div class="flex items-center justify-between">
+            <div>
+                {% if snap.prices %}
+                <div class="flex flex-wrap gap-1">
+                    {% for p in snap.prices %}
+                    <span class="text-white font-mono bg-emerald-900/40 px-2 py-0.5 rounded text-xs">{{ p }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <span class="text-gray-600 text-sm">Nenhum preco encontrado</span>
+                {% endif %}
+            </div>
+            <span class="text-xs text-gray-500">{{ snap.captured_at[:19] if snap.captured_at else '' }}</span>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="card p-6 text-center text-gray-500">
+    Nenhum snapshot capturado. Clique em "Verificar agora".
+</div>
+{% endif %}
+{% endblock %}

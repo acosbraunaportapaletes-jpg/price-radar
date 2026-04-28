@@ -11,23 +11,23 @@
   "core_features": [
     {
       "id": "auth",
-      "desc": "Email + password login, bcrypt hashing, Flask-Login session management"
+      "desc": "Email + password login, bcrypt hashing, Flask-Login session"
     },
     {
       "id": "competitors",
-      "desc": "Competitor management: name, pricing page URL, notes"
+      "desc": "Competitor management with pricing page URL and plan name to monitor"
     },
     {
-      "id": "price-monitor",
-      "desc": "Scheduled job that scrapes the pricing page, extracts an HTML snapshot, and detects diffs against the previous version"
+      "id": "price-scraper",
+      "desc": "Scheduled job (APScheduler) that scrapes registered pricing pages, extracts prices via configurable CSS selector with regex fallback, and saves a snapshot to the database"
     },
     {
-      "id": "alerts",
-      "desc": "Email notification when a change is detected, with a visual diff (before/after) highlighted"
+      "id": "change-detection",
+      "desc": "Compares the latest snapshot with the previous one; if there's a price difference, flags it as an alert and fires off an email via SMTP"
     },
     {
-      "id": "timeline",
-      "desc": "Competitor snapshot history with a visual timeline of every detected change"
+      "id": "dashboard",
+      "desc": "Dashboard with a timeline of detected changes by competitor, current vs. previous pricing, and date of each update"
     }
   ],
   "db_tables": [
@@ -37,15 +37,15 @@
     },
     {
       "name": "competitors",
-      "columns": "id PK, user_id FK, name, pricing_url, notes, created_at"
+      "columns": "id PK, user_id FK, name, pricing_url, css_selector NULL, created_at"
     },
     {
       "name": "snapshots",
-      "columns": "id PK, competitor_id FK, html_hash, content_text, captured_at"
+      "columns": "id PK, competitor_id FK, raw_html TEXT, extracted_price TEXT, captured_at"
     },
     {
-      "name": "changes",
-      "columns": "id PK, snapshot_id FK, diff_html, notified_at, created_at"
+      "name": "alerts",
+      "columns": "id PK, snapshot_id FK, old_price TEXT, new_price TEXT, notified_at NULL, created_at"
     }
   ],
   "routes": [
@@ -53,62 +53,63 @@
       "path": "/",
       "method": "GET",
       "handler": "landing",
-      "desc": "landing page com pitch e CTA de cadastro"
+      "desc": "Landing page pública com pitch e CTA de cadastro"
     },
     {
       "path": "/register",
-      "method": "POST",
+      "method": "GET|POST",
       "handler": "register",
-      "desc": "cria conta"
+      "desc": "Cadastro de novo usuário"
     },
     {
       "path": "/login",
-      "method": "POST",
+      "method": "GET|POST",
       "handler": "login",
-      "desc": "autentica usuário"
+      "desc": "Login"
     },
     {
       "path": "/dashboard",
       "method": "GET",
       "handler": "dashboard",
-      "desc": "lista concorrentes e alertas recentes"
+      "desc": "Painel com alertas recentes e lista de concorrentes"
     },
     {
       "path": "/competitors",
+      "method": "GET|POST",
+      "handler": "competitors",
+      "desc": "CRUD de concorrentes (htmx partial para add/edit/delete)"
+    },
+    {
+      "path": "/competitors/<id>/snapshots",
+      "method": "GET",
+      "handler": "snapshots",
+      "desc": "Histórico de snapshots e mudanças de preço de um concorrente"
+    },
+    {
+      "path": "/competitors/<id>/check",
       "method": "POST",
-      "handler": "add_competitor",
-      "desc": "adiciona concorrente com URL de pricing"
+      "handler": "manual_check",
+      "desc": "Dispara scraping manual imediato (htmx)"
     },
     {
-      "path": "/competitors/<id>",
+      "path": "/alerts",
       "method": "GET",
-      "handler": "competitor_detail",
-      "desc": "timeline de mudanças do concorrente"
-    },
-    {
-      "path": "/competitors/<id>",
-      "method": "DELETE",
-      "handler": "delete_competitor",
-      "desc": "remove concorrente"
-    },
-    {
-      "path": "/changes/<id>",
-      "method": "GET",
-      "handler": "change_diff",
-      "desc": "exibe diff visual antes/depois da mudança"
+      "handler": "alerts",
+      "desc": "Lista de todos os alertas de mudança de preço"
     }
   ],
   "env_vars": [
     "SECRET_KEY",
     "DATABASE_URL",
     "SMTP_HOST",
+    "SMTP_PORT",
     "SMTP_USER",
     "SMTP_PASS",
-    "CHECK_INTERVAL_HOURS"
+    "FROM_EMAIL"
   ],
   "pricing_plan": {
-    "free": "até 3 concorrentes monitorados, check a cada 72h, histórico de 30 dias",
-    "pro": "até 20 concorrentes, check a cada 12h, histórico ilimitado, diff por email em tempo real — R$47/mês"
+    "free": "Até 3 concorrentes, checks 1x por semana, histórico 30 dias",
+    "pro": "Até 20 concorrentes, checks diários, histórico ilimitado, alertas por email em tempo real — R$49/mês"
   },
   "_lang": "en"
 }

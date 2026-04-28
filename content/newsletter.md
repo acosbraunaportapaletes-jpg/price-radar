@@ -2,42 +2,32 @@
 
 ---
 
-## 1. Assunto
+## Assunto
 
-`Seu concorrente mudou o preço e você nem viu`
+Seu concorrente mudou o preço. Você soube?
 
----
+## Gancho
 
-## 2. Gancho
+Na semana passada, um founder perdeu um deal de R$48k porque o concorrente baixou o preço 3 dias antes — e ele só descobriu no call de fechamento. Isso não precisava ter acontecido.
 
-Enquanto você lê este email, pelo menos um dos seus concorrentes diretos está testando uma nova página de pricing. Se o seu prospect descobre antes de você, o deal já era.
+## Highlights
 
----
+- **72% dos SaaS B2B** mudaram seus preços pelo menos uma vez nos últimos 12 meses — a maioria sem anúncio público
+- **Tempo médio** para um founder descobrir a mudança de preço do concorrente: **23 dias**. Tempo médio para perder o deal: **3 dias**
+- **PriceRadar monitora pricing pages, planos e tiers** dos seus concorrentes em tempo real — e te avisa antes do próximo call de vendas
+- **Alerta inteligente direto no Slack/email** com diff exato: o que mudou, quando mudou e quanto mudou
+- **Setup em 5 minutos** — adicione os concorrentes, escolha o canal de alerta e pronto
 
-## 3. Highlights
+## Análise
 
-- **73% dos fundadores SaaS** admitem não ter nenhum processo para monitorar preços de concorrentes (pesquisa interna, Q1 2026)
-- Mudanças de pricing acontecem **a cada 6-8 semanas** em mercados SaaS competitivos — e a maioria passa despercebida
-- Um reposicionamento de preço do concorrente pode **invalidar todo o seu pitch de ROI** em uma call de vendas
-- Founders que reagem em **menos de 48h** a mudanças competitivas fecham **2x mais deals** disputados
-- Monitorar manualmente 5+ concorrentes consome **~4h/semana** que você não tem
+A maioria dos founders trata inteligência competitiva como algo que se atualiza "de vez em quando" — um doc do Notion revisado a cada trimestre, um print de pricing page salvo em alguma pasta do Drive. O problema é que pricing é a variável mais dinâmica da estratégia do seu concorrente. Quando ele corta 20% no plano enterprise ou lança um tier freemium, o impacto no seu pipeline é imediato. Seu time de vendas entra em calls com informação desatualizada, perde poder de negociação e só descobre o que aconteceu quando o prospect fala "achei mais barato".
 
----
+PriceRadar resolve isso eliminando o gap de informação. Em vez de depender de reports trimestrais ou de alertas manuais do time, você recebe uma notificação automatizada toda vez que um concorrente altera qualquer elemento de pricing — valor, estrutura de planos, limites de features ou até mudanças em copy que indicam reposicionamento. Com essa informação em mãos antes do próximo deal, seu time ajusta o pitch, reforça diferenciais e entra na conversa com contexto que o prospect nem esperava que você tivesse.
 
-## 4. Análise
+## CTA
 
-A maioria dos fundadores SaaS trata inteligência de pricing como algo pontual: dá uma olhada no site do concorrente antes de uma call importante e torce para nada ter mudado. O problema é que pricing em SaaS é dinâmico. Concorrentes testam tiers, removem planos free, adicionam add-ons e mudam ancoragem de valor sem aviso. Quando você descobre pela boca do prospect — "mas o Fulano oferece isso por menos" — já perdeu o controle da narrativa e está jogando na defensiva.
+**Seus concorrentes já estão mudando. Você vai saber quando?**
 
-O que separa founders que ganham deals competitivos dos que perdem não é ter o melhor produto. É ter **contexto atualizado**. Saber que o concorrente subiu 20% no plano enterprise na semana passada transforma sua call de vendas. Você deixa de reagir e passa a conduzir. Em vez de justificar preço, você posiciona valor com dados concretos. Isso não é vantagem marginal — é a diferença entre fechar e perder o deal.
+[Comece a monitorar grátis por 14 dias →](https://priceradar.com)
 
----
-
-## 5. CTA
-
-**O PriceRadar monitora as páginas de pricing dos seus concorrentes 24/7 e te avisa no minuto em que algo muda** — novo tier, preço diferente, plano removido, qualquer alteração.
-
-Chega de ser pego de surpresa em call de vendas.
-
-**[→ Quero monitorar meus concorrentes agora](https://priceradar.com)**
-
-Comece grátis. Setup em 2 minutos. Sem cartão de crédito.
+Sem cartão. Setup em 5 minutos. Cancele quando quiser.

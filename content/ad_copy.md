@@ -1,37 +1,49 @@
-# PriceRadar — Copy para Ads (Meta + Google)
+# PriceRadar — 3 Variantes de Ad Copy
 
 ---
 
 ## Variante A — DOR
 
-**Headline (38 chars)**
-> Cansou de perder deal por preço cego?
+**Headline:**
+Perdendo deals sem saber por quê?
 
-**Primary Text (122 chars)**
-> Seu concorrente mudou o pricing e você só descobriu quando o prospect falou. PriceRadar alerta você em tempo real. Teste já.
+**Primary Text:**
+Seu concorrente mudou o preço e você só descobriu depois de perder o deal. O PriceRadar alerta você em tempo real — antes que o próximo contrato escape.
 
-**CTA:** `Quero Monitorar Agora`
+**CTA:** `Quero parar de perder deals`
 
 ---
 
 ## Variante B — RESULTADO
 
-**Headline (39 chars)**
-> Em 2 min, monitore todo concorrente SaaS
+**Headline:**
+Saiba o preço do rival em minutos
 
-**Primary Text (124 chars)**
-> Configure o PriceRadar uma vez e receba alertas sempre que um concorrente mudar de preço. Nunca mais entre cego numa negociação.
+**Primary Text:**
+Em 2 min você configura o PriceRadar e recebe alertas toda vez que um concorrente muda preços. Chegue no deal já com a resposta pronta.
 
-**CTA:** `Começar Grátis`
+**CTA:** `Testar grátis agora`
 
 ---
 
 ## Variante C — CURIOSIDADE
 
-**Headline (40 chars)**
-> O alerta que founders SaaS não conhecem
+**Headline:**
+O alerta que top SaaS founders usam
 
-**Primary Text (123 chars)**
-> Enquanto você lê isso, seu concorrente pode ter mudado o pricing. Fundadores usam o PriceRadar pra saber antes do prospect.
+**Primary Text:**
+Existe um truque simples pra saber quando seu concorrente muda o preço — antes dele fechar o deal que era seu. Founders de SaaS já estão usando.
 
-**CTA:** `Ver Como Funciona`
+**CTA:** `Descobrir como funciona`
+
+---
+
+### Notas rápidas
+
+| | Headline | Primary Text | CTA |
+|---|---|---|---|
+| **A (Dor)** | 38 chars | 124 chars | Emocional |
+| **B (Resultado)** | 37 chars | 123 chars | Direto |
+| **C (Curiosidade)** | 39 chars | 125 chars | Curioso |
+
+Todas dentro dos limites de caracteres para Meta (Facebook/Instagram) e compatíveis com Google Ads (headlines e descriptions).

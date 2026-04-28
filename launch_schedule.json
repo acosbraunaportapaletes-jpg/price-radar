@@ -1,10 +1,10 @@
 {
   "slug": "price-radar",
   "product_name": "PriceRadar",
-  "created_at": "2026-04-28T12:11:30.993717+00:00",
+  "created_at": "2026-04-28T12:40:04.958518+00:00",
   "events": [
     {
-      "scheduled_for": "2026-04-28T13:11:30.993717+00:00",
+      "scheduled_for": "2026-04-28T13:40:04.958518+00:00",
       "action": "post_social",
       "slug": "price-radar",
       "params": {
@@ -16,7 +16,7 @@
       "status": "pending"
     },
     {
-      "scheduled_for": "2026-04-28T20:11:30.993717+00:00",
+      "scheduled_for": "2026-04-28T20:40:04.958518+00:00",
       "action": "post_social",
       "slug": "price-radar",
       "params": {
@@ -27,21 +27,21 @@
       "status": "pending"
     },
     {
-      "scheduled_for": "2026-04-29T12:11:30.993717+00:00",
+      "scheduled_for": "2026-04-29T12:40:04.958518+00:00",
       "action": "send_email_launch",
       "slug": "price-radar",
       "params": {},
       "status": "pending"
     },
     {
-      "scheduled_for": "2026-04-30T14:11:30.993717+00:00",
+      "scheduled_for": "2026-04-30T14:40:04.958518+00:00",
       "action": "reddit_post",
       "slug": "price-radar",
       "params": {},
       "status": "pending"
     },
     {
-      "scheduled_for": "2026-05-01T15:11:30.993717+00:00",
+      "scheduled_for": "2026-05-01T15:40:04.958518+00:00",
       "action": "outreach_extra",
       "slug": "price-radar",
       "params": {
@@ -50,14 +50,14 @@
       "status": "pending"
     },
     {
-      "scheduled_for": "2026-05-03T16:11:30.993717+00:00",
+      "scheduled_for": "2026-05-03T16:40:04.958518+00:00",
       "action": "product_hunt",
       "slug": "price-radar",
       "params": {},
       "status": "pending"
     },
     {
-      "scheduled_for": "2026-05-05T14:11:30.993717+00:00",
+      "scheduled_for": "2026-05-05T14:40:04.958518+00:00",
       "action": "performance_review",
       "slug": "price-radar",
       "params": {},
