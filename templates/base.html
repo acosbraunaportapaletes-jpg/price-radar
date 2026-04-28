@@ -32,6 +32,8 @@
             <div class="flex items-center gap-4">
                 {% if session.get('user_id') %}
                     <a href="/dashboard" class="text-sm text-gray-400 hover:text-white">Dashboard</a>
+                    <a href="/competitors" class="text-sm text-gray-400 hover:text-white">Concorrentes</a>
+                    <a href="/alerts" class="text-sm text-gray-400 hover:text-white">Alertas</a>
                     <span class="text-sm text-gray-600">{{ session.get('user_email') }}</span>
                     <a href="/logout" class="text-sm text-gray-500 hover:text-red-400">Sair</a>
                 {% else %}
@@ -57,7 +59,7 @@
     </main>
 
     <footer class="border-t border-gray-800 mt-16 py-6 text-center text-gray-600 text-xs">
-        PriceRadar &mdash; Saiba quando seu concorrente muda o preco.
+        PriceRadar &mdash; Saiba quando seu concorrente muda de preco.
     </footer>
 </body>
 </html>

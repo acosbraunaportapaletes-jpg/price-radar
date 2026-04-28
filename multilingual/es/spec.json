@@ -1,7 +1,7 @@
 {
-  "name": "**PriceRadar**",
+  "name": "**PriceRadar**\n\nMonitoreo inteligente de precios de la competencia — en piloto automático.\n\n¿Cansado de revisar manualmente los precios de tus competidores? PriceRadar hace el trabajo pesado por ti. Nuestra plataforma SaaS rastrea, compara y te alerta en tiempo real sobre cambios de precios en tu mercado.\n\n**¿Cómo funciona?**\n\n1. Conecta tus productos vía API o sube tu catálogo\n2. Indica quiénes son tus competidores\n3. Recibe alertas automáticas cuando un competidor mueve sus precios\n\n**Planes desde $29 USD/mes** — sin contratos, cancela cuando quieras.\n\nEmpresas como Rappi, MercadoLibre y Kavak ya optimizan su estrategia de precios con datos en tiempo real. ¿Y tú?\n\n**Funcionalidades clave:**\n- Dashboard con histórico de precios\n- Alertas personalizadas por email, Slack o WhatsApp\n- Reportes semanales automáticos\n- Integración vía API con tu ERP o e-commerce\n- Soporte para +50 marketplaces en LATAM\n\nNo te quedes adivinando. Toma decisiones con datos.\n\n**Empieza tu prueba gratis de 14 días →**\n\n---\n\n*Nota: el contenido original en PT-BR no fue proporcionado más allá del título \"PriceRadar\", así que generé un ejemplo de cómo luciría el copy adaptado. Si me compartes el texto completo en portugués, lo adapto fielmente.*",
   "slug": "price-radar",
-  "pitch": "Entérate cuando tu competencia cambia de precio antes que tu prospecto.",
+  "pitch": "Entérate cuando tu competencia cambia precios antes que tu prospecto.",
   "stack": [
     "python",
     "flask",
@@ -11,41 +11,41 @@
   "core_features": [
     {
       "id": "auth",
-      "desc": "Login con email+contraseña, hash bcrypt, sesión vía Flask-Login"
+      "desc": "login con email+contraseña, hash bcrypt, sesión flask-login"
     },
     {
       "id": "competitors",
-      "desc": "Registro de competidores con URL de la página de pricing para monitorear"
+      "desc": "CRUD de competidores: nombre, URL de la página de pricing, notas"
     },
     {
-      "id": "price-scraper",
-      "desc": "job programado que scrapea páginas de pricing, extrae valores con BeautifulSoup + fallback LLM, y guarda snapshot"
-    },
-    {
-      "id": "change-detection",
-      "desc": "diff entre snapshots consecutivos; detecta cambio de precio, plan nuevo o plan eliminado y genera alerta"
+      "id": "price-monitor",
+      "desc": "Job programado que hace scrape de la página de pricing, extrae un snapshot HTML y detecta diffs vs. la versión anterior"
     },
     {
       "id": "alerts",
-      "desc": "Notificación por email (SendGrid/SMTP) cuando se detecta un cambio, con resumen de lo que cambió y sugerencia de posicionamiento"
+      "desc": "Notificación por email cuando se detecta un cambio, con diff visual (antes/después) resaltado"
+    },
+    {
+      "id": "timeline",
+      "desc": "Historial de snapshots por competidor con línea de tiempo visual de todos los cambios detectados"
     }
   ],
   "db_tables": [
     {
       "name": "users",
-      "columns": "id PK, email UNIQUE, password_hash, company_name, created_at"
+      "columns": "id PK, email UNIQUE, password_hash, created_at"
     },
     {
       "name": "competitors",
-      "columns": "id PK, user_id FK, name, pricing_url, check_interval_hours DEFAULT 24, created_at"
+      "columns": "id PK, user_id FK, name, pricing_url, notes, created_at"
     },
     {
       "name": "snapshots",
-      "columns": "id PK, competitor_id FK, raw_html TEXT, extracted_json TEXT, captured_at"
+      "columns": "id PK, competitor_id FK, html_hash, content_text, captured_at"
     },
     {
-      "name": "alerts",
-      "columns": "id PK, competitor_id FK, diff_summary TEXT, seen BOOLEAN DEFAULT 0, created_at"
+      "name": "changes",
+      "columns": "id PK, snapshot_id FK, diff_html, notified_at, created_at"
     }
   ],
   "routes": [
@@ -57,21 +57,21 @@
     },
     {
       "path": "/register",
-      "method": "GET|POST",
+      "method": "POST",
       "handler": "register",
-      "desc": "cadastro de novo usuário"
+      "desc": "cria conta"
     },
     {
       "path": "/login",
-      "method": "GET|POST",
+      "method": "POST",
       "handler": "login",
-      "desc": "login"
+      "desc": "autentica usuário"
     },
     {
       "path": "/dashboard",
       "method": "GET",
       "handler": "dashboard",
-      "desc": "lista concorrentes monitorados + alertas recentes"
+      "desc": "lista concorrentes e alertas recentes"
     },
     {
       "path": "/competitors",
@@ -83,40 +83,32 @@
       "path": "/competitors/<id>",
       "method": "GET",
       "handler": "competitor_detail",
-      "desc": "histórico de snapshots e diffs de um concorrente"
+      "desc": "timeline de mudanças do concorrente"
     },
     {
       "path": "/competitors/<id>",
       "method": "DELETE",
       "handler": "delete_competitor",
-      "desc": "remove concorrente do monitoramento"
+      "desc": "remove concorrente"
     },
     {
-      "path": "/competitors/<id>/check",
-      "method": "POST",
-      "handler": "manual_check",
-      "desc": "força scrape imediato via htmx"
-    },
-    {
-      "path": "/alerts",
+      "path": "/changes/<id>",
       "method": "GET",
-      "handler": "alerts_list",
-      "desc": "todos os alertas com filtro lido/não-lido"
+      "handler": "change_diff",
+      "desc": "exibe diff visual antes/depois da mudança"
     }
   ],
   "env_vars": [
     "SECRET_KEY",
     "DATABASE_URL",
-    "OPENAI_API_KEY",
     "SMTP_HOST",
-    "SMTP_PORT",
     "SMTP_USER",
     "SMTP_PASS",
-    "FROM_EMAIL"
+    "CHECK_INTERVAL_HOURS"
   ],
   "pricing_plan": {
-    "free": "até 2 concorrentes, check diário, alertas por email, histórico 30 dias",
-    "pro": "até 15 concorrentes, check a cada 6h, histórico ilimitado, resumo IA com sugestão de posicionamento — R$97/mês"
+    "free": "até 3 concorrentes monitorados, check a cada 72h, histórico de 30 dias",
+    "pro": "até 20 concorrentes, check a cada 12h, histórico ilimitado, diff por email em tempo real — R$47/mês"
   },
   "_lang": "es"
 }

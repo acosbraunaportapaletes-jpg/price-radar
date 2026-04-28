@@ -1,28 +1,21 @@
-Here's the thread:
+1/7
+Semana passada perdi um deal de R$18k porque o prospect disse: "achei mais barato". O concorrente tinha baixado o preço 3 dias antes e eu nem sabia.
 
----
+2/7
+Fui investigar e descobri que isso já tinha acontecido outras 2 vezes no trimestre. Três deals perdidos pelo mesmo motivo: eu estava no escuro.
 
-**1/8**
-Semana passada um founder perdeu um deal de R$48k porque o concorrente tinha baixado o preço 3 dias antes — e ele nem sabia.
+3/7
+O problema não é perder no preço. É perder sem saber que o jogo mudou. Quando você descobre pelo prospect, já perdeu a negociação.
 
-**2/8**
-Isso acontece mais do que você imagina. Seu prospect pesquisa 3-4 ferramentas antes de decidir. Se o concorrente mudou o pricing e você não sabe, você entra na call vendendo no escuro.
+4/7
+Comecei a monitorar manualmente. Abria o site de 4 concorrentes todo dia, comparava planos, printava tela. Durou 11 dias. Inviável.
 
-**3/8**
-O problema não é ter concorrente. É não saber o que ele está fazendo. Mudou o plano starter? Criou um tier enterprise? Ofereceu desconto anual? Você descobre quando já perdeu o deal.
+5/7
+Aí encontrei o PriceRadar. Ele monitora as páginas de pricing dos seus concorrentes e te avisa no momento que algo muda. Preço, plano, feature — qualquer alteração.
 
-**4/8**
-PriceRadar monitora as páginas de pricing dos seus concorrentes e te avisa em tempo real quando qualquer mudança acontece. Preço, planos, posicionamento — tudo.
+6/7
+Agora quando um concorrente baixa preço, eu sei antes do meu prospect. Ajusto o pitch, reposiciono a oferta ou acelero o deal antes que o desconto do outro chegue no radar do lead 🎯
 
-**5/8**
-Na prática: você acorda, tem um alerta dizendo que o Concorrente X reduziu o plano Pro em 20%. Antes da sua primeira call do dia, você já ajustou o pitch.
-
-**6/8**
-Isso muda o jogo pra quem vende SaaS B2B em mercado competitivo. Não é sobre copiar preço. É sobre ter contexto antes de entrar na negociação.
-
-**7/8**
-Founders e heads de vendas que competem com 3+ players não podem se dar ao luxo de descobrir mudança de pricing pelo LinkedIn — duas semanas depois.
-
-**8/8**
-Se você quer parar de perder deal por falta de inteligência competitiva, experimenta o PriceRadar 👇
-https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-6a931f24-66c8-45c5-a9e0-35267389d020
+7/7
+Se você vende SaaS B2B e compete com 3+ players, precisa dessa inteligência. Teste o PriceRadar e pare de perder deal no escuro 👇
+https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-26546402-57c7-4821-93f8-a69598540bb7

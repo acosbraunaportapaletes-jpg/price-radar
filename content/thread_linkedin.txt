@@ -1,11 +1,17 @@
-Seu concorrente baixou o preço ontem e você só vai descobrir quando perder o deal.
+Seu concorrente mudou o pricing ontem e você só vai descobrir quando perder o deal.
 
-Semana passada conversei com um founder de SaaS B2B que perdeu um contrato de R$ 180k. O prospect disse na cara: "a gente foi com o outro porque eles lançaram um plano mais agressivo no mês passado." O founder não fazia ideia. Ninguém do time monitorava. A planilha de inteligência competitiva tinha sido atualizada pela última vez em março. Isso não é exceção — é a regra em times de vendas de 5 a 50 pessoas.
+Isso acontece mais do que a gente admite. O prospect pede desconto citando "uma proposta melhor", você não sabe se é blefe ou verdade, e acaba cedendo margem sem necessidade — ou pior, perde a conta.
 
-O problema real não é perder no preço. É perder no tempo. Quando seu concorrente muda o posicionamento, reempacota planos ou corta valores, ele está testando uma hipótese no mercado. Se você demora 30, 60, 90 dias pra perceber, cada deal nesse intervalo vai pra mesa de negociação com informação desatualizada. Seu head de vendas prepara battlecard com dados velhos. Seu SDR rebate objeção que já mudou. E o prospect percebe que você não conhece nem o próprio mercado.
+Semana passada conversei com um fundador que perdeu 3 deals seguidos pro mesmo concorrente. Quando foi investigar, descobriu que o cara tinha cortado 30% do plano enterprise dois meses antes. Dois meses operando no escuro.
 
-Foi por isso que criamos o PriceRadar. Ele monitora em tempo real quando concorrentes mudam preços, planos, páginas de pricing e posicionamento — e entrega um alerta direto no seu Slack ou CRM antes que o próximo prospect entre em call. Sem precisar de analista dedicado, sem depender de alguém lembrar de abrir o site do concorrente toda semana. Founders e heads de vendas que usam passaram a antecipar movimentos em vez de reagir a eles. Um cliente nosso ajustou a proposta em 24h depois de um alerta e fechou um deal que, nas palavras dele, "teria perdido sem saber por quê."
+O problema não é falta de competência. É falta de processo. Ninguém tem tempo de ficar entrando no site de 4 concorrentes toda semana pra checar se mudou alguma coisa. E quando muda, geralmente é sutil — um plano novo aqui, um desconto condicional ali, uma feature que migrou de tier.
 
-Inteligência competitiva não é luxo de empresa grande. É a diferença entre entrar na call preparado ou entrar no escuro.
+Foi por isso que criamos o PriceRadar. Ele monitora as páginas de pricing dos seus concorrentes e te avisa no momento em que qualquer mudança acontece. Não é relatório mensal. É alerta em tempo real com o antes e depois lado a lado.
 
-Quantos deals o seu time já perdeu por não saber o que o concorrente mudou na semana anterior?
+Na prática, isso muda três coisas no seu processo de vendas. Primeiro, você para de ser pego de surpresa em negociação. Segundo, seu time de sales consegue usar a movimentação do mercado a favor — "o concorrente X acabou de subir o preço do plano Y" é um argumento poderoso. Terceiro, você toma decisões de pricing com dados, não com achismo.
+
+Um head de sales que usa o PriceRadar me disse que a taxa de desconto desnecessário caiu pela metade no primeiro trimestre. Não porque ele ficou mais duro na negociação, mas porque ele sabia exatamente o cenário competitivo antes de cada call.
+
+Se você compete com 3 ou mais players diretos e não tem um sistema automático monitorando isso, a pergunta não é se você está perdendo dinheiro — é quanto.
+
+Quantos deals você cedeu margem sem saber que seu preço já era o mais competitivo da mesa?

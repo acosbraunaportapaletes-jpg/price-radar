@@ -3,81 +3,76 @@
 {% block content %}
 <div class="flex items-center justify-between mb-8">
     <h1 class="text-3xl font-bold">Dashboard</h1>
+    <a href="/competitors" class="btn-secondary text-sm">Gerenciar concorrentes</a>
 </div>
 
-<!-- Add competitor form -->
-<div class="card p-6 mb-8">
-    <h2 class="font-semibold mb-4">Adicionar concorrente</h2>
-    <form method="POST" action="/competitors" class="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
-        <div class="md:col-span-3">
-            <label class="block text-xs text-gray-400 mb-1">Nome</label>
-            <input type="text" name="name" required placeholder="Ex: Competitor X" class="input-field text-sm">
-        </div>
-        <div class="md:col-span-4">
-            <label class="block text-xs text-gray-400 mb-1">URL da pagina de pricing</label>
-            <input type="url" name="pricing_url" required placeholder="https://example.com/pricing" class="input-field text-sm">
-        </div>
-        <div class="md:col-span-3">
-            <label class="block text-xs text-gray-400 mb-1">Notas (opcional)</label>
-            <input type="text" name="notes" placeholder="Concorrente direto no segmento X" class="input-field text-sm">
-        </div>
-        <div class="md:col-span-2">
-            <button type="submit" class="btn-primary w-full text-sm">+ Adicionar</button>
-        </div>
-    </form>
+<!-- Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+    <div class="card p-5">
+        <p class="text-sm text-gray-500">Concorrentes</p>
+        <p class="text-3xl font-bold text-emerald-400">{{ competitors|length }}</p>
+    </div>
+    <div class="card p-5">
+        <p class="text-sm text-gray-500">Alertas recentes</p>
+        <p class="text-3xl font-bold text-yellow-400">{{ alerts|length }}</p>
+    </div>
+    <div class="card p-5">
+        <p class="text-sm text-gray-500">Proximo check</p>
+        <p class="text-lg font-semibold text-gray-300 mt-1">Automatico (6h)</p>
+    </div>
 </div>
 
-<!-- Competitors list -->
-<h2 class="text-xl font-semibold mb-4">Monitorando ({{ competitors|length }})</h2>
-<div id="competitors-list">
+<!-- Competitors quick list -->
+<h2 class="text-xl font-semibold mb-4">Concorrentes monitorados</h2>
 {% if competitors %}
 <div class="grid gap-3 mb-10">
     {% for comp in competitors %}
-    <div class="card p-4 flex items-center justify-between" id="comp-{{ comp.id }}">
+    <div class="card p-4 flex items-center justify-between">
         <div class="flex-1">
-            <a href="/competitors/{{ comp.id }}" class="text-lg font-semibold text-emerald-400 hover:underline">{{ comp.name }}</a>
-            {% if comp.notes %}<span class="text-gray-600 text-xs ml-2">{{ comp.notes }}</span>{% endif %}
+            <a href="/competitors/{{ comp.id }}/snapshots" class="text-lg font-semibold text-emerald-400 hover:underline">{{ comp.name }}</a>
             <p class="text-sm text-gray-500 mt-1 truncate max-w-lg">{{ comp.pricing_url }}</p>
         </div>
-        <div class="flex items-center gap-3 text-sm text-gray-400">
-            <span>{{ comp.snap_count }} snap{{ 's' if comp.snap_count != 1 else '' }}</span>
-            {% if comp.last_check %}
-            <span class="text-xs">{{ comp.last_check[:16] }}</span>
+        <div class="flex items-center gap-4 text-sm">
+            {% if comp.last_price %}
+            <span class="text-white font-mono bg-emerald-900/40 px-3 py-1 rounded">{{ comp.last_price }}</span>
+            {% else %}
+            <span class="text-gray-600">sem preco</span>
             {% endif %}
+            <span class="text-gray-500">{{ comp.snap_count }} snap{{ 's' if comp.snap_count != 1 else '' }}</span>
             <span id="check-{{ comp.id }}">
                 <button hx-post="/competitors/{{ comp.id }}/check"
                         hx-target="#check-{{ comp.id }}"
                         hx-swap="innerHTML"
                         class="btn-secondary text-xs">
-                    Verificar agora
+                    Verificar
                     <span class="htmx-indicator">...</span>
                 </button>
             </span>
-            <button hx-delete="/competitors/{{ comp.id }}"
-                    hx-target="#comp-{{ comp.id }}"
-                    hx-swap="outerHTML"
-                    hx-confirm="Remover {{ comp.name }}?"
-                    class="text-red-400/60 hover:text-red-400 text-xs">&#10005;</button>
         </div>
     </div>
     {% endfor %}
 </div>
 {% else %}
 <div class="card p-8 text-center text-gray-500 mb-10">
-    Nenhum concorrente cadastrado. Adicione um acima para comecar.
+    Nenhum concorrente cadastrado. <a href="/competitors" class="text-emerald-400 hover:underline">Adicione um</a>.
 </div>
 {% endif %}
-</div>
 
-<!-- Recent changes -->
-{% if recent_changes %}
-<h2 class="text-xl font-semibold mb-4 mt-8">Mudancas recentes</h2>
+<!-- Recent alerts -->
+{% if alerts %}
+<h2 class="text-xl font-semibold mb-4 text-yellow-400">Alertas recentes</h2>
 <div class="space-y-3">
-    {% for ch in recent_changes %}
-    <a href="/changes/{{ ch.id }}" class="card p-4 block hover:border-emerald-800 transition">
+    {% for a in alerts %}
+    <a href="/competitors/{{ a.competitor_id }}/snapshots" class="card p-4 block hover:border-yellow-800 transition">
         <div class="flex items-center justify-between">
-            <span class="text-emerald-400 font-medium">{{ ch.competitor_name }}</span>
-            <span class="text-xs text-gray-500">{{ ch.created_at[:16] if ch.created_at else '' }}</span>
+            <div>
+                <span class="text-yellow-400 font-medium">{{ a.competitor_name }}</span>
+                <span class="text-gray-400 mx-2">mudou de</span>
+                <span class="text-red-400 line-through font-mono">{{ a.old_price }}</span>
+                <span class="text-gray-400 mx-1">&rarr;</span>
+                <span class="text-green-400 font-mono font-bold">{{ a.new_price }}</span>
+            </div>
+            <span class="text-xs text-gray-500">{{ a.created_at[:16] if a.created_at else '' }}</span>
         </div>
     </a>
     {% endfor %}

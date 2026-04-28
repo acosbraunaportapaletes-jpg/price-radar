@@ -1,18 +1,18 @@
 ```html
 <!doctype html>
-<html lang="es-419">
+<html lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PriceRadar — Entérate cuando tu competencia cambia sus precios antes que tu prospecto.</title>
-<meta name="description" content="Entérate cuando tu competencia cambia sus precios antes que tu prospecto."/>
+<title>PriceRadar — Entérate cuando tu competencia cambia precios antes que tu prospecto.</title>
+<meta name="description" content="Entérate cuando tu competencia cambia precios antes que tu prospecto."/>
 <meta property="og:title" content="PriceRadar"/>
-<meta property="og:description" content="Entérate cuando tu competencia cambia sus precios antes que tu prospecto."/>
+<meta property="og:description" content="Entérate cuando tu competencia cambia precios antes que tu prospecto."/>
 <meta property="og:image" content="og_image.png"/>
 <meta property="og:type" content="product"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="PriceRadar"/>
-<meta name="twitter:description" content="Entérate cuando tu competencia cambia sus precios antes que tu prospecto."/>
+<meta name="twitter:description" content="Entérate cuando tu competencia cambia precios antes que tu prospecto."/>
 <meta name="twitter:image" content="og_image.png"/>
 <link rel="icon" href="logo.png"/>
 <script src="https://cdn.tailwindcss.com"></script>
@@ -44,8 +44,8 @@ body { background: #0b0d10; color: #d7dde3; font-family: 'Inter', system-ui, san
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
     <div class="fade-in">
       <span class="inline-block bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-semibold mb-6">LANZAMIENTO</span>
-      <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">Entérate cuando tu competencia cambia sus precios antes que tu prospecto.</h1>
-      <p class="text-xl text-gray-300 mb-8 leading-relaxed">Entérate cuando tu competencia cambia sus precios antes que tu prospecto.</p>
+      <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">Entérate cuando tu competencia cambia precios antes que tu prospecto.</h1>
+      <p class="text-xl text-gray-300 mb-8 leading-relaxed">Entérate cuando tu competencia cambia precios antes que tu prospecto.</p>
       <div class="flex flex-col sm:flex-row gap-4">
         <a href="#comprar" class="bg-primary text-dark px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition inline-block text-center">Comprar por $9 USD</a>
         <a href="#como-funciona" class="border border-gray-700 text-white px-8 py-4 rounded-lg font-semibold hover:border-primary transition inline-block text-center">Cómo funciona</a>
@@ -66,7 +66,7 @@ body { background: #0b0d10; color: #d7dde3; font-family: 'Inter', system-ui, san
 <section class="py-20 px-6 border-t border-gray-800">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">¿Te suena familiar?</h2>
-    <p class="text-xl text-gray-400">Los fundadores de SaaS B2B no saben cuándo sus competidores cambian precios, y pierden deals por no tener un posicionamiento actualizado</p>
+    <p class="text-xl text-gray-400">Los fundadores SaaS no saben cuándo sus competidores cambian precios o posicionamiento, y pierden deals por falta de inteligencia competitiva</p>
   </div>
 </section>
 
@@ -75,11 +75,11 @@ body { background: #0b0d10; color: #d7dde3; font-family: 'Inter', system-ui, san
   <div class="max-w-6xl mx-auto">
     <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-14">Lo que recibes</h2>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">login con email+contraseña, hash bcrypt, sesión vía Flask-Login</p></div>
-<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">registro de competidores con URL de su página de pricing para monitorear</p></div>
-<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">job programado que scrapea páginas de pricing, extrae valores con BeautifulSoup + fallback LLM, y guarda snapshot</p></div>
-<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">diff entre snapshots consecutivos; detecta cambio de precio, plan nuevo o plan eliminado y genera alerta</p></div>
-<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">notificación por email (SendGrid/SMTP) cuando se detecta un cambio, con resumen de lo que cambió y sugerencia de posicionamiento</p></div>
+      <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Login con email+contraseña, hash bcrypt, sesión flask-login</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">CRUD de competidores: nombre, URL de la página de pricing, notas</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Job programado que hace scrape de la página de pricing, extrae snapshot HTML y detecta diff vs versión anterior</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Notificación por email cuando se detecta un cambio, con diff visual (antes/después) resaltado</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Historial de snapshots por competidor con timeline visual de todos los cambios detectados</p></div>
     </div>
   </div>
 </section>
@@ -89,9 +89,9 @@ body { background: #0b0d10; color: #d7dde3; font-family: 'Inter', system-ui, san
   <div class="max-w-2xl mx-auto">
     <div class="bg-gray-900/80 backdrop-blur border border-gray-800 rounded-2xl p-10 text-center">
       <h2 class="text-2xl font-bold text-white mb-2">PriceRadar</h2>
-      <p class="text-gray-400 mb-8">Entérate cuando tu competencia cambia sus precios antes que tu prospecto.</p>
+      <p class="text-gray-400 mb-8">Entérate cuando tu competencia cambia precios antes que tu prospecto.</p>
       <div class="text-5xl font-extrabold text-primary mb-2">$9 USD</div>
       <p class="text-sm text-gray-500 mb-8">Pago único · Acceso de por vida</p>
       <ul class="text-left space-y-3 mb-10">
-        <li class="flex items-s
+        <li class="flex items-start gap-3 text-gray-300"><span class="text-primary mt-1
 ```

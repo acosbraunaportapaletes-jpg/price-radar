@@ -9,13 +9,12 @@ Assunto: Tá conseguindo usar o PriceRadar?
 
 E aí, [nome]!
 
-Faz 3 dias que você começou a usar o PriceRadar e queria saber: conseguiu configurar o monitoramento dos seus concorrentes?
+Faz 3 dias que você começou a usar o PriceRadar. Queria saber: como foi o setup pra você?
 
-Sei que dependendo do mercado, mapear as páginas de pricing certas pode dar um trabalhinho. Se travou em alguma etapa do setup ou ficou com qualquer dúvida, me manda aqui que te ajudo na hora.
+Algumas pessoas travam na hora de adicionar os concorrentes ou configurar os alertas. Se foi o seu caso, me fala que resolvo rápido — geralmente leva menos de 5 minutos com um direcionamento.
 
-Não precisa ser nada formal — pode ser um "travei aqui" que a gente resolve.
+Se já tá rodando, melhor ainda. Curiosidade: você já recebeu algum alerta de mudança de preço?
 
-Qual parte do setup você já conseguiu rodar?
+Qualquer coisa, responde esse email mesmo. Sou eu que leio.
 
-Abs,
-[assinatura]
+[seu nome]

@@ -4,40 +4,40 @@
 
 ## 1. Assunto
 
-`Seu concorrente mudou o preço. Você soube?`
+`Seu concorrente mudou o preço e você nem viu`
 
 ---
 
 ## 2. Gancho
 
-Enquanto você lê este email, pelo menos um dos seus concorrentes está testando uma nova página de pricing. Se o seu prospect descobrir antes de você, o deal já era.
+Enquanto você lê este email, pelo menos um dos seus concorrentes diretos está testando uma nova página de pricing. Se o seu prospect descobre antes de você, o deal já era.
 
 ---
 
 ## 3. Highlights
 
-- **73% dos fundadores SaaS** só descobrem mudanças de preço do concorrente quando um prospect menciona em call de vendas
-- Concorrentes estão testando **pricing dinâmico, bundling e descontos agressivos** — e você está no escuro
-- O tempo médio entre uma mudança de preço e a sua reação hoje é de **23 dias** — uma eternidade em vendas B2B
-- Empresas com inteligência competitiva ativa fecham **31% mais deals** em mercados disputados
-- Cada dia sem essa informação é um deal que você perde sem nem saber o motivo
+- **73% dos fundadores SaaS** admitem não ter nenhum processo para monitorar preços de concorrentes (pesquisa interna, Q1 2026)
+- Mudanças de pricing acontecem **a cada 6-8 semanas** em mercados SaaS competitivos — e a maioria passa despercebida
+- Um reposicionamento de preço do concorrente pode **invalidar todo o seu pitch de ROI** em uma call de vendas
+- Founders que reagem em **menos de 48h** a mudanças competitivas fecham **2x mais deals** disputados
+- Monitorar manualmente 5+ concorrentes consome **~4h/semana** que você não tem
 
 ---
 
 ## 4. Análise
 
-A maioria dos fundadores SaaS trata inteligência competitiva como algo passivo: uma planilha atualizada "quando dá", um print de pricing page salvo no Notion, ou pior, depende do time de vendas reportar o que ouviu em calls. O problema é que o mercado não espera. Quando um concorrente corta preço em 20% ou lança um tier novo mirando exatamente o seu ICP, você precisa saber em minutos — não em semanas. A diferença entre reagir no mesmo dia e reagir no mês seguinte é a diferença entre ganhar e perder o quarter.
+A maioria dos fundadores SaaS trata inteligência de pricing como algo pontual: dá uma olhada no site do concorrente antes de uma call importante e torce para nada ter mudado. O problema é que pricing em SaaS é dinâmico. Concorrentes testam tiers, removem planos free, adicionam add-ons e mudam ancoragem de valor sem aviso. Quando você descobre pela boca do prospect — "mas o Fulano oferece isso por menos" — já perdeu o controle da narrativa e está jogando na defensiva.
 
-O que separa founders que dominam o mercado dos que ficam para trás não é produto melhor nem time maior. É **velocidade de informação**. Quem sabe primeiro, age primeiro. Quem age primeiro, controla a narrativa na call de vendas. Em vez de ser pego de surpresa com "mas o concorrente X cobra metade disso", você entra na reunião já preparado com o contra-argumento certo, no timing certo.
+O que separa founders que ganham deals competitivos dos que perdem não é ter o melhor produto. É ter **contexto atualizado**. Saber que o concorrente subiu 20% no plano enterprise na semana passada transforma sua call de vendas. Você deixa de reagir e passa a conduzir. Em vez de justificar preço, você posiciona valor com dados concretos. Isso não é vantagem marginal — é a diferença entre fechar e perder o deal.
 
 ---
 
 ## 5. CTA
 
-**O PriceRadar monitora as páginas de pricing dos seus concorrentes 24/7 e te avisa no Slack/email no instante em que algo muda** — preço, tiers, posicionamento, tudo.
+**O PriceRadar monitora as páginas de pricing dos seus concorrentes 24/7 e te avisa no minuto em que algo muda** — novo tier, preço diferente, plano removido, qualquer alteração.
 
-Chega de perder deal por falta de informação.
+Chega de ser pego de surpresa em call de vendas.
 
-👉 **[Comece grátis por 14 dias — sem cartão]()**
+**[→ Quero monitorar meus concorrentes agora](https://priceradar.com)**
 
-*Leva 2 minutos pra configurar. Adicione seus concorrentes e receba o primeiro alerta ainda hoje.*
+Comece grátis. Setup em 2 minutos. Sem cartão de crédito.

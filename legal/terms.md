@@ -1,208 +1,227 @@
-# TERMOS DE USO — PRICERADAR
+# TERMOS DE USO – PRICERADAR
 
-**Última atualização: 28 de abril de 2026**
+**Última atualização:** 28 de abril de 2026
 
 ---
 
 ## 1. ACEITAÇÃO DOS TERMOS
 
-1.1. Ao acessar, contratar ou utilizar o produto digital **PriceRadar**, o usuário declara que leu, compreendeu e concorda integralmente com os presentes Termos de Uso.
+1.1. Ao acessar, contratar ou utilizar o produto digital **PriceRadar** ("Produto"), o usuário ("Usuário" ou "Você") declara que leu, compreendeu e concorda integralmente com os presentes Termos de Uso ("Termos").
 
-1.2. Caso o usuário não concorde com qualquer disposição aqui prevista, deverá cessar imediatamente o uso do produto e, se aplicável, solicitar o cancelamento dentro do prazo de garantia estabelecido na Seção 6.
+1.2. Caso não concorde com qualquer disposição destes Termos, o Usuário deverá cessar imediatamente o uso do Produto.
 
-1.3. A utilização do PriceRadar implica aceitação tácita destes Termos, independentemente de assinatura física ou eletrônica específica.
+1.3. O simples acesso ou utilização do Produto implica aceitação tácita e irrestrita de todas as condições aqui estabelecidas, independentemente de assinatura física ou eletrônica específica.
+
+1.4. O Usuário declara ser maior de 18 (dezoito) anos ou, sendo menor, estar devidamente assistido ou representado por seus responsáveis legais, nos termos da legislação civil brasileira.
 
 ---
 
 ## 2. DESCRIÇÃO DO SERVIÇO
 
-2.1. O **PriceRadar** é um produto digital que permite ao usuário monitorar alterações de preços praticados por concorrentes, fornecendo alertas e relatórios para apoiar decisões comerciais e de precificação.
+2.1. O **PriceRadar** é um produto digital que permite ao Usuário monitorar alterações de preços praticados por concorrentes, fornecendo alertas e informações para que o Usuário tome decisões comerciais mais informadas. Em síntese: *saiba quando seu concorrente muda preços antes do seu prospect*.
 
-2.2. O PriceRadar é sintetizado pelo seguinte propósito: *"Saiba quando seu concorrente muda o preço antes do seu prospect."*
+2.2. O Produto é disponibilizado exclusivamente em formato digital, sendo comercializado pelo valor de **R$ 47,00** (quarenta e sete reais) através das plataformas **Mercado Pago**, **Gumroad**, **Hotmart** e **Kiwify**.
 
-2.3. O produto é disponibilizado exclusivamente em formato digital, sem entrega de mídia física, e pode incluir acesso a plataforma online, painel de controle, notificações por e-mail ou outros canais eletrônicos, conforme a versão contratada.
+2.3. O PriceRadar é fornecido "como está" (*as is*), podendo sofrer atualizações, melhorias ou alterações de funcionalidades a qualquer momento, sem necessidade de aviso prévio, desde que mantida a essência do serviço contratado.
 
-2.4. As funcionalidades, limites de monitoramento e especificações técnicas do PriceRadar são aquelas descritas na página de venda vigente no momento da contratação.
-
-2.5. O PriceRadar não garante resultados financeiros, comerciais ou de qualquer outra natureza ao usuário. Trata-se de ferramenta de apoio à decisão, cabendo ao usuário a responsabilidade por suas próprias estratégias e ações comerciais.
+2.4. A disponibilidade do Produto depende de fatores técnicos, incluindo, mas não se limitando a, servidores de terceiros, conexão à internet do Usuário e disponibilidade das fontes de dados monitoradas. Não é garantida disponibilidade ininterrupta ou livre de erros.
 
 ---
 
 ## 3. CADASTRO E CONTA
 
-3.1. Para utilizar o PriceRadar, o usuário deverá criar uma conta fornecendo informações verdadeiras, completas e atualizadas, incluindo, conforme aplicável: nome completo, endereço de e-mail válido e demais dados solicitados no processo de cadastro.
+3.1. Para utilizar o PriceRadar, o Usuário deverá fornecer informações cadastrais verdadeiras, completas e atualizadas, responsabilizando-se integralmente pela veracidade dos dados informados.
 
-3.2. O usuário é o único responsável pela veracidade das informações fornecidas. O fornecimento de dados falsos, incompletos ou desatualizados poderá resultar na suspensão ou no cancelamento da conta, sem direito a reembolso fora do prazo de garantia legal.
+3.2. Cada conta é pessoal e intransferível. O Usuário é o único responsável por manter a confidencialidade de suas credenciais de acesso (login e senha), bem como por todas as atividades realizadas em sua conta.
 
-3.3. As credenciais de acesso (e-mail e senha) são pessoais e intransferíveis. O usuário compromete-se a não compartilhá-las com terceiros e a adotar medidas razoáveis para protegê-las.
+3.3. O Usuário compromete-se a notificar imediatamente a equipe do PriceRadar em caso de uso não autorizado de sua conta ou qualquer outra violação de segurança de que tome conhecimento.
 
-3.4. O usuário é integralmente responsável por todas as atividades realizadas em sua conta. Em caso de suspeita de acesso não autorizado, deverá comunicar imediatamente a equipe do PriceRadar pelos canais de contato indicados na Seção 12.
-
-3.5. Cada licença adquirida corresponde a um único usuário. O compartilhamento de conta entre múltiplos usuários é expressamente vedado, salvo previsão em contrário em plano específico.
+3.4. O PriceRadar reserva-se o direito de recusar, suspender ou cancelar cadastros que contenham informações falsas, incompletas ou que violem estes Termos.
 
 ---
 
 ## 4. USO PERMITIDO E USO PROIBIDO
 
-### 4.1. Uso permitido
+### 4.1. Uso Permitido
 
-O usuário poderá:
+O Usuário poderá:
 
-a) Utilizar o PriceRadar para fins comerciais legítimos, dentro do escopo descrito na página de venda e nestas condições;
+a) Utilizar o Produto para fins comerciais legítimos de monitoramento de preços de concorrentes;
 
-b) Acessar os dados, alertas e relatórios gerados pelo produto para embasar suas próprias decisões de negócio;
+b) Acessar os dados e relatórios gerados pelo Produto para uso interno de sua empresa ou atividade profissional;
 
-c) Utilizar o produto em dispositivos de sua titularidade, respeitando o limite de uma conta por licença adquirida.
+c) Compartilhar informações geradas pelo Produto com membros de sua própria equipe de trabalho, desde que dentro da mesma organização.
 
-### 4.2. Uso proibido
+### 4.2. Uso Proibido
 
-É expressamente vedado ao usuário:
+É expressamente vedado ao Usuário:
 
-a) Copiar, reproduzir, distribuir, sublicenciar, alugar, vender ou revender o PriceRadar, no todo ou em parte, a terceiros;
+a) Revender, sublicenciar, redistribuir ou comercializar o Produto ou qualquer parte dele a terceiros, sob qualquer forma;
 
-b) Realizar engenharia reversa, descompilar, desmontar ou tentar extrair o código-fonte do produto;
+b) Realizar engenharia reversa, descompilar, desmontar ou tentar extrair o código-fonte do Produto;
 
-c) Utilizar o PriceRadar para finalidades ilícitas, fraudulentas, difamatórias ou que violem direitos de terceiros;
+c) Utilizar o Produto para fins ilícitos, fraudulentos ou que violem a legislação brasileira vigente;
 
-d) Utilizar robôs, scrapers ou quaisquer mecanismos automatizados para acessar o produto de forma que exceda o uso normal previsto, comprometa sua estabilidade ou sobrecarregue a infraestrutura;
+d) Utilizar robôs, scrapers ou qualquer mecanismo automatizado para extrair dados do Produto de forma massiva ou além do uso normal previsto;
 
-e) Compartilhar, transferir ou ceder sua conta ou credenciais de acesso a terceiros;
+e) Compartilhar suas credenciais de acesso com terceiros ou permitir o uso de sua conta por pessoas não autorizadas;
 
-f) Remover, alterar ou ocultar avisos de propriedade intelectual, marcas ou créditos presentes no produto;
+f) Interferir, sobrecarregar ou prejudicar o funcionamento do Produto, de seus servidores ou de suas redes;
 
-g) Utilizar os dados obtidos por meio do PriceRadar para práticas de concorrência desleal, conforme definido pela legislação brasileira aplicável.
+g) Utilizar os dados obtidos por meio do Produto para práticas de concorrência desleal, conforme definido na Lei nº 9.279/1996 e demais normas aplicáveis;
 
-4.3. A violação de qualquer das proibições acima poderá resultar no cancelamento imediato da conta, sem direito a reembolso, além de responsabilização civil e criminal cabível.
+h) Remover, alterar ou ocultar avisos de propriedade intelectual, marcas ou identificações contidas no Produto.
+
+4.3. A violação de qualquer das proibições acima poderá resultar na suspensão ou cancelamento imediato da conta do Usuário, sem direito a reembolso, além de responsabilização civil e criminal cabível.
 
 ---
 
 ## 5. PROPRIEDADE INTELECTUAL
 
-5.1. O PriceRadar, incluindo mas não se limitando ao seu código-fonte, algoritmos, interface, design, textos, logotipos, marcas, nomes comerciais e demais elementos que o compõem, é de titularidade exclusiva de seus desenvolvedores e está protegido pela legislação brasileira de propriedade intelectual, notadamente pela Lei nº 9.610/1998 (Direitos Autorais) e pela Lei nº 9.279/1996 (Propriedade Industrial).
+5.1. Todos os direitos de propriedade intelectual sobre o PriceRadar — incluindo, sem limitação, código-fonte, design, layout, textos, gráficos, logotipos, ícones, algoritmos, bases de dados e demais elementos — são de titularidade exclusiva do PriceRadar e de seus desenvolvedores, protegidos pela Lei nº 9.610/1998 (Direitos Autorais), Lei nº 9.609/1998 (Software) e demais normas aplicáveis.
 
-5.2. A aquisição do PriceRadar confere ao usuário uma **licença de uso pessoal, limitada, não exclusiva, intransferível e revogável**, restrita às funcionalidades e ao prazo contratados. Em nenhuma hipótese a contratação importa em cessão ou transferência de direitos de propriedade intelectual.
+5.2. A aquisição do Produto confere ao Usuário tão somente uma **licença pessoal, limitada, não exclusiva, intransferível e revogável** de uso, nos termos e condições aqui descritos. Nenhuma disposição destes Termos implica cessão ou transferência de direitos de propriedade intelectual ao Usuário.
 
-5.3. Os dados, relatórios e alertas gerados pelo PriceRadar a partir de informações públicas de mercado são disponibilizados ao usuário para uso próprio. A propriedade intelectual sobre a metodologia, a estrutura e a forma de apresentação desses dados permanece com o PriceRadar.
+5.3. É vedada a reprodução, cópia, distribuição ou criação de obras derivadas do Produto, no todo ou em parte, sem autorização prévia e expressa por escrito.
 
-5.4. Qualquer uso não autorizado dos elementos protegidos por propriedade intelectual constitui infração passível de medidas judiciais cabíveis.
+5.4. Eventuais marcas, nomes comerciais e logotipos exibidos no Produto são de propriedade de seus respectivos titulares, e seu uso não autorizado é proibido.
 
 ---
 
 ## 6. PAGAMENTO E REEMBOLSO
 
-### 6.1. Preço e forma de pagamento
+### 6.1. Pagamento
 
-6.1.1. O preço do PriceRadar é de **R$ 47,00 (quarenta e sete reais)**, pagamento único, salvo condição promocional ou plano diferenciado expressamente informado na página de venda.
+6.1.1. O Produto é comercializado pelo valor de **R$ 47,00** (quarenta e sete reais), em pagamento único, através das plataformas Mercado Pago, Gumroad, Hotmart e Kiwify.
 
-6.1.2. O pagamento é processado por meio das plataformas **Mercado Pago**, **Gumroad**, **Hotmart** e/ou **Kiwify**, conforme a opção escolhida pelo usuário no momento da compra.
+6.1.2. As formas de pagamento disponíveis são aquelas oferecidas por cada plataforma de comercialização, podendo incluir cartão de crédito, boleto bancário, Pix e outras modalidades.
 
-6.1.3. As condições de parcelamento, meios de pagamento aceitos e eventuais taxas adicionais são aquelas praticadas pela plataforma intermediadora selecionada, sobre as quais o PriceRadar não possui ingerência.
+6.1.3. O acesso ao Produto será liberado após a confirmação do pagamento pela respectiva plataforma, conforme os prazos e procedimentos de cada meio de pagamento utilizado.
 
-6.1.4. O acesso ao produto será liberado após a confirmação do pagamento pela respectiva plataforma.
+6.1.4. Eventuais taxas bancárias, impostos ou encargos adicionais decorrentes da transação são de responsabilidade exclusiva do Usuário.
 
-### 6.2. Garantia legal de 7 (sete) dias — Direito de arrependimento
+### 6.2. Garantia Legal de 7 (Sete) Dias — Direito de Arrependimento
 
-6.2.1. Em conformidade com o **artigo 49 do Código de Defesa do Consumidor (Lei nº 8.078/1990)**, o usuário tem o direito de desistir da compra no prazo de **7 (sete) dias corridos** contados a partir da data de recebimento do acesso ao produto, sem necessidade de justificativa.
+6.2.1. Em conformidade com o **artigo 49 do Código de Defesa do Consumidor** (Lei nº 8.078/1990), o Usuário que adquirir o Produto fora do estabelecimento comercial (contratação à distância, pela internet) tem o direito de desistir da compra no prazo de **7 (sete) dias corridos**, contados a partir da data de aquisição ou do recebimento do acesso ao Produto, o que ocorrer por último.
 
-6.2.2. Para exercer o direito de arrependimento, o usuário deverá entrar em contato por meio dos canais indicados na Seção 12, informando os dados da compra (nome, e-mail de cadastro e comprovante de pagamento).
+6.2.2. Para exercer o direito de arrependimento, o Usuário deverá entrar em contato através dos canais indicados na Seção 12 (Contato), informando seus dados de compra e solicitando o reembolso.
 
-6.2.3. Exercido o direito de arrependimento dentro do prazo legal, o reembolso será realizado de forma integral, incluindo o valor total pago, no prazo de até **30 (trinta) dias** após a solicitação, pelo mesmo meio de pagamento utilizado na compra ou por outro meio acordado entre as partes.
+6.2.3. Exercido o direito de arrependimento dentro do prazo legal, o valor pago será devolvido integralmente, incluindo eventuais custos de transação, no prazo de até **30 (trinta) dias úteis**, pelo mesmo meio de pagamento utilizado na compra ou por meio alternativo acordado entre as partes.
 
-6.2.4. Após o período de 7 dias, o reembolso será concedido apenas nos casos expressamente previstos em lei.
+6.2.4. Após o processamento do reembolso, o acesso do Usuário ao Produto será imediatamente revogado.
+
+### 6.3. Reembolso Fora do Prazo Legal
+
+6.3.1. Solicitações de reembolso realizadas após o prazo de 7 (sete) dias serão analisadas individualmente e a critério exclusivo do PriceRadar, não havendo obrigação de devolução, salvo nas hipóteses previstas em lei.
 
 ---
 
 ## 7. LIMITAÇÃO DE RESPONSABILIDADE
 
-7.1. O PriceRadar é fornecido **"no estado em que se encontra"** (*as is*). Embora sejam empregados esforços razoáveis para manter o produto funcional e atualizado, não se garante que o serviço será ininterrupto, livre de erros ou que atenderá a todas as expectativas do usuário.
+7.1. O PriceRadar **não garante** que as informações de preços monitoradas sejam absolutamente precisas, completas ou atualizadas em tempo real, uma vez que dependem de fontes externas sobre as quais não possui controle.
 
-7.2. O PriceRadar **não se responsabiliza por**:
+7.2. O PriceRadar **não se responsabiliza** por:
 
-a) Decisões comerciais, financeiras ou estratégicas tomadas pelo usuário com base nas informações fornecidas pelo produto;
+a) Decisões comerciais tomadas pelo Usuário com base nas informações fornecidas pelo Produto;
 
-b) Perdas, lucros cessantes ou danos indiretos decorrentes do uso ou da impossibilidade de uso do produto;
+b) Lucros cessantes, perdas de oportunidade de negócio ou danos indiretos de qualquer natureza;
 
-c) Indisponibilidades temporárias causadas por manutenção programada, falhas em serviços de terceiros (servidores, provedores de internet, plataformas de pagamento) ou eventos de força maior;
+c) Indisponibilidade temporária do Produto decorrente de manutenção, falhas técnicas, caso fortuito ou força maior;
 
-d) Alterações em sites, plataformas ou fontes de dados monitoradas que impossibilitem ou prejudiquem o funcionamento de funcionalidades específicas do produto;
+d) Alterações nas fontes de dados monitoradas que impossibilitem a coleta de informações;
 
-e) Atos ou omissões do usuário, incluindo o uso inadequado do produto ou o descumprimento destes Termos.
+e) Atos ou omissões de terceiros, incluindo as plataformas de pagamento (Mercado Pago, Gumroad, Hotmart, Kiwify);
 
-7.3. Em qualquer hipótese, a responsabilidade total do PriceRadar perante o usuário fica limitada ao valor efetivamente pago pelo usuário na contratação do produto.
+f) Falhas de conexão à internet, incompatibilidade de dispositivos ou problemas no ambiente tecnológico do Usuário.
 
-7.4. Nenhuma disposição destes Termos exclui ou limita responsabilidades que não possam ser excluídas ou limitadas pela legislação brasileira vigente, incluindo o Código de Defesa do Consumidor.
+7.3. Em qualquer hipótese, a responsabilidade total do PriceRadar perante o Usuário estará limitada ao valor efetivamente pago pelo Usuário na aquisição do Produto (**R$ 47,00**).
+
+7.4. As limitações previstas nesta seção não se aplicam nos casos em que a legislação brasileira, em especial o Código de Defesa do Consumidor, não admita tal limitação.
 
 ---
 
 ## 8. MODIFICAÇÕES DOS TERMOS
 
-8.1. O PriceRadar reserva-se o direito de alterar, complementar ou atualizar estes Termos de Uso a qualquer tempo, a seu exclusivo critério.
+8.1. O PriceRadar reserva-se o direito de modificar, atualizar ou revisar estes Termos a qualquer momento, a seu exclusivo critério.
 
-8.2. As alterações entrarão em vigor na data de sua publicação. O usuário será notificado sobre mudanças relevantes por e-mail ou por aviso na plataforma, com antecedência razoável.
+8.2. Alterações relevantes serão comunicadas ao Usuário por meio de e-mail cadastrado, notificação no Produto ou publicação na página oficial, com antecedência razoável.
 
-8.3. O uso continuado do produto após a publicação das alterações constitui aceitação tácita dos novos termos. Caso o usuário discorde das modificações, poderá cessar o uso do produto e solicitar o cancelamento de sua conta.
+8.3. A continuidade de uso do Produto após a publicação das alterações constitui aceitação das novas condições. Caso o Usuário discorde das modificações, deverá cessar o uso do Produto e, se aplicável, solicitar o cancelamento de sua conta.
 
-8.4. Recomenda-se que o usuário consulte periodicamente a versão mais recente destes Termos.
+8.4. Recomenda-se que o Usuário consulte periodicamente estes Termos para manter-se informado sobre eventuais atualizações.
 
 ---
 
 ## 9. RESCISÃO
 
-9.1. **Rescisão pelo usuário.** O usuário poderá encerrar sua conta e cessar o uso do PriceRadar a qualquer tempo, mediante solicitação pelos canais de contato indicados na Seção 12. O encerramento voluntário após o prazo de garantia não dá direito a reembolso.
+9.1. O Usuário poderá cessar o uso do Produto a qualquer momento, mediante solicitação através dos canais de contato disponibilizados na Seção 12.
 
-9.2. **Rescisão pelo PriceRadar.** O PriceRadar poderá suspender ou cancelar a conta do usuário, a qualquer tempo e sem aviso prévio, nas seguintes hipóteses:
+9.2. O PriceRadar poderá rescindir ou suspender o acesso do Usuário, de forma imediata e sem aviso prévio, nas seguintes hipóteses:
 
-a) Violação de qualquer disposição destes Termos de Uso;
+a) Violação de qualquer disposição destes Termos;
 
-b) Uso fraudulento, abusivo ou ilícito do produto;
+b) Uso do Produto para fins ilícitos ou contrários à boa-fé;
 
-c) Fornecimento de informações falsas no cadastro;
+c) Fornecimento de informações cadastrais falsas ou fraudulentas;
 
-d) Determinação judicial ou administrativa.
+d) Conduta que prejudique o funcionamento do Produto ou os direitos de outros usuários;
 
-9.3. Em caso de rescisão por violação imputável ao usuário, não haverá direito a reembolso.
+e) Determinação judicial ou administrativa.
 
-9.4. A rescisão, por qualquer motivo, não afeta os direitos e obrigações das partes constituídos anteriormente à data do encerramento, incluindo as disposições sobre propriedade intelectual e limitação de responsabilidade, que permanecerão em vigor após a rescisão.
+9.3. Em caso de rescisão por violação dos Termos por parte do Usuário, não haverá direito a reembolso.
+
+9.4. A rescisão não exime o Usuário das obrigações assumidas durante o período de vigência, especialmente no que tange à propriedade intelectual e ao uso proibido, que permanecem vigentes mesmo após o encerramento da relação contratual.
 
 ---
 
 ## 10. LEGISLAÇÃO APLICÁVEL
 
-10.1. Estes Termos de Uso são regidos exclusivamente pelas leis da **República Federativa do Brasil**, incluindo, sem limitação:
+10.1. Estes Termos são regidos exclusivamente pelas leis da **República Federativa do Brasil**, em especial:
 
-- **Lei nº 8.078/1990** — Código de Defesa do Consumidor;
-- **Lei nº 10.406/2002** — Código Civil;
-- **Lei nº 12.965/2014** — Marco Civil da Internet;
-- **Lei nº 13.709/2018** — Lei Geral de Proteção de Dados Pessoais (LGPD);
-- **Lei nº 9.610/1998** — Lei de Direitos Autorais;
-- **Lei nº 9.279/1996** — Lei de Propriedade Industrial.
+- **Código Civil** (Lei nº 10.406/2002);
+- **Código de Defesa do Consumidor** (Lei nº 8.078/1990);
+- **Marco Civil da Internet** (Lei nº 12.965/2014);
+- **Lei Geral de Proteção de Dados — LGPD** (Lei nº 13.709/2018);
+- **Lei de Direitos Autorais** (Lei nº 9.610/1998);
+- **Lei de Software** (Lei nº 9.609/1998).
 
-10.2. Eventuais lacunas ou omissões nestes Termos serão supridas conforme os princípios gerais do direito brasileiro e a legislação aplicável.
+10.2. Quaisquer cláusulas ou condições que contrariem normas de ordem pública ou direitos do consumidor serão consideradas nulas de pleno direito, sem prejuízo das demais disposições.
 
 ---
 
 ## 11. FORO
 
-11.1. Fica eleito o foro da **Comarca de São Paulo — Estado de São Paulo**, como competente para dirimir quaisquer controvérsias oriundas destes Termos de Uso, com renúncia expressa a qualquer outro, por mais privilegiado que seja.
+11.1. Fica eleito o foro da **Comarca de São Paulo, Estado de São Paulo**, para dirimir quaisquer controvérsias oriundas destes Termos, com renúncia expressa a qualquer outro, por mais privilegiado que seja.
 
-11.2. Ressalva-se o direito do consumidor de optar pelo foro de seu domicílio, nos termos do artigo 101, inciso I, do Código de Defesa do Consumidor.
+11.2. Nada obstante, o consumidor poderá optar pelo foro de seu domicílio, conforme assegurado pelo artigo 101, inciso I, do Código de Defesa do Consumidor.
 
 ---
 
 ## 12. CONTATO
 
-12.1. Para dúvidas, solicitações, exercício do direito de arrependimento ou qualquer comunicação relacionada a estes Termos de Uso e ao PriceRadar, o usuário poderá entrar em contato por meio do seguinte canal:
+12.1. Para dúvidas, solicitações, reclamações ou exercício do direito de arrependimento, o Usuário poderá entrar em contato através dos seguintes canais:
 
 - **E-mail:** [inserir e-mail de contato]
+- **Formulário de suporte:** [inserir URL do formulário, se aplicável]
 
-12.2. As solicitações serão respondidas em até **5 (cinco) dias úteis**, salvo demandas que exijam prazo diferenciado em razão de sua complexidade.
-
----
-
-**Ao utilizar o PriceRadar, o usuário declara estar ciente e de acordo com todos os termos acima.**
-
-**São Paulo, 28 de abril de 2026.**
+12.2. O PriceRadar compromete-se a responder às solicitações dos Usuários no prazo de até **5 (cinco) dias úteis**, salvo em situações que demandem prazo superior para análise.
 
 ---
 
-> **Nota:** Substitua `[inserir e-mail de contato]` pelo endereço de e-mail real de atendimento antes de publicar.
+## DISPOSIÇÕES FINAIS
+
+I. A eventual tolerância do PriceRadar quanto ao descumprimento de qualquer disposição destes Termos não configurará novação, renúncia ou precedente invocável pelo Usuário.
+
+II. Caso qualquer cláusula destes Termos seja declarada nula, inválida ou inexequível por autoridade competente, as demais disposições permanecerão em pleno vigor e efeito.
+
+III. Estes Termos constituem o acordo integral entre o Usuário e o PriceRadar no que diz respeito ao uso do Produto, substituindo quaisquer entendimentos anteriores, verbais ou escritos, sobre o mesmo objeto.
+
+---
+
+**Ao utilizar o PriceRadar, você confirma que leu, compreendeu e aceita integralmente estes Termos de Uso.**
+
+*Documento atualizado em 28 de abril de 2026.*
+
+---
+
+**Nota:** Substitua os campos marcados com `[inserir ...]` na Seção 12 pelos dados reais de contato antes de publicar.

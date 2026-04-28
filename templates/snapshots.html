@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}{{ competitor.name }} — Snapshots — PriceRadar{% endblock %}
+{% block content %}
+<div class="mb-6">
+    <a href="/competitors" class="text-sm text-gray-500 hover:text-gray-300">&larr; Concorrentes</a>
+</div>
+
+<div class="flex items-center justify-between mb-8">
+    <div>
+        <h1 class="text-2xl font-bold">{{ competitor.name }}</h1>
+        <p class="text-sm text-gray-500 mt-1 truncate">{{ competitor.pricing_url }}</p>
+        {% if competitor.css_selector %}
+        <p class="text-xs text-gray-600 mt-1">Seletor: <code class="bg-gray-800 px-2 py-0.5 rounded">{{ competitor.css_selector }}</code></p>
+        {% endif %}
+    </div>
+    <span id="check-live">
+        <button hx-post="/competitors/{{ competitor.id }}/check"
+                hx-target="#check-live"
+                hx-swap="innerHTML"
+                class="btn-primary text-sm">
+            Verificar agora
+            <span class="htmx-indicator">...</span>
+        </button>
+    </span>
+</div>
+
+<!-- Timeline of price changes -->
+{% set has_alerts = alerts_map.values()|list|length > 0 %}
+{% if has_alerts %}
+<h2 class="text-xl font-semibold mb-4 text-yellow-400">Mudancas de preco detectadas</h2>
+<div class="space-y-3 mb-10">
+    {% for snap in snapshots %}
+    {% if snap.id in alerts_map %}
+    {% set alert = alerts_map[snap.id] %}
+    <div class="card p-4 border-yellow-800/50">
+        <div class="flex items-center justify-between">
+            <div>
+                <span class="text-red-400 line-through font-mono">{{ alert.old_price }}</span>
+                <span class="text-gray-400 mx-2">&rarr;</span>
+                <span class="text-green-400 font-mono font-bold">{{ alert.new_price }}</span>
+                {% if alert.notified_at %}
+                <span class="text-xs text-gray-600 ml-2">(email enviado)</span>
+                {% endif %}
+            </div>
+            <span class="text-xs text-gray-500">{{ alert.created_at[:16] if alert.created_at else '' }}</span>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- All snapshots -->
+<h2 class="text-xl font-semibold mb-4">Historico de snapshots ({{ snapshots|length }})</h2>
+{% if snapshots %}
+<div class="space-y-3">
+    {% for snap in snapshots %}
+    <div class="card p-4">
+        <div class="flex items-center justify-between">
+            <div>
+                {% if snap.extracted_price %}
+                <span class="text-white font-mono bg-emerald-900/40 px-3 py-1 rounded">{{ snap.extracted_price }}</span>
+                {% else %}
+                <span class="text-gray-600 text-sm">Preco nao encontrado</span>
+                {% endif %}
+                {% if snap.id in alerts_map %}
+                <span class="text-yellow-400 text-xs ml-2">&#9888; mudanca</span>
+                {% endif %}
+            </div>
+            <span class="text-xs text-gray-500">{{ snap.captured_at[:19] if snap.captured_at else '' }}</span>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="card p-6 text-center text-gray-500">
+    Nenhum snapshot capturado. Clique em "Verificar agora".
+</div>
+{% endif %}
+{% endblock %}

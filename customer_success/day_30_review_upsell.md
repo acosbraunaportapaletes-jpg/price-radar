@@ -7,25 +7,29 @@
 
 Assunto: Fazendo PriceRadar render mais 📈
 
-Fala, [nome]!
+Fala, {{nome}}!
 
 30 dias usando o PriceRadar. Antes de qualquer coisa: valeu pela confiança.
 
 Quero te passar uma dica que pouca gente usa e faz diferença real:
 
-**Crie alertas por faixa de variação, não só por mudança.**
+**Crie alertas por "faixa de variação" em vez de qualquer mudança.**
 
-Exemplo: em vez de receber alerta toda vez que o concorrente mexe R$1 no plano, configure pra disparar só quando a variação passar de 10%. Isso filtra ruído e te faz agir só quando realmente importa — tipo quando um competidor resolve cortar preço pra ganhar mercado.
+A maioria configura alerta pra toda alteração de preço do concorrente. O problema: você recebe notificação demais e ignora o que importa.
 
-Na prática, quem usa assim fecha mais deals porque chega na call já com o argumento pronto: *"O player X acabou de subir 15%, nosso plano entrega mais por menos."*
+O hack: defina alertas só pra variações acima de 10-15%. São essas mudanças que sinalizam reposicionamento estratégico — e aí sim você tem uma janela pra agir com o prospect antes que ele perceba a mudança sozinho.
 
-Agora um pedido rápido: você me ajuda com uma review honesta? Leva 30 segundos e faz uma diferença enorme pra gente.
+Na prática: concorrente cortou 20% no plano enterprise? Seu time de vendas liga pro prospect no mesmo dia com uma proposta ajustada. Deal fechado enquanto o mercado ainda nem percebeu.
 
-👉 [Deixar minha review aqui]
+---
 
-E se você acompanha mais de 5 concorrentes, dá uma olhada no plano Pro — monitora ilimitado e com relatório semanal automático.
+Agora um pedido rápido: pode deixar uma review honesta de 1 minuto? Sua experiência ajuda outros founders a decidirem.
 
-Qualquer dúvida, responde esse email.
+👉 [Deixar review aqui]
+
+{{se existir plano avançado}}
+PS: Se quiser monitorar mais de 5 concorrentes simultâneos, dá uma olhada no plano Pro. Responde esse email que te explico.
+{{/se}}
 
 Abraço,
-[assinatura]
+{{assinatura}}

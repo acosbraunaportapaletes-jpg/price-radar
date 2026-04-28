@@ -11,9 +11,13 @@ Ad copies:
 
 Variante A — DOR
 
-**Headline:** Cansou de perder deal por preço?
-**Primary Text:** Seus concorrentes mudam o pricing e você só descobre quando o prospect escolhe o outro. PriceRadar te alerta antes disso acontecer.
-**CTA:** Quero monitorar agora
+**Headline (38 chars)**
+> Cansou de perder deal pro concorrente?
+
+**Primary Text (124 chars)**
+> Seu prospect fechou com outro SaaS porque ele baixou o preço e você nem ficou sabendo. PriceRadar te alerta antes que aconteça.
+
+**CTA:** `Quero parar de perder deals`
 
 ---
 
@@ -23,9 +27,13 @@ Variante A — DOR
 
 Variante B — RESULTADO
 
-**Headline:** Saiba o preço rival em 30 min
-**Primary Text:** Configure o PriceRadar uma vez e receba alertas toda vez que um concorrente mudar o pricing. Reposicione antes de perder o deal.
-**CTA:** Começar grátis
+**Headline (40 chars)**
+> Em 2 min, saiba toda mudança do rival
+
+**Primary Text (122 chars)**
+> Configure uma vez e receba alertas quando concorrentes mudarem preço ou posicionamento. Inteligência competitiva no piloto.
+
+**CTA:** `Testar grátis agora`
 
 ---
 
@@ -35,21 +43,13 @@ Variante B — RESULTADO
 
 Variante C — CURIOSIDADE
 
-**Headline:** O alerta que top founders usam
-**Primary Text:** Existe um truque simples pra saber quando seu concorrente muda de preço — antes do seu prospect descobrir. Fundadores B2B já usam.
-**CTA:** Ver como funciona
+**Headline (39 chars)**
+> O alerta que top founders não revelam
 
----
+**Primary Text (125 chars)**
+> Existe um jeito de saber toda vez que seu concorrente muda preço — antes do seu prospect. Founders SaaS já estão usando isso.
 
-### Notas rápidas
-
-| | Headline | Primary Text | CTA |
-|---|---|---|---|
-| **A** | 34 chars | 124 chars | Quero monitorar agora |
-| **B** | 33 chars | 122 chars | Começar grátis |
-| **C** | 33 chars | 125 chars | Ver como funciona |
-
-Todas dentro 
+**CTA:** `Descobrir como funciona`
 
 
 ## Google Ads
@@ -57,7 +57,7 @@ Todas dentro
 Status: PENDENTE
 Keywords:
 - PriceRadar
-- Fundadores SaaS B2B não sabem quando concorrentes 
-- Klue — US$30k+/ano, enterprise demais para PME
-- Crayon — US$20k+/ano, foco em grandes empresas
-- Kompyte — US$15k+/ano, inacessível para micro-SaaS
+- Fundadores SaaS não sabem quando concorrentes muda
+- Klue — enterprise, $20k+/ano, fora do alcance de PMEs
+- Crayon — enterprise competitive intel, +$15k/ano
+- Kompyte — mid-market, $500+/mo

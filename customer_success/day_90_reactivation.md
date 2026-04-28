@@ -7,15 +7,19 @@
 
 Assunto: Ainda usando PriceRadar?
 
-Fala, [nome]!
+Fala, {nome}!
 
 Faz 90 dias que você tá com o PriceRadar. Queria saber: ainda tá usando?
 
-Se sim, tenho uma proposta. Quem usa ativamente nos primeiros 3 meses costuma expandir pra monitorar mais concorrentes. Se fizer sentido pra você, tenho um cupom de 20% no upgrade — válido por 7 dias.
+Se sim, tenho uma proposta. Liberei um cupom de **20% off** pra você fazer upgrade pro plano [Plano Superior] — mais alertas, mais concorrentes monitorados, mais vantagem nos deals.
 
-Se parou de usar, também quero saber. Sem julgamento. Me conta o que aconteceu: faltou funcionalidade? Não encaixou na rotina? Seu feedback direto me ajuda a melhorar o produto.
+👉 [Quero o upgrade com 20% off]
 
-Responde esse email com "quero o cupom" ou "parei de usar porque…" — qualquer uma das duas me ajuda.
+Cupom: **RADAR20** (válido por 7 dias)
+
+Agora, se você parou de usar, tudo bem também. Mas me conta: o que faltou? Foi o produto, o momento, o preço?
+
+Uma resposta rápida já ajuda bastante. Levo feedback a sério.
 
 Abraço,
-[assinatura]
+{assinatura}

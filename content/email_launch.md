@@ -6,36 +6,42 @@
 
 Fala, [NOME].
 
-Vou ser direto: semana passada um founder me mandou mensagem dizendo que perdeu um deal de R$18k/ano porque o concorrente tinha baixado o preço do plano enterprise — e ele só descobriu quando o prospect jogou na cara dele durante a call de fechamento.
+Vou ser direto: semana passada um founder me contou que perdeu um deal de R$48k/ano porque o concorrente baixou o preço e ele só ficou sabendo quando o prospect jogou na cara dele na call de negociação.
 
-Isso me doeu porque eu já passei por isso.
+Ele não tinha resposta. Perdeu o deal.
 
-**Foi assim que o PriceRadar nasceu.** Eu cansei de entrar em call sem saber o que o concorrente tinha mudado na página de pricing na noite anterior. Montei uma ferramenta interna pro meu time, funcionou tão bem que outros founders começaram a pedir acesso. Agora estou abrindo pra todo mundo.
+Isso me incomodou porque eu já passei por isso. Mais de uma vez.
 
-## O que o PriceRadar faz por você:
+**Como o PriceRadar nasceu**
 
-- **Monitora preços e posicionamento dos seus concorrentes 24/7** — e te avisa antes que seu prospect descubra sozinho
-- **Te dá contexto pra reagir rápido** — ajustou pricing? Mudou feature do plano? Tirou trial? Você sabe na hora
-- **Transforma inteligência competitiva em argumento de venda** — seu time de vendas entra na call preparado, não no escuro
+Eu cansei de entrar em call de vendas sem saber que o concorrente tinha mudado a página de pricing na semana anterior. Tentei monitorar manualmente — abrir 5, 10 sites por semana, tirar print, comparar. Durou 3 semanas. Aí construí uma ferramenta pra fazer isso por mim. Funcionou tão bem que outros founders começaram a pedir acesso. Agora estou abrindo pro mercado.
 
-Simples assim. Sem dashboard bonito que ninguém abre. Você recebe o alerta, age, e fecha.
+**O que o PriceRadar faz por você:**
 
-## Quem deve comprar:
+- **Monitora as páginas de preço dos seus concorrentes 24/7** e te avisa no momento em que algo muda — plano novo, desconto, reposicionamento, qualquer alteração.
+- **Te dá contexto pra negociação.** Você entra na call sabendo exatamente o cenário competitivo. Seu prospect menciona o concorrente? Você já tem a resposta pronta.
+- **Cria um histórico de pricing do seu mercado.** Em 3 meses você tem dados que ninguém mais tem — tendências, padrões sazonais, movimentos estratégicos dos competidores.
 
-Se você é head de vendas ou founder de SaaS B2B, tem entre 5 e 50 pessoas no time, e compete num mercado com 3 ou mais players — o PriceRadar foi feito pra você. Literalmente.
+**Pra quem é (e pra quem não é)**
 
-## Quem NÃO deve comprar:
+O PriceRadar é pra você se:
+→ Você é founder ou Head de Sales de um SaaS B2B
+→ Tem pelo menos 3 concorrentes diretos
+→ Perde tempo (ou deveria perder e não perde) acompanhando pricing da concorrência
 
-Se você é o único player do mercado (parabéns, aliás) ou se seu ciclo de venda não envolve comparação com concorrente, não faz sentido. Não quero seu dinheiro se não vai usar.
+**Não é pra você** se você é o único player do mercado ou se pricing não é um fator relevante nas suas negociações. Sem ressentimentos.
 
-## Preço e garantia:
+**Investimento**
 
-Acesso ao PriceRadar por **um valor que cabe no caixa de qualquer SaaS em estágio inicial.** E eu coloco minha cara: se em **7 dias** você não sentir que isso muda o jogo da sua operação comercial, pede reembolso. Sem pergunta, sem formulário, sem atrito. Devolvo tudo.
+O acesso ao PriceRadar custa menos do que um almoço de negócios por mês. E se em 7 dias você achar que não vale, eu devolvo 100% — sem pergunta, sem formulário, sem atrito.
 
-**→ [QUERO ACESSO AO PRICERADAR](https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-6a931f24-66c8-45c5-a9e0-35267389d020)**
+Preferi não colocar preço aqui no e-mail porque tenho condições diferentes dependendo do volume de concorrentes monitorados. Tudo transparente na página de compra.
 
-Só um link, só uma decisão.
+**→ [Quero monitorar meus concorrentes agora](https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-26546402-57c7-4821-93f8-a69598540bb7)**
 
----
+É só isso. Um link, uma decisão.
 
-**P.S.:** Eu não sei por quanto tempo vou manter esse preço de lançamento. Não é escassez falsa — é que eu genuinamente ainda estou validando o quanto cobrar. Quem entra agora, trava o menor preço que vai existir. Depois não me cobra.
+Abraço,
+[SEU NOME]
+
+P.S. — Se você leu até aqui e pensou "eu deveria estar fazendo isso há meses"… é porque deveria. A boa notícia é que o próximo movimento do seu concorrente, você vai saber primeiro.

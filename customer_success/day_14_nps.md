@@ -7,13 +7,13 @@
 
 Assunto: Pergunta rápida (1 clique)
 
-Fala, {{nome}}!
+Fala, {{primeiro_nome}}!
 
-Você está usando o PriceRadar há 2 semanas. Quero te fazer uma pergunta rápida:
+Você está usando o PriceRadar há 2 semanas. Quero te fazer uma pergunta só:
 
 **De 0 a 10, quanto você recomendaria o PriceRadar pra um amigo?**
 
-Clica na opção que representa sua nota:
+Clica na sua resposta:
 
 👉 [9 ou 10 — Recomendo demais]({{link_promotor}})
 
@@ -21,7 +21,7 @@ Clica na opção que representa sua nota:
 
 👉 [0 a 6 — Não recomendaria]({{link_detrator}})
 
-É 1 clique, leva 3 segundos.
+Leva 2 segundos. Sua resposta me ajuda a melhorar o produto pra você.
 
-Valeu!
+Valeu,
 {{assinatura}}
