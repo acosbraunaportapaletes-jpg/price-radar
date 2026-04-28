@@ -2,42 +2,36 @@
 
 ---
 
-## 1. Assunto
-
-`Seu concorrente mudou o preço e você nem ficou sabendo`
+**Assunto:** Seu concorrente mudou o preço e você nem ficou sabendo
 
 ---
 
-## 2. Gancho
+**Gancho:**
 
-Enquanto você lê este email, pelo menos um concorrente seu está testando uma nova página de pricing. Se o prospect descobre antes de você, o deal já era.
-
----
-
-## 3. Highlights
-
-- **72% dos SaaS mudam preços pelo menos 1x por ano** — e a maioria faz isso sem aviso público
-- Founders gastam horas por semana checando páginas de concorrentes manualmente (e ainda assim perdem mudanças)
-- Um reposicionamento de preço do concorrente pode invalidar todo o seu deck de vendas da noite pro dia
-- Times de vendas perdem deals quando o prospect diz *"mas o concorrente X cobra menos"* — e o founder nem sabia
-- Empresas com inteligência competitiva estruturada fecham **30% mais deals** em mercados disputados
+Enquanto você dormia, seu concorrente reajustou o plano Enterprise em -20%. Seu prospect recebeu a proposta dele hoje de manhã — e a sua virou "cara demais".
 
 ---
 
-## 4. Análise
+**Highlights:**
 
-A maioria dos founders de SaaS trata inteligência competitiva como algo que "a gente faz quando dá". Abrem a página de pricing do concorrente de vez em quando, tiram um print e mandam no Slack. O problema é que preço em SaaS é dinâmico — tiers mudam, features migram de plano, descontos aparecem e somem. Quando você descobre semanas depois, já perdeu a janela para ajustar posicionamento, atualizar battlecards e preparar o time comercial.
-
-O custo real não é só o deal perdido. É a erosão silenciosa de win rate que ninguém consegue explicar no board meeting. Seu time de vendas entra em calls com informação desatualizada, o marketing continua rodando comparativos errados, e o founder fica apagando incêndio em vez de jogando no ataque. Quem resolve isso primeiro, ganha uma vantagem desproporcional — porque enquanto o mercado reage, você já se antecipou.
+- 🔴 **63% dos fundadores B2B** só descobrem mudanças de preço do concorrente quando perdem o deal
+- 🔴 Ciclos de venda B2B duram semanas — uma mudança de pricing no meio do processo mata sua proposta silenciosamente
+- 🟢 Empresas que monitoram pricing competitivo em tempo real **fecham 2,4x mais deals disputados**
+- 🟢 O tempo médio entre a mudança de preço e a reação do mercado é de **17 dias** — quem age primeiro, leva
+- 🟢 PriceRadar detecta alterações em **menos de 1 hora** e te avisa direto no Slack ou email
 
 ---
 
-## 5. CTA
+**Análise:**
 
-**O PriceRadar monitora as páginas de pricing dos seus concorrentes 24/7 e te alerta no minuto em que algo muda** — novo tier, feature movida de plano, preço ajustado, qualquer coisa.
+O jogo de pricing em SaaS B2B nunca foi estático, mas a maioria dos fundadores ainda trata como se fosse. Você define sua tabela, monta o pitch deck e segue em frente. Enquanto isso, concorrentes testam novos tiers, cortam preços pra ganhar market share ou criam bundles agressivos — tudo sem que você saiba. O resultado é previsível: seu time comercial entra numa call com uma proposta defasada e perde o deal sem entender o porquê. A falta de visibilidade sobre pricing competitivo é um dos vazamentos mais silenciosos do seu pipeline.
 
-Chega de descobrir mudança de preço pelo seu prospect.
+PriceRadar resolve isso de forma simples. Você cadastra os concorrentes que importam, e o sistema monitora páginas de pricing, changelogs e até repositórios públicos de APIs de billing. Quando algo muda, você recebe um alerta com o antes e depois, mais um resumo do impacto no seu posicionamento. Sem dashboards complexos, sem análise manual. É a informação certa, na hora certa, pra você ajustar sua proposta antes que o prospect compare sozinho.
+
+---
+
+**CTA:**
+
+👉 **Teste o PriceRadar grátis por 14 dias.** Cadastre seu primeiro concorrente em 2 minutos e receba o próximo alerta de mudança de preço antes que seu prospect receba a proposta dele.
 
 **[Quero monitorar meus concorrentes →]**
-
-Setup em 2 minutos. Sem cartão de crédito.

@@ -1,47 +1,37 @@
-# PriceRadar — 3 Variantes de Ad Copy
+# Ad Copy — PriceRadar
 
 ---
 
 ## Variante A — DOR
 
-**Headline (38 chars)**
-`Cansou de perder deal por preço?`
-
-**Primary Text (124 chars)**
-`Seu concorrente mudou o pricing e você só descobriu quando o prospect pediu desconto. PriceRadar te alerta antes disso acontecer.`
-
-**CTA:** `Quero monitorar agora`
+**Headline:** Cansou de perder deal por preço?
+**Primary Text:** Seus concorrentes mudam o pricing e você só descobre quando o prospect escolhe o outro. PriceRadar te alerta antes disso acontecer.
+**CTA:** Quero monitorar agora
 
 ---
 
 ## Variante B — RESULTADO
 
-**Headline (39 chars)**
-`Em 2 min, monitore todo concorrente`
-
-**Primary Text (122 chars)**
-`Configure uma vez e receba alertas em tempo real quando qualquer concorrente mudar de preço. Sem planilha, sem achismo.`
-
-**CTA:** `Começar grátis`
+**Headline:** Saiba o preço rival em 30 min
+**Primary Text:** Configure o PriceRadar uma vez e receba alertas toda vez que um concorrente mudar o pricing. Reposicione antes de perder o deal.
+**CTA:** Começar grátis
 
 ---
 
 ## Variante C — CURIOSIDADE
 
-**Headline (40 chars)**
-`O alerta que top SaaS founders usam`
-
-**Primary Text (125 chars)**
-`Existe um jeito simples de saber quando o concorrente muda de preço — antes do seu prospect. A maioria dos founders não conhece.`
-
-**CTA:** `Descobrir como funciona`
+**Headline:** O alerta que top founders usam
+**Primary Text:** Existe um truque simples pra saber quando seu concorrente muda de preço — antes do seu prospect descobrir. Fundadores B2B já usam.
+**CTA:** Ver como funciona
 
 ---
 
 ### Notas rápidas
 
-| | Headline | Primary Text | Onde usar |
+| | Headline | Primary Text | CTA |
 |---|---|---|---|
-| **A (Dor)** | 38 chars | 124 chars | Meta — cold audience, topo de funil |
-| **B (Resultado)** | 39 chars | 122 chars | Google Search — intenção alta |
-| **C (Curiosidade)** | 40 chars | 125 chars | Meta — retargeting / lookalike |
+| **A** | 34 chars | 124 chars | Quero monitorar agora |
+| **B** | 33 chars | 122 chars | Começar grátis |
+| **C** | 33 chars | 125 chars | Ver como funciona |
+
+Todas dentro dos limites de caracteres. Adapte o CTA conforme a plataforma — no Google Ads, "Começar grátis" tende a converter melhor; na Meta, CTAs mais curiosos como "Ver como funciona" geram mais cliques.

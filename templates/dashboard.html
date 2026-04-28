@@ -4,43 +4,47 @@
 <div class="flex items-center justify-between mb-8">
     <h1 class="text-3xl font-bold">Dashboard</h1>
     {% if unseen > 0 %}
-    <span class="badge badge-unseen text-sm px-3 py-1">{{ unseen }} alerta{{ 's' if unseen > 1 }} novo{{ 's' if unseen > 1 }}</span>
+    <a href="/alerts?seen=0" class="badge-unseen text-sm px-3 py-1">{{ unseen }} alerta{{ 's' if unseen > 1 }} novo{{ 's' if unseen > 1 }}</a>
     {% endif %}
 </div>
 
-<!-- Stats -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-    <div class="card p-5 text-center">
-        <p class="text-3xl font-bold text-indigo-400">{{ competitors|length }}</p>
-        <p class="text-sm text-gray-500 mt-1">Concorrentes monitorados</p>
-    </div>
-    <div class="card p-5 text-center">
-        <p class="text-3xl font-bold text-yellow-400">{{ unseen }}</p>
-        <p class="text-sm text-gray-500 mt-1">Alertas nao lidos</p>
-    </div>
-    <div class="card p-5 text-center">
-        <p class="text-3xl font-bold text-green-400">{{ alerts|length }}</p>
-        <p class="text-sm text-gray-500 mt-1">Mudancas detectadas</p>
-    </div>
+<!-- Add competitor form -->
+<div class="card p-6 mb-8">
+    <h2 class="font-semibold mb-4">Adicionar concorrente</h2>
+    <form method="POST" action="/competitors" class="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
+        <div class="md:col-span-3">
+            <label class="block text-xs text-gray-400 mb-1">Nome</label>
+            <input type="text" name="name" required placeholder="Ex: Competitor X" class="input-field text-sm">
+        </div>
+        <div class="md:col-span-5">
+            <label class="block text-xs text-gray-400 mb-1">URL da pagina de pricing</label>
+            <input type="url" name="pricing_url" required placeholder="https://example.com/pricing" class="input-field text-sm">
+        </div>
+        <div class="md:col-span-2">
+            <label class="block text-xs text-gray-400 mb-1">Intervalo (horas)</label>
+            <input type="number" name="check_interval_hours" value="24" min="1" class="input-field text-sm">
+        </div>
+        <div class="md:col-span-2">
+            <button type="submit" class="btn-primary w-full text-sm">+ Adicionar</button>
+        </div>
+    </form>
 </div>
 
-<!-- Competitors summary -->
-<div class="flex items-center justify-between mb-4">
-    <h2 class="text-xl font-semibold">Concorrentes ({{ competitors|length }})</h2>
-    <a href="/competitors" class="btn-secondary text-sm">Gerenciar</a>
-</div>
+<!-- Competitors list -->
+<h2 class="text-xl font-semibold mb-4">Monitorando ({{ competitors|length }})</h2>
 {% if competitors %}
 <div class="grid gap-3 mb-10">
     {% for comp in competitors %}
     <div class="card p-4 flex items-center justify-between" id="comp-{{ comp.id }}">
         <div class="flex-1">
-            <a href="/competitors/{{ comp.id }}" class="text-lg font-semibold text-indigo-400 hover:underline">{{ comp.name }}</a>
+            <a href="/competitors/{{ comp.id }}" class="text-lg font-semibold text-emerald-400 hover:underline">{{ comp.name }}</a>
+            <span class="text-gray-600 text-xs ml-2">a cada {{ comp.check_interval_hours }}h</span>
             <p class="text-sm text-gray-500 mt-1 truncate max-w-lg">{{ comp.pricing_url }}</p>
         </div>
         <div class="flex items-center gap-3 text-sm text-gray-400">
-            <span>{{ comp.snap_count }} snapshots</span>
+            <span>{{ comp.snap_count }} snap{{ 's' if comp.snap_count != 1 }}</span>
             {% if comp.last_check %}
-            <span class="text-xs">Ultimo: {{ comp.last_check[:16] }}</span>
+            <span class="text-xs">{{ comp.last_check[:16] }}</span>
             {% endif %}
             <span id="check-{{ comp.id }}">
                 <button hx-post="/competitors/{{ comp.id }}/check"
@@ -48,56 +52,40 @@
                         hx-swap="innerHTML"
                         class="btn-secondary text-xs">
                     Verificar agora
+                    <span class="htmx-indicator">...</span>
                 </button>
             </span>
+            <button hx-delete="/competitors/{{ comp.id }}"
+                    hx-target="#comp-{{ comp.id }}"
+                    hx-swap="outerHTML"
+                    hx-confirm="Remover {{ comp.name }}?"
+                    class="text-red-400/60 hover:text-red-400 text-xs">&#10005;</button>
         </div>
     </div>
     {% endfor %}
 </div>
 {% else %}
 <div class="card p-8 text-center text-gray-500 mb-10">
-    Nenhum concorrente cadastrado. <a href="/competitors" class="text-indigo-400 hover:underline">Adicionar primeiro</a>.
+    Nenhum concorrente cadastrado. Adicione um acima para comecar.
 </div>
 {% endif %}
 
-<!-- Alerts timeline -->
-<h2 class="text-xl font-semibold mb-4">Alertas recentes</h2>
+<!-- Recent alerts -->
 {% if alerts %}
+<h2 class="text-xl font-semibold mb-4">Alertas recentes</h2>
 <div class="space-y-3">
     {% for alert in alerts %}
-    <div class="card p-4 flex items-center justify-between" id="alert-{{ alert.id }}">
-        <div class="flex-1">
-            <div class="flex items-center gap-2">
-                <a href="/alerts/{{ alert.id }}" class="text-indigo-400 hover:underline font-medium">
-                    {{ alert.competitor_name }}
-                </a>
-                <span id="status-{{ alert.id }}">
-                    {% if alert.seen %}
-                        <span class="badge badge-read">Visto</span>
-                    {% else %}
-                        <span class="badge badge-unseen">Novo</span>
-                    {% endif %}
-                </span>
+    <div class="card p-4">
+        <div class="flex items-center justify-between">
+            <div>
+                <span class="text-emerald-400 font-medium">{{ alert.competitor_name }}</span>
+                <span class="badge-unseen ml-2">Novo</span>
             </div>
-            <p class="text-xs text-gray-500 mt-1">{{ alert.created_at[:16] if alert.created_at else '' }}</p>
+            <span class="text-xs text-gray-500">{{ alert.created_at[:16] if alert.created_at else '' }}</span>
         </div>
-        <div class="flex items-center gap-2 ml-4">
-            <a href="/alerts/{{ alert.id }}" class="btn-secondary text-xs">Ver detalhes</a>
-            {% if not alert.seen %}
-            <button hx-post="/alerts/{{ alert.id }}/seen"
-                    hx-target="#status-{{ alert.id }}"
-                    hx-swap="innerHTML"
-                    class="btn-secondary text-xs">
-                Marcar visto
-            </button>
-            {% endif %}
-        </div>
+        <pre class="text-xs text-gray-400 mt-2 whitespace-pre-wrap">{{ alert.diff_summary[:300] }}</pre>
     </div>
     {% endfor %}
-</div>
-{% else %}
-<div class="card p-8 text-center text-gray-500">
-    Nenhum alerta ainda. Adicione concorrentes e execute verificacoes.
 </div>
 {% endif %}
 {% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Alertas — PriceRadar{% endblock %}
+{% block content %}
+<div class="flex items-center justify-between mb-6">
+    <h1 class="text-2xl font-bold">Alertas</h1>
+    <div class="flex gap-2 text-sm">
+        <a href="/alerts"
+           class="px-3 py-1.5 rounded-lg {{ 'btn-primary' if filter_seen is none else 'btn-secondary' }}">Todos</a>
+        <a href="/alerts?seen=0"
+           class="px-3 py-1.5 rounded-lg {{ 'btn-primary' if filter_seen == '0' else 'btn-secondary' }}">Nao lidos</a>
+        <a href="/alerts?seen=1"
+           class="px-3 py-1.5 rounded-lg {{ 'btn-primary' if filter_seen == '1' else 'btn-secondary' }}">Lidos</a>
+    </div>
+</div>
+
+{% if not alerts %}
+<div class="card p-8 text-center text-gray-500">
+    Nenhum alerta{% if filter_seen == '0' %} nao lido{% elif filter_seen == '1' %} lido{% endif %} encontrado.
+</div>
+{% endif %}
+
+<div class="space-y-3">
+    {% for a in alerts %}
+    <div class="card p-4" id="alert-{{ a.id }}">
+        <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-3">
+                <span class="text-emerald-400 font-semibold">{{ a.competitor_name }}</span>
+                {% if not a.seen %}
+                <span class="badge-unseen">Novo</span>
+                {% endif %}
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-xs text-gray-500">{{ a.created_at[:16] if a.created_at else '' }}</span>
+                {% if not a.seen %}
+                <span id="seen-{{ a.id }}">
+                    <button hx-post="/alerts/{{ a.id }}/seen"
+                            hx-target="#seen-{{ a.id }}"
+                            hx-swap="innerHTML"
+                            class="btn-secondary text-xs">Marcar lido</button>
+                </span>
+                {% else %}
+                <span class="text-xs text-gray-600">Lido</span>
+                {% endif %}
+            </div>
+        </div>
+        <pre class="text-xs text-gray-300 whitespace-pre-wrap font-mono bg-gray-900/50 p-3 rounded-lg">{{ a.diff_summary }}</pre>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
