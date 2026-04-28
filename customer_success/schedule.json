@@ -1,0 +1,31 @@
+{
+  "product_name": "PriceRadar",
+  "sequence": [
+    {
+      "day": 0,
+      "file": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\customer_success\\day_00_welcome.md",
+      "id": "welcome"
+    },
+    {
+      "day": 3,
+      "file": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\customer_success\\day_03_checkin.md",
+      "id": "checkin"
+    },
+    {
+      "day": 14,
+      "file": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\customer_success\\day_14_nps.md",
+      "id": "nps"
+    },
+    {
+      "day": 30,
+      "file": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\customer_success\\day_30_review_upsell.md",
+      "id": "review_upsell"
+    },
+    {
+      "day": 90,
+      "file": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\customer_success\\day_90_reactivation.md",
+      "id": "reactivation"
+    }
+  ],
+  "total_emails": 5
+}

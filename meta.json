@@ -2,97 +2,98 @@
   "slug": "price-radar",
   "idea": "Como vocês descobrem quando um concorrente muda os preços?\n\nGenuine question for other SaaS founders here.\n\nWe lost a deal last quarter because a competitor had dropped their pricing three weeks before the call. The prospect knew. We didn't. We walked in with the wrong positioning and it cost us.\n\nSince then I've been trying to figure out what our actual process is for tracking competitor moves. Turns out we don't have one. We occasionally check their pric",
   "source_ref": "lead:1swv8pr",
-  "started_at": "2026-04-27T23:00:27.363672+00:00",
-  "finished_at": "2026-04-27T23:07:06.195972+00:00",
+  "started_at": "2026-04-27T23:44:28.043366+00:00",
+  "finished_at": "2026-04-27T23:52:00.072436+00:00",
   "research": {
-    "problema": "Fundadores SaaS não têm processo sistemático para detectar mudanças de preço/posicionamento de concorrentes, perdendo deals por falta de inteligência competitiva atualizada",
-    "quem_sente": "Fundador/Head de vendas de SaaS B2B com 5-50 funcionários que compete em mercados com 3+ players diretos",
-    "quanto_pagariam_usd_mes": "29-97",
+    "problema": "SaaS founders não têm processo para detectar quando concorrentes mudam preços, perdendo deals por falta de inteligência competitiva",
+    "quem_sente": "Founder/Head de Revenue de SaaS B2B com 5-50 funcionários que compete em mercado com 3+ players diretos",
+    "quanto_pagariam_usd_mes": "19-79",
     "tam_brasil": "medio",
     "concorrencia": [
-      "Klue — enterprise, $20k+/ano, foco grandes empresas",
-      "Crayon — mid-market, ~$15k/ano, competitive intelligence platform",
-      "Kompyte — adquirida pela Semrush, foco marketing",
-      "Planilha manual + Google Alerts — grátis, sem estrutura"
+      "Klue — enterprise, USD 20k+/ano, fora do alcance de PME",
+      "Crayon — enterprise competitive intel, +USD 15k/ano",
+      "Kompyte (Semrush) — foco em marketing, não pricing",
+      "Planilha manual + Google Alerts — grátis, mas ninguém mantém"
     ],
-    "diferencial_com_ia": "Playbook empacotado com templates prontos e prompts de IA para monitoramento automatizado que qualquer founder solo opera sem contratar analista",
+    "diferencial_com_ia": "Template + framework pronto para montar processo de monitoramento competitivo com automações no-code e prompts de IA que fazem a análise",
     "riscos": [
-      "Conteúdo gratuito em blogs e YouTube cobre 70% do tema",
-      "Ferramentas de IA genéricas (ChatGPT + browse) podem substituir o template",
-      "Nicho pequeno no Brasil — maioria dos SaaS BR não tem maturidade para competitive intel estruturada"
+      "Demanda real é por ferramenta automatizada, não por conteúdo educativo",
+      "Nicho pequeno no Brasil — SaaS founders que pagam por competitive intel",
+      "Baixa retenção: compra uma vez, extrai o framework e nunca mais volta"
     ],
     "bayes": {
       "prior": 0.12,
       "evidencias_plus": [
-        "Dor específica com impacto financeiro mensurável (deal perdido)",
-        "Validação social implícita (post em comunidade de founders, outros provavelmente sentem o mesmo)",
-        "Soluções existentes são enterprise e caras — gap claro no segmento PME/indie",
-        "Custo zero de produção como info-produto elimina risco financeiro"
+        "Dor específica e quantificável — perda real de deal com valor monetário concreto",
+        "Ausência de solução acessível — tools existentes custam USD 15-20k/ano",
+        "Post orgânico pedindo ajuda a peers — validação social de que outros sentem o mesmo",
+        "Contexto B2B com high-stakes — decisões de pricing afetam revenue diretamente"
       ],
       "evidencias_minus": [
-        "Google Alerts + checagem manual resolve 60% do problema gratuitamente",
-        "Mercado brasileiro de SaaS B2B sofisticado o suficiente para isso ainda é pequeno",
-        "Conteúdo sobre competitive intel já existe abundantemente em inglês"
+        "Info-produto é fit fraco para problema de monitoramento contínuo",
+        "Público-alvo no BR é nicho dentro de nicho (founders SaaS ativos)",
+        "Alternativa grátis viável: checar sites + Google Alerts mensalmente",
+        "Retenção duvidosa — framework se aprende uma vez"
       ],
-      "posterior": 0.19,
-      "justificativa_posterior": "Dor real e específica com gap no mercado PME eleva o prior, mas a facilidade de alternativas gratuitas limita o salto"
+      "posterior": 0.17,
+      "justificativa_posterior": "Dor validada e específica puxa posterior pra cima, mas mismatch entre formato (info-produto) e necessidade real (automação contínua) limita o upside"
     },
     "mcda": {
       "mercado": {
-        "score": 6,
-        "nota": "~15k SaaS founders/operators no BR, ~500k globalmente que poderiam se interessar — médio para info-produto"
+        "score": 5,
+        "nota": "~15-20k SaaS no BR, ~500k globalmente, mas só fração prioriza competitive intel ativa"
       },
       "disposicao_pagar": {
-        "score": 7,
-        "nota": "Deal perdido = dor cara; founders pagam por atalhos que protegem receita; R$97-297 por playbook é impulso"
+        "score": 5,
+        "nota": "Founders B2B pagam por vantagem competitiva, mas resistem a pagar recorrente por conteúdo estático"
       },
       "viabilidade_tecnica": {
         "score": 9,
-        "nota": "Info-produto puro: ebook + planilha + prompts de IA. Produz em 3-5 dias, custo zero"
+        "nota": "Ebook + planilha + prompts — produção em 3-5 dias, custo zero"
       },
       "moat": {
         "score": 3,
-        "nota": "Baixo — qualquer creator pode fazer conteúdo similar; moat seria comunidade/atualização contínua, mas frágil"
+        "nota": "Qualquer consultor ou creator pode empacotar framework similar em semanas"
       },
       "timing": {
         "score": 7,
-        "nota": "IA generativa abriu janela: agora é possível monitorar com prompts automatizados o que antes exigia analista; tema quente em 2025-26"
+        "nota": "IA generativa abriu janela: prompts + automações no-code tornam o framework 10x mais acionável que há 2 anos"
       },
-      "score_ponderado": 6.45
+      "score_ponderado": 5.55
     },
     "fermi": {
       "n_clientes_br": 15000,
-      "ticket_mensal_brl": 29,
+      "ticket_mensal_brl": 97,
       "conversao_esperada": 0.005,
       "cenarios": {
         "bull": {
           "p": 0.2,
-          "mrr_ano1_brl": 5000
+          "mrr_ano1_brl": 7500
         },
         "base": {
           "p": 0.5,
-          "mrr_ano1_brl": 2000
+          "mrr_ano1_brl": 3200
         },
         "bear": {
           "p": 0.3,
-          "mrr_ano1_brl": 500
+          "mrr_ano1_brl": 700
         }
       },
-      "expected_value_mrr_brl": 2150
+      "expected_value_mrr_brl": 3310
     },
     "red_team": {
-      "risk_manager": "Se ChatGPT lançar um plugin nativo de competitive monitoring gratuito, o info-produto perde 80% da proposta de valor da noite pro dia",
-      "cliente_cetico": "Por que pagar R$97 num playbook se posso pedir ao ChatGPT para me montar um sistema de monitoramento em 10 minutos? Preciso ver valor beyond prompts genéricos",
-      "fundador_senior": "Já vi 3 playbooks de competitive intel floparem — vendem bem no mês 1 pelo hype, mas churn de atenção é brutal; sem comunidade ou atualização, vira PDF esquecido na pasta de downloads"
+      "risk_manager": "O público quer automação, não educação — compram o ebook esperando uma solução plug-and-play e se frustram quando percebem que precisam montar o processo manualmente",
+      "cliente_cetico": "Por que pagar R$97 se posso pedir ao ChatGPT para montar um framework de competitive intel em 5 minutos e configurar Google Alerts de graça?",
+      "fundador_senior": "Já vi dezenas de info-produtos de 'competitive intelligence framework' — vendem bem no lançamento, morrem em 60 dias porque o conteúdo comoditiza rápido e não há razão para recompra"
     },
-    "veredito": "GO",
-    "confianca_veredito_pct": 58,
-    "motivo_veredito": "Dor real e validada com impacto financeiro claro, gap no mercado PME, custo de produção zero e EV de R$2.150 MRR justificam execução — objeções do red team são mitigáveis com curadoria contínua e comunidade, mas exigem estratégia de retenção além do PDF"
+    "veredito": "CAUTION",
+    "confianca_veredito_pct": 48,
+    "motivo_veredito": "Dor real e validada com posterior razoável (0.17) e EV atrativo (R$3.3k), mas o formato info-produto é fit mediano para um problema que clama por automação — vale testar com MVE (mínimo ebook viável) de baixo esforço, mas pivote para ferramenta se tração confirmar demanda"
   },
   "spec": {
     "name": "PriceRadar",
     "slug": "price-radar",
-    "pitch": "Saiba quando seu concorrente muda o preço antes do seu prospect.",
+    "pitch": "Saiba quando seu concorrente muda o preço. Antes do seu prospect.",
     "stack": [
       "python",
       "flask",
@@ -102,41 +103,41 @@
     "core_features": [
       {
         "id": "auth",
-        "desc": "login com email+senha, hash bcrypt, sessão Flask-Login"
+        "desc": "login com email+senha, hash bcrypt, sessão via cookie seguro"
       },
       {
         "id": "competitors",
-        "desc": "CRUD de concorrentes: nome, URL da página de pricing, notas"
+        "desc": "cadastro de concorrentes com URL da página de pricing para monitoramento"
       },
       {
-        "id": "price-monitor",
-        "desc": "Job agendado (APScheduler) que faz scrape das páginas de pricing, detecta mudanças via diff de texto e alerta o usuário"
+        "id": "snapshot",
+        "desc": "crawler agendado que captura snapshot da pricing page (texto + hash) e detecta diff vs versão anterior"
       },
       {
         "id": "alerts",
-        "desc": "Notificação por email (SendGrid/SMTP) quando mudança de preço é detectada, com snapshot antes/depois"
+        "desc": "email automático quando mudança é detectada, com diff destacando o que mudou"
       },
       {
         "id": "dashboard",
-        "desc": "Painel com timeline de mudanças detectadas por concorrente, filtro por data e status lido/não-lido"
+        "desc": "timeline de mudanças por concorrente com histórico de snapshots e diffs visuais"
       }
     ],
     "db_tables": [
       {
         "name": "users",
-        "columns": "id PK, email UNIQUE, password_hash, created_at"
+        "columns": "id PK, email UNIQUE, password_hash, plan TEXT DEFAULT 'free', created_at"
       },
       {
         "name": "competitors",
-        "columns": "id PK, user_id FK, name, pricing_url, notes, created_at"
+        "columns": "id PK, user_id FK, name, pricing_url, check_interval_hours DEFAULT 24, created_at"
       },
       {
         "name": "snapshots",
-        "columns": "id PK, competitor_id FK, content_hash, content_text, captured_at"
+        "columns": "id PK, competitor_id FK, content_text, content_hash, captured_at"
       },
       {
         "name": "alerts",
-        "columns": "id PK, snapshot_id FK, user_id FK, diff_summary, is_read BOOL DEFAULT 0, created_at"
+        "columns": "id PK, snapshot_id FK, user_id FK, diff_summary, sent_at, read_at"
       }
     ],
     "routes": [
@@ -148,51 +149,57 @@
       },
       {
         "path": "/register",
-        "method": "GET|POST",
+        "method": "POST",
         "handler": "register",
-        "desc": "cadastro de usuário"
+        "desc": "cria conta"
       },
       {
         "path": "/login",
-        "method": "GET|POST",
+        "method": "POST",
         "handler": "login",
-        "desc": "login"
+        "desc": "autentica usuário"
       },
       {
         "path": "/dashboard",
         "method": "GET",
         "handler": "dashboard",
-        "desc": "painel com alertas recentes e resumo"
+        "desc": "timeline de alertas e mudanças recentes"
       },
       {
         "path": "/competitors",
-        "method": "GET|POST",
-        "handler": "competitors",
-        "desc": "listar e adicionar concorrentes"
+        "method": "GET",
+        "handler": "list_competitors",
+        "desc": "lista concorrentes monitorados"
+      },
+      {
+        "path": "/competitors",
+        "method": "POST",
+        "handler": "add_competitor",
+        "desc": "adiciona URL de pricing para monitorar"
       },
       {
         "path": "/competitors/<id>",
-        "method": "GET|PUT|DELETE",
-        "handler": "competitor_detail",
-        "desc": "ver, editar ou remover concorrente"
+        "method": "DELETE",
+        "handler": "remove_competitor",
+        "desc": "remove concorrente"
       },
       {
-        "path": "/competitors/<id>/snapshots",
+        "path": "/competitors/<id>/history",
         "method": "GET",
-        "handler": "snapshots",
-        "desc": "histórico de snapshots e diffs de um concorrente"
+        "handler": "snapshot_history",
+        "desc": "histórico de snapshots com diffs"
+      },
+      {
+        "path": "/competitors/<id>/check",
+        "method": "POST",
+        "handler": "manual_check",
+        "desc": "força snapshot manual agora"
       },
       {
         "path": "/alerts",
         "method": "GET",
-        "handler": "alerts",
-        "desc": "lista de alertas com filtro lido/não-lido"
-      },
-      {
-        "path": "/alerts/<id>/read",
-        "method": "POST",
-        "handler": "mark_read",
-        "desc": "marcar alerta como lido"
+        "handler": "list_alerts",
+        "desc": "lista alertas enviados"
       }
     ],
     "env_vars": [
@@ -202,15 +209,14 @@
       "SMTP_PORT",
       "SMTP_USER",
       "SMTP_PASS",
-      "FROM_EMAIL",
-      "CHECK_INTERVAL_HOURS"
+      "FROM_EMAIL"
     ],
     "pricing_plan": {
-      "free": "Até 3 concorrentes monitorados, check a cada 24h, alertas no dashboard apenas",
-      "pro": "Até 20 concorrentes, check a cada 6h, alertas por email em tempo real, histórico ilimitado de snapshots — R$47/mês"
+      "free": "até 2 concorrentes, check diário, histórico 30 dias",
+      "pro": "até 15 concorrentes, check a cada 6h, histórico ilimitado, diff detalhado com resumo IA — R$79/mês"
     }
   },
-  "build_summary": "Pronto. Todos os arquivos foram criados/reescritos:\n\n- **`app.py`** (~340 linhas) — App Flask completo com todas as 9 rotas da spec: landing, register, login, dashboard (com filtros de data e status), CRUD de concorrentes (GET/POST + GET/PUT/DELETE via `_method`), snapshots por concorrente, lista de alertas com filtro lido/nao-lido, e marcar alerta como lido via htmx. Inclui scraper com BeautifulSoup, diff com `difflib`, email SMTP, APScheduler rodando em background, e verificacao manual.\n- **8 templates** — `base.html` (htmx + Tailwind CDN), `index.html` (landing interna), `login.html`, `register.html`, `dashboard.html` (com stats + filtros + timeline), `competitors.html` (listagem + form de adicionar), `competitor_detail.html` (editar/remover), `snapshots.html` (historico com diff inline), `alerts.html` (filtro lido/nao-lido + marcar via htmx).\n- **`landing.html`** — Pagina estatica com CSS inline, design escuro, headline + 3 features + CTA.\n- **`requirements.txt`**, **`.env.example`**, **`README.md`** — Tudo documentado e pronto pra rodar com `pip install -r requirements.txt && python app.py`.",
+  "build_summary": "MVP completo reescrito. Foram atualizados/criados **9 arquivos**: `app.py` (~310 linhas, todas as rotas da spec funcionando com schema correto: `users` com `plan`, `competitors` com `check_interval_hours`, `alerts` com `sent_at`/`read_at`), `templates/base.html` (htmx + Tailwind CDN), `templates/index.html`, `templates/login.html`, `templates/register.html`, `templates/dashboard.html` (timeline + stats), `templates/competitors.html` (CRUD + delete via htmx), `templates/history.html` (novo, com diff textual e diff visual lado a lado via `HtmlDiff`), `templates/alerts.html` (marcacao lido via htmx), `requirements.txt` (5 deps, sem APScheduler), `.env.example`, `README.md`, e `landing.html` (pagina estatica com design escuro, inline CSS, deployavel em Netlify). O DB e criado automaticamente no startup, email degrada graciosamente se SMTP nao estiver configurado, e todas as rotas da spec (`/`, `/register`, `/login`, `/dashboard`, `/competitors` GET/POST, `/competitors/<id>` DELETE, `/competitors/<id>/history`, `/competitors/<id>/check`, `/alerts`) estao implementadas e funcionais.",
   "validation": {
     "ok": true,
     "missing_files": [],
@@ -224,13 +230,17 @@
       "templates\\login.html",
       "templates\\register.html",
       "templates\\dashboard.html",
-      "templates\\competitor_detail.html",
       "templates\\competitors.html",
-      "templates\\snapshots.html",
-      "templates\\alerts.html"
+      "templates\\alerts.html",
+      "templates\\history.html",
+      "affiliate\\index.html",
+      "multilingual\\en\\landing.html",
+      "multilingual\\es\\landing.html",
+      "legal\\cookie_notice.html",
+      "upsells\\order_bump.html"
     ],
     "compile_errors": [],
-    "total_size_bytes": 33272902,
-    "file_count": 154
+    "total_size_bytes": 47317011,
+    "file_count": 224
   }
 }

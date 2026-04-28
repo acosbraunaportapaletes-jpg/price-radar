@@ -1,0 +1,7 @@
+Como enviar:
+1. Abre https://sell.appsumo.com
+2. Clica 'Get listed' ou 'Apply to partner'
+3. Cola o conteúdo de partner_application.md nos campos correspondentes
+4. Aceita terms + envia
+5. Review humana da AppSumo — demora 2-4 semanas
+6. Se aprovado, eles te contatam por email pra firmar deal

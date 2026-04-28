@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Historico — {{ competitor.name }} — PriceRadar{% endblock %}
+{% block content %}
+<div class="mb-6">
+    <a href="/competitors" class="text-sm text-gray-500 hover:text-gray-300">&larr; Concorrentes</a>
+</div>
+
+<div class="flex items-center justify-between mb-8">
+    <div>
+        <h1 class="text-2xl font-bold">Historico de {{ competitor.name }}</h1>
+        <p class="text-sm text-gray-500 mt-1">{{ competitor.pricing_url }}</p>
+    </div>
+    <form method="POST" action="/competitors/{{ competitor.id }}/check">
+        <button type="submit" class="btn-primary text-sm">Capturar agora</button>
+    </form>
+</div>
+
+{% if diffs %}
+<div class="space-y-3">
+    {% for item in diffs %}
+    <div class="card p-5">
+        <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-3">
+                <span class="text-sm text-gray-300 font-medium">{{ item.snapshot.captured_at[:19] }}</span>
+                <span class="text-xs text-gray-600 font-mono">{{ item.snapshot.content_hash[:16] }}...</span>
+                <span class="text-xs text-gray-500">{{ (item.snapshot.content_text or '')|length }} chars</span>
+            </div>
+            {% if item.changed %}
+                <span class="badge badge-alert">Mudanca detectada</span>
+            {% endif %}
+        </div>
+
+        {% if item.changed and item.diff_text %}
+        <details class="mt-2">
+            <summary class="text-xs text-indigo-400 cursor-pointer hover:underline">Ver diff (texto)</summary>
+            <pre class="text-xs text-gray-400 mt-2 p-3 bg-gray-900 rounded-lg overflow-x-auto whitespace-pre-wrap max-h-64 overflow-y-auto">{{ item.diff_text }}</pre>
+        </details>
+        {% endif %}
+
+        {% if item.changed and item.diff_html %}
+        <details class="mt-2">
+            <summary class="text-xs text-yellow-400 cursor-pointer hover:underline">Ver diff visual (lado a lado)</summary>
+            <div class="mt-2 p-3 bg-gray-900 rounded-lg overflow-x-auto max-h-96 overflow-y-auto text-xs">
+                {{ item.diff_html | safe }}
+            </div>
+        </details>
+        {% endif %}
+
+        <details class="mt-2">
+            <summary class="text-xs text-gray-500 cursor-pointer hover:text-gray-300">Ver conteudo capturado</summary>
+            <pre class="text-xs text-gray-400 mt-2 p-3 bg-gray-900 rounded-lg overflow-x-auto whitespace-pre-wrap max-h-64 overflow-y-auto">{{ item.snapshot.content_text[:5000] }}</pre>
+        </details>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="card p-8 text-center text-gray-500">
+    Nenhum snapshot capturado ainda. Clique "Capturar agora" para o primeiro.
+</div>
+{% endif %}
+{% endblock %}

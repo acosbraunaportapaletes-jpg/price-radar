@@ -3,13 +3,13 @@
 ## Dados pra preencher em dashboard.kiwify.com.br
 
 - **Nome do produto**: PriceRadar
-- **Preço**: R$ 67.00
+- **Preço**: R$ 47.00
 - **Descrição curta**: Saiba quando seu concorrente muda o preço antes do seu prospect.
 - **Descrição longa**:
 
 Saiba quando seu concorrente muda o preço antes do seu prospect.
 
-SaaS founders não têm processo estruturado para detectar mudanças de preço de concorrentes, perdendo deals por falta de inteligência competitiva
+Fundadores SaaS não têm processo sistemático para detectar mudanças de preço/posicionamento de concorrentes, perdendo deals por falta de inteligência competitiva atualizada
 
 - **Categoria**: Tecnologia / Educação Digital
 - **Tipo**: Pagamento único

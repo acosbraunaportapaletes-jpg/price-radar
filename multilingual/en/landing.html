@@ -1,0 +1,96 @@
+```html
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PriceRadar — Know when your competitor changes pricing before your prospect does.</title>
+<meta name="description" content="Know when your competitor changes pricing before your prospect does."/>
+<meta property="og:title" content="PriceRadar"/>
+<meta property="og:description" content="Know when your competitor changes pricing before your prospect does."/>
+<meta property="og:image" content="og_image.png"/>
+<meta property="og:type" content="product"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="PriceRadar"/>
+<meta name="twitter:description" content="Know when your competitor changes pricing before your prospect does."/>
+<meta name="twitter:image" content="og_image.png"/>
+<link rel="icon" href="logo.png"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {theme:{extend:{colors:{primary:'#8fd6a0',dark:'#0b0d10'}}}}
+</script>
+<style>
+body { background: #0b0d10; color: #d7dde3; font-family: 'Inter', system-ui, sans-serif; }
+.gradient-bg { background: radial-gradient(circle at 20% 20%, #1a3a2a 0%, #0b0d10 60%); }
+.fade-in { animation: fadeIn 0.8s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body class="min-h-screen">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full bg-dark/80 backdrop-blur-lg border-b border-gray-800 z-50">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="logo.png" alt="PriceRadar" class="w-8 h-8 rounded"/>
+      <span class="font-bold text-white">PriceRadar</span>
+    </div>
+    <a href="#buy" class="bg-primary text-dark px-5 py-2 rounded-lg font-semibold hover:bg-green-400 transition">Buy now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="gradient-bg pt-32 pb-20 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <div class="fade-in">
+      <span class="inline-block bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-semibold mb-6">JUST LAUNCHED</span>
+      <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">Know when your competitor changes pricing before your prospect does.</h1>
+      <p class="text-xl text-gray-300 mb-8 leading-relaxed">Know when your competitor changes pricing before your prospect does.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#buy" class="bg-primary text-dark px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition inline-block text-center">Buy for $9</a>
+        <a href="#how-it-works" class="border border-gray-700 text-white px-8 py-4 rounded-lg font-semibold hover:border-primary transition inline-block text-center">How it works</a>
+      </div>
+      <div class="mt-6 flex items-center gap-2 text-sm text-gray-400">
+        <span>✓ Instant access after purchase</span>
+        <span>·</span>
+        <span>✓ 7-day money-back guarantee</span>
+      </div>
+    </div>
+    <div class="fade-in">
+      <img src="cover.png" alt="PriceRadar" class="rounded-2xl shadow-2xl border border-gray-800"/>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="py-20 px-6 border-t border-gray-800">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Sound familiar?</h2>
+    <p class="text-xl text-gray-400">SaaS founders have no systematic way to detect competitor pricing or positioning changes — and end up losing deals because their competitive intel is always stale.</p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="how-it-works" class="py-20 px-6 border-t border-gray-800">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-14">What you get</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Email + password auth with bcrypt hashing and Flask-Login sessions</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Competitor CRUD: name, pricing page URL, and notes</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Scheduled job (APScheduler) that scrapes pricing pages, detects changes via text diff, and alerts you</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Email notification (SendGrid/SMTP) when a pricing change is detected, with before/after snapshots</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">Dashboard with a timeline of detected changes per competitor, filterable by date and read/unread status</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING / BUY -->
+<section id="buy" class="py-20 px-6 border-t border-gray-800 gradient-bg">
+  <div class="max-w-2xl mx-auto">
+    <div class="bg-gray-900/80 backdrop-blur border border-gray-800 rounded-2xl p-10 text-center">
+      <h2 class="text-2xl font-bold text-white mb-2">PriceRadar</h2>
+      <p class="text-gray-400 mb-8">Know when your competitor changes pricing before your prospect does.</p>
+      <div class="text-5xl font-extrabold text-primary mb-2">$9</div>
+      <p class="text-sm text-gray-500 mb-8">One-time payment · Lifetime access</p>
+      <ul class="text-left space-y-3 mb-10">
+```

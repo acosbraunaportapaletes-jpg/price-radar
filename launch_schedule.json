@@ -1,0 +1,67 @@
+{
+  "slug": "price-radar",
+  "product_name": "PriceRadar",
+  "created_at": "2026-04-27T23:36:04.743283+00:00",
+  "events": [
+    {
+      "scheduled_for": "2026-04-27T13:36:04.743283+00:00",
+      "action": "post_social",
+      "slug": "price-radar",
+      "params": {
+        "channels": [
+          "telegram_channel",
+          "x_thread"
+        ]
+      },
+      "status": "pending"
+    },
+    {
+      "scheduled_for": "2026-04-27T20:36:04.743283+00:00",
+      "action": "post_social",
+      "slug": "price-radar",
+      "params": {
+        "channels": [
+          "linkedin"
+        ]
+      },
+      "status": "pending"
+    },
+    {
+      "scheduled_for": "2026-04-28T12:36:04.743283+00:00",
+      "action": "send_email_launch",
+      "slug": "price-radar",
+      "params": {},
+      "status": "pending"
+    },
+    {
+      "scheduled_for": "2026-04-29T14:36:04.743283+00:00",
+      "action": "reddit_post",
+      "slug": "price-radar",
+      "params": {},
+      "status": "pending"
+    },
+    {
+      "scheduled_for": "2026-04-30T15:36:04.743283+00:00",
+      "action": "outreach_extra",
+      "slug": "price-radar",
+      "params": {
+        "n_dms": 10
+      },
+      "status": "pending"
+    },
+    {
+      "scheduled_for": "2026-05-02T16:36:04.743283+00:00",
+      "action": "product_hunt",
+      "slug": "price-radar",
+      "params": {},
+      "status": "pending"
+    },
+    {
+      "scheduled_for": "2026-05-04T14:36:04.743283+00:00",
+      "action": "performance_review",
+      "slug": "price-radar",
+      "params": {},
+      "status": "pending"
+    }
+  ]
+}

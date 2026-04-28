@@ -1,7 +1,7 @@
 # Mercado Livre — draft (API falhou)
 
 Titulo: PriceRadar
-Preco: R$ 67.00
+Preco: R$ 47.00
 
 PRICERADAR - MATERIAL DIGITAL COMPLETO
 

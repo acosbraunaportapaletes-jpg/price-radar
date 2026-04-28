@@ -1,25 +1,25 @@
-# PriceRadar — Product Hunt Launch Post
+## Product Hunt Launch Post — PriceRadar
 
 ---
 
-## Tagline (55 chars)
-**Know when competitors change pricing before your prospects do.**
+**Tagline (55 chars):**
+
+> Know when competitors change pricing. Before prospects do.
 
 ---
 
-## Description (258 chars)
-**PriceRadar monitors your competitors' pricing pages and alerts you in real time when they change prices, plans, or positioning. Stop losing deals to outdated competitive intel. Set up in 2 minutes — just paste competitor URLs and get Slack/email alerts.**
+**Description (258 chars):**
+
+> PriceRadar monitors your competitors' pricing pages and alerts you instantly when something changes. Stop losing deals because a prospect found a better price you didn't know about. Set up in 2 minutes. Track unlimited competitors. Built for B2B SaaS teams.
 
 ---
 
-## Maker Comment
+**Maker Comment:**
 
-**Hey Product Hunt! 👋**
+Last quarter I lost a $28K deal. The prospect told me: "Your competitor dropped their price 3 weeks ago — you didn't know?" I didn't. I felt stupid. I went through my Slack, my inbox, my bookmarks — zero process to catch that. I was checking competitor pages manually, maybe once a month, when I remembered. That's not competitive intelligence. That's hope.
 
-I'm launching PriceRadar today and it comes from a pain I lived firsthand. I run a B2B SaaS and last quarter I lost a deal because the prospect told me: "Your competitor just dropped their price 20%." I had no idea. I checked — they'd changed it two weeks earlier. I felt blind. That's when I realized: I was tracking competitors' blog posts, their Twitter, their feature launches… but nobody was watching the one page that matters most — their pricing page.
+So I built PriceRadar. It watches your competitors' pricing pages 24/7 and pings you the moment anything changes — new tiers, price drops, feature bundling shifts, plan restructuring. You get the full before/after diff, so your sales team can adjust positioning the same day, not three weeks later.
 
-So I built PriceRadar. You paste your competitors' pricing URLs, and we monitor them continuously. When anything changes — a new plan, a price increase, a repositioned tier, even a removed feature from a plan — you get an instant alert on Slack or email with a clear before/after diff. No more manually checking pages. No more being the last to know.
+We're laser-focused on B2B SaaS teams (5-50 people) competing in crowded markets. If you have 3+ direct competitors and your revenue depends on smart positioning, this is for you. Setup takes 2 minutes — just paste the URLs you want to track. No code, no integrations required to start.
 
-This is built specifically for SaaS founders and sales leaders competing in crowded markets. If you have 3+ direct competitors and a sales team that needs to handle objections in real time, this gives you an unfair advantage. We're starting with pricing pages but expanding to full positioning tracking (landing pages, feature comparisons, messaging changes).
-
-I'd love your honest feedback — what would make this a must-have for your stack? Drop a comment or roast the landing page, all feedback is welcome. Happy to answer any questions! 🚀
+We're launching today with a free tier so you can try it risk-free. I'd love your honest feedback — what would make this a must-have in your stack? Drop a comment, I read and reply to every single one. 🙏

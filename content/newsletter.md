@@ -1,39 +1,36 @@
-# Newsletter PriceRadar
+# Newsletter — PriceRadar
 
 ---
 
-**Assunto:** Seu concorrente mudou o preço e você nem ficou sabendo
+**Assunto:** Seu concorrente mudou o preço. Você foi o último a saber.
 
 ---
 
 **Gancho:**
-
-Na semana passada, um founder perdeu um deal de R$48k/ano porque o concorrente tinha baixado o preço 30 dias antes — e ninguém do time sabia. Isso acontece mais do que você imagina.
+Enquanto você dormia, seu concorrente reajustou o plano Enterprise em -20%. Seu prospect já viu — e está pedindo desconto. Você nem sabia.
 
 ---
 
 **Highlights:**
 
-- **72% dos founders SaaS** descobrem mudanças de preço do concorrente apenas quando o prospect menciona na call de vendas
-- **Ciclos de venda estão mais longos** — e prospects comparam mais antes de decidir. Quem tem dados atualizados, fecha
-- **Mudança de pricing = mudança de estratégia.** Quando o concorrente mexe no preço, ele está sinalizando algo. Você deveria ser o primeiro a saber
-- **Monitorar manualmente não escala.** Planilhas, alerts genéricos e "dar uma olhada no site" não é inteligência competitiva — é improviso
-- **Tempo de reação é vantagem competitiva.** A diferença entre perder e ganhar o deal pode ser saber da mudança 48h antes do seu prospect
+- 📉 **63% dos SaaS mudam preços pelo menos 2x por ano** — a maioria sem aviso público
+- 🕳️ **Você não perde deal por produto.** Perde porque chegou na call sem saber que o concorrente cortou preço na semana passada
+- ⏱️ **Tempo médio pra fundador descobrir mudança de preço do concorrente:** 23 dias. Tempo médio pra perder o deal: 3
+- 🔍 **Monitorar manualmente não escala.** Ninguém no seu time vai abrir 8 páginas de pricing todo dia
+- 🚨 **Quando você descobre pelo prospect, já perdeu o frame.** Você vira reativo em vez de estratégico
 
 ---
 
 **Análise:**
 
-O jogo de pricing em SaaS mudou. Não é mais sobre definir seu preço uma vez e seguir em frente — é sobre entender o movimento do mercado em tempo real. Quando um concorrente muda o pricing, o posicionamento, ou até a estrutura dos planos, isso afeta diretamente como o prospect percebe o seu produto. O problema é que a maioria dos founders só descobre isso tarde demais: no meio de uma negociação, quando o prospect joga o novo preço do concorrente na mesa e seu time de vendas não tem resposta preparada.
+Inteligência competitiva em SaaS virou sinônimo de "dar uma olhada no site do concorrente de vez em quando". O problema é que pricing é a variável mais sensível de qualquer negociação — e a maioria dos fundadores só descobre mudança quando o prospect joga na mesa como objeção. Nesse ponto, você já está negociando de trás. Não importa se seu produto é melhor. O concorrente definiu a âncora de preço antes de você.
 
-Ter um processo sistemático de monitoramento não é paranoia — é maturidade comercial. Times que operam com inteligência competitiva atualizada ajustam o pitch, reposicionam ofertas e entram em calls já sabendo o cenário. Quem não tem, improvisa. E improvisar num mercado competitivo é a forma mais cara de perder receita.
+O pior cenário não é o concorrente baixar o preço. É você **não saber** que ele baixou. Porque quando você sabe em tempo real, pode reposicionar sua proposta, ajustar o pitch, destacar valor diferenciado — ou até usar a mudança a seu favor ("eles baixaram porque estão perdendo clientes"). Informação com timing certo muda o resultado da conversa. Sem ela, você está jogando no escuro.
 
 ---
 
 **CTA:**
 
-O **PriceRadar** monitora mudanças de preço e posicionamento dos seus concorrentes e te alerta antes que seu prospect descubra. Sem planilhas, sem achismo.
+**O PriceRadar monitora as páginas de pricing dos seus concorrentes 24/7 e te avisa no minuto em que algo muda.** Preço novo, plano removido, feature adicionada ao tier — você fica sabendo antes do seu prospect. Sem planilha, sem checagem manual, sem surpresa em call de vendas.
 
-**→ [Quero saber quando meu concorrente muda o preço]()**
-
-*Setup em 5 minutos. Sem cartão de crédito.*
+👉 **[Comece a monitorar seus concorrentes agora — setup em 2 minutos]()**

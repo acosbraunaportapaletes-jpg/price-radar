@@ -1,0 +1,122 @@
+{
+  "name": "PriceRadar",
+  "slug": "price-radar",
+  "pitch": "Know when your competitor changes pricing before your prospect does.",
+  "stack": [
+    "python",
+    "flask",
+    "sqlite",
+    "htmx"
+  ],
+  "core_features": [
+    {
+      "id": "auth",
+      "desc": "Email + password login, bcrypt hashing, Flask-Login session management"
+    },
+    {
+      "id": "competitors",
+      "desc": "Competitor management: name, pricing page URL, notes"
+    },
+    {
+      "id": "price-monitor",
+      "desc": "Scheduled job (APScheduler) that scrapes pricing pages, detects changes via text diff, and alerts the user"
+    },
+    {
+      "id": "alerts",
+      "desc": "Email notification (SendGrid/SMTP) when a price change is detected, with before/after snapshot"
+    },
+    {
+      "id": "dashboard",
+      "desc": "Dashboard with a timeline of detected competitor changes, filterable by date and read/unread status"
+    }
+  ],
+  "db_tables": [
+    {
+      "name": "users",
+      "columns": "id PK, email UNIQUE, password_hash, created_at"
+    },
+    {
+      "name": "competitors",
+      "columns": "id PK, user_id FK, name, pricing_url, notes, created_at"
+    },
+    {
+      "name": "snapshots",
+      "columns": "id PK, competitor_id FK, content_hash, content_text, captured_at"
+    },
+    {
+      "name": "alerts",
+      "columns": "id PK, snapshot_id FK, user_id FK, diff_summary, is_read BOOL DEFAULT 0, created_at"
+    }
+  ],
+  "routes": [
+    {
+      "path": "/",
+      "method": "GET",
+      "handler": "landing",
+      "desc": "landing page com pitch e CTA de cadastro"
+    },
+    {
+      "path": "/register",
+      "method": "GET|POST",
+      "handler": "register",
+      "desc": "cadastro de usuário"
+    },
+    {
+      "path": "/login",
+      "method": "GET|POST",
+      "handler": "login",
+      "desc": "login"
+    },
+    {
+      "path": "/dashboard",
+      "method": "GET",
+      "handler": "dashboard",
+      "desc": "painel com alertas recentes e resumo"
+    },
+    {
+      "path": "/competitors",
+      "method": "GET|POST",
+      "handler": "competitors",
+      "desc": "listar e adicionar concorrentes"
+    },
+    {
+      "path": "/competitors/<id>",
+      "method": "GET|PUT|DELETE",
+      "handler": "competitor_detail",
+      "desc": "ver, editar ou remover concorrente"
+    },
+    {
+      "path": "/competitors/<id>/snapshots",
+      "method": "GET",
+      "handler": "snapshots",
+      "desc": "histórico de snapshots e diffs de um concorrente"
+    },
+    {
+      "path": "/alerts",
+      "method": "GET",
+      "handler": "alerts",
+      "desc": "lista de alertas com filtro lido/não-lido"
+    },
+    {
+      "path": "/alerts/<id>/read",
+      "method": "POST",
+      "handler": "mark_read",
+      "desc": "marcar alerta como lido"
+    }
+  ],
+  "env_vars": [
+    "SECRET_KEY",
+    "DATABASE_URL",
+    "SMTP_HOST",
+    "SMTP_PORT",
+    "SMTP_USER",
+    "SMTP_PASS",
+    "FROM_EMAIL",
+    "CHECK_INTERVAL_HOURS"
+  ],
+  "pricing_plan": {
+    "free": "Até 3 concorrentes monitorados, check a cada 24h, alertas no dashboard apenas",
+    "pro": "Até 20 concorrentes, check a cada 6h, alertas por email em tempo real, histórico ilimitado de snapshots — R$47/mês"
+  },
+  "_lang": "en"
+}

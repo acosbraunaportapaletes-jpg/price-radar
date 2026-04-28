@@ -1,35 +1,49 @@
-# Ads Copy — PriceRadar
+# PriceRadar — 3 Variantes de Ad Copy
 
 ---
 
 ## Variante A — DOR
 
-**Headline:** Cansou de perder deal por preço?
-**Primary Text:** Seu concorrente mudou o pricing e você só descobriu quando o prospect falou. O PriceRadar monitora e te alerta em tempo real.
-**CTA:** `Quero Monitorar Agora`
+**Headline (38 chars)**
+`Cansou de perder deal pro concorrente?`
+
+**Primary Text (124 chars)**
+`Seu concorrente mudou o preço e você só soube depois que perdeu o deal. PriceRadar te alerta em tempo real. Nunca mais no escuro.`
+
+**CTA:** `Quero monitorar agora`
 
 ---
 
 ## Variante B — RESULTADO
 
-**Headline:** Saiba a mudança de preço em 5 min
-**Primary Text:** PriceRadar rastreia o pricing dos seus concorrentes e te avisa antes do seu prospect perceber. Setup rápido, zero planilha.
-**CTA:** `Testar Grátis`
+**Headline (40 chars)**
+`Em 2 min, monitore todo concorrente seu`
+
+**Primary Text (122 chars)**
+`Configure uma vez. Receba alertas sempre que um concorrente mudar preço. Ajuste sua proposta antes do prospect comparar.`
+
+**CTA:** `Começar em 2 minutos`
 
 ---
 
 ## Variante C — CURIOSIDADE
 
-**Headline:** O alerta que fecha deals sozinho
-**Primary Text:** Fundadores SaaS estão usando um truque simples pra saber quando o concorrente muda de preço — e ajustar a oferta na hora.
-**CTA:** `Ver Como Funciona`
+**Headline (39 chars)**
+`O alerta que SaaS founders escondem 🤫`
+
+**Primary Text (125 chars)**
+`Tem founder fechando deal porque sabe na hora que o concorrente mexeu no preço. A vantagem? Uma ferramenta de R$ 0 pra testar.`
+
+**CTA:** `Descobrir como funciona`
 
 ---
 
-### Checklist de limites
+### Notas de uso
 
-| Variante | Headline | Primary Text |
-|----------|----------|-------------|
-| A | 38 chars | 124 chars |
-| B | 39 chars | 119 chars |
-| C | 38 chars | 125 chars |
+| Campo | Meta Ads | Google Ads |
+|---|---|---|
+| Headline | Aparece abaixo da imagem | Título do anúncio (Headline 1 + 2) |
+| Primary Text | Texto acima da imagem | Descrição |
+| CTA | Botão nativo (selecionar o mais próximo) | Extensão de CTA / sitelink |
+
+> **Dica:** No Meta, o CTA é pré-definido — use **"Saiba mais"** como fallback se o texto customizado não estiver disponível. No Google, encaixe o CTA como extensão de chamada ou no final da descrição.

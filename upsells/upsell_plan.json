@@ -1,0 +1,27 @@
+{
+  "order_bump": {
+    "name": "Bônus: templates extras + vídeo tutorial",
+    "price_brl": 11.75,
+    "description": "+ R$ 11.75 e você leva kit completo de templates pré-prontos + vídeo de onboarding de 20min + suporte prioritário por email.",
+    "cta": "SIM, quero pagar +R$ 11.75 pelo bônus",
+    "expected_conversion": 0.22,
+    "expected_lift_per_sale_brl": 2.585
+  },
+  "one_click_upsell": {
+    "name": "PriceRadar PRO — versão completa",
+    "price_brl": 117.5,
+    "description": "Oferta exclusiva pós-compra (só aparece 1 vez). A versão PRO tem tudo o que o básico tem + licença pra equipe (5 usuários), integrações premium, suporte prioritário e atualizações vitalícias.",
+    "cta": "Upgrar agora por +R$ 70.50",
+    "expected_conversion": 0.1,
+    "expected_lift_per_sale_brl": 7.050000000000001
+  },
+  "cross_sell_email": {
+    "name": "Produto complementar (dia 7)",
+    "price_brl": 35.25,
+    "description": "Email dia 7 sugere produto complementar do catálogo (você precisa ter outros produtos pra usar).",
+    "cta": "Clique pra conhecer",
+    "expected_conversion": 0.04,
+    "expected_lift_per_sale_brl": 1.41
+  },
+  "total_ltv_lift_estimate_brl": 11.045000000000002
+}

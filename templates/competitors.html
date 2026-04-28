@@ -5,18 +5,15 @@
     <h1 class="text-3xl font-bold">Concorrentes</h1>
 </div>
 
-<!-- Add competitor form -->
 <div class="card p-6 mb-8">
     <h2 class="text-lg font-semibold mb-4">Adicionar concorrente</h2>
-    <form method="POST" action="/competitors" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <form method="POST" action="/competitors" class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <input type="text" name="name" required class="input-field" placeholder="Nome do concorrente">
         <input type="url" name="pricing_url" required class="input-field" placeholder="https://concorrente.com/pricing">
-        <input type="text" name="notes" class="input-field" placeholder="Notas (opcional)">
         <button type="submit" class="btn-primary">Adicionar</button>
     </form>
 </div>
 
-<!-- Competitors list -->
 <div>
     <h2 class="text-xl font-semibold mb-4">Seus concorrentes ({{ competitors|length }})</h2>
     {% if competitors %}
@@ -24,13 +21,8 @@
         {% for comp in competitors %}
         <div class="card p-5 flex items-center justify-between" id="comp-{{ comp.id }}">
             <div class="flex-1">
-                <a href="/competitors/{{ comp.id }}" class="text-lg font-semibold text-indigo-400 hover:underline">
-                    {{ comp.name }}
-                </a>
+                <span class="text-lg font-semibold text-indigo-400">{{ comp.name }}</span>
                 <p class="text-sm text-gray-500 mt-1">{{ comp.pricing_url }}</p>
-                {% if comp.notes %}
-                <p class="text-xs text-gray-600 mt-1">{{ comp.notes }}</p>
-                {% endif %}
             </div>
             <div class="flex items-center gap-4 text-sm text-gray-400">
                 <span>{{ comp.snap_count }} snapshots</span>
@@ -40,7 +32,7 @@
                 {% if comp.last_check %}
                 <span>Ultimo: {{ comp.last_check[:16] }}</span>
                 {% endif %}
-                <a href="/competitors/{{ comp.id }}/snapshots" class="btn-secondary text-xs">Historico</a>
+                <a href="/competitors/{{ comp.id }}/history" class="btn-secondary text-xs">Historico</a>
                 <form method="POST" action="/competitors/{{ comp.id }}/check" class="inline">
                     <button type="submit" class="btn-secondary text-xs">Verificar</button>
                 </form>

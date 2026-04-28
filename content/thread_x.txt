@@ -1,26 +1,46 @@
-1/7
-Seu concorrente mudou o preço na terça. Seu vendedor descobriu na sexta — quando o prospect já tinha assinado com eles.
+Here's the thread:
 
-Isso acontece mais do que você imagina.
+---
 
-2/7
-A maioria dos fundadores SaaS monitora concorrente assim: entra no site de vez em quando, pergunta pro time de vendas, ou espera o prospect falar.
+**1/8**
+Perdi um deal de R$180k porque o concorrente baixou o preço 2 semanas antes e eu nem fiquei sabendo.
 
-Isso não é inteligência competitiva. É sorte.
+O prospect só me disse no "não": "achamos uma opção mais em conta."
 
-3/7
-Quando um concorrente muda preço ou posicionamento, você tem uma janela curta pra ajustar seu pitch. Se não sabe que a mudança aconteceu, a janela fecha sem você perceber.
+Isso nunca mais aconteceu. Explico 👇
 
-4/7
-PriceRadar monitora automaticamente os preços e o posicionamento dos seus concorrentes diretos. Mudou algo? Você recebe um alerta antes que o seu prospect descubra por conta própria.
+**2/8**
+O problema real: a maioria dos founders de SaaS não tem processo nenhum pra monitorar preço de concorrente.
 
-5/7
-Funciona assim: você cadastra os concorrentes que quer monitorar. O PriceRadar rastreia páginas de pricing, planos e features. Qualquer alteração vira um alerta no seu inbox com o antes e depois.
+Você descobre que mudaram quando já perdeu o deal. Ou quando alguém posta no LinkedIn.
 
-6/7
-Se você compete num mercado com 3+ players diretos e tem um time de vendas que precisa de argumento atualizado, não dá pra depender de checagem manual. Automação aqui não é luxo — é vantagem competitiva.
+**3/8**
+Pensa no absurdo: você gasta milhares em ads, SDR, conteúdo pra gerar demanda.
 
-7/7
-Quer parar de perder deal por informação desatualizada? Conheça o PriceRadar 🔗
+Aí perde o deal porque não sabia que o concorrente mudou o pricing na terça passada.
 
-https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-b050ffea-30f9-408a-8c0f-0ce90aa87b5f
+**4/8**
+Inteligência competitiva de preço não é luxo. É o básico que ninguém faz.
+
+Quem compete em mercado com 3, 5, 10 players diretos e não monitora isso tá jogando no escuro.
+
+**5/8**
+Criei o PriceRadar exatamente pra resolver isso.
+
+Ele detecta mudanças de preço dos seus concorrentes e te avisa antes que seu prospect descubra sozinho.
+
+**6/8**
+Na prática: você recebe um alerta, ajusta seu posicionamento e entra na call preparado.
+
+Em vez de reagir ao "não", você antecipa a objeção.
+
+**7/8**
+Isso muda o jogo pra quem é Head de Revenue ou founder tocando vendas.
+
+Não é sobre copiar preço. É sobre nunca mais ser pego de surpresa numa negociação.
+
+**8/8**
+Se você tem um SaaS B2B e compete com pelo menos 3 players diretos, o PriceRadar foi feito pra você.
+
+Garanta acesso aqui 🔗
+https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-5861dce7-c0bc-4393-a9bb-09b6b279f610

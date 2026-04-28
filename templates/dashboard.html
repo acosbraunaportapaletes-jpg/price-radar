@@ -6,10 +6,9 @@
     <a href="/competitors" class="btn-primary text-sm">Gerenciar concorrentes</a>
 </div>
 
-<!-- Stats -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
     <div class="card p-5 text-center">
-        <div class="text-3xl font-bold text-indigo-400">{{ total_competitors }}</div>
+        <div class="text-3xl font-bold text-indigo-400">{{ competitor_count }}</div>
         <div class="text-sm text-gray-400 mt-1">Concorrentes</div>
     </div>
     <div class="card p-5 text-center">
@@ -22,30 +21,6 @@
     </div>
 </div>
 
-<!-- Filters -->
-<div class="card p-4 mb-6">
-    <form method="GET" action="/dashboard" class="flex flex-wrap items-end gap-4">
-        <div>
-            <label class="block text-xs text-gray-500 mb-1">Status</label>
-            <select name="status" class="input-field text-sm" style="width:auto;">
-                <option value="all" {% if filter_status == 'all' %}selected{% endif %}>Todos</option>
-                <option value="unread" {% if filter_status == 'unread' %}selected{% endif %}>Nao lidos</option>
-                <option value="read" {% if filter_status == 'read' %}selected{% endif %}>Lidos</option>
-            </select>
-        </div>
-        <div>
-            <label class="block text-xs text-gray-500 mb-1">De</label>
-            <input type="date" name="date_from" value="{{ date_from }}" class="input-field text-sm" style="width:auto;">
-        </div>
-        <div>
-            <label class="block text-xs text-gray-500 mb-1">Ate</label>
-            <input type="date" name="date_to" value="{{ date_to }}" class="input-field text-sm" style="width:auto;">
-        </div>
-        <button type="submit" class="btn-secondary text-sm">Filtrar</button>
-    </form>
-</div>
-
-<!-- Alerts timeline -->
 <h2 class="text-xl font-semibold mb-4">Timeline de alertas</h2>
 {% if alerts %}
 <div class="space-y-3">
@@ -53,27 +28,28 @@
     <div class="card p-4 flex items-center justify-between" id="alert-{{ alert.id }}">
         <div class="flex-1">
             <div class="flex items-center gap-2">
-                <a href="/competitors/{{ alert.competitor_id }}" class="text-indigo-400 hover:underline font-medium">
+                <a href="/competitors/{{ alert.competitor_id }}/history" class="text-indigo-400 hover:underline font-medium">
                     {{ alert.competitor_name }}
                 </a>
-                {% if alert.is_read %}
-                    <span class="badge badge-read">Lido</span>
-                {% else %}
-                    <span class="badge badge-unread">Novo</span>
-                {% endif %}
+                <span id="status-{{ alert.id }}">
+                    {% if alert.read_at %}
+                        <span class="badge badge-read">Lido</span>
+                    {% else %}
+                        <span class="badge badge-unread">Novo</span>
+                    {% endif %}
+                </span>
             </div>
-            <p class="text-xs text-gray-500 mt-1">{{ alert.created_at[:16] }}</p>
-            <pre class="text-xs text-gray-400 mt-2 max-h-20 overflow-hidden whitespace-pre-wrap">{{ alert.diff_summary[:300] }}</pre>
+            <p class="text-xs text-gray-500 mt-1">{{ alert.sent_at[:16] if alert.sent_at else '' }}</p>
+            <pre class="text-xs text-gray-400 mt-2 max-h-20 overflow-hidden whitespace-pre-wrap">{{ alert.diff_summary[:300] if alert.diff_summary else '' }}</pre>
         </div>
         <div class="flex items-center gap-2 ml-4">
-            {% if not alert.is_read %}
+            {% if not alert.read_at %}
             <button hx-post="/alerts/{{ alert.id }}/read"
                     hx-target="#status-{{ alert.id }}"
                     hx-swap="innerHTML"
                     class="btn-secondary text-xs">
                 Marcar lido
             </button>
-            <span id="status-{{ alert.id }}"></span>
             {% endif %}
         </div>
     </div>

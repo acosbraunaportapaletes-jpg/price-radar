@@ -1,19 +1,11 @@
-Seu concorrente baixou o preço ontem e você só vai descobrir quando perder o deal.
+Seu concorrente mudou o preço ontem e você só vai descobrir quando perder o deal.
 
-Semana passada conversei com um founder que perdeu um contrato de R$180k/ano. O prospect disse: "adorei a solução de vocês, mas o concorrente X acabou de lançar um plano 30% mais barato."
+Semana passada conversei com um founder de SaaS B2B que perdeu um contrato de R$180k/ano. O prospect disse na cara: "a gente fechou com o concorrente de vocês, o preço deles caiu 20% e ficou mais atrativo." O founder não fazia ideia que o concorrente tinha mexido na página de pricing. Nem ele, nem o time de vendas, nem o head de revenue. Ninguém. O deal morreu em silêncio.
 
-O founder nem sabia que o concorrente tinha mudado a página de pricing. Ficou sabendo pelo prospect. Na call de fechamento.
+Isso não é exceção. É a regra. A maioria dos SaaS entre 5 e 50 pessoas não tem nenhum processo estruturado para monitorar pricing de concorrente. Zero. O máximo que rola é alguém do time abrir a página de vez em quando — quando lembra. Enquanto isso, seus 3, 4, 5 concorrentes diretos estão testando novos planos, mudando valores, criando bundles, e você fica sabendo pelo prospect na call de negociação. Aí já era. Você virou o cara que reage em vez de antecipar.
 
-Isso não é azar. É falta de processo.
+Inteligência competitiva de verdade não é ler relatório trimestral de analista. É saber em tempo real que o concorrente X removeu o plano Enterprise da página, que o concorrente Y subiu 15% no tier intermediário, que o concorrente Z lançou um plano freemium que não existia na terça. E saber disso antes de entrar na call com o prospect, não depois de perder o deal.
 
-A maioria dos founders de SaaS B2B monitora concorrente assim: entra no site de vez em quando, pergunta pro time de vendas "e aí, o que tão falando do concorrente?", ou pior — espera o prospect trazer a informação na negociação. Quando você descobre a mudança pelo prospect, já perdeu a vantagem. Ele já comparou. Já ancorou no preço mais baixo. E agora você está jogando na defesa.
+Foi exatamente por isso que criamos o PriceRadar. Ele monitora as páginas de pricing dos seus concorrentes e te avisa no momento em que qualquer mudança acontece. Preço novo, plano removido, feature adicionada em um tier, tudo. Você recebe o alerta antes do seu prospect perceber a diferença. Seu time de vendas entra na reunião já sabendo o cenário competitivo atualizado. Seu head de revenue toma decisão de posicionamento com dados frescos, não com achismo de 3 meses atrás.
 
-O problema não é que você não se importa com concorrência. É que ninguém monta um sistema pra isso. Ninguém acorda todo dia e abre as 4 páginas de pricing dos concorrentes. Ninguém rastreia mudança de posicionamento, novo plano, feature que sumiu do site.
-
-Foi exatamente por isso que criamos o PriceRadar.
-
-Ele monitora continuamente as páginas de pricing e posicionamento dos seus concorrentes e te avisa no momento em que algo muda. Preço subiu, preço caiu, plano novo, feature removida, mudança de naming — você recebe o alerta antes de entrar na próxima call de vendas. Não depois de perder o deal.
-
-Imagina seu vendedor entrando na reunião e dizendo: "sei que você está avaliando o concorrente X, e eles mudaram o pricing na semana passada. Deixa eu te mostrar por que, mesmo com essa mudança, a gente entrega mais valor." Isso muda completamente a dinâmica da conversa. Você sai da defesa e assume o controle.
-
-Se o seu time de vendas compete contra 3, 5, 10 players — quantos deals você já perdeu simplesmente porque a informação chegou tarde demais?
+Me conta uma coisa honesta: quando foi a última vez que você checou o pricing de todos os seus concorrentes diretos — e o que te faz acreditar que nada mudou desde então?

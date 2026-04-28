@@ -1,6 +1,6 @@
 # PriceRadar
 
-**Saiba quando seu concorrente muda o preco antes do seu prospect.**
+**Saiba quando seu concorrente muda o preco. Antes do seu prospect.**
 
 ## Como rodar
 
@@ -14,25 +14,36 @@ Acesse `http://localhost:5000`.
 
 ## Features implementadas
 
-- **Auth** — Cadastro e login com email+senha (hash Werkzeug), sessao Flask
-- **CRUD de concorrentes** — Adicione, edite e remova concorrentes com URL da pricing page e notas
-- **Scraper agendado** — APScheduler captura snapshots HTML/texto e detecta diffs automaticamente
-- **Alertas por email** — Notificacao automatica via SMTP quando mudanca e detectada, com diff antes/depois
-- **Dashboard** — Painel com timeline de alertas, filtro por data e status lido/nao-lido
-- **Pagina de alertas** — Lista completa com filtro lido/nao-lido e marcacao via htmx
-- **Historico de snapshots** — Timeline de snapshots por concorrente com diff inline
-- **Verificacao manual** — Force um snapshot a qualquer momento
-- **htmx** — Delete inline, marcar alerta como lido sem reload
+- **Auth** -- Cadastro e login com email+senha (hash Werkzeug), sessao via cookie seguro
+- **Concorrentes** -- Cadastre URLs de pricing pages para monitoramento
+- **Snapshots** -- Crawler captura texto da pricing page, gera hash e detecta diff vs versao anterior
+- **Alertas por email** -- Notificacao automatica via SMTP quando mudanca e detectada, com diff
+- **Dashboard** -- Timeline de mudancas por concorrente com contadores e marcacao lido/nao-lido via htmx
+- **Historico** -- Timeline de snapshots por concorrente com diffs visuais lado a lado
+- **Verificacao manual** -- Force um snapshot a qualquer momento com 1 clique
+- **htmx** -- Delete inline, marcar alerta como lido sem reload
 
 ## Stack
 
-Flask + SQLite + htmx + Tailwind CDN + APScheduler + BeautifulSoup
+Flask + SQLite + htmx + Tailwind CDN + BeautifulSoup
+
+## Env vars
+
+| Variavel | Descricao |
+|---|---|
+| `SECRET_KEY` | Chave secreta Flask para sessoes |
+| `DATABASE_URL` | Caminho do arquivo SQLite |
+| `SMTP_HOST` | Host do servidor SMTP |
+| `SMTP_PORT` | Porta SMTP (default 587) |
+| `SMTP_USER` | Usuario SMTP |
+| `SMTP_PASS` | Senha SMTP |
+| `FROM_EMAIL` | Email remetente dos alertas |
 
 ## Proximos passos
 
+- Scheduler automatico (cron ou APScheduler) para checks periodicos
 - Webhook/Slack notifications
 - Seletor CSS para monitorar apenas a secao de precos
-- Historico de precos com grafico
-- Multi-user com planos (free/pro)
-- Deploy com Docker + cron job externo
 - Puppeteer/Playwright para paginas com JS rendering
+- Multi-user com planos (free/pro) e limites
+- Deploy com Docker

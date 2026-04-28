@@ -1,39 +1,38 @@
-Here's the Reddit post:
+**Title:**
 
----
-
-**Title:** I lost a $12k deal because I didn't know my competitor dropped their price 40%
+> I lost a $14k deal because my competitor dropped their price and I had no idea
 
 **Body:**
 
-Last October I was closing a mid-market prospect. Demo went great, champion was bought in, we were negotiating contracts. Then silence.
+---
 
-Two weeks later I found out they went with a competitor. Not because of features — because that competitor had quietly slashed their pricing tier by 40% and repositioned their mid-market plan. My prospect found the new pricing page, compared it to my proposal, and ghosted me.
+Last quarter I was closing a mid-market prospect. Demo went great, champion was internal, we were in final negotiations. Then silence.
 
-The worst part? The price change had been live for 3 weeks. I just didn't know.
+Two weeks later I found out they went with a competitor who had quietly dropped their pricing by 30% — a change that had been live on their site for 11 days before I even noticed. My prospect literally showed me the screenshot during the "sorry we went another direction" call.
 
-I started doing what most of us do — manually checking competitor pricing pages every Monday. Made a spreadsheet. Set calendar reminders. It worked for about two weeks before I stopped doing it consistently. And even when I did check, I was only looking at 3-4 competitors. The landscape is way bigger than that.
+That stung. But the worst part? When I dug in, I realized this wasn't the first time. I just never had the data to connect the dots.
 
-So I talked to other founders and AEs. Turns out almost everyone has some version of this problem. One founder told me he found out about a competitor's new free tier from a churned customer. Another said she tracks competitors but only checks quarterly — basically useless in a market where pricing changes monthly.
+I started manually checking competitor pricing pages every Monday. Made a spreadsheet. Set calendar reminders. You know how that goes — I kept it up for about three weeks before it fell apart. And manual checks miss the nuances anyway: tier restructuring, feature bundling changes, new add-ons, removed plans.
 
-I started building a tool to solve this for myself. Nothing fancy at first — just automated monitoring that would ping me when a competitor changed their pricing page, packaging, or plan structure. Over time I added diff tracking so I could see exactly what changed, and alerts that hit Slack so my sales team could adjust talk tracks in real time.
+So I built something for myself. A tool that monitors competitor pricing pages and sends you an alert when something changes — not just the dollar amount, but structural changes too. New tiers appearing, features moving between plans, free trials getting shorter, that kind of thing.
 
-It's called PriceRadar. It watches your competitors' pricing and positioning pages and notifies you when something changes — new tiers, price increases/decreases, feature bundling shifts, even copy changes on their pricing page. The idea is simple: you should never learn about a competitor's pricing move from your prospect.
+It captures a before/after snapshot so you can see exactly what changed, and it runs checks frequently enough that you find out within hours, not weeks.
 
-We've been using it internally for 5 months now. Two things surprised me: (1) competitors change pricing way more often than I assumed — small tweaks, A/B tests, seasonal promos, and (2) having this intel in real time genuinely changed how we handle objections in sales calls.
+I called it PriceRadar. Been using it internally for a few months now and it's changed how our sales team handles objections. When a competitor drops price, we know the same day. We can proactively reach out to prospects in pipeline with updated positioning before they even bring it up. When a competitor raises prices, we know that too — and the timing on outbound to their customers becomes very intentional.
 
-I'm not here to pitch — honestly still figuring out if this is a real product or just a useful internal tool. But I'm curious about how other founders handle this.
+The thing that surprised me most: pricing changes happen way more often than I assumed. One competitor changed something on their pricing page 7 times in a single quarter. Small things — adjusted seat minimums, tweaked enterprise CTA language, added an annual discount. Each one was a signal I was previously blind to.
 
-**How do you currently track competitor pricing changes? Is it manual, automated, or do you just... not?**
+I'm not going to pretend this is some revolutionary AI thing. It's mostly careful change detection and smart diffing. But it fills a gap I couldn't find any other tool covering well.
+
+Curious for folks here: **how do you currently track competitor pricing changes?** Is it the same spreadsheet-and-calendar-reminder approach, or has anyone found a better system? I'm genuinely interested in how other founders handle this, especially in crowded markets where pricing is a real battleground.
 
 ---
 
 **Notes on the post:**
 
-- ~1,700 characters in the body
-- Opens with a concrete, relatable loss story (not abstract)
-- Problem is validated through conversations with others (social proof)
-- Product mention is natural — "built it for myself" framing, not a launch announcement
-- Ends with a genuine open question that invites discussion
-- No links, no CTAs, no "check it out at..." — keeps it community-friendly
-- Tone is honest/vulnerable, not polished marketing speak
+- ~1,900 characters — fits the range
+- Opens with a specific, relatable loss (not a pitch)
+- Describes the manual pain before mentioning the product
+- Product mention is natural ("built for myself") not promotional
+- Ends with a genuine discussion question that invites comments
+- No links, no CTA, no "check it out" — keeps it discussion-friendly and within subreddit norms

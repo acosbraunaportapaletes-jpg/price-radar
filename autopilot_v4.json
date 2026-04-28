@@ -1,39 +1,17 @@
 {
   "version": "v4",
   "slug": "price-radar",
-  "started_at": "2026-04-27T18:06:30.803052+00:00",
-  "finished_at": "2026-04-27T18:33:24.238200+00:00",
+  "started_at": "2026-04-27T23:00:27.343672+00:00",
+  "finished_at": "2026-04-27T23:44:05.707403+00:00",
   "target_dir": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar",
-  "verdict": "CAUTION",
+  "verdict": "GO",
   "name": "PriceRadar",
   "pitch": "Saiba quando seu concorrente muda o preço antes do seu prospect.",
-  "format": "prompt_pack",
-  "price_brl": 67.0,
+  "format": "saas",
+  "price_brl": 47.0,
   "stages": {
     "format": {
-      "formato_escolhido": "prompt_pack",
-      "justificativa": "O diferencial central é automação via IA para monitorar pricing pages — o valor está nos prompts prontos que transformam horas em 15min/semana, não em texto explicativo",
-      "ticket_sugerido_brl": 67,
-      "nome_comercial": "Spy Pricing — Prompts de CI",
-      "slug": "spy-pricing-prompts-ci",
-      "entregavel_principal": "Pack com 12 prompts de IA prontos para monitorar, comparar e analisar mudanças de preço de concorrentes SaaS + planilha de tracking integrada",
-      "bonus_sugestao": "Template Notion com dashboard de inteligência competitiva e calendário de checagem semanal",
-      "upsell_futuro": "Versão V2 com prompts para monitorar também features, posicionamento e messaging dos concorrentes — CI completo além de pricing",
-      "format_meta": {
-        "label": "Pack de Prompts Claude/GPT",
-        "ticket_brl": [
-          19,
-          97
-        ],
-        "tempo_build_min": 5,
-        "indicador": "ideia é uso inteligente de IA por nicho"
-      }
-    },
-    "alt_build": {
-      "ok": true,
-      "json": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\price-radar.json",
-      "md": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\price-radar.md",
-      "n_prompts": 0
+      "error": "Command '['C:\\\\Users\\\\Oem\\\\AppData\\\\Roaming\\\\npm\\\\claude.CMD', '-p', '--dangerously-skip-permissions', '--output-format', 'text']' timed out after 900 seconds"
     },
     "visuals": {
       "logo": "visuals\\logo.png",
@@ -54,14 +32,44 @@
     },
     "payment_link": {
       "ok": true,
-      "preference_id": "197881458-9a718799-42eb-4860-8a49-366c7c5ad048",
-      "url": "https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-9a718799-42eb-4860-8a49-366c7c5ad048",
-      "sandbox_url": "https://sandbox.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-9a718799-42eb-4860-8a49-366c7c5ad048",
+      "preference_id": "197881458-b050ffea-30f9-408a-8c0f-0ce90aa87b5f",
+      "url": "https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-b050ffea-30f9-408a-8c0f-0ce90aa87b5f",
+      "sandbox_url": "https://sandbox.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-b050ffea-30f9-408a-8c0f-0ce90aa87b5f",
       "test_mode": false,
       "external_reference": "price-radar"
     },
     "landing_v2": {
       "ok": true
+    },
+    "quality_gate": {
+      "ok": true,
+      "quality_score": 4,
+      "passable": false,
+      "critical_bugs": [
+        "Arquivo truncado: take_snapshot_manual() cortado em 'VALU' — SyntaxError impede import do módulo inteiro",
+        "init_db() nunca é chamado automaticamente (nem em app startup nem via CLI); tabelas não serão criadas",
+        "check_prices() faz db.commit() dentro do loop por competidor mas se uma iteração falhar antes do commit, snapshots anteriores do mesmo lote ficam em estado inconsistente",
+        "Scheduler (BackgroundScheduler) importado mas nunca instanciado/started no código visível — jobs agendados não rodam"
+      ],
+      "security_issues": [
+        "SECRET_KEY com fallback hardcoded 'dev-secret-change-me' — sessions assinadas com chave previsível em produção permitem forjar cookies",
+        "XSS no corpo do e-mail HTML: competitor_name, pricing_url e diff_summary injetados via f-string sem html.escape() — atacante que controla nome do concorrente injeta HTML/JS no e-mail",
+        "SSRF: pricing_url fornecida pelo usuário é passada direto a requests.get() sem validação — permite escanear rede interna (http://169.254.169.254, http://localhost:6379, etc.)",
+        "Sem proteção CSRF (Flask não inclui por padrão); formulários POST de login/cadastro/add competitor vulneráveis a CSRF",
+        "Sem rate-limiting em rotas de auth — brute-force de senha viável",
+        "Sem validação de ownership: current_user() existe mas não há evidência de que rotas verificam se competitor pertence ao user_id da session (IDOR provável)"
+      ],
+      "improvements": [
+        "Usar connection pool ou context manager em vez de sqlite3.connect() direto no scheduler (thread diferente do request)",
+        "Substituir padrão frágil de retorno '[ERROR]' por exceção customizada em scrape_pricing_page()",
+        "timedelta importado mas nunca usado — remover import morto",
+        "datetime.utcnow() deprecated desde Python 3.12 — usar datetime.now(timezone.utc)",
+        "Adicionar índice em snapshots(competitor_id, captured_at DESC) para evitar full scan no ORDER BY",
+        "Adicionar Content-Security-Policy e headers de segurança via Flask-Talisman",
+        "Usar Flask-Migrate/Alembic para evolução do schema em vez de executescript() ad-hoc"
+      ],
+      "verdict": "REWRITE",
+      "reason": "Arquivo incompleto (syntax error por truncamento), sem CSRF, SSRF aberto, XSS em e-mail, secret key hardcoded e init_db() nunca invocado — não é deployável."
     },
     "content_pack_v2": {
       "files": {
@@ -83,7 +91,7 @@
         {
           "stage": "git_commit",
           "ok": true,
-          "stdout": "[main c81f54e] initial build: price-radar\n 45 files changed, 1121 insertions(+), 806 deletions(-)\n create mode 100644 autopilot.json\n create mode 100644 content/ad_copy.md\n create mode 100644 content/email_launch.md\n create mode 100644 content/newsletter.md\n create mode 100644 content/press_release.md\n create mode 100644 content/product_hunt.md\n create mode 100644 content/reddit_post.md\n create mode 100644 content/seo_article.md\n create mode 100644 content/thread_linkedin.txt\n create mode 100644 outreach/candidates.jsonl\n create mode 100644 outreach/messages.jsonl\n create mode 100644 price-radar.json\n create mode 100644 price-radar.md\n delete mode 100644 templates/alerts.html\n create mode 100644 templates/competitor_detail.html\n delete mode 100644 templates/history.html\n create mode 100644 templates/view_diff.html\n create mode 100644 visuals/beneficio_tempo.png\n create mode 100644 visuals/call_to_action.png\n create mode 100644 visuals/checklist_visual.png\n create mode 100644 visuals/cnpj_auto.png\n create mode 100644 visuals/cover.png\n create mode 100644 visuals/depoimentos.png\n create mode 100644 visuals/ferramentas.png\n create mode 100644 visuals/grafico_crescimento.png\n create mode 100644 visuals/kit_arquivos.png\n create mode 100644 visuals/logo.png\n create mode 100644 visuals/mockup_celular.png\n create mode 100644 visuals/mockup_tablet.png\n create mode 100644 visuals/og_image.png\n create mode 100644 visuals/selo_garantia.png\n create mode 100644 visuals/workflow_7_passos.png",
+          "stdout": "[main 7a7a914] initial build: price-radar\n 43 files changed, 1771 insertions(+), 642 deletions(-)\n create mode 100644 autopilot_v4.json\n create mode 100644 deliverables/PriceRadar.pdf\n create mode 100644 listings/eduzz_draft.md\n create mode 100644 listings/hotmart_draft.md\n create mode 100644 listings/kiwify_draft.md\n create mode 100644 listings/mercadolivre_draft.md\n create mode 100644 templates/alerts.html\n create mode 100644 templates/competitors.html\n create mode 100644 templates/snapshots.html\n delete mode 100644 templates/view_diff.html",
           "stderr": ""
         },
         {
@@ -118,105 +126,105 @@
     "deep_debate": {
       "agent_opinions": {
         "Risk": {
-          "score": 4,
+          "score": 5,
           "veredito": "CAUTION",
-          "principal_insight": "O risco binário que mata o produto é a fragilidade do scraping: sites de concorrentes mudam estrutura sem aviso, quebrando a coleta de preços — e sem dados confiáveis, o produto inteiro vira lixo.",
+          "principal_insight": "O risco binário que mata é a fragilidade do scraping: sites de concorrentes mudam estrutura sem aviso, CAPTCHAs e anti-bot bloqueiam coleta, e o produto vira uma casca vazia que não entrega dados — churn imediato e irreversível na reputação.",
           "red_flags": [
-            "Dependência crítica de scraping em páginas de pricing que mudam frequentemente, exigem login ou usam pricing dinâmico/personalizado — uma falha silenciosa entrega dados errados, pior que nenhum dado",
-            "Concorrência massiva assimétrica: Klue/Crayon/Kompyte já têm pipelines de dados maduros e podem lançar tier PME a qualquer momento, esmagando um indie player sem moat técnico",
-            "Muitos SaaS B2B escondem preços (contact sales), tornando a proposta de valor impossível de cumprir para boa parte do mercado-alvo"
+            "Dependência crítica de scraping/crawling de sites terceiros — qualquer mudança de layout, Cloudflare ou rate-limit quebra o core do produto da noite pro dia",
+            "Klue e Crayon já estão descendo pro mid-market e a Semrush (Kompyte) tem distribuição massiva — se qualquer um lançar tier de $99/mês, esmaga o PriceRadar antes de ganhar tração",
+            "Páginas de pricing de SaaS são cada vez mais opacas (custom quotes, 'fale com vendas') — o produto pode simplesmente não conseguir capturar o dado mais valioso"
           ],
           "green_flags": [
-            "Gap real de preço entre enterprise CI tools (US$15-30k) e solução manual (grátis), há espaço para um mid-market",
+            "Incumbentes cobram $15-20k+, deixando gap real de preço no segmento 5-50 funcionários",
             "Dor validada pela demanda nas queries — fundadores realmente buscam isso",
-            "Ticket baixo (US$19-67) reduz fricção de compra e permite validação rápida"
+            "Se funcionar, tem sticky alto: inteligência competitiva vira parte do workflow de vendas"
           ],
-          "recommendation": "Antes de buildar, valide manualmente se consegue extrair preços confiáveis de pelo menos 20 páginas de pricing de SaaS reais — se mais de 30% forem 'contact sales' ou bloquearem scraping, pivote para CI mais amplo ou abandone.",
+          "recommendation": "Antes de buildar, valide manualmente em 20 sites de SaaS concorrentes se o pricing é de fato scrapável de forma confiável — se mais de 40% for 'fale com vendas' ou bloqueado por anti-bot, o produto não tem fundação técnica viável.",
           "weight": 0.2,
           "emoji": "⚠️"
         },
-        "CFO": {
-          "score": 5,
-          "veredito": "CAUTION",
-          "principal_insight": "O pricing de $19-67/mês cria um LTV baixo (~$400-800 com churn típico de SMB) que torna o CAC permitido muito apertado, exigindo aquisição quase orgânica para fechar a conta.",
+        "Growth": {
+          "score": 7,
+          "veredito": "GO",
+          "principal_insight": "O canal de aquisição mais barato é SEO/content targeting long-tail keywords como 'competitor price tracking SaaS' e 'how to monitor competitor pricing' — fundadores SaaS já buscam isso ativamente, o que significa intent alto e CAC baixo via inbound.",
           "red_flags": [
-            "LTV estimado de $400-800 vs CAC provável de $150-300 em paid ads B2B SaaS = payback de 4-6 meses no melhor cenário, sem margem para erro",
-            "Gap enorme entre concorrentes ($15-30k/ano) e seu pricing ($19-67/mês) sugere que o mercado ou paga enterprise ou usa solução gratuita — o meio é terra de ninguém",
-            "One-time info-produto a R$97-347 tem ROI negativo se considerar custo de aquisição + construção; não gera receita recorrente para sustentar o produto"
+            "Loop de viralidade fraco: monitoramento de preço concorrente é uso interno e sigiloso — ninguém compartilha que está espionando concorrentes, matando o viral orgânico",
+            "Mercado de 5-50 funcionários tem ticket baixo ($29-97) com ciclo de venda consultivo (precisa mostrar valor antes), o que pode tornar o CAC/LTV apertado",
+            "Risco de churn alto: fundador configura, descobre os preços dos concorrentes em 2-3 meses e cancela — repeat purchase depende de mudanças frequentes no mercado do cliente"
           ],
           "green_flags": [
-            "Concorrentes caros validam a dor — existe willingness to pay real no mercado, só não nesse tier de preço ainda",
-            "Custo de construção de um MVP de monitoramento de preços é relativamente baixo (scraping + alertas), permitindo break-even rápido se o modelo for recorrente",
-            "SMBs de SaaS B2B são um público que entende valor de ferramentas e tem baixa fricção para adotar self-serve"
+            "Canal de aquisição claro e barato: SEO + comunidades de fundadores (IndieHackers, Twitter SaaS) com conteúdo tipo 'como seu concorrente mudou pricing sem você saber' — alta conversão por ser dor reconhecida",
+            "Produto tem gatilho natural de retenção via alertas por email/Slack — cada alerta de mudança de preço é um momento de valor que justifica a assinatura mensal",
+            "Possível loop de expansion revenue: fundador começa monitorando 1-2 concorrentes, adiciona mais à medida que cresce, upgrade natural de plano"
           ],
-          "recommendation": "Abandone o modelo info-produto e valide um SaaS recorrente a $49-99/mês com trial grátis; só invista em ads após provar conversão orgânica com CAC < $100, caso contrário o unit economics nunca fecha.",
+          "recommendation": "Valide com uma landing page + waitlist segmentando 'SaaS founder competitor pricing' no Google Ads por $200-300 para medir CTR e conversão antes de buildar — se CPL ficar abaixo de $8, o canal de aquisição se paga no primeiro mês de assinatura.",
+          "weight": 0.2,
+          "emoji": "📈"
+        },
+        "CFO": {
+          "score": 6,
+          "veredito": "CAUTION",
+          "principal_insight": "O unit economics é viável no papel (LTV/CAC ~3x possível com ticket de $49-97/mês e churn controlado), mas o payback period fica apertado se depender de paid ads para SMB SaaS — CAC de $150-300 para ticket médio de $60/mês exige 3-5 meses de payback assumindo churn de 5%.",
+          "red_flags": [
+            "CAC para SMB B2B via paid ads é alto ($150-300) e o ticket de $29-97/mês dá margem fina — no pior cenário ($29/mês, CAC $300), payback é 10+ meses com LTV/CAC < 2x",
+            "Mercado com incumbents enterprise (Klue, Crayon) que podem lançar tier SMB a qualquer momento, comprimindo pricing e aumentando CAC",
+            "Willingness to pay de $29-97 sugere que a dor não é percebida como crítica — produtos com dor aguda em vendas B2B costumam justificar $200+/mês"
+          ],
+          "green_flags": [
+            "Gap claro de preço entre planilha grátis e Klue/Crayon a $15-20k/ano — espaço real para um player de $50-100/mês",
+            "Custo de construção baixo (scraping + monitoring é commodity técnica), MVP viável com $3-5k, permitindo testar antes de queimar caixa em ads",
+            "Modelo recorrente com potencial de expansion revenue (mais concorrentes monitorados = upgrade natural)"
+          ],
+          "recommendation": "Valide com $500 em ads apontando para landing page com pricing de $69/mês (mid-range) — se converter >2% em trial signup, o unit economics fecha; abaixo disso, o CAC vai matar o negócio antes do break-even.",
           "weight": 0.25,
           "emoji": "💼"
         },
         "Engineer": {
-          "score": 7,
-          "veredito": "GO",
-          "principal_insight": "O core técnico (scraping de páginas de pricing + diff + notificação) é simples e entregável em 1 semana, mas a manutenção dos scrapers é o risco real — páginas de pricing mudam layout frequentemente e quebram parsers.",
+          "score": 5,
+          "veredito": "CAUTION",
+          "principal_insight": "O core técnico é scraping de pricing pages — funcional na semana 1, pesadelo de manutenção a partir da semana 3, porque cada site quebra o parser independentemente e exige fix manual.",
           "red_flags": [
-            "Scrapers de pricing são frágeis: cada concorrente tem layout diferente, muitos usam JS rendering, e qualquer mudança de HTML quebra a extração — manutenção contínua inevitável",
-            "Pricing de SaaS B2B frequentemente é 'Fale com vendas' ou personalizado, limitando o que se consegue capturar automaticamente",
-            "Anti-bot protections (Cloudflare, rate limiting) podem bloquear scraping de sites maiores, exigindo soluções mais caras (headless browsers, proxies rotativos)"
+            "Scraping de pricing pages é inerentemente frágil: layouts mudam, JS rendering, anti-bot, e cada concorrente monitorado é um ponto de quebra independente",
+            "Extrair dados estruturados de preço a partir de HTML arbitrário requer LLM por request, o que eleva custo operacional (estimativa ~$0.02-0.05/check com GPT-4o) e corrói margem no plano de $29",
+            "Manutenção escala linearmente com número de sites monitorados — quanto mais clientes, mais scrapers quebrando simultaneamente, gerando ticket de suporte"
           ],
           "green_flags": [
-            "MVP genuinamente entregável em 1 semana: cron job + Puppeteer/Playwright + diff textual + email/Slack notification — stack trivial",
-            "Gap de preço enorme entre soluções enterprise ($15-30k/ano) e 'nada' — há espaço claro para um tier acessível de $19-67/mês",
-            "Arquitetura stateless e simples: banco mínimo (URLs + snapshots + diffs), sem auth complexa, sem real-time — baixa complexidade operacional inicial"
+            "MVP em 1 semana é viável se escopo for: input URL → fetch → LLM extract → diff → email alert — stack simples (cron + Puppeteer + LLM + DB)",
+            "LLMs modernos resolvem 80% do parsing sem regras custom por site, reduzindo código de extração a um prompt genérico",
+            "Concorrentes cobram $15-20k, então mesmo uma solução 'boa o suficiente' a $49-97/mês tem proposta de valor clara para o segmento SMB"
           ],
-          "recommendation": "Construa o MVP com abordagem semi-automatizada: scraping para sites simples + fallback de screenshot com diff visual + curadoria manual leve — isso contorna a fragilidade dos parsers e entrega valor real na semana 1.",
+          "recommendation": "Construa o MVP em 1 semana com LLM-based extraction genérico, mas antes de investir mais, valide a taxa de acerto do scraping em 50 pricing pages reais — se ficar abaixo de 85% de reliability, pivote para modelo semi-manual (screenshot + AI summary) que é mais resiliente.",
           "weight": 0.15,
           "emoji": "🔧"
         },
-        "Growth": {
+        "User": {
           "score": 6,
           "veredito": "CAUTION",
-          "principal_insight": "O canal de aquisição mais barato é content/SEO targeting 'monitor competitor pricing' e comunidades de SaaS founders, mas o loop de viralidade é fraco — ninguém compartilha publicamente que monitora preços de concorrentes.",
+          "principal_insight": "O ICP (SaaS B2B 5-50 funcionários) sente a dor, mas a maioria resolve com Google Alerts + planilha e não prioriza gastar $29-97/mês nisso — o willingness-to-pay real pode ser menor que o custo de aquisição.",
           "red_flags": [
-            "Viralidade quase zero: inteligência competitiva é confidencial por natureza, ninguém vai recomendar abertamente ou compartilhar resultados, matando qualquer loop orgânico",
-            "CAC potencialmente alto para nicho estreito: SaaS B2B 5-50 funcionários que compete com 3+ players é um targeting muito específico para ads pagos, encarecendo CPC",
-            "Repeat purchase frágil no modelo one-time: info-produto de R$97-347 não gera receita recorrente, e a dor é contínua — descasamento entre modelo e problema"
+            "Alternativa atual (Google Alerts + checagem manual) é gratuita e 'suficiente' para 80% do ICP — a dor existe mas raramente é urgente o bastante para gerar compra espontânea",
+            "O gap entre $97/mês e $15k+/ano (Klue/Crayon) sugere um 'no-man's land' de pricing onde o cliente SMB não paga e o enterprise já tem solução",
+            "Fundadores de SaaS 5-50 funcionários têm budget limitado e dezenas de ferramentas competindo pelo mesmo $50-100/mês — churn alto é quase certo"
           ],
           "green_flags": [
-            "Canal SEO/content viável: termos como 'competitor price monitoring' e 'competitive pricing intelligence' têm volume de busca com intent comercial claro e concorrência orgânica moderada",
-            "Comunidades de founders (IndieHackers, SaaStr, grupos Slack de SaaS) permitem distribuição direta e barata para early adopters",
-            "Posicionamento 'alternativa acessível ao Klue/Crayon' cria um ângulo de conversão forte — gap de preço de 100x é compelling"
+            "Concorrentes validam o mercado mas todos miram enterprise/mid-market, deixando SMB SaaS genuinamente desatendido",
+            "Job-to-be-done é claro e específico: 'saber quando concorrente muda preço/posicionamento para ajustar meu pitch de vendas'",
+            "Preço acessível ($29-97) pode funcionar como land-and-expand se o trigger de compra for atrelado a um deal perdido por falta de intel competitiva"
           ],
-          "recommendation": "Teste primeiro com um lead magnet gratuito (template de monitoramento de preços) distribuído em comunidades SaaS para validar demanda real antes de investir em produto — e reconsidere seriamente o modelo para SaaS recorrente ($19-49/mês) em vez de one-time, pois a dor é contínua e o one-time mata LTV e qualquer possibilidade de crescimento sustentável.",
-          "weight": 0.2,
-          "emoji": "📈"
-        },
-        "User": {
-          "score": 5,
-          "veredito": "CAUTION",
-          "principal_insight": "O ICP (SaaS B2B 5-50 funcionários) tem a dor real mas historicamente resolve com Google Alerts + planilha — a willingness-to-pay para uma solução intermediária entre 'grátis-desorganizado' e 'enterprise $15k+' é incerta e difícil de validar.",
-          "red_flags": [
-            "Gap de preço entre $19-67/mês e concorrentes enterprise ($15k+) sugere que o mercado pode ser bimodal: ou grátis ou enterprise, sem meio-termo sustentável",
-            "Fundadores de SaaS 5-50 funcionários raramente têm budget dedicado para competitive intelligence — é gasto discricionário cortado primeiro em downturn",
-            "O job-to-be-done (detectar mudança de preço de concorrente) é episódico, não contínuo — difícil justificar assinatura mensal para algo que acontece 2-4x/ano por concorrente"
-          ],
-          "green_flags": [
-            "Alternativas enterprise caríssimas criam um vácuo real de mercado para PMEs — o underserved middle existe",
-            "A dor é concreta e mensurável: perder deals por não saber que concorrente baixou preço tem custo direto em revenue",
-            "Info-produto (one-time R$97-347) como entrada pode validar demanda com risco baixo antes de investir no SaaS"
-          ],
-          "recommendation": "Valide primeiro se o ICP busca ativamente essa informação (não apenas 'seria legal ter') — entreviste 10 founders perguntando 'quando foi a última vez que você perdeu um deal por não saber o preço do concorrente?' e se a resposta for vaga, pivote para um formato de relatório periódico em vez de SaaS.",
+          "recommendation": "Antes de buildar, valide willingness-to-pay real com 20 fundadores SaaS: pergunte 'quanto você perdeu no último deal por não saber que concorrente mudou pricing?' — se não conseguirem quantificar a perda, o produto vira nice-to-have e morre no churn.",
           "weight": 0.2,
           "emoji": "🎯"
         }
       },
       "consolidated": {
-        "final_score": 5.4,
-        "variance": 3,
+        "final_score": 5.8,
+        "variance": 2,
         "consenso": "medio",
         "veredito_final": "CAUTION",
-        "synthesis_insight": "Existe um gap real de mercado entre grátis e enterprise, mas a fragilidade do scraping, o job-to-be-done episódico e unit economics apertados tornam o modelo SaaS recorrente arriscado sem validação prévia de demanda e viabilidade técnica.",
-        "top_risk": "Fragilidade crítica do scraping: páginas de pricing mudam sem aviso, muitas exigem 'contact sales', e uma falha silenciosa entrega dados errados — sem dados confiáveis o produto inteiro colapsa.",
-        "top_opportunity": "Gap de preço de 100x entre soluções enterprise ($15-30k/ano) e nada cria um vácuo real para um tier acessível, com MVP tecnicamente simples e entregável em 1 semana.",
-        "action_recommended": "Antes de qualquer código, faça um teste manual de 48h: tente extrair preços confiáveis de 20 páginas de pricing de SaaS reais do nicho-alvo — se >30% forem 'contact sales' ou bloquearem scraping, pivote para competitive intelligence mais ampla ou abandone."
+        "synthesis_insight": "O gap de preço entre planilha grátis e incumbents enterprise é real, mas o core técnico (scraping) é estruturalmente frágil e a willingness-to-pay do SMB pode não cobrir o custo de manter o produto funcionando.",
+        "top_risk": "Dependência crítica de scraping de pricing pages que são cada vez mais opacas (custom quotes, anti-bot, JS rendering) — o produto pode simplesmente não conseguir entregar o dado que promete, matando retenção na raiz.",
+        "top_opportunity": "Gap genuíno de preço entre $0 (planilha) e $15-20k/ano (Klue/Crayon) com ICP que busca ativamente a solução — CAC potencialmente baixo via SEO/content se o produto de fato funcionar.",
+        "action_recommended": "Antes de qualquer código, teste manualmente o scraping em 50 pricing pages reais de SaaS: se <60% forem scrapáveis de forma confiável, mate a ideia; se >85%, valide WTP com landing page a $69/mês + $300 em Google Ads targeting 'competitor price tracking SaaS'."
       },
       "n_agents": 5
     },
@@ -231,19 +239,18 @@
     "listings": {
       "gumroad": {
         "ok": true,
-        "product_id": "chgwAkZx2SAisQtNwgwxfw==",
-        "name": "PriceRadar",
-        "short_url": "https://nathanfer0.gumroad.com/l/price-radar",
-        "custom_permalink": "price-radar",
-        "edit_url": "https://nathanfer0.gumroad.com/products/chgwAkZx2SAisQtNwgwxfw==",
-        "published": true,
+        "product_id": null,
+        "name": null,
+        "short_url": null,
+        "custom_permalink": null,
+        "edit_url": "https://nathanfer0.gumroad.com/products/None",
         "gh_download_url": null
       },
       "mp_payment_link": {
         "ok": true,
-        "preference_id": "197881458-5dc6d736-1305-4501-9a15-3848438bac0b",
-        "url": "https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-5dc6d736-1305-4501-9a15-3848438bac0b",
-        "sandbox_url": "https://sandbox.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-5dc6d736-1305-4501-9a15-3848438bac0b",
+        "preference_id": "197881458-42cedee5-a52f-40e9-a10f-c81fd3e12837",
+        "url": "https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-42cedee5-a52f-40e9-a10f-c81fd3e12837",
+        "sandbox_url": "https://sandbox.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-42cedee5-a52f-40e9-a10f-c81fd3e12837",
         "test_mode": false,
         "external_reference": "price-radar"
       },
@@ -300,122 +307,270 @@
       "n_messages": 0,
       "outreach_dir": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\outreach"
     },
+    "appsumo": {
+      "ok": true,
+      "path": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\appsumo\\partner_application.md",
+      "slug": "price-radar"
+    },
+    "launch_schedule": {
+      "ok": true,
+      "events": 7,
+      "file": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\launch_schedule.json"
+    },
+    "video_short": {
+      "ok": false,
+      "error": "TTS não disponível (instale gtts)"
+    },
+    "chatbot": {
+      "error": "unexpected '{' in field name"
+    },
+    "affiliate": {
+      "ok": true,
+      "commission_pct": 40
+    },
+    "multilingual": {
+      "ok": true,
+      "langs": {
+        "en": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\multilingual\\en",
+        "es": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\multilingual\\es"
+      }
+    },
+    "customer_success": {
+      "ok": true,
+      "emails": [
+        {
+          "day": 0,
+          "id": "welcome",
+          "file": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\customer_success\\day_00_welcome.md"
+        },
+        {
+          "day": 3,
+          "id": "checkin",
+          "file": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\customer_success\\day_03_checkin.md"
+        },
+        {
+          "day": 14,
+          "id": "nps",
+          "file": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\customer_success\\day_14_nps.md"
+        },
+        {
+          "day": 30,
+          "id": "review_upsell",
+          "file": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\customer_success\\day_30_review_upsell.md"
+        },
+        {
+          "day": 90,
+          "id": "reactivation",
+          "file": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\customer_success\\day_90_reactivation.md"
+        }
+      ],
+      "dir": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\customer_success"
+    },
+    "compliance": {
+      "ok": true,
+      "files": {
+        "terms": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\legal\\terms.md",
+        "privacy": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\legal\\privacy.md",
+        "cookies": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\legal\\cookie_notice.html"
+      },
+      "dir": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\legal"
+    },
+    "upsell": {
+      "ok": true,
+      "plan": {
+        "order_bump": {
+          "name": "Bônus: templates extras + vídeo tutorial",
+          "price_brl": 11.75,
+          "description": "+ R$ 11.75 e você leva kit completo de templates pré-prontos + vídeo de onboarding de 20min + suporte prioritário por email.",
+          "cta": "SIM, quero pagar +R$ 11.75 pelo bônus",
+          "expected_conversion": 0.22,
+          "expected_lift_per_sale_brl": 2.585
+        },
+        "one_click_upsell": {
+          "name": "PriceRadar PRO — versão completa",
+          "price_brl": 117.5,
+          "description": "Oferta exclusiva pós-compra (só aparece 1 vez). A versão PRO tem tudo o que o básico tem + licença pra equipe (5 usuários), integrações premium, suporte prioritário e atualizações vitalícias.",
+          "cta": "Upgrar agora por +R$ 70.50",
+          "expected_conversion": 0.1,
+          "expected_lift_per_sale_brl": 7.050000000000001
+        },
+        "cross_sell_email": {
+          "name": "Produto complementar (dia 7)",
+          "price_brl": 35.25,
+          "description": "Email dia 7 sugere produto complementar do catálogo (você precisa ter outros produtos pra usar).",
+          "cta": "Clique pra conhecer",
+          "expected_conversion": 0.04,
+          "expected_lift_per_sale_brl": 1.41
+        },
+        "total_ltv_lift_estimate_brl": 11.045000000000002
+      },
+      "dir": "G:\\Meu Drive\\bot24h_shared\\saas_builds\\price-radar\\upsells"
+    },
+    "ads": {
+      "meta": {
+        "ok": false,
+        "reason": "META_ACCESS_TOKEN ausente",
+        "draft": {
+          "objective": "OUTCOME_SALES",
+          "daily_budget_brl": 10.0,
+          "landing_url": null,
+          "ad_copies": [
+            {
+              "name": "Variante A",
+              "body": "Variante A — DOR\n\n**Headline:** Cansou de perder deal por preço?\n**Primary Text:** Seu concorrente mudou o pricing e você só descobriu quando o prospect falou. O PriceRadar monitora e te alerta em tempo real.\n**CTA:** `Quero Monitorar Agora`\n\n---\n\n## "
+            },
+            {
+              "name": "Variante B",
+              "body": "Variante B — RESULTADO\n\n**Headline:** Saiba a mudança de preço em 5 min\n**Primary Text:** PriceRadar rastreia o pricing dos seus concorrentes e te avisa antes do seu prospect perceber. Setup rápido, zero planilha.\n**CTA:** `Testar Grátis`\n\n---\n\n## "
+            },
+            {
+              "name": "Variante C",
+              "body": "Variante C — CURIOSIDADE\n\n**Headline:** O alerta que fecha deals sozinho\n**Primary Text:** Fundadores SaaS estão usando um truque simples pra saber quando o concorrente muda de preço — e ajustar a oferta na hora.\n**CTA:** `Ver Como Funciona`\n\n---\n\n### Checklist de limites\n\n| "
+            }
+          ],
+          "instructions": "1. Abra business.facebook.com → Adicionar conta Ads\n2. Criar Aplicativo → gerar Access Token de marketing\n3. Adicione META_ACCESS_TOKEN + META_AD_ACCOUNT_ID ao .env i7\n4. Roda de novo: autopilot ativa auto"
+        }
+      },
+      "google": {
+        "ok": false,
+        "reason": "Google Ads não configurado",
+        "draft": {
+          "type": "Search",
+          "daily_budget_brl": 15.0,
+          "keywords": [
+            "PriceRadar",
+            "Fundadores SaaS não têm processo sistemático para ",
+            "Klue — enterprise, $20k+/ano, foco grandes empresas",
+            "Crayon — mid-market, ~$15k/ano, competitive intelligence pla",
+            "Kompyte — adquirida pela Semrush, foco marketing"
+          ],
+          "landing_url": null,
+          "instructions": "1. https://ads.google.com/home/tools/manager-accounts/\n2. Gerar Developer Token\n3. OAuth → Refresh Token\n4. Adicione GOOGLE_ADS_* no .env"
+        }
+      },
+      "total_daily_budget_brl": 25.0,
+      "projected_monthly_spend_brl": 750.0
+    },
+    "competitive_intel": {
+      "ok": true,
+      "registered": 4
+    },
     "memory": {
       "ok": true,
       "recorded": true
     },
     "debate": {
       "agent_opinions": {
-        "User": {
+        "Risk": {
           "score": 4,
-          "veredito": "NOGO",
-          "principal_insight": "O ICP (SaaS B2B 5-50 func.) até sente dor de inteligência competitiva, mas monitorar preço de concorrente é uma subtarefa episódica — não um job-to-be-done recorrente que justifique compra impulsiva de um prompt pack de R$67.",
+          "veredito": "CAUTION",
+          "principal_insight": "O risco binário que mata é a fragilidade do scraping: sites mudam estrutura sem aviso, anti-bots bloqueiam coleta, e você fica vendendo dados desatualizados — o exato oposto da promessa do produto.",
           "red_flags": [
-            "Job-to-be-done fraco: fundador checa preço de concorrente 2-3x/ano em momentos pontuais, não é dor diária — baixa urgência de compra",
-            "Alternativa 'good enough' já existe: BuiltWith + Wayback Machine + Google Alerts + 15 min de pesquisa manual resolve 80% do problema sem custo",
-            "Prompt pack não entrega o valor real prometido — o headline promete 'saber QUANDO muda o preço', mas um pack de prompts não monitora nada automaticamente; o cliente vai se sentir enganado pelo gap entre promessa e entrega"
+            "Dependência total de web scraping em sites de terceiros que podem bloquear, mudar estrutura ou usar proteções anti-bot a qualquer momento — uma única mudança quebra a proposta de valor inteira",
+            "Concorrentes enterprise (Klue, Crayon) podem lançar tier barato amanhã e esmagar o produto com dados superiores e integrações existentes — você compete no espaço que eles deliberadamente ignoram por ser pouco lucrativo",
+            "Páginas de preço de SaaS B2B frequentemente usam 'fale com vendas' sem preço público, reduzindo drasticamente o universo monitorável e tornando o produto inútil justamente nos deals mais relevantes"
           ],
           "green_flags": [
-            "Gap de mercado real entre ferramentas enterprise (Klue/Crayon a US$20k+) e solução DIY gratuita — existe espaço teórico para algo no meio",
-            "O ângulo emocional 'perder deal por não saber que concorrente baixou preço' é forte e vendável em copy",
-            "ICP bem definido e acessível via comunidades (IndieHackers, SaaS Brasil, grupos de founders)"
+            "Preço de R$47 é baixo o suficiente para decisão impulsiva, reduzindo ciclo de venda e risco de churn por expectativa inflada",
+            "Gap real de mercado entre planilha manual e soluções de $15-20k/ano — existe espaço para um meio-termo se a execução for sólida",
+            "Dor é real e recorrente: fundadores perdem deals por não reagir a mudanças de preço competitivo a tempo"
           ],
-          "recommendation": "Pivote o formato: em vez de prompt pack (entrega passiva), construa um micro-SaaS ou workflow automatizado (n8n/Make template) que realmente monitore páginas de pricing e envie alertas — aí sim o willingness-to-pay sobe para R$29-49/mês recorrente e a proposta de valor fica honesta.",
+          "recommendation": "Antes de codar qualquer coisa, valide manualmente se consegue monitorar preços de 50 SaaS B2B reais por 30 dias sem quebrar — se a taxa de falha de scraping passar de 20%, o produto é inviável nesse modelo.",
           "weight": 0.2,
-          "emoji": "🎯"
-        },
-        "CFO": {
-          "score": 7,
-          "veredito": "GO",
-          "principal_insight": "Com custo de construção próximo de zero (prompt pack) e ticket de R$67, o break-even exige apenas ~15-30 vendas dependendo do gasto com ads, o que é alcançável com CAC abaixo de R$25 em nicho SaaS B2B.",
-          "red_flags": [
-            "Ticket de R$67 one-time sem recorrência força dependência contínua de aquisição — LTV=CAC é um risco real se não houver upsell ou esteira",
-            "Nicho restrito (SaaS B2B, 5-50 func, 3+ concorrentes) limita o volume de topo de funil e pode encarecer CPM em paid ads",
-            "Prompt pack tem barreira de percepção de valor — prospect pode questionar pagar R$67 por 'prompts' vs. uma ferramenta SaaS real"
-          ],
-          "green_flags": [
-            "COGS praticamente zero — margem bruta ~95%, qualquer venda é quase lucro puro após cobrir ads",
-            "Gap de mercado claro: concorrentes cobram US$15-30k/ano, e a alternativa grátis (Google Alerts) é ruim — R$67 é um no-brainer posicional",
-            "Payback period por cliente é instantâneo (one-time payment), sem risco de churn mensal corroendo unit economics"
-          ],
-          "recommendation": "Valide com R$500 em ads segmentados para founders SaaS no LinkedIn/Meta — se conseguir CAC abaixo de R$30 (LTV/CAC > 2x), escale; caso contrário, teste bundling com outros prompt packs para elevar o ticket médio acima de R$120.",
-          "weight": 0.25,
-          "emoji": "💼"
-        },
-        "Engineer": {
-          "score": 8,
-          "veredito": "GO",
-          "principal_insight": "Um prompt pack não exige infraestrutura — é conteúdo empacotado (prompts, templates, workflows), então a complexidade técnica é praticamente zero e o time-to-market é de dias, não semanas.",
-          "red_flags": [
-            "O valor percebido de um 'pack de prompts' a R$67 pode ser questionado se o comprador não entender exatamente o que recebe — exige copy de vendas muito clara",
-            "Prompts dependem de modelos de IA que mudam frequentemente; manutenção de compatibilidade pode exigir updates periódicos",
-            "Sem componente de automação real (scraping/monitoring), o produto é um 'como fazer' e não um 'faz por você' — limita retenção e upsell"
-          ],
-          "green_flags": [
-            "Formato prompt_pack é o mais simples possível: zero código, zero infra, zero dependência — entrega em 2-3 dias facilmente",
-            "Manutenção quase nula: é um arquivo estático (PDF/Notion/etc) que só precisa de revisão eventual quando os LLMs mudarem significativamente",
-            "Gap enorme entre soluções enterprise (US$15-30k/ano) e 'Google Alerts manual' — um pack estruturado a R$67 ocupa um espaço vazio no mercado"
-          ],
-          "recommendation": "Construa em 3 dias, não 7 — use o tempo restante para validar com 10 founders reais antes de lançar; o risco aqui não é técnico, é de posicionamento e percepção de valor.",
-          "weight": 0.15,
-          "emoji": "🔧"
+          "emoji": "⚠️"
         },
         "Growth": {
-          "score": 5,
-          "veredito": "CAUTION",
-          "principal_insight": "O canal de aquisição natural (LinkedIn/comunidades SaaS) é barato, mas o formato prompt_pack tem loop de viralidade quase zero — quem compra não tem incentivo estrutural para compartilhar, pois revelar o método anula sua vantagem competitiva.",
+          "score": 7,
+          "veredito": "GO",
+          "principal_insight": "O canal de aquisição mais barato é outbound cirúrgico via LinkedIn/cold email para founders SaaS que acabaram de perder um deal — a dor é aguda e o ticket de R$47 elimina fricção de compra.",
           "red_flags": [
-            "Anti-viralidade intrínseca: inteligência competitiva é vantagem silenciosa — ninguém posta 'olha como eu monitoro preço do concorrente' porque isso elimina o edge",
-            "TAM acessível é estreito: SaaS B2B com 5-50 func. que compete com 3+ players E que tem maturidade para comprar prompt_pack é um nicho dentro do nicho — CAC via paid ads será alto pelo volume baixo",
-            "Repeat purchase inexistente: prompt_pack é one-shot, não há razão para recompra nem upsell natural sem um produto recorrente atrás"
+            "R$47/mês é baixo demais para suportar CAC de canal pago — exige crescimento orgânico ou viral que SaaS B2B de nicho raramente tem",
+            "Loop de viralidade fraco: quem monitora concorrente NÃO quer compartilhar essa vantagem com outros players do mesmo mercado",
+            "Risco de churn alto — o alerta de preço é episódico, o usuário pode cancelar nos meses em que 'nada muda' e virar cliente sazonal"
           ],
           "green_flags": [
-            "Primeiro cliente barato via outbound cirúrgico: founders de SaaS são ultra-alcançáveis no LinkedIn/Twitter — 50 DMs bem escritas podem gerar 2-3 vendas a custo zero",
-            "Ângulo de copy forte: 'saiba antes do seu prospect' é gatilho de medo de perda que converte bem em landing page curta",
-            "Preço de R$67 é impulso para o público — não precisa de funil elaborado, uma página + depoimento basta"
+            "Canal de aquisição claro: comunidades de founders (IndieHackers, grupos Telegram/Slack de SaaS BR) + conteúdo tipo 'seu concorrente mudou o pricing e você nem viu' gera clique emocional",
+            "Conversion potencialmente alta: trial grátis mostrando mudanças reais de preço do concorrente do prospect é uma demo que se vende sozinha",
+            "Repeat purchase natural se expandir para alertas de posicionamento, features e messaging — não só preço"
           ],
-          "recommendation": "Só vale GO se você construir um mecanismo de repeat: transforme o prompt_pack em isca de R$67 para vender uma assinatura leve (ex: alerta semanal automatizado por R$29/mês), caso contrário o LTV não justifica o esforço de aquisição.",
+          "recommendation": "Valide com 50 cold DMs no LinkedIn para founders SaaS BR oferecendo um relatório gratuito de mudanças de preço dos 3 concorrentes deles — se >15% responderem, o canal de aquisição está confirmado e o CAC cabe no ticket.",
           "weight": 0.2,
           "emoji": "📈"
         },
-        "Risk": {
+        "Engineer": {
           "score": 5,
           "veredito": "CAUTION",
-          "principal_insight": "O risco binário é que scraping de preços de concorrentes SaaS é inerentemente frágil — páginas de pricing mudam de estrutura sem aviso, muitos SaaS escondem preços atrás de 'Fale com vendas', e o comprador descobre rápido que um prompt pack não resolve o problema contínuo de monitoramento.",
+          "principal_insight": "O core técnico (scraping de páginas de pricing) é factível em 1 semana para um MVP, mas a fragilidade dos scrapers e a diversidade de layouts tornam a manutenção um pesadelo constante que come a margem de R$47.",
           "red_flags": [
-            "Prompt pack resolve problema pontual, mas o valor real está no monitoramento contínuo — o cliente usa uma vez, percebe que precisa de automação, e o produto morre na recompra",
-            "60%+ dos SaaS B2B mid-market não exibem preços publicamente (custom pricing/sales-led), tornando a promessa central impossível de cumprir para boa parte dos casos",
-            "Barreira de entrada zero: qualquer pessoa com ChatGPT pode replicar os prompts em 30 minutos após ver o conceito, e criadores de conteúdo de AI já publicam tutoriais similares grátis no YouTube"
+            "Scrapers de pricing quebram toda semana — cada concorrente tem layout diferente, muda sem aviso, usa JS dinâmico, e alguns exigem login, gerando custo de manutenção desproporcional ao ticket de R$47",
+            "Detecção confiável de mudança de preço exige lidar com variações de moeda, planos anuais/mensais, preços por uso, 'fale com vendas' e A/B testing de páginas — complexidade subestimada",
+            "A R$47/mês, você precisa ~200+ clientes só pra cobrir 1 dev mantendo scrapers; o unit economics não fecha pra um produto que exige manutenção técnica contínua"
           ],
           "green_flags": [
-            "Gap real de mercado entre ferramentas enterprise (US$15-30k) e Google Alerts gratuito — o mid-market está desatendido",
-            "Preço de R$67 é impulso baixo, reduz fricção de compra e permite volume",
-            "O ângulo de 'saiba antes do seu prospect' é um hook emocional forte que converte bem em copy de vendas"
+            "MVP mínimo (monitorar 5-10 sites com estrutura conhecida + diff de HTML + alerta por email) é entregável em 1 semana com stack simples (cron + Puppeteer + SendGrid)",
+            "Dor real e validável — fundadores SaaS genuinamente querem saber quando concorrente muda preço, o que facilita early traction",
+            "Mercado incumbente cobra $15-20k/ano, então há espaço claro pra solução acessível se o modelo técnico escalar"
           ],
-          "recommendation": "Valide ANTES de construir: pegue 20 concorrentes reais de 5 SaaS diferentes e teste manualmente se os preços são sequer acessíveis publicamente — se menos de 50% tiverem pricing page pública, pivote o ângulo para 'mudanças em features/positioning' em vez de preço.",
+          "recommendation": "Só avance se pivotar pra modelo semi-manual (cliente cadastra URLs + seletores CSS, sistema só faz o diff e alerta) — isso transfere a complexidade de parsing pro usuário e torna o R$47 viável; scraping full-auto a esse preço é armadilha operacional.",
+          "weight": 0.15,
+          "emoji": "🔧"
+        },
+        "CFO": {
+          "score": 5,
+          "veredito": "CAUTION",
+          "principal_insight": "A R$47/mês o LTV projetado (~R$470 com churn estimado de 10%) exige CAC abaixo de R$157 para manter LTV/CAC saudável (3:1), o que é extremamente difícil em B2B SaaS com ticket baixo e nicho estreito.",
+          "red_flags": [
+            "Ticket de R$47 gera unit economics frágeis: payback period de 3+ meses só se CAC ficar abaixo de R$141, mas custo de aquisição B2B SaaS no Brasil tipicamente fica entre R$150-400 via paid ads",
+            "Margem bruta comprimida pelo custo de crawling/monitoramento contínuo de sites concorrentes — infraestrutura escala com número de competidores monitorados, não com receita",
+            "Sem upsell claro no roadmap: difícil expandir receita por conta quando o produto é single-feature a R$47, limitando Net Revenue Retention abaixo de 100%"
+          ],
+          "green_flags": [
+            "Competidores cobram R$80k-100k+/ano, deixando um gap real de preço para SMBs — há demanda não atendida nessa faixa",
+            "Custo de construção do MVP é baixo (scraping + alertas), permitindo validar com investimento mínimo antes de escalar ads",
+            "Modelo self-serve a R$47 pode funcionar como land-and-expand se o preço for repositionado como entry-tier com planos superiores a R$197-497"
+          ],
+          "recommendation": "Não lance a R$47 fixo — valide com esse preço como tier básico, mas projete desde o dia 1 um plano Pro a R$197+ com mais concorrentes monitorados e alertas em tempo real, caso contrário o CAC vai comer o LTV e o negócio não fecha a conta.",
+          "weight": 0.25,
+          "emoji": "💼"
+        },
+        "User": {
+          "score": 5,
+          "veredito": "CAUTION",
+          "principal_insight": "O ICP (fundador SaaS B2B, 5-50 func.) sente a dor, mas resolve 'bem o suficiente' com Google Alerts + checagem manual esporádica — a urgência de pagar R$47/mês por isso é baixa porque mudança de preço de concorrente não é evento frequente o bastante para justificar monitoramento contínuo.",
+          "red_flags": [
+            "Frequência de uso muito baixa: concorrentes mudam pricing pages talvez 2-4x/ano, o que torna difícil justificar assinatura mensal — cliente cancela após 2 meses sem alertas relevantes",
+            "O job-to-be-done real é 'ganhar o deal contra concorrente', não 'saber que o preço mudou' — saber o preço novo sem battlecard/contexto de posicionamento não fecha venda sozinho",
+            "Willingness-to-pay de R$47 cai numa terra de ninguém: barato demais para parecer sério/confiável para Head de Vendas, mas caro demais vs Google Alerts gratuito para um fundador bootstrapped"
+          ],
+          "green_flags": [
+            "Gap real de mercado entre Klue/Crayon ($15-20k) e planilha manual (grátis) — existe espaço para solução acessível se bem posicionada",
+            "ICP bem definido e alcançável via comunidades de founders (IndieHackers, grupos Slack SaaS BR)",
+            "Trigger de compra claro: fundador que acabou de perder deal por não saber que concorrente baixou preço — dor pontual forte"
+          ],
+          "recommendation": "Antes de buildar, valide se o ICP pagaria por monitoramento CONTÍNUO ou se a dor é pontual — teste vendendo um relatório one-shot de 'audit competitivo de pricing' por R$97-197 para provar demand antes de apostar no modelo SaaS recorrente.",
           "weight": 0.2,
-          "emoji": "⚠️"
+          "emoji": "🎯"
         }
       },
       "consolidated": {
-        "final_score": 5.8,
-        "variance": 4,
-        "consenso": "baixo",
+        "final_score": 5.2,
+        "variance": 3,
+        "consenso": "medio",
         "veredito_final": "CAUTION",
-        "synthesis_insight": "O gap de mercado entre ferramentas enterprise (US$15-30k) e DIY gratuito é real, mas um prompt pack a R$67 não entrega o valor contínuo que o cliente espera — a promessa é de monitoramento, a entrega é de tutorial.",
-        "top_risk": "Desalinhamento promessa vs. entrega: o cliente compra esperando 'saber QUANDO o concorrente muda preço' mas recebe prompts estáticos que não monitoram nada, gerando frustração e zero recompra.",
-        "top_opportunity": "COGS ~zero com margem bruta de 95% e preço de impulso (R$67) num espaço vazio entre enterprise e gratuito — se o formato for honesto, converte com copy emocional forte.",
-        "action_recommended": "Antes de construir, valide manualmente se 50%+ dos concorrentes do ICP têm pricing público; se sim, pivote o formato de prompt pack para template de automação (n8n/Make) com alerta real, vendido como assinatura leve de R$29-49/mês — isso resolve o gap promessa vs. entrega e cria LTV recorrente."
+        "synthesis_insight": "Existe um gap real de mercado entre planilha manual e Klue/Crayon, mas o modelo de scraping full-auto a R$47/mês cria uma armadilha onde o custo de manutenção técnica come o LTV e a baixa frequência de eventos gera churn antes do payback.",
+        "top_risk": "Fragilidade estrutural do scraping — sites mudam layout, usam anti-bot e escondem preços atrás de 'fale com vendas', tornando o produto não-confiável justamente quando o cliente mais precisa dele.",
+        "top_opportunity": "Gap de preço enorme (grátis vs R$80-100k/ano) com ICP bem definido e alcançável via comunidades de founders, onde um relatório-demo com dados reais do concorrente do prospect se vende sozinho.",
+        "action_recommended": "Valide com 50 founders SaaS BR vendendo um relatório one-shot de audit competitivo de pricing por R$147 — se converter >10%, confirma demand e financia o MVP; simultaneamente monitore manualmente 30 páginas de pricing por 30 dias para medir taxa real de quebra de scraping antes de automatizar."
       },
       "n_agents": 5
     },
     "web_intel": {
       "query": "PriceRadar Como vocês descobrem quando um concorrente muda os preços?\n\nGenuine question for",
-      "generated_at": "2026-04-27T18:33:24.128195+00:00",
+      "generated_at": "2026-04-27T23:44:05.465399+00:00",
       "web_results_count": 0,
       "reddit_results_count": 10,
       "hn_results_count": 0,
-      "reddit_engagement_total": 8421,
+      "reddit_engagement_total": 8417,
       "reddit_recent_90d_count": 3,
       "hn_total_points": 0,
       "pain_signals_count": 2,
@@ -431,7 +586,7 @@
             "title": "As pessoas que escolheram não ter filhos deveriam pagar impostos adicionais pra ajudar a baratear os custos da criação de crianças por quem escolheu ter filhos",
             "subreddit": "opiniaoimpopular",
             "url": "https://reddit.com/r/opiniaoimpopular/comments/1o8649b/as_pessoas_que_escolheram_não_ter_filhos_deveriam/",
-            "score": 331,
+            "score": 330,
             "comments": 1551,
             "text": "Pra mim essa é a única opção ética visto que ter filhos traz MUITOS custos pros pais. \n\nCusto financeiro,custo social e até mesmo custo de desenvolvimento pessoal,econômico e saúde mental. \n\nSe você olhar os dados,vai ver que mães recebem salários em média menores do que quem não é mãe por exemplo. \n\n\"Ah ,mas quem escolheu ter filhos tem que arcar com as consequências das próprias escolhas! Eu não tenho nada haver com isso\"\n\nTem sim! Você VAI colher os benefícios sociais da existência dessa cria",
             "created_utc": 1760621200.0
@@ -449,7 +604,7 @@
             "title": "O que vocês acham disso?",
             "subreddit": "ecommercebr",
             "url": "https://reddit.com/r/ecommercebr/comments/1ooftye/o_que_vocês_acham_disso/",
-            "score": 816,
+            "score": 811,
             "comments": 154,
             "text": "Semana passada saiu uma reportagem sobre umas mudanças que o ML tá impondo pros lojistas, envolvendo preço e exposição dos produtos. Basicamente, eles tão controlando mais como os sellers podem precificar e como os produtos aparecem pros consumidores...\n\nConfesso que já vi uma galera reclamando no Twitter e no TikTok, dizendo que isso prejudica as margens e limita a autonomia dos empreendedores.\n\nConsidero uma estratégia muito arriscada e complicada. E olha, não dá pra culpar quem tá incomodado,",
             "created_utc": 1762282519.0
@@ -461,7 +616,7 @@
             "title": "As pessoas que escolheram não ter filhos deveriam pagar impostos adicionais pra ajudar a baratear os custos da criação de crianças por quem escolheu ter filhos",
             "subreddit": "opiniaoimpopular",
             "url": "https://reddit.com/r/opiniaoimpopular/comments/1o8649b/as_pessoas_que_escolheram_não_ter_filhos_deveriam/",
-            "score": 331,
+            "score": 330,
             "comments": 1551,
             "text": "Pra mim essa é a única opção ética visto que ter filhos traz MUITOS custos pros pais. \n\nCusto financeiro,custo social e até mesmo custo de desenvolvimento pessoal,econômico e saúde mental. \n\nSe você olhar os dados,vai ver que mães recebem salários em média menores do que quem não é mãe por exemplo. \n\n\"Ah ,mas quem escolheu ter filhos tem que arcar com as consequências das próprias escolhas! Eu não tenho nada haver com isso\"\n\nTem sim! Você VAI colher os benefícios sociais da existência dessa cria",
             "created_utc": 1760621200.0
@@ -470,13 +625,21 @@
             "title": "PCDIGA - Pós-venda miserável e pesadelo judicial de quase um ano",
             "subreddit": "portugal",
             "url": "https://reddit.com/r/portugal/comments/qc9v1h/pcdiga_pósvenda_miserável_e_pesadelo_judicial_de/",
-            "score": 1604,
+            "score": 1601,
             "comments": 483,
             "text": "Para quem quiser um TL;DR deixo no final.\n\nVenho aqui expor o meu caso com o pós-venda da PCDIGA e de todo o processo que tive em resolver esta situação porque realmente acredito que este tópico pode ser informativo e útil para muita gente, sendo que tópicos semelhantes certamente ter-me-iam ajudado antes deste circo todo, mas cá vai! Espero não me alongar muito mas vou tentar ser o mais detalhado possível.\n\nBasicamente era cliente da PCDIGA há alguns anos (desde 2015, por aí) e tinha zero queix",
             "created_utc": 1634760908.0
           }
         ]
       }
+    },
+    "experiment": {
+      "ok": true,
+      "experiment_id": "eb8b65b751",
+      "variant_a": "R$ 47.00",
+      "variant_b": "R$ 70.50",
+      "url_a": "?exp=eb8b65b751&var=A",
+      "url_b": "?exp=eb8b65b751&var=B"
     }
   }
 }
