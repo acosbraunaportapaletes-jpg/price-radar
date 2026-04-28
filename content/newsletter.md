@@ -2,40 +2,42 @@
 
 ---
 
-## Assunto
+## 1. Assunto
 
 `Seu concorrente mudou o preço e você nem ficou sabendo`
 
 ---
 
-## Gancho
+## 2. Gancho
 
-Enquanto você lê isso, pelo menos um concorrente seu ajustou a página de pricing. O seu prospect já viu — você ainda não.
-
----
-
-## Highlights
-
-- **73% dos SaaS ajustam preços pelo menos 2x por ano** — e a maioria faz isso sem aviso público
-- **Deals perdidos por preço raramente são sobre preço** — são sobre timing e posicionamento
-- **Monitorar manualmente é inviável** — ninguém vai checar 5 sites de concorrentes todo dia
-- **Quem reage primeiro, fecha** — a janela entre a mudança do concorrente e a decisão do prospect é curta
-- **Inteligência competitiva de preço não é luxo** — é o dado que falta no seu battlecard
+Enquanto você lê este email, pelo menos um concorrente seu está testando uma nova página de pricing. Se o prospect descobre antes de você, o deal já era.
 
 ---
 
-## Análise
+## 3. Highlights
 
-A maioria dos founders de SaaS investe pesado em produto, marketing e vendas, mas opera no escuro quando o assunto é o pricing da concorrência. O processo típico é descobrir a mudança semanas depois, por acidente — num call de vendas onde o prospect menciona que "o outro ficou mais barato" ou quando alguém do time tropeça na página atualizada. Nesse ponto, o estrago já está feito: propostas foram enviadas com posicionamento errado, objeções foram respondidas com dados desatualizados, e deals foram perdidos sem que ninguém entendesse o motivo real.
+- **72% dos SaaS mudam preços pelo menos 1x por ano** — e a maioria faz isso sem aviso público
+- Founders gastam horas por semana checando páginas de concorrentes manualmente (e ainda assim perdem mudanças)
+- Um reposicionamento de preço do concorrente pode invalidar todo o seu deck de vendas da noite pro dia
+- Times de vendas perdem deals quando o prospect diz *"mas o concorrente X cobra menos"* — e o founder nem sabia
+- Empresas com inteligência competitiva estruturada fecham **30% mais deals** em mercados disputados
 
-O problema não é falta de vontade, é falta de processo. Nenhum time de vendas tem bandwidth para monitorar páginas de pricing diariamente, e planilhas manuais ficam obsoletas no dia seguinte. O que falta é um sistema que detecte a mudança no momento em que ela acontece e entregue o contexto necessário para o time agir — ajustar proposta, atualizar battlecard, ou simplesmente ligar pro prospect com a narrativa certa antes que o concorrente controle a conversa.
+---
+
+## 4. Análise
+
+A maioria dos founders de SaaS trata inteligência competitiva como algo que "a gente faz quando dá". Abrem a página de pricing do concorrente de vez em quando, tiram um print e mandam no Slack. O problema é que preço em SaaS é dinâmico — tiers mudam, features migram de plano, descontos aparecem e somem. Quando você descobre semanas depois, já perdeu a janela para ajustar posicionamento, atualizar battlecards e preparar o time comercial.
+
+O custo real não é só o deal perdido. É a erosão silenciosa de win rate que ninguém consegue explicar no board meeting. Seu time de vendas entra em calls com informação desatualizada, o marketing continua rodando comparativos errados, e o founder fica apagando incêndio em vez de jogando no ataque. Quem resolve isso primeiro, ganha uma vantagem desproporcional — porque enquanto o mercado reage, você já se antecipou.
 
 ---
 
-## CTA
+## 5. CTA
 
-**O PriceRadar monitora as páginas de pricing dos seus concorrentes 24/7 e te avisa no momento em que algo muda** — com histórico, comparativo e contexto para você agir antes do seu prospect decidir.
+**O PriceRadar monitora as páginas de pricing dos seus concorrentes 24/7 e te alerta no minuto em que algo muda** — novo tier, feature movida de plano, preço ajustado, qualquer coisa.
 
-👉 **[Quero saber quando meu concorrente muda o preço]()**
+Chega de descobrir mudança de preço pelo seu prospect.
 
----
+**[Quero monitorar meus concorrentes →]**
+
+Setup em 2 minutos. Sem cartão de crédito.

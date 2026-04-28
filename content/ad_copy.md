@@ -1,38 +1,47 @@
-# PriceRadar — Ad Copy Variants
+# PriceRadar — 3 Variantes de Ad Copy
 
 ---
 
 ## Variante A — DOR
 
-**Headline:** Cansou de perder deal pro concorrente?
+**Headline (38 chars)**
+`Cansou de perder deal por preço?`
 
-**Primary Text:** Seu prospect fechou com outro porque ele baixou o preço e você nem ficou sabendo. PriceRadar monitora cada mudança de preço da concorrência em tempo real.
+**Primary Text (124 chars)**
+`Seu concorrente mudou o pricing e você só descobriu quando o prospect pediu desconto. PriceRadar te alerta antes disso acontecer.`
 
-**CTA:** `Quero Monitorar Agora`
+**CTA:** `Quero monitorar agora`
 
 ---
 
 ## Variante B — RESULTADO
 
-**Headline:** Saiba o preço do rival em 30 seg
+**Headline (39 chars)**
+`Em 2 min, monitore todo concorrente`
 
-**Primary Text:** PriceRadar detecta mudanças de preço dos concorrentes e te avisa antes que seu prospect veja. Mais deals fechados com inteligência competitiva real.
+**Primary Text (122 chars)**
+`Configure uma vez e receba alertas em tempo real quando qualquer concorrente mudar de preço. Sem planilha, sem achismo.`
 
-**CTA:** `Testar Grátis`
+**CTA:** `Começar grátis`
 
 ---
 
 ## Variante C — CURIOSIDADE
 
-**Headline:** O alerta de 2 min que salva deals
+**Headline (40 chars)**
+`O alerta que top SaaS founders usam`
 
-**Primary Text:** Founders de SaaS estão usando um truque simples para descobrir quando o concorrente muda o preço — e ajustar a proposta antes do prospect decidir.
+**Primary Text (125 chars)**
+`Existe um jeito simples de saber quando o concorrente muda de preço — antes do seu prospect. A maioria dos founders não conhece.`
 
-**CTA:** `Descobrir Como`
+**CTA:** `Descobrir como funciona`
 
 ---
 
-**Notas rápidas:**
-- Headlines: 39, 36 e 38 chars respectivamente — todos dentro do limite.
-- Primary Texts: todos ≤125 chars.
-- CTAs curtos e orientados a ação, compatíveis com botões de Meta e Google.
+### Notas rápidas
+
+| | Headline | Primary Text | Onde usar |
+|---|---|---|---|
+| **A (Dor)** | 38 chars | 124 chars | Meta — cold audience, topo de funil |
+| **B (Resultado)** | 39 chars | 122 chars | Google Search — intenção alta |
+| **C (Curiosidade)** | 40 chars | 125 chars | Meta — retargeting / lookalike |

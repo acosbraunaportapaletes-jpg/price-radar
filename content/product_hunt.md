@@ -1,25 +1,27 @@
-## PriceRadar — Product Hunt Launch Post
+# Product Hunt Launch Post — PriceRadar
 
 ---
 
-**Tagline (58 chars):**
+## Tagline (54 chars)
 
-> Know when competitors change pricing before your prospects do
-
----
-
-**Description (256 chars):**
-
-> PriceRadar monitors your competitors' pricing pages and alerts you in real time when they change prices, plans, or packaging. Stop losing deals to outdated battlecards. Get the intel your sales team needs to win — automatically.
+**Know when competitors change pricing before your deals do.**
 
 ---
 
-**Maker Comment:**
+## Description (256 chars)
 
-Hey PH! I'm the founder of PriceRadar, and I built this out of a very specific pain.
+**PriceRadar monitors your competitors' pricing pages 24/7 and alerts you the moment something changes. Stop losing deals because a rival dropped prices last week and you had no idea. Built for B2B SaaS teams competing in crowded markets.**
 
-I was running a B2B SaaS and lost a deal because a competitor had quietly dropped their price by 30% — and my sales team was still pitching against their old pricing. The prospect literally said "yeah but X is way cheaper now." We had no idea. I realized we had zero process for tracking this. We were manually checking competitor pages once a quarter, maybe. That's not competitive intelligence — that's guessing.
+---
 
-So I built PriceRadar. You add competitor pricing pages, and we monitor them continuously. When something changes — a price increase, a new tier, a removed feature, a packaging shift — you get an alert with a clear before/after diff. Your sales team gets updated battlecards without anyone doing manual work. It's built specifically for B2B SaaS teams (5-50 people) competing in crowded markets where pricing moves actually change deal outcomes.
+## Maker Comment
 
-We're early and building fast. I'd love your honest feedback — what would make this a must-have for your sales workflow? Drop a comment or try it out. Every piece of feedback shapes what we ship next. Thanks for the support! 🙏
+**Hey Product Hunt! 👋**
+
+I lost a $28K deal last year because a competitor quietly dropped their price by 30% — and my prospect knew before I did. I found out during a closing call when they pulled up the new pricing page on a screenshare. That moment was embarrassing, but it was also the moment PriceRadar was born.
+
+If you run a B2B SaaS competing against 3, 5, or 10+ direct players, you already know: pricing is the most strategic lever in your market, yet most of us track competitor prices the same way we did in 2015 — manually checking pages once a month (if we remember). Meanwhile, your competitors are making moves and your sales team is flying blind.
+
+PriceRadar fixes this with a dead-simple setup: add competitor URLs, pick your alert channels (Slack, email, webhook), and you're done. We detect pricing changes, plan restructures, new tiers, and even stealth A/B tests on pricing pages. Your revenue team gets context before the next prospect call, not after.
+
+We're a small team and we built this because we needed it ourselves. Would love your honest feedback — what's missing? What would make this a no-brainer for your stack? Drop a comment, I read and reply to every single one. 🙏

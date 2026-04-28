@@ -7,27 +7,27 @@
 
 Assunto: Fazendo PriceRadar render mais 📈
 
-Fala, [NOME]!
+Fala, [Nome]!
 
-30 dias usando o PriceRadar. Antes de qualquer coisa: obrigado por confiar no produto.
+30 dias usando o PriceRadar. Antes de qualquer coisa: valeu pela confiança.
 
-Quero te passar uma dica que os usuários mais avançados estão usando pra extrair ainda mais valor:
+Quero te passar uma dica que pouca gente usa e faz diferença real:
 
-**Crie alertas cruzados: preço + página de features.**
+**Crie alertas por faixa de variação, não só por mudança.**
 
-A maioria configura só alerta de preço. Mas quando um concorrente muda o pricing, quase sempre muda o posicionamento junto — adiciona um plano, remove uma feature do tier básico, muda a página de comparação.
+A maioria configura alerta pra "qualquer alteração de preço". O problema? Você recebe notificação de ajuste de centavos e ignora o que importa.
 
-Configure um monitor na página de pricing E na página de features/comparação de cada concorrente. Quando os dois disparam juntos, é sinal de reposicionamento estratégico — e aí você tem uma janela de oportunidade real pra abordar prospects que estão avaliando aquele concorrente.
+Configura assim: alerta só quando o concorrente mudar **mais de 5% pra baixo**. Esse é o sinal de que ele tá tentando roubar deal na agressividade. Aí você age rápido — ajusta proposta, manda contraproposta, ou usa o dado na call de negociação.
 
-É a diferença entre "o preço mudou" e "eles estão mudando a estratégia".
+Quem faz isso converte mais porque reage só quando é estratégico.
 
 ---
 
-Uma coisa rápida: se o PriceRadar tem te ajudado, me faria um enorme favor deixando uma review honesta aqui: [LINK]
+Agora um pedido rápido: você me ajuda com uma **review honesta** de 1 minuto? Pode ser aqui: [LINK]
 
-Leva 2 minutos e ajuda demais outros fundadores a encontrarem a ferramenta.
+Sua opinião ajuda outros founders a decidirem.
 
-E se você monitora 10+ concorrentes, dá uma olhada no plano Pro — alertas ilimitados + relatório semanal consolidado.
+E se você monitora **mais de 5 concorrentes**, dá uma olhada no plano Pro — dobra o número de alertas simultâneos.
 
-Valeu pela confiança,
-[ASSINATURA]
+Valeu demais,
+[Assinatura]

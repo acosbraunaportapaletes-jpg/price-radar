@@ -11,16 +11,8 @@
         <p class="text-sm text-gray-500 mt-1">{{ alert.pricing_url }}</p>
         <p class="text-xs text-gray-600 mt-1">Detectado em {{ alert.created_at[:19] if alert.created_at else '' }}</p>
     </div>
-    <span class="badge badge-read">Lido</span>
+    <span class="badge badge-read">Visto</span>
 </div>
-
-<!-- Battle Card -->
-{% if alert.battlecard_md %}
-<div class="card p-6 mb-6">
-    <h2 class="text-lg font-semibold mb-4 text-indigo-400">Battle Card</h2>
-    <div class="prose prose-invert text-sm text-gray-300 whitespace-pre-wrap leading-relaxed">{{ alert.battlecard_md }}</div>
-</div>
-{% endif %}
 
 <!-- Diff side-by-side -->
 {% if diff_html %}
@@ -33,11 +25,11 @@
 {% endif %}
 
 <!-- Diff text -->
-{% if diff_text %}
+{% if alert.diff_summary %}
 <div class="card p-6 mb-6">
-    <details>
-        <summary class="text-sm text-indigo-400 cursor-pointer hover:underline font-medium">Ver diff (texto unificado)</summary>
-        <pre class="text-xs text-gray-400 mt-3 p-4 bg-gray-900 rounded-lg overflow-x-auto whitespace-pre-wrap max-h-96 overflow-y-auto">{{ diff_text }}</pre>
+    <details open>
+        <summary class="text-sm text-indigo-400 cursor-pointer hover:underline font-medium">Diff (texto unificado)</summary>
+        <pre class="text-xs text-gray-400 mt-3 p-4 bg-gray-900 rounded-lg overflow-x-auto whitespace-pre-wrap max-h-96 overflow-y-auto">{{ alert.diff_summary }}</pre>
     </details>
 </div>
 {% endif %}

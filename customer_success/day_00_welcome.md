@@ -7,25 +7,27 @@
 
 Assunto: Bem-vindo(a) ao PriceRadar! 🎉
 
-Fala, [NOME]!
+Boa, sua conta tá ativa! 🔥
 
-Sua conta no PriceRadar tá ativa. A partir de agora, você vai saber quando qualquer concorrente mexer no preço — antes do seu prospect perceber.
+A partir de agora, você vai saber toda vez que um concorrente mexer no preço — antes do seu prospect perceber.
 
-**Seu acesso:** [LINK DO PRODUTO]
+**Seu acesso:** [Entrar no PriceRadar →]
 
-**3 passos pra começar agora (leva 5min):**
+Pra começar a monitorar em 5 minutos:
 
-1. **Adicione seus concorrentes** — cole as URLs das páginas de pricing. O PriceRadar começa a monitorar na hora.
+**1. Adicione seus concorrentes**
+Vá em Configurações > Concorrentes e cole as URLs das páginas de pricing. O PriceRadar faz o resto.
 
-2. **Configure seus alertas** — escolha se quer receber por email, Slack ou ambos. Recomendo Slack pra reagir mais rápido.
+**2. Configure seus alertas**
+Escolha como quer ser notificado: email, Slack ou ambos. Recomendo Slack pra reagir rápido.
 
-3. **Conecte seu CRM** — assim, quando um concorrente mudar o preço, você já sabe quais deals abertos são afetados.
+**3. Conecte seu CRM (opcional)**
+Integre com HubSpot ou Pipedrive e receba o alerta direto no deal aberto — seu time de vendas vai agradecer.
 
-Pronto. Com isso rodando, da próxima vez que um concorrente subir, baixar ou reestruturar o pricing, você vai ser o primeiro a saber — e o primeiro a agir.
+Pronto. Com isso rodando, da próxima vez que um concorrente baixar o preço pra roubar seu deal, você vai saber primeiro e ajustar o discurso na hora.
 
-Nos próximos dias vou te mandar algumas dicas pra tirar o máximo do PriceRadar. Coisa rápida, sem enrolação.
+**Precisa de ajuda?** Responde esse email. Sou eu mesmo que leio e respondo — sem bot, sem ticket.
 
-Qualquer dúvida, responde esse email direto. Eu leio e respondo pessoalmente.
-
-Bora,
-[ASSINATURA]
+Boas vendas,
+[Nome]
+Fundador, PriceRadar

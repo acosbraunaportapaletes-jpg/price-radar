@@ -1,6 +1,6 @@
 # PriceRadar
 
-**Entérate cuando tu competencia cambia sus precios antes que tu prospecto.**
+**Entérate cuando tu competidor cambia sus precios. Antes que tu prospecto.**
 
 ## Cómo ejecutar
 
@@ -14,25 +14,35 @@ Accede a `http://localhost:5000`.
 
 ## Features implementadas
 
-- **Auth** — Registro e inicio de sesión con email+contraseña (hash Werkzeug), sesión Flask
-- **CRUD de competidores** — Agrega, edita y elimina competidores con URL de su página de precios y notas
-- **Scraper programado** — APScheduler captura snapshots HTML/texto y detecta diffs automáticamente
-- **Alertas por email** — Notificación automática vía SMTP cuando se detecta un cambio, con diff antes/después
-- **Dashboard** — Panel con timeline de alertas, filtro por fecha y estado leído/no leído
-- **Página de alertas** — Lista completa con filtro leído/no leído y marcación vía htmx
-- **Historial de snapshots** — Timeline de snapshots por competidor con diff inline
-- **Verificación manual** — Fuerza un snapshot en cualquier momento
-- **htmx** — Delete inline, marcar alerta como leído sin recargar
+- **Auth** -- Registro e inicio de sesión con email+contraseña (hash Werkzeug), sesión vía cookie segura
+- **Competidores** -- CRUD de competidores con URL de la página de pricing y nombre
+- **Price Monitor** -- Job programado (APScheduler, 1h) que hace scrape de la página de pricing, extrae texto, compara hash con snapshot anterior; si cambió, crea alerta
+- **Alertas** -- Cuando el snapshot cambia, envía email vía SMTP y muestra badge en el dashboard con diff lado a lado (antes/después)
+- **Battle Card** -- Prompt pre-armado enviado a OpenAI API que recibe el diff de pricing y genera una battle card resumida con talking points para ventas
+- **htmx** -- Verificación manual inline, delete inline, marcar alerta como leído sin recargar
+- **Diff visual** -- Comparación lado a lado (HTML diff) y diff unificado en texto
 
 ## Stack
 
-Flask + SQLite + htmx + Tailwind CDN + APScheduler + BeautifulSoup
+Flask + SQLite + htmx + Tailwind CDN + BeautifulSoup + APScheduler + OpenAI API
+
+## Variables de entorno
+
+| Variable | Descripción |
+|---|---|
+| `SECRET_KEY` | Clave secreta de Flask para sesiones |
+| `DATABASE_URL` | Ruta del archivo SQLite |
+| `OPENAI_API_KEY` | Clave de la API de OpenAI para generar battle cards |
+| `SMTP_HOST` | Host del servidor SMTP |
+| `SMTP_PORT` | Puerto SMTP (default 587) |
+| `SMTP_USER` | Usuario SMTP |
+| `SMTP_PASS` | Contraseña SMTP |
+| `FROM_EMAIL` | Email remitente de las alertas |
 
 ## Próximos pasos
 
-- Webhook/Slack notifications
 - Selector CSS para monitorear solo la sección de precios
-- Historial de precios con gráfica
-- Multi-usuario con planes (free/pro)
-- Deploy con Docker + cron job externo
 - Puppeteer/Playwright para páginas con JS rendering
+- Webhook/Slack notifications
+- Multi-usuario con planes (free/pro) y límites
+- Deploy con Docker

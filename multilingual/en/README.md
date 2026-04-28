@@ -1,38 +1,48 @@
 # PriceRadar
 
-**Know when your competitor changes pricing before your prospect does.**
+**Know when your competitor changes pricing. Before your prospect does.**
 
-## Getting started
+## Getting Started
 
 ```bash
 pip install -r requirements.txt
-cp .env.example .env   # add your credentials
+cp .env.example .env   # edit with your credentials
 python app.py
 ```
 
-Open `http://localhost:5000`.
+Then open `http://localhost:5000`.
 
 ## Features
 
-- **Auth** — Sign up and log in with email + password (Werkzeug hashing), Flask sessions
-- **Competitor CRUD** — Add, edit, and remove competitors with their pricing page URL and notes
-- **Scheduled scraper** — APScheduler captures HTML/text snapshots and detects diffs automatically
-- **Email alerts** — Automatic SMTP notifications when a change is detected, with before/after diff
-- **Dashboard** — Overview panel with alert timeline, date filters, and read/unread status
-- **Alerts page** — Full alert list with read/unread filtering and inline status toggling via htmx
-- **Snapshot history** — Per-competitor snapshot timeline with inline diffs
-- **Manual check** — Force a snapshot at any time
-- **htmx** — Inline delete, mark alerts as read without page reload
+- **Auth** — Sign up and log in with email + password (Werkzeug hashing), secure cookie-based sessions
+- **Competitors** — Full CRUD for competitors with pricing page URL and name
+- **Price Monitor** — Scheduled job (APScheduler, every 1h) that scrapes the pricing page, extracts text, and compares the hash against the previous snapshot; if it changed, an alert is created
+- **Alerts** — When a snapshot changes, sends an email via SMTP and shows a badge on the dashboard with a side-by-side diff (before/after)
+- **Battle Card** — Pre-built prompt sent to the OpenAI API that takes a pricing diff and generates a concise battle card with talking points for sales
+- **htmx** — Inline manual check, inline delete, mark alert as read — all without a page reload
+- **Visual Diff** — Side-by-side comparison (HTML diff) and unified text diff
 
 ## Stack
 
-Flask + SQLite + htmx + Tailwind CDN + APScheduler + BeautifulSoup
+Flask + SQLite + htmx + Tailwind CDN + BeautifulSoup + APScheduler + OpenAI API
+
+## Environment Variables
+
+| Variable | Description |
+|---|---|
+| `SECRET_KEY` | Flask secret key for sessions |
+| `DATABASE_URL` | Path to the SQLite database file |
+| `OPENAI_API_KEY` | OpenAI API key for generating battle cards |
+| `SMTP_HOST` | SMTP server host |
+| `SMTP_PORT` | SMTP port (defaults to 587) |
+| `SMTP_USER` | SMTP username |
+| `SMTP_PASS` | SMTP password |
+| `FROM_EMAIL` | Sender email address for alerts |
 
 ## Roadmap
 
-- Webhook/Slack notifications
 - CSS selector targeting to monitor only the pricing section
-- Pricing history with charts
-- Multi-user with plans (free/pro)
-- Docker deploy + external cron job
-- Puppeteer/Playwright for JS-rendered pages
+- Puppeteer/Playwright support for JS-rendered pages
+- Webhook/Slack notifications
+- Multi-tenant with plans (free/pro) and usage limits
+- Docker deployment

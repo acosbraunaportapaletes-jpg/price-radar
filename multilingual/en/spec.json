@@ -15,19 +15,19 @@
     },
     {
       "id": "competitors",
-      "desc": "Competitor management: name, pricing page URL, notes"
+      "desc": "Competitor CRUD with pricing page URL and name"
     },
     {
       "id": "price-monitor",
-      "desc": "Scheduled job (APScheduler) that scrapes pricing pages, detects changes via text diff, and alerts the user"
+      "desc": "Scheduled job (APScheduler) that scrapes the pricing page, extracts the text, and compares the hash against the previous snapshot — if it changed, it flags it as dirty"
     },
     {
       "id": "alerts",
-      "desc": "Email notification (SendGrid/SMTP) when a price change is detected, with before/after snapshot"
+      "desc": "When a snapshot changes, send an email via SMTP and display a badge on the dashboard with a side-by-side diff (before/after)"
     },
     {
-      "id": "dashboard",
-      "desc": "Dashboard with a timeline of detected competitor changes, filterable by date and read/unread status"
+      "id": "battlecard",
+      "desc": "A pre-built prompt sent to the OpenAI API that takes a pricing diff and generates a summarized battle card with sales talking points"
     }
   ],
   "db_tables": [
@@ -37,15 +37,15 @@
     },
     {
       "name": "competitors",
-      "columns": "id PK, user_id FK, name, pricing_url, notes, created_at"
+      "columns": "id PK, user_id FK, name, pricing_url, created_at"
     },
     {
       "name": "snapshots",
-      "columns": "id PK, competitor_id FK, content_hash, content_text, captured_at"
+      "columns": "id PK, competitor_id FK, content_text, content_hash, captured_at"
     },
     {
       "name": "alerts",
-      "columns": "id PK, snapshot_id FK, user_id FK, diff_summary, is_read BOOL DEFAULT 0, created_at"
+      "columns": "id PK, competitor_id FK, snapshot_old_id FK, snapshot_new_id FK, battlecard_md, seen BOOLEAN DEFAULT 0, created_at"
     }
   ],
   "routes": [
@@ -53,13 +53,13 @@
       "path": "/",
       "method": "GET",
       "handler": "landing",
-      "desc": "landing page com pitch e CTA de cadastro"
+      "desc": "landing page pública com pitch e CTA"
     },
     {
       "path": "/register",
       "method": "GET|POST",
       "handler": "register",
-      "desc": "cadastro de usuário"
+      "desc": "cadastro de novo usuário"
     },
     {
       "path": "/login",
@@ -71,52 +71,52 @@
       "path": "/dashboard",
       "method": "GET",
       "handler": "dashboard",
-      "desc": "painel com alertas recentes e resumo"
+      "desc": "lista concorrentes + alertas não lidos com badge"
     },
     {
       "path": "/competitors",
-      "method": "GET|POST",
-      "handler": "competitors",
-      "desc": "listar e adicionar concorrentes"
+      "method": "POST",
+      "handler": "add_competitor",
+      "desc": "adiciona concorrente (nome + URL pricing)"
     },
     {
       "path": "/competitors/<id>",
-      "method": "GET|PUT|DELETE",
-      "handler": "competitor_detail",
-      "desc": "ver, editar ou remover concorrente"
+      "method": "DELETE",
+      "handler": "delete_competitor",
+      "desc": "remove concorrente"
     },
     {
-      "path": "/competitors/<id>/snapshots",
+      "path": "/alerts/<id>",
       "method": "GET",
-      "handler": "snapshots",
-      "desc": "histórico de snapshots e diffs de um concorrente"
+      "handler": "view_alert",
+      "desc": "diff antes/depois + battle card gerada"
     },
     {
-      "path": "/alerts",
-      "method": "GET",
-      "handler": "alerts",
-      "desc": "lista de alertas com filtro lido/não-lido"
-    },
-    {
-      "path": "/alerts/<id>/read",
+      "path": "/alerts/<id>/seen",
       "method": "POST",
-      "handler": "mark_read",
-      "desc": "marcar alerta como lido"
+      "handler": "mark_seen",
+      "desc": "marca alerta como lido (htmx swap)"
+    },
+    {
+      "path": "/competitors/<id>/check",
+      "method": "POST",
+      "handler": "force_check",
+      "desc": "força re-check manual imediato da URL"
     }
   ],
   "env_vars": [
     "SECRET_KEY",
     "DATABASE_URL",
+    "OPENAI_API_KEY",
     "SMTP_HOST",
     "SMTP_PORT",
     "SMTP_USER",
     "SMTP_PASS",
-    "FROM_EMAIL",
-    "CHECK_INTERVAL_HOURS"
+    "FROM_EMAIL"
   ],
   "pricing_plan": {
-    "free": "Até 3 concorrentes monitorados, check a cada 24h, alertas no dashboard apenas",
-    "pro": "Até 20 concorrentes, check a cada 6h, alertas por email em tempo real, histórico ilimitado de snapshots — R$47/mês"
+    "free": "até 2 concorrentes, check diário, alertas na dashboard apenas",
+    "pro": "até 15 concorrentes, check a cada 6h, alertas por email, battle cards com IA — R$47/mês"
   },
   "_lang": "en"
 }

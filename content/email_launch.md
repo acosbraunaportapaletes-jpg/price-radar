@@ -1,54 +1,42 @@
 **Assunto:** Seu concorrente mudou o preço. Você soube?
 
-**Preview:** A maioria dos founders de SaaS descobre tarde demais. Agora não precisa mais ser assim.
+**Preview:** A maioria dos founders de SaaS descobre tarde demais. Agora tem um jeito melhor.
 
 ---
 
 Fala, [NOME].
 
-Vou direto: quantas vezes você perdeu um deal e só depois descobriu que o concorrente tinha baixado o preço na semana anterior?
+Vou direto: semana passada um founder me mandou mensagem dizendo que perdeu um deal de R$48k/ano porque o concorrente baixou o preço e ele só descobriu quando o prospect pediu desconto na call de fechamento. Tarde demais.
 
-Eu passei por isso. Rodava um SaaS B2B, competia com 4 players diretos, e minha "inteligência competitiva" era abrir o site deles de vez em quando pra ver se algo tinha mudado. Spoiler: quando eu percebia, já era tarde. O prospect já tinha assinado com o outro.
+Isso me incomodou porque eu já tinha vivido a mesma coisa. Passava vergonha em call de vendas por não saber que o concorrente tinha mudado o plano, ajustado o pricing, ou lançado um tier novo. A informação estava lá, pública, no site deles — e eu não estava olhando.
 
-Foi dessa dor que nasceu o **PriceRadar**.
+Foi por isso que criei o **PriceRadar**.
 
-Ele monitora os preços dos seus concorrentes e te avisa **antes** que o seu prospect descubra sozinho. Simples assim.
+É simples: você cadastra os concorrentes, e o PriceRadar monitora as páginas de pricing deles 24/7. Quando algo muda — qualquer coisa — você recebe um alerta antes que seu prospect descubra por conta própria.
 
----
+**O que ele resolve na prática:**
 
-**O que o PriceRadar resolve na prática:**
-
-- **Você para de ser pego de surpresa.** Receba alertas quando qualquer concorrente muda preço, plano ou modelo de cobrança. Em tempo real, não "quando der".
-
-- **Seu time de vendas entra na call preparado.** Em vez de adivinhar objeções de preço, seu vendedor sabe exatamente como o mercado está posicionado naquele dia.
-
-- **Você toma decisões de pricing com dados, não com achismo.** Histórico completo de mudanças, tendências e movimentos de mercado dos seus concorrentes num dashboard que você abre em 2 minutos.
-
----
+- **Você nunca mais entra em call sem saber o cenário competitivo.** Mudou preço, mudou feature do plano, criou desconto? Você sabe no mesmo dia.
+- **Seu time de vendas para de perder deal por falta de contexto.** Eles vão ter munição real pra posicionar contra a concorrência.
+- **Você toma decisão de pricing com dados, não com achismo.** Sabe quando o mercado está se movendo e pode reagir antes, não depois.
 
 **Quem deve comprar:**
 
-Fundadores e heads de vendas de SaaS B2B com 5 a 50 pessoas, que competem em mercado com 3 ou mais concorrentes diretos e estão cansados de perder deal por falta de informação.
+Fundador ou Head de Revenue de SaaS B2B que compete com 3+ players diretos e não tem processo nenhum pra monitorar isso hoje. Se você tem entre 5 e 50 funcionários e cada deal perdido dói no caixa, isso foi feito pra você.
 
 **Quem NÃO deve comprar:**
 
-Se você é o único player do mercado ou não compete por preço, o PriceRadar não vai mudar sua vida. Simples assim — prefiro ser honesto.
+Se você é o único player do mercado ou se pricing não é um fator competitivo relevante no seu segmento, não faz sentido. Não quero seu dinheiro se não vai resolver um problema real.
 
----
+**Investimento:** por menos do que custa um almoço de equipe, você tem acesso completo ao PriceRadar.
 
-**Investimento:** acesso completo por **R$ 297/mês**.
+E se nos primeiros **7 dias** você sentir que não faz sentido pro seu contexto, me manda um email e devolvo 100%. Sem pergunta, sem formulário, sem drama.
 
-Sem contrato anual. Sem setup fee. Sem pegadinha.
+**→ [Quero acesso ao PriceRadar](https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-fd374664-389b-4f56-9c9d-c13f600e6d31)**
 
-E você tem **7 dias de garantia incondicional**. Se não fizer sentido pro seu processo, pede o dinheiro de volta. Sem pergunta, sem formulário, sem atrito.
+Um link. Um clique. Acesso imediato.
 
----
-
-**👉 [QUERO COMEÇAR AGORA](https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-75397a52-de99-4685-baf4-97bb949af7be)**
-
----
-
-Um abraço,
+Abraço,
 [SEU NOME]
 
-P.S. — Semana passada um usuário beta me mandou mensagem: "Fechei um deal de R$ 48k porque entrei na call sabendo que o concorrente tinha subido 20% no dia anterior." Eu não prometo isso. Mas prometo que você nunca mais vai ser o último a saber.
+**P.S.** — Eu genuinamente acredito que a maioria dos SaaS no Brasil perde dinheiro por falta de informação básica sobre concorrência. Não por falta de produto, não por falta de vendedor bom. Por falta de contexto. Se isso te soa familiar, dá uma chance pro PriceRadar. 7 dias pra testar, risco zero.

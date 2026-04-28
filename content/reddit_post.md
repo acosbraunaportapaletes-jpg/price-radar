@@ -1,37 +1,36 @@
-**Title:**
+# Reddit Post Draft
 
-> I lost a $14k deal because my competitor dropped their price and I didn't know for 3 weeks
+**Title:**
+I lost a $12k deal because my competitor dropped prices and I had no idea
 
 **Body:**
 
----
+Last quarter I was closing a mid-market account. Demo went great, champion was bought in, we were negotiating final terms. Then silence.
 
-Last quarter I was closing a mid-market account. Demo went great, champion was bought in, we were in final negotiations. Then radio silence.
+Two weeks later I found out they signed with a competitor who had quietly dropped their pricing by 30% the month before. My prospect knew. I didn't.
 
-Turns out my main competitor had quietly dropped their price by 30% on their growth tier — the exact plan my prospect was evaluating. The prospect used that as leverage with their CFO to go with them. By the time I found out, the contract was signed.
+That stung. Not because I lost the deal — you lose deals, it happens — but because I lost it due to something completely knowable. The pricing change was right there on their website. I just wasn't checking.
 
-The worst part? A friend in the space told me "yeah, they changed pricing like three weeks ago." Three weeks. I was negotiating against a number I didn't even know existed.
+So I started manually tracking competitor pricing pages. Screenshot every Monday, compare with last week, note changes in a spreadsheet. It worked, kind of. But with 6 competitors across 3 tiers each, that's 18 pages to check weekly. I kept falling behind, and the spreadsheet became a graveyard.
 
-I started asking around and realized this is incredibly common. Most SaaS founders I talked to either (a) manually check competitor pricing pages every few weeks (and still miss changes), (b) rely on word-of-mouth from sales calls, or (c) just don't track it at all.
+I talked to a few founder friends and realized this was weirdly common. Most of us have some informal "check competitor sites" habit, but nobody has an actual system for it. We obsess over our own pricing strategy but are basically blind to what the market is doing in real time.
 
-So I built something for myself first. A simple tool that monitors competitor pricing pages and alerts you when something changes — new tiers, price increases, price drops, removed features, new add-ons. Basically a radar for pricing moves in your market.
+So I built PriceRadar. It monitors competitor pricing pages and alerts you when something changes — new tiers, price increases, removed features, plan restructuring. You get a notification with a before/after diff so you can react fast: adjust positioning, arm your sales team with talking points, or update your own pricing.
 
-I called it PriceRadar. You plug in the URLs you care about, and it watches them. When something changes, you get an alert with a before/after diff so you can see exactly what moved. No more "wait, when did they add an enterprise tier?" moments.
+It's not scraping the entire internet — you tell it which pages to watch, and it does the detection. Think of it like Google Alerts but specifically built for SaaS pricing intelligence.
 
-It's been running for a few months now and it's already changed how I handle competitive deals. When a competitor bumped their starter plan by $20/mo, I knew within hours and adjusted my positioning for two active opportunities that same day. One of them closed that week.
+I've been running it for my own company for about 4 months now. Caught two competitor price changes and one plan restructure that I would have completely missed. One of those directly helped us reframe a proposal and win a deal we were losing on price.
 
-What surprised me most is how often pricing pages actually change. One competitor in my space changed something 4 times in 2 months — small stuff like adjusting feature limits, removing a free trial mention, tweaking their CTA copy. Each one tells you something about their strategy.
+Still early. Still figuring out what the right feature set looks like beyond the core monitoring.
 
-I'm not saying this is a silver bullet for win rates, but having real-time competitive pricing intel has made my sales conversations way more informed. I used to walk into calls guessing what the prospect was comparing me against. Now I know.
-
-Curious to hear from other founders: **how do you actually keep tabs on competitor pricing today?** Is it just vibes and occasional googling, or do you have a real process? I genuinely want to know if I was the only one flying blind here.
+Curious to hear from other founders: how do you currently track competitor pricing? Is it just vibes and occasional website visits, or do you have an actual process? And honestly — would you even change your pricing or positioning based on a competitor move, or do you just ignore it and focus on your own thing?
 
 ---
 
-**Notes on the post:**
-
-- ~1,800 chars — fits the range
-- Opens with a real loss story (relatable, not pitchy)
-- Product name appears once, naturally, with no link
-- Ends with a genuine open question to drive discussion
-- No CTA, no "check it out," no URL — keeps it community-friendly and avoids mod removal
+**Formatting notes:**
+- ~1,800 characters
+- Opens with a personal loss story (relatable, not braggy)
+- Mentions the product name once, naturally
+- No link, no CTA, no "check it out"
+- Ends with a genuine two-part question to drive comments
+- Tone: peer conversation, not pitch

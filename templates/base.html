@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}PriceRadar{% endblock %}</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
     <style>
         body { background: #0a0a0f; color: #e2e8f0; font-family: 'Inter', system-ui, sans-serif; }
         .card { background: #12121a; border: 1px solid #1e1e2e; border-radius: 12px; }
@@ -25,11 +25,6 @@
         .badge-alert { background: #6366f1; color: white; }
         .badge-unseen { background: #f59e0b; color: #1a1a2e; }
         .badge-read { background: #065f46; color: #6ee7b7; }
-        .diff-table { width: 100%; font-size: 12px; border-collapse: collapse; }
-        .diff-table td { padding: 2px 6px; font-family: monospace; }
-        .diff_add { background: #064e3b; }
-        .diff_sub { background: #7f1d1d; }
-        .diff_chg { background: #78350f; }
     </style>
 </head>
 <body class="min-h-screen">
@@ -39,6 +34,7 @@
             <div class="flex items-center gap-4">
                 {% if session.get('user_id') %}
                     <a href="/dashboard" class="text-sm text-gray-400 hover:text-white">Dashboard</a>
+                    <a href="/competitors" class="text-sm text-gray-400 hover:text-white">Concorrentes</a>
                     <span class="text-sm text-gray-600">{{ session.get('user_email') }}</span>
                     <a href="/logout" class="text-sm text-gray-400 hover:text-red-400">Sair</a>
                 {% else %}

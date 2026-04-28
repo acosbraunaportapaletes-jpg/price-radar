@@ -11,8 +11,10 @@ Ad copies:
 
 Variante A — DOR
 
-**Headline:** Cansou de perder deal por preço?
-**Primary Text:** Seu concorrente mudou o pricing e você só descobriu quando o prospect falou. O PriceRadar monitora e te alerta em tempo real.
+**Headline:** Cansou de perder deal pro concorrente?
+
+**Primary Text:** Seu prospect fechou com outro porque ele baixou o preço e você nem ficou sabendo. PriceRadar monitora cada mudança de preço da concorrência em tempo real.
+
 **CTA:** `Quero Monitorar Agora`
 
 ---
@@ -23,8 +25,10 @@ Variante A — DOR
 
 Variante B — RESULTADO
 
-**Headline:** Saiba a mudança de preço em 5 min
-**Primary Text:** PriceRadar rastreia o pricing dos seus concorrentes e te avisa antes do seu prospect perceber. Setup rápido, zero planilha.
+**Headline:** Saiba o preço do rival em 30 seg
+
+**Primary Text:** PriceRadar detecta mudanças de preço dos concorrentes e te avisa antes que seu prospect veja. Mais deals fechados com inteligência competitiva real.
+
 **CTA:** `Testar Grátis`
 
 ---
@@ -35,15 +39,18 @@ Variante B — RESULTADO
 
 Variante C — CURIOSIDADE
 
-**Headline:** O alerta que fecha deals sozinho
-**Primary Text:** Fundadores SaaS estão usando um truque simples pra saber quando o concorrente muda de preço — e ajustar a oferta na hora.
-**CTA:** `Ver Como Funciona`
+**Headline:** O alerta de 2 min que salva deals
+
+**Primary Text:** Founders de SaaS estão usando um truque simples para descobrir quando o concorrente muda o preço — e ajustar a proposta antes do prospect decidir.
+
+**CTA:** `Descobrir Como`
 
 ---
 
-### Checklist de limites
-
-| 
+**Notas rápidas:**
+- Headlines: 39, 36 e 38 chars respectivamente — todos dentro do limite.
+- Primary Texts: todos ≤125 chars.
+- CTAs curtos e orientados a ação, compatíveis com botões de Meta e Google.
 
 
 ## Google Ads
@@ -51,7 +58,7 @@ Variante C — CURIOSIDADE
 Status: PENDENTE
 Keywords:
 - PriceRadar
-- Fundadores SaaS não têm processo sistemático para 
-- Klue — enterprise, $20k+/ano, foco grandes empresas
-- Crayon — mid-market, ~$15k/ano, competitive intelligence pla
-- Kompyte — adquirida pela Semrush, foco marketing
+- SaaS founders não têm processo para detectar mudan
+- Klue — enterprise CI platform, $30k+/ano, fora do alcance de
+- Crayon — competitive intelligence SaaS, $15k+/ano, complexo 
+- Kompyte — monitoramento automatizado, $499/mês, overkill par

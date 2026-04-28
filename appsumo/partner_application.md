@@ -1,43 +1,43 @@
 # Product overview
 
-PriceRadar monitors your competitors' pricing pages and positioning changes automatically, alerting you before your prospects notice. Built for B2B SaaS founders and sales leaders (5-50 employees) competing in crowded markets — no analyst hire needed, just plug in competitor URLs and get actionable intel with AI-generated response playbooks.
+PriceRadar monitors your competitors' pricing pages and alerts you the moment something changes — before your prospects notice. Built for B2B SaaS founders and sales leaders (5-50 employees) competing in crowded markets, it turns raw pricing page data into structured alerts and auto-updated battle cards using pre-built AI prompts. No manual checking, no surprises in sales calls.
 
 # Why AppSumo
 
-AppSumo buyers are exactly who PriceRadar serves: solopreneurs and small SaaS teams who can't afford a dedicated competitive intelligence analyst but still lose deals when a competitor drops their price or repositions overnight. This is a self-serve tool — sign up, add competitor URLs, get alerts. No onboarding calls, no enterprise setup. The included AI prompt templates and response playbooks mean even a solo founder running everything can operate like they have a market intelligence team. It's a pure B2B utility that pays for itself the first time it saves a deal.
+AppSumo buyers are exactly who loses deals to competitor price changes: bootstrapped SaaS founders, small sales teams, and consultants who advise startups on positioning. These buyers don't have a competitive intelligence team — they Google competitors manually or find out too late that a rival undercut them. PriceRadar is fully self-serve (add competitor URLs, pick a monitoring frequency, done), costs a fraction of enterprise CI tools like Klue or Crayon, and delivers ROI from day one. A lifetime deal makes this a no-brainer stack addition for any B2B founder who competes on price.
 
 # Pricing for lifetime deal
 
-| | Tier 1 — Solo ($49) | Tier 2 — Growth ($99) | Tier 3 — Scale ($199) |
+| | Tier 1 — $49 | Tier 2 — $99 | Tier 3 — $199 |
 |---|---|---|---|
-| Competitor URLs monitored | 5 | 15 | 50 |
-| Check frequency | Weekly | Daily | Every 6 hours |
-| Alert channels | Email | Email + Slack | Email + Slack + Webhook |
-| AI response playbooks | 3 templates | 10 templates + custom prompts | Unlimited + custom prompts |
-| Pricing history dashboard | 90 days | 1 year | Unlimited |
+| Competitor monitors | 3 competitors | 10 competitors | 25 competitors |
+| Pricing page checks | Daily | Every 6 hours | Every hour |
+| AI battle cards | 3 auto-generated | 10 auto-generated | Unlimited |
+| Alert channels | Email only | Email + Slack | Email + Slack + Webhook |
+| AI prompt templates | 5 starter prompts | Full library | Full library + custom prompts |
 | Team seats | 1 | 3 | 10 |
-| Positioning change detection | — | Yes | Yes |
-| Export (CSV/PDF) | — | — | Yes |
+| Change history | 30 days | 1 year | Unlimited |
+| Exportable reports | — | PDF/CSV | PDF/CSV + API access |
 
-All tiers: lifetime access, future updates included. No recurring fees. Stack up to 3 codes per tier for additional limits.
+All tiers include lifetime access, all future updates, and a 60-day money-back guarantee (AppSumo standard). Tiers stack for higher limits.
 
 # Differentiator
 
-- **Playbook-first, not dashboard-first.** Other tools (Klue, Crayon, Kompyte) give you a feed of changes. PriceRadar gives you the change *plus* an AI-generated response playbook: objection-handling scripts, email templates, and repositioning suggestions you can use in your next sales call.
-- **Zero setup complexity.** No browser extensions, no CRM integrations required, no training. Paste competitor URLs, set alert frequency, done. Enterprise CI tools require weeks of onboarding — PriceRadar works in 5 minutes.
-- **Built for SaaS pricing specifically.** Not a generic website change detector. PriceRadar understands pricing page structures (tiers, feature matrices, per-seat vs. usage models) and reports changes in business context, not raw HTML diffs.
+- **AI-ready out of the box.** Pre-built prompt templates turn raw pricing page HTML into structured comparisons, objection handlers, and battle cards — no prompt engineering required. Competitors like Visualping just tell you "something changed."
+- **Built for SaaS pricing specifically.** Not a generic website monitor. PriceRadar understands tiers, feature matrices, per-seat pricing, and usage-based models. It parses pricing structure, not just pixel diffs.
+- **Battle cards that update themselves.** Every detected change auto-refreshes your sales battle cards. Your reps always walk into calls with current intel instead of a stale Google Doc from 6 months ago.
 
 # Traction so far
 
-Pre-launch. Currently in closed beta with 12 B2B SaaS founders in LATAM. Early signal: 3 beta users reported catching competitor price drops within 24 hours that would have taken them weeks to notice manually. No MRR yet — building toward this AppSumo launch as the go-to-market moment. Founder is an active SaaS operator with direct experience losing deals to undetected competitor moves.
+Pre-launch. Currently in closed beta with 12 B2B SaaS founders validating the monitoring + AI battle card workflow. Early feedback confirms the core pain: every founder we talked to was tracking competitor pricing manually (screenshots, bookmarks, or not at all). No MRR yet — launching with AppSumo as the go-to-market channel.
 
 # Why now
 
-Three things converging in 2026: (1) SaaS market compression — more competitors in every vertical means pricing warfare is constant, not occasional. (2) AI costs dropped enough to make real-time page analysis viable at SMB price points — this tool couldn't exist profitably at $49 LTD two years ago. (3) The "PLG squeeze" — as product-led growth matures, pricing and packaging are the #1 lever small SaaS teams actually control, making competitive pricing intel operationally critical rather than nice-to-have.
+Three things converged in 2025-2026: (1) SaaS pricing is changing faster than ever — usage-based, hybrid, and AI-tier models mean competitors update pricing pages monthly, not yearly. (2) LLMs are finally reliable enough to parse unstructured pricing pages into structured data without custom scrapers per site. (3) The competitive intelligence tool market (Klue, Crayon, Kompyte) prices out small teams at $15K-$30K/year — there's nothing usable under $100/month for a 10-person SaaS. PriceRadar fills that gap.
 
 # Demo URL + pricing page
 
 - **Demo:** `{{DEMO_URL}}`
-- **Pricing page:** `{{PRICING_URL}}`
+- **Pricing:** `{{PRICING_URL}}`
 
-*(URLs to be populated by deployment pipeline)*
+*(URLs to be provided upon deployment)*

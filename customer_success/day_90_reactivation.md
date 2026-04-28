@@ -11,11 +11,11 @@ Fala, {nome}!
 
 Faz 90 dias que você tá com o PriceRadar. Queria saber: ainda tá usando?
 
-Se sim, tenho uma proposta. Muita gente nesse estágio já identificou padrões de pricing dos concorrentes e quer monitorar mais players. Tô liberando **20% off no upgrade** do seu plano — válido por 7 dias. É só usar o cupom **RADAR20** na hora do upgrade.
+Se sim, tenho uma proposta. Muita gente nesse estágio já identificou padrões de pricing dos concorrentes e quer ir além — monitorar mais players, receber alertas mais granulares. Pra você, liberei **20% off em qualquer upgrade** com o cupom **RADAR20**. Válido por 7 dias.
 
-Agora, se você parou de usar, me conta o motivo? Responde esse email com uma linha só. Quero entender de verdade o que faltou.
+Agora, se parou de usar, também quero saber. Me responde com o motivo — pode ser uma linha só. Isso me ajuda a melhorar o produto de verdade.
 
-Sem formulário, sem pesquisa. Só uma resposta honesta.
+Sem pressão dos dois lados.
 
 Abraço,
 {assinatura}

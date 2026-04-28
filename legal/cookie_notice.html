@@ -1,15 +1,15 @@
 ```html
-<div id="cookie-banner" style="position:fixed;bottom:0;width:100%;background:#1a1a2e;color:#eee;padding:14px 24px;display:flex;align-items:center;justify-content:center;gap:16px;font:14px sans-serif;z-index:9999">
-  <span>O PriceRadar usa cookies essenciais para o funcionamento do site e cookies analíticos para melhorar sua experiência. Saiba mais na nossa <a href="/privacidade" style="color:#4fc3f7">Política de Privacidade</a>.</span>
-  <button onclick="document.getElementById('cookie-banner').remove()" style="background:#4fc3f7;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;white-space:nowrap">Aceitar todos</button>
-  <button onclick="document.getElementById('cookie-banner').remove()" style="background:transparent;border:1px solid #4fc3f7;color:#4fc3f7;padding:8px 16px;border-radius:4px;cursor:pointer;white-space:nowrap">Apenas essenciais</button>
+<div id="cookie-banner" style="position:fixed;bottom:0;width:100%;background:#1a1a2e;color:#eee;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;font:14px sans-serif;z-index:9999;gap:12px">
+  <p style="margin:0">O PriceRadar usa cookies essenciais para o funcionamento do site e cookies de analytics para melhorar sua experiência. Saiba mais na nossa <a href="/politica-de-privacidade" style="color:#4fc3f7">Política de Privacidade</a>.</p>
+  <div style="display:flex;gap:8px;flex-shrink:0">
+    <button onclick="document.getElementById('cookie-banner').remove()" style="padding:8px 16px;border:1px solid #888;background:transparent;color:#eee;border-radius:4px;cursor:pointer">Apenas essenciais</button>
+    <button onclick="document.getElementById('cookie-banner').remove()" style="padding:8px 16px;border:none;background:#4fc3f7;color:#1a1a2e;border-radius:4px;cursor:pointer;font-weight:bold">Aceitar todos</button>
+  </div>
 </div>
 ```
 
-**O que cobre (LGPD):**
-- **Art. 7º** — distingue base legal: cookies essenciais (legítimo interesse) vs analíticos (consentimento)
-- **Art. 9º** — informação clara sobre finalidade antes da coleta
-- **Opt-out real** — dois botões com escolha granular
-- **Art. 18** — link direto pra política de privacidade com direitos do titular
+**Notas rápidas:**
 
-Na implementação real, o botão "Apenas essenciais" deve bloquear o carregamento de scripts analíticos (GA, Hotjar, etc.) e salvar a preferência em `localStorage` ou cookie próprio.
+- **LGPD**: informa a finalidade (essenciais vs analytics), oferece escolha granular e linka a política completa — cobre os requisitos do Art. 7º e 8º.
+- Os `onclick` removem o banner; na implementação real, salve a escolha em `localStorage` e dispare/bloqueie os scripts de analytics conforme a resposta.
+- Responsividade: adicione um `flex-wrap:wrap` no container se precisar suportar telas estreitas.
