@@ -3,9 +3,6 @@
 {% block content %}
 <div class="flex items-center justify-between mb-8">
     <h1 class="text-3xl font-bold">Dashboard</h1>
-    {% if unseen > 0 %}
-    <a href="/alerts?seen=0" class="badge-unseen text-sm px-3 py-1">{{ unseen }} alerta{{ 's' if unseen > 1 }} novo{{ 's' if unseen > 1 }}</a>
-    {% endif %}
 </div>
 
 <!-- Add competitor form -->
@@ -16,13 +13,13 @@
             <label class="block text-xs text-gray-400 mb-1">Nome</label>
             <input type="text" name="name" required placeholder="Ex: Competitor X" class="input-field text-sm">
         </div>
-        <div class="md:col-span-5">
+        <div class="md:col-span-4">
             <label class="block text-xs text-gray-400 mb-1">URL da pagina de pricing</label>
             <input type="url" name="pricing_url" required placeholder="https://example.com/pricing" class="input-field text-sm">
         </div>
-        <div class="md:col-span-2">
-            <label class="block text-xs text-gray-400 mb-1">Intervalo (horas)</label>
-            <input type="number" name="check_interval_hours" value="24" min="1" class="input-field text-sm">
+        <div class="md:col-span-3">
+            <label class="block text-xs text-gray-400 mb-1">Notas (opcional)</label>
+            <input type="text" name="notes" placeholder="Concorrente direto no segmento X" class="input-field text-sm">
         </div>
         <div class="md:col-span-2">
             <button type="submit" class="btn-primary w-full text-sm">+ Adicionar</button>
@@ -32,17 +29,18 @@
 
 <!-- Competitors list -->
 <h2 class="text-xl font-semibold mb-4">Monitorando ({{ competitors|length }})</h2>
+<div id="competitors-list">
 {% if competitors %}
 <div class="grid gap-3 mb-10">
     {% for comp in competitors %}
     <div class="card p-4 flex items-center justify-between" id="comp-{{ comp.id }}">
         <div class="flex-1">
             <a href="/competitors/{{ comp.id }}" class="text-lg font-semibold text-emerald-400 hover:underline">{{ comp.name }}</a>
-            <span class="text-gray-600 text-xs ml-2">a cada {{ comp.check_interval_hours }}h</span>
+            {% if comp.notes %}<span class="text-gray-600 text-xs ml-2">{{ comp.notes }}</span>{% endif %}
             <p class="text-sm text-gray-500 mt-1 truncate max-w-lg">{{ comp.pricing_url }}</p>
         </div>
         <div class="flex items-center gap-3 text-sm text-gray-400">
-            <span>{{ comp.snap_count }} snap{{ 's' if comp.snap_count != 1 }}</span>
+            <span>{{ comp.snap_count }} snap{{ 's' if comp.snap_count != 1 else '' }}</span>
             {% if comp.last_check %}
             <span class="text-xs">{{ comp.last_check[:16] }}</span>
             {% endif %}
@@ -69,22 +67,19 @@
     Nenhum concorrente cadastrado. Adicione um acima para comecar.
 </div>
 {% endif %}
+</div>
 
-<!-- Recent alerts -->
-{% if alerts %}
-<h2 class="text-xl font-semibold mb-4">Alertas recentes</h2>
+<!-- Recent changes -->
+{% if recent_changes %}
+<h2 class="text-xl font-semibold mb-4 mt-8">Mudancas recentes</h2>
 <div class="space-y-3">
-    {% for alert in alerts %}
-    <div class="card p-4">
+    {% for ch in recent_changes %}
+    <a href="/changes/{{ ch.id }}" class="card p-4 block hover:border-emerald-800 transition">
         <div class="flex items-center justify-between">
-            <div>
-                <span class="text-emerald-400 font-medium">{{ alert.competitor_name }}</span>
-                <span class="badge-unseen ml-2">Novo</span>
-            </div>
-            <span class="text-xs text-gray-500">{{ alert.created_at[:16] if alert.created_at else '' }}</span>
+            <span class="text-emerald-400 font-medium">{{ ch.competitor_name }}</span>
+            <span class="text-xs text-gray-500">{{ ch.created_at[:16] if ch.created_at else '' }}</span>
         </div>
-        <pre class="text-xs text-gray-400 mt-2 whitespace-pre-wrap">{{ alert.diff_summary[:300] }}</pre>
-    </div>
+    </a>
     {% endfor %}
 </div>
 {% endif %}

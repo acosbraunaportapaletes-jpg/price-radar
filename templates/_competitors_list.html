@@ -1,0 +1,37 @@
+{% if competitors %}
+<div class="grid gap-3 mb-10">
+    {% for comp in competitors %}
+    <div class="card p-4 flex items-center justify-between" id="comp-{{ comp.id }}">
+        <div class="flex-1">
+            <a href="/competitors/{{ comp.id }}" class="text-lg font-semibold text-emerald-400 hover:underline">{{ comp.name }}</a>
+            {% if comp.notes %}<span class="text-gray-600 text-xs ml-2">{{ comp.notes }}</span>{% endif %}
+            <p class="text-sm text-gray-500 mt-1 truncate max-w-lg">{{ comp.pricing_url }}</p>
+        </div>
+        <div class="flex items-center gap-3 text-sm text-gray-400">
+            <span>{{ comp.snap_count }} snap{{ 's' if comp.snap_count != 1 else '' }}</span>
+            {% if comp.last_check %}
+            <span class="text-xs">{{ comp.last_check[:16] }}</span>
+            {% endif %}
+            <span id="check-{{ comp.id }}">
+                <button hx-post="/competitors/{{ comp.id }}/check"
+                        hx-target="#check-{{ comp.id }}"
+                        hx-swap="innerHTML"
+                        class="btn-secondary text-xs">
+                    Verificar agora
+                    <span class="htmx-indicator">...</span>
+                </button>
+            </span>
+            <button hx-delete="/competitors/{{ comp.id }}"
+                    hx-target="#comp-{{ comp.id }}"
+                    hx-swap="outerHTML"
+                    hx-confirm="Remover {{ comp.name }}?"
+                    class="text-red-400/60 hover:text-red-400 text-xs">&#10005;</button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="card p-8 text-center text-gray-500 mb-10">
+    Nenhum concorrente cadastrado. Adicione um acima para comecar.
+</div>
+{% endif %}

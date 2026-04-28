@@ -11,41 +11,41 @@
   "core_features": [
     {
       "id": "auth",
-      "desc": "login con email+contraseña, hash bcrypt, sesión Flask-Login"
+      "desc": "Login con email+contraseña, hash bcrypt, sesión vía Flask-Login"
     },
     {
       "id": "competitors",
-      "desc": "CRUD de competidores con URL de la página de pricing y nombre"
+      "desc": "Registro de competidores con URL de la página de pricing para monitorear"
     },
     {
-      "id": "price-monitor",
-      "desc": "Job programado (APScheduler) que hace scraping de la página de pricing, extrae el texto y compara el hash con el snapshot anterior; si cambió, lo marca como dirty."
+      "id": "price-scraper",
+      "desc": "job programado que scrapea páginas de pricing, extrae valores con BeautifulSoup + fallback LLM, y guarda snapshot"
+    },
+    {
+      "id": "change-detection",
+      "desc": "diff entre snapshots consecutivos; detecta cambio de precio, plan nuevo o plan eliminado y genera alerta"
     },
     {
       "id": "alerts",
-      "desc": "Cuando el snapshot cambia, envía un correo por SMTP y muestra un badge en el dashboard con un diff lado a lado (antes/después)"
-    },
-    {
-      "id": "battlecard",
-      "desc": "Prompt prearmado enviado a la OpenAI API que recibe el diff de pricing y genera una battle card resumida con talking points para ventas"
+      "desc": "Notificación por email (SendGrid/SMTP) cuando se detecta un cambio, con resumen de lo que cambió y sugerencia de posicionamiento"
     }
   ],
   "db_tables": [
     {
       "name": "users",
-      "columns": "id PK, email UNIQUE, password_hash, created_at"
+      "columns": "id PK, email UNIQUE, password_hash, company_name, created_at"
     },
     {
       "name": "competitors",
-      "columns": "id PK, user_id FK, name, pricing_url, created_at"
+      "columns": "id PK, user_id FK, name, pricing_url, check_interval_hours DEFAULT 24, created_at"
     },
     {
       "name": "snapshots",
-      "columns": "id PK, competitor_id FK, content_text, content_hash, captured_at"
+      "columns": "id PK, competitor_id FK, raw_html TEXT, extracted_json TEXT, captured_at"
     },
     {
       "name": "alerts",
-      "columns": "id PK, competitor_id FK, snapshot_old_id FK, snapshot_new_id FK, battlecard_md, seen BOOLEAN DEFAULT 0, created_at"
+      "columns": "id PK, competitor_id FK, diff_summary TEXT, seen BOOLEAN DEFAULT 0, created_at"
     }
   ],
   "routes": [
@@ -53,7 +53,7 @@
       "path": "/",
       "method": "GET",
       "handler": "landing",
-      "desc": "landing page pública com pitch e CTA"
+      "desc": "landing page com pitch e CTA de cadastro"
     },
     {
       "path": "/register",
@@ -71,37 +71,37 @@
       "path": "/dashboard",
       "method": "GET",
       "handler": "dashboard",
-      "desc": "lista concorrentes + alertas não lidos com badge"
+      "desc": "lista concorrentes monitorados + alertas recentes"
     },
     {
       "path": "/competitors",
       "method": "POST",
       "handler": "add_competitor",
-      "desc": "adiciona concorrente (nome + URL pricing)"
+      "desc": "adiciona concorrente com URL de pricing"
+    },
+    {
+      "path": "/competitors/<id>",
+      "method": "GET",
+      "handler": "competitor_detail",
+      "desc": "histórico de snapshots e diffs de um concorrente"
     },
     {
       "path": "/competitors/<id>",
       "method": "DELETE",
       "handler": "delete_competitor",
-      "desc": "remove concorrente"
-    },
-    {
-      "path": "/alerts/<id>",
-      "method": "GET",
-      "handler": "view_alert",
-      "desc": "diff antes/depois + battle card gerada"
-    },
-    {
-      "path": "/alerts/<id>/seen",
-      "method": "POST",
-      "handler": "mark_seen",
-      "desc": "marca alerta como lido (htmx swap)"
+      "desc": "remove concorrente do monitoramento"
     },
     {
       "path": "/competitors/<id>/check",
       "method": "POST",
-      "handler": "force_check",
-      "desc": "força re-check manual imediato da URL"
+      "handler": "manual_check",
+      "desc": "força scrape imediato via htmx"
+    },
+    {
+      "path": "/alerts",
+      "method": "GET",
+      "handler": "alerts_list",
+      "desc": "todos os alertas com filtro lido/não-lido"
     }
   ],
   "env_vars": [
@@ -115,8 +115,8 @@
     "FROM_EMAIL"
   ],
   "pricing_plan": {
-    "free": "até 2 concorrentes, check diário, alertas na dashboard apenas",
-    "pro": "até 15 concorrentes, check a cada 6h, alertas por email, battle cards com IA — R$47/mês"
+    "free": "até 2 concorrentes, check diário, alertas por email, histórico 30 dias",
+    "pro": "até 15 concorrentes, check a cada 6h, histórico ilimitado, resumo IA com sugestão de posicionamento — R$97/mês"
   },
   "_lang": "es"
 }

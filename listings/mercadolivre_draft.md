@@ -5,7 +5,7 @@ Preco: R$ 47.00
 
 PRICERADAR - MATERIAL DIGITAL COMPLETO
 
-Saiba quando seu concorrente muda de preço antes do seu prospect.
+Saiba quando seu concorrente muda o preço antes do seu prospect.
 
 ========================================
 PACOTE COMPLETO INCLUI:

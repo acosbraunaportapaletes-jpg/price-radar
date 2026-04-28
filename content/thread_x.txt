@@ -1,21 +1,28 @@
-1/7
-Semana passada um fundador SaaS perdeu um deal de R$18k/mês. O prospect disse: "achei uma opção mais barata." O concorrente tinha baixado o preço 3 dias antes. Ele nem sabia.
+Here's the thread:
 
-2/7
-Isso acontece mais do que você imagina. Seu concorrente muda o pricing page numa terça à noite e você só descobre quando o prospect joga na sua cara durante a negociação.
+---
 
-3/7
-O problema não é seu produto ser pior. É você estar vendendo com uma narrativa de posicionamento que já não corresponde à realidade do mercado.
+**1/8**
+Semana passada um founder perdeu um deal de R$48k porque o concorrente tinha baixado o preço 3 dias antes — e ele nem sabia.
 
-4/7
-Seu head de sales prepara battlecard com preços de 2 meses atrás. O SDR entra na call confiante. O prospect abre o site do concorrente ao vivo e o desconto novo está lá. Silêncio constrangedor.
+**2/8**
+Isso acontece mais do que você imagina. Seu prospect pesquisa 3-4 ferramentas antes de decidir. Se o concorrente mudou o pricing e você não sabe, você entra na call vendendo no escuro.
 
-5/7
-PriceRadar monitora as páginas de pricing dos seus concorrentes e te avisa no momento em que qualquer mudança acontece. Preço novo, plano removido, feature adicionada ao tier. Você sabe primeiro.
+**3/8**
+O problema não é ter concorrente. É não saber o que ele está fazendo. Mudou o plano starter? Criou um tier enterprise? Ofereceu desconto anual? Você descobre quando já perdeu o deal.
 
-6/7
-Com essa informação em tempo real você ajusta o discurso de vendas, atualiza battlecards antes da call e transforma a mudança do concorrente em argumento a seu favor. Em vez de ser pego de surpresa, você controla a narrativa.
+**4/8**
+PriceRadar monitora as páginas de pricing dos seus concorrentes e te avisa em tempo real quando qualquer mudança acontece. Preço, planos, posicionamento — tudo.
 
-7/7
-Se você compete com 3+ players e não quer perder mais deal por preço desatualizado, testa o PriceRadar aqui 👇
-https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-79a9c782-572e-456b-8c93-1b4b3bde8824
+**5/8**
+Na prática: você acorda, tem um alerta dizendo que o Concorrente X reduziu o plano Pro em 20%. Antes da sua primeira call do dia, você já ajustou o pitch.
+
+**6/8**
+Isso muda o jogo pra quem vende SaaS B2B em mercado competitivo. Não é sobre copiar preço. É sobre ter contexto antes de entrar na negociação.
+
+**7/8**
+Founders e heads de vendas que competem com 3+ players não podem se dar ao luxo de descobrir mudança de pricing pelo LinkedIn — duas semanas depois.
+
+**8/8**
+Se você quer parar de perder deal por falta de inteligência competitiva, experimenta o PriceRadar 👇
+https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-6a931f24-66c8-45c5-a9e0-35267389d020

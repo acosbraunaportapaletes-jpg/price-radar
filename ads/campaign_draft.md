@@ -11,11 +11,9 @@ Ad copies:
 
 Variante A — DOR
 
-**Headline:** Cansou de perder deal pro concorrente?
-
-**Primary Text:** Seu prospect fechou com outro porque ele baixou o preço e você nem ficou sabendo. PriceRadar monitora cada mudança de preço da concorrência em tempo real.
-
-**CTA:** `Quero Monitorar Agora`
+**Headline:** Cansou de perder deal por preço?
+**Primary Text:** Seus concorrentes mudam o pricing e você só descobre quando o prospect escolhe o outro. PriceRadar te alerta antes disso acontecer.
+**CTA:** Quero monitorar agora
 
 ---
 
@@ -25,11 +23,9 @@ Variante A — DOR
 
 Variante B — RESULTADO
 
-**Headline:** Saiba o preço do rival em 30 seg
-
-**Primary Text:** PriceRadar detecta mudanças de preço dos concorrentes e te avisa antes que seu prospect veja. Mais deals fechados com inteligência competitiva real.
-
-**CTA:** `Testar Grátis`
+**Headline:** Saiba o preço rival em 30 min
+**Primary Text:** Configure o PriceRadar uma vez e receba alertas toda vez que um concorrente mudar o pricing. Reposicione antes de perder o deal.
+**CTA:** Começar grátis
 
 ---
 
@@ -39,18 +35,21 @@ Variante B — RESULTADO
 
 Variante C — CURIOSIDADE
 
-**Headline:** O alerta de 2 min que salva deals
-
-**Primary Text:** Founders de SaaS estão usando um truque simples para descobrir quando o concorrente muda o preço — e ajustar a proposta antes do prospect decidir.
-
-**CTA:** `Descobrir Como`
+**Headline:** O alerta que top founders usam
+**Primary Text:** Existe um truque simples pra saber quando seu concorrente muda de preço — antes do seu prospect descobrir. Fundadores B2B já usam.
+**CTA:** Ver como funciona
 
 ---
 
-**Notas rápidas:**
-- Headlines: 39, 36 e 38 chars respectivamente — todos dentro do limite.
-- Primary Texts: todos ≤125 chars.
-- CTAs curtos e orientados a ação, compatíveis com botões de Meta e Google.
+### Notas rápidas
+
+| | Headline | Primary Text | CTA |
+|---|---|---|---|
+| **A** | 34 chars | 124 chars | Quero monitorar agora |
+| **B** | 33 chars | 122 chars | Começar grátis |
+| **C** | 33 chars | 125 chars | Ver como funciona |
+
+Todas dentro 
 
 
 ## Google Ads
@@ -58,7 +57,7 @@ Variante C — CURIOSIDADE
 Status: PENDENTE
 Keywords:
 - PriceRadar
-- SaaS founders não têm processo para detectar mudan
-- Klue — enterprise CI platform, $30k+/ano, fora do alcance de
-- Crayon — competitive intelligence SaaS, $15k+/ano, complexo 
-- Kompyte — monitoramento automatizado, $499/mês, overkill par
+- Fundadores SaaS B2B não sabem quando concorrentes 
+- Klue — US$30k+/ano, enterprise demais para PME
+- Crayon — US$20k+/ano, foco em grandes empresas
+- Kompyte — US$15k+/ano, inacessível para micro-SaaS

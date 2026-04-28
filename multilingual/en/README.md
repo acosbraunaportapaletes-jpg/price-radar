@@ -1,12 +1,12 @@
 # PriceRadar
 
-**Know when your competitor changes pricing. Before your prospect does.**
+**Know when your competitor changes pricing before your prospect does.**
 
-## Getting Started
+## Getting started
 
 ```bash
 pip install -r requirements.txt
-cp .env.example .env   # edit with your credentials
+cp .env.example .env   # add your credentials
 python app.py
 ```
 
@@ -14,35 +14,37 @@ Then open `http://localhost:5000`.
 
 ## Features
 
-- **Auth** — Sign up and log in with email + password (Werkzeug hashing), secure cookie-based sessions
-- **Competitors** — Full CRUD for competitors with pricing page URL and name
-- **Price Monitor** — Scheduled job (APScheduler, every 1h) that scrapes the pricing page, extracts text, and compares the hash against the previous snapshot; if it changed, an alert is created
-- **Alerts** — When a snapshot changes, sends an email via SMTP and shows a badge on the dashboard with a side-by-side diff (before/after)
-- **Battle Card** — Pre-built prompt sent to the OpenAI API that takes a pricing diff and generates a concise battle card with talking points for sales
-- **htmx** — Inline manual check, inline delete, mark alert as read — all without a page reload
-- **Visual Diff** — Side-by-side comparison (HTML diff) and unified text diff
+- **Auth** — Sign up and log in with email + password (Werkzeug hashing), secure cookie sessions
+- **Competitors** — Add competitors with their pricing page URL, name, and configurable check interval
+- **Smart scraper** — Extracts prices with BeautifulSoup (price regex) + OpenAI LLM fallback for complex pages
+- **Change detection** — Diffs between snapshots: catches price changes, new plans, and removed plans
+- **Email alerts** — SMTP notifications when a change is detected, with positioning suggestions
+- **Dashboard** — View monitored competitors + recent alerts + manual checks via htmx
+- **Scheduled jobs** — APScheduler runs every 30 min, respects the check interval configured per competitor
+- **htmx** — Inline manual checks, inline delete, mark alerts as read — no page reload
 
 ## Stack
 
-Flask + SQLite + htmx + Tailwind CDN + BeautifulSoup + APScheduler + OpenAI API
+Flask + SQLite + htmx + Tailwind CDN + BeautifulSoup + APScheduler
 
-## Environment Variables
+## Environment variables
 
 | Variable | Description |
 |---|---|
 | `SECRET_KEY` | Flask secret key for sessions |
-| `DATABASE_URL` | Path to the SQLite database file |
-| `OPENAI_API_KEY` | OpenAI API key for generating battle cards |
+| `DATABASE_URL` | SQLite file path (default: priceradar.db) |
+| `OPENAI_API_KEY` | OpenAI key for LLM fallback on price extraction |
 | `SMTP_HOST` | SMTP server host |
-| `SMTP_PORT` | SMTP port (defaults to 587) |
+| `SMTP_PORT` | SMTP port (default: 587) |
 | `SMTP_USER` | SMTP username |
 | `SMTP_PASS` | SMTP password |
-| `FROM_EMAIL` | Sender email address for alerts |
+| `FROM_EMAIL` | Sender email address |
 
 ## Roadmap
 
-- CSS selector targeting to monitor only the pricing section
-- Puppeteer/Playwright support for JS-rendered pages
-- Webhook/Slack notifications
-- Multi-tenant with plans (free/pro) and usage limits
-- Docker deployment
+- Webhook / Slack integration for alerts
+- Dashboard with pricing trend charts
+- Multi-tenant with plans (free / pro) and usage limits
+- Custom CSS selector per competitor
+- Playwright support for JS-rendered pages
+- Docker + Gunicorn deployment

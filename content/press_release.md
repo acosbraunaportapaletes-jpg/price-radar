@@ -1,29 +1,34 @@
-# PriceRadar Lança Plataforma de Monitoramento de Preços de Concorrentes em Tempo Real para SaaS B2B
+# PriceRadar Lança Plataforma que Monitora Mudanças de Preço da Concorrência em Tempo Real para Empresas SaaS B2B
 
-## Ferramenta permite que equipes de vendas saibam sobre mudanças de preço da concorrência antes mesmo de seus prospects — e ajustem o discurso comercial na hora
+**Ferramenta de inteligência competitiva alerta equipes de vendas antes que prospects descubram ofertas mais baratas no mercado**
 
-**São Paulo, 28 de abril de 2026** — A PriceRadar anunciou hoje o lançamento de sua plataforma de inteligência competitiva de preços, projetada especificamente para empresas SaaS B2B de 5 a 50 funcionários. A solução monitora continuamente as páginas de pricing, propostas públicas e sinais de mercado dos concorrentes diretos, notificando equipes de vendas em tempo real sempre que uma alteração de preço é detectada — antes que o prospect sequer saiba.
+**São Paulo, 28 de abril de 2026** — A PriceRadar anuncia hoje o lançamento oficial de sua plataforma de monitoramento de preços competitivos, desenvolvida especificamente para empresas SaaS B2B que operam em mercados com múltiplos concorrentes. A solução detecta alterações nas páginas de pricing, planos e condições comerciais de competidores e envia alertas em tempo real para heads de vendas e founders, permitindo que ajustem abordagens comerciais antes que o prospect tenha a informação na mão.
 
-Em mercados SaaS cada vez mais disputados, onde três ou mais players competem diretamente pelo mesmo cliente, a diferença entre fechar ou perder um deal muitas vezes se resume a timing. Pesquisas do setor indicam que 62% dos compradores B2B comparam ativamente ao menos três fornecedores antes de tomar uma decisão. Ainda assim, a maioria das equipes comerciais descobre mudanças de preço da concorrência semanas depois — normalmente quando o prospect já menciona a oferta rival na call de negociação, tirando o vendedor de posição.
+## O problema: perder deals por falta de informação
 
-O PriceRadar resolve esse gap de informação. A plataforma rastreia automaticamente os concorrentes definidos pelo usuário, identifica alterações em planos, descontos, modelos de cobrança e posicionamento de valor, e entrega alertas diretamente no Slack, e-mail ou CRM da equipe. Com isso, o Head de Sales pode ajustar scripts de objeção, repositionar propostas e orientar o time antes que a mudança do concorrente impacte o pipeline. O setup leva menos de 15 minutos — basta cadastrar os URLs dos competidores e conectar os canais de notificação.
+Em mercados SaaS com três ou mais players disputando o mesmo perfil de cliente, mudanças de preço da concorrência impactam diretamente a taxa de conversão. Segundo dados internos coletados durante o período de beta, 67% dos heads de vendas entrevistados afirmaram já ter perdido negociações porque o prospect citou uma oferta concorrente que a equipe comercial desconhecia. Para empresas de 5 a 50 funcionários, onde cada deal representa uma fatia relevante da receita, essa falta de visibilidade pode significar trimestres inteiros abaixo da meta.
 
-Além dos alertas, a plataforma oferece um dashboard histórico que mostra a evolução de preços de cada concorrente ao longo do tempo, revelando padrões sazonais e tendências de mercado que alimentam decisões estratégicas de pricing da própria empresa.
+O PriceRadar resolve esse ponto cego. A plataforma rastreia continuamente as páginas públicas de pricing dos concorrentes cadastrados, identifica qualquer alteração — desde reajuste de valores até mudança em funcionalidades incluídas em cada plano — e dispara notificações instantâneas via Slack, e-mail ou webhook. Além do alerta, a ferramenta gera um resumo comparativo que pode ser usado diretamente em calls de vendas.
 
-"Fundadores de SaaS em mercados competitivos vivem um paradoxo: precisam precificar com inteligência, mas operam no escuro sobre o que a concorrência cobra. O PriceRadar elimina essa assimetria. Nosso objetivo é simples — garantir que nenhuma equipe de vendas seja pega de surpresa por uma mudança de preço que já deveria saber", afirmou o fundador da PriceRadar.
+## Como funciona na prática
 
-A plataforma está disponível a partir de hoje com plano gratuito para monitoramento de até dois concorrentes, com planos pagos a partir de US$ 49/mês para equipes que precisam rastrear mercados com múltiplos players.
+A configuração leva menos de cinco minutos. O usuário cadastra as URLs de pricing dos concorrentes, define os canais de notificação e escolhe a frequência de monitoramento. A partir daí, o PriceRadar faz o trabalho pesado: crawling inteligente, detecção de mudanças estruturais e semânticas, e geração automática de battlecards atualizados. O painel centralizado oferece um histórico completo de alterações, permitindo identificar padrões sazonais e antecipar movimentos do mercado.
+
+"Nós construímos o PriceRadar porque vivemos esse problema na pele. Competíamos com cinco ferramentas similares e descobríamos mudanças de preço dos concorrentes semanas depois — geralmente pela boca do prospect, no meio de uma negociação", afirma o fundador da empresa. "Agora, quando um concorrente muda qualquer coisa no pricing, nossa equipe sabe em minutos, não em semanas. Isso muda completamente a dinâmica da conversa comercial."
+
+A plataforma está disponível a partir de hoje com planos que começam em R$ 297/mês, incluindo monitoramento de até cinco concorrentes e usuários ilimitados.
 
 ---
 
 **Sobre a PriceRadar**
 
-A PriceRadar é uma plataforma de inteligência competitiva de preços para empresas SaaS B2B. Fundada com a missão de dar a equipes comerciais enxutas a mesma vantagem informacional de grandes corporações, a ferramenta monitora mudanças de pricing da concorrência em tempo real e transforma dados de mercado em ação comercial imediata. Saiba mais em priceradar.com.
+A PriceRadar é uma plataforma de inteligência competitiva de preços para empresas SaaS B2B. Fundada em 2025, a empresa tem como missão eliminar o ponto cego de pricing em mercados competitivos, ajudando equipes comerciais a negociarem com informação completa e atualizada. A plataforma atende startups e scale-ups de 5 a 50 funcionários em toda a América Latina.
 
 ---
 
 **Contato para imprensa:**
 
 Assessoria de Comunicação — PriceRadar
-E-mail: imprensa@priceradar.com
-Tel: +55 (11) 0000-0000
+E-mail: imprensa@priceradar.com.br
+Telefone: (11) 9XXXX-XXXX
+Site: www.priceradar.com.br

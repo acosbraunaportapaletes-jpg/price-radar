@@ -1,35 +1,35 @@
 import os
-import json
+import re
 import sqlite3
 import hashlib
 import smtplib
-import re
 import threading
+import time
+import difflib
+from datetime import datetime
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from datetime import datetime, timedelta
 from functools import wraps
+from urllib.request import urlopen, Request
+from urllib.error import URLError
 
-import requests
 from flask import (
     Flask, render_template, request, redirect, url_for,
-    session, flash, g, abort, jsonify
+    session, flash, g, abort
 )
 from werkzeug.security import generate_password_hash, check_password_hash
-from bs4 import BeautifulSoup
-from dotenv import load_dotenv
-
-load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = os.getenv("SECRET_KEY", "dev-secret-change-me")
+app.secret_key = os.environ.get("SECRET_KEY", "dev-secret-change-me")
 
-DATABASE = os.getenv("DATABASE_URL", "priceradar.db")
+DATABASE = os.environ.get("DATABASE_URL", "priceradar.db")
+SMTP_HOST = os.environ.get("SMTP_HOST", "")
+SMTP_USER = os.environ.get("SMTP_USER", "")
+SMTP_PASS = os.environ.get("SMTP_PASS", "")
+CHECK_INTERVAL = int(os.environ.get("CHECK_INTERVAL_HOURS", "6"))
 
 
-# ---------------------------------------------------------------------------
-# DB helpers
-# ---------------------------------------------------------------------------
+# ── DB helpers ────────────────────────────────────────────────────────────────
 
 def get_db():
     if "db" not in g:
@@ -54,7 +54,6 @@ def init_db():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             email TEXT UNIQUE NOT NULL,
             password_hash TEXT NOT NULL,
-            company_name TEXT,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
         CREATE TABLE IF NOT EXISTS competitors (
@@ -62,38 +61,28 @@ def init_db():
             user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
             name TEXT NOT NULL,
             pricing_url TEXT NOT NULL,
-            check_interval_hours INTEGER DEFAULT 24,
+            notes TEXT DEFAULT '',
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
         CREATE TABLE IF NOT EXISTS snapshots (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             competitor_id INTEGER NOT NULL REFERENCES competitors(id) ON DELETE CASCADE,
-            raw_html TEXT,
-            extracted_json TEXT,
+            html_hash TEXT NOT NULL,
+            content_text TEXT NOT NULL,
             captured_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
-        CREATE TABLE IF NOT EXISTS alerts (
+        CREATE TABLE IF NOT EXISTS changes (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            competitor_id INTEGER NOT NULL REFERENCES competitors(id) ON DELETE CASCADE,
-            diff_summary TEXT NOT NULL,
-            seen INTEGER DEFAULT 0,
+            snapshot_id INTEGER NOT NULL REFERENCES snapshots(id) ON DELETE CASCADE,
+            diff_html TEXT NOT NULL,
+            notified_at TIMESTAMP,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
     """)
     db.close()
 
 
-# ---------------------------------------------------------------------------
-# Auth helpers
-# ---------------------------------------------------------------------------
-
-def current_user():
-    if "user_id" not in session:
-        return None
-    return get_db().execute(
-        "SELECT * FROM users WHERE id = ?", (session["user_id"],)
-    ).fetchone()
-
+# ── Auth helpers ──────────────────────────────────────────────────────────────
 
 def login_required(f):
     @wraps(f)
@@ -105,264 +94,135 @@ def login_required(f):
     return decorated
 
 
-# ---------------------------------------------------------------------------
-# Price extraction
-# ---------------------------------------------------------------------------
-
-PRICE_RE = re.compile(
-    r"(?:R\$|US\$|\$|€|£)\s*[\d.,]+|[\d.,]+\s*(?:/\s*m[eê]s|/mo|/month|/year|/ano)",
-    re.IGNORECASE,
-)
-
-
-def extract_prices_from_html(html: str) -> list[dict]:
-    soup = BeautifulSoup(html, "html.parser")
-    for tag in soup(["script", "style", "noscript"]):
-        tag.decompose()
-
-    plans = []
-    seen = set()
-
-    cards = soup.select(
-        ".pricing, .price, .plan, [class*=pricing], [class*=price], [class*=plan]"
-    )
-    if not cards:
-        cards = soup.select("section, article, .card, .col, [class*=card], [class*=col]")
-
-    for card in cards:
-        text = card.get_text(" ", strip=True)
-        prices = PRICE_RE.findall(text)
-        if prices:
-            title_el = card.find(["h1", "h2", "h3", "h4", "strong", "b"])
-            title = title_el.get_text(strip=True) if title_el else "Plano"
-            price_str = prices[0].strip()
-            key = f"{title}|{price_str}"
-            if key not in seen:
-                seen.add(key)
-                plans.append({"plan": title, "price": price_str})
-
-    if not plans:
-        full_text = soup.get_text(" ", strip=True)
-        all_prices = PRICE_RE.findall(full_text)
-        for i, p in enumerate(all_prices[:10]):
-            plans.append({"plan": f"Item {i+1}", "price": p.strip()})
-
-    return plans
-
-
-def try_llm_extraction(html: str) -> list[dict] | None:
-    api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key:
+def current_user():
+    if "user_id" not in session:
         return None
-    try:
-        soup = BeautifulSoup(html, "html.parser")
-        for tag in soup(["script", "style", "noscript"]):
-            tag.decompose()
-        text = soup.get_text(" ", strip=True)[:4000]
-
-        resp = requests.post(
-            "https://api.openai.com/v1/chat/completions",
-            headers={
-                "Authorization": f"Bearer {api_key}",
-                "Content-Type": "application/json",
-            },
-            json={
-                "model": "gpt-4o-mini",
-                "messages": [
-                    {
-                        "role": "system",
-                        "content": (
-                            "Extract pricing plans from this page text. "
-                            "Return JSON array of {plan, price}. Only valid JSON, no markdown."
-                        ),
-                    },
-                    {"role": "user", "content": text},
-                ],
-                "temperature": 0,
-            },
-            timeout=30,
-        )
-        data = resp.json()
-        content = data["choices"][0]["message"]["content"].strip()
-        content = content.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
-        return json.loads(content)
-    except Exception:
-        return None
+    return get_db().execute(
+        "SELECT * FROM users WHERE id = ?", (session["user_id"],)
+    ).fetchone()
 
 
-# ---------------------------------------------------------------------------
-# Diff logic
-# ---------------------------------------------------------------------------
-
-def compute_diff(old: list[dict], new: list[dict]) -> list[str]:
-    changes = []
-    old_map = {item.get("plan", ""): item.get("price", "") for item in old}
-    new_map = {item.get("plan", ""): item.get("price", "") for item in new}
-
-    for plan, price in new_map.items():
-        if plan not in old_map:
-            changes.append(f"NOVO PLANO: {plan} — {price}")
-        elif old_map[plan] != price:
-            changes.append(f"PRECO ALTERADO: {plan} — de {old_map[plan]} para {price}")
-
-    for plan in old_map:
-        if plan not in new_map:
-            changes.append(f"PLANO REMOVIDO: {plan} (era {old_map[plan]})")
-
-    return changes
+@app.context_processor
+def inject_user():
+    return {"user": current_user()}
 
 
-# ---------------------------------------------------------------------------
-# Email helper
-# ---------------------------------------------------------------------------
+# ── Scraper & Diff ────────────────────────────────────────────────────────────
 
-def send_alert_email(to_email, competitor_name, diff_text):
-    smtp_host = os.getenv("SMTP_HOST")
-    if not smtp_host:
-        print(f"[ALERT] SMTP nao configurado. Mudanca em: {competitor_name}")
+def fetch_page_text(url):
+    req = Request(url, headers={"User-Agent": "PriceRadar/1.0 (price monitoring)"})
+    with urlopen(req, timeout=30) as resp:
+        return resp.read().decode("utf-8", errors="replace")
+
+
+def strip_tags(html):
+    text = re.sub(r"<script[^>]*>.*?</script>", "", html, flags=re.DOTALL | re.IGNORECASE)
+    text = re.sub(r"<style[^>]*>.*?</style>", "", text, flags=re.DOTALL | re.IGNORECASE)
+    text = re.sub(r"<[^>]+>", "\n", text)
+    lines = [ln.strip() for ln in text.splitlines()]
+    return "\n".join(ln for ln in lines if ln)
+
+
+def compute_hash(text):
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def make_diff_html(old_text, new_text):
+    old_lines = old_text.splitlines()
+    new_lines = new_text.splitlines()
+    diff = difflib.unified_diff(old_lines, new_lines, lineterm="", n=3)
+    parts = []
+    for line in diff:
+        esc = (line.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
+        if line.startswith("+") and not line.startswith("+++"):
+            parts.append(f'<span style="color:#4ade80;background:#052e16">{esc}</span>')
+        elif line.startswith("-") and not line.startswith("---"):
+            parts.append(f'<span style="color:#f87171;background:#450a0a;text-decoration:line-through">{esc}</span>')
+        elif line.startswith("@@"):
+            parts.append(f'<span style="color:#94a3b8">{esc}</span>')
+        else:
+            parts.append(f'<span style="color:#cbd5e1">{esc}</span>')
+    return "<br>".join(parts) if parts else "<em>Sem diferenca textual visivel.</em>"
+
+
+# ── Email ─────────────────────────────────────────────────────────────────────
+
+def send_email(to_addr, subject, html_body):
+    if not SMTP_HOST:
+        print(f"[EMAIL SKIP] SMTP nao configurado. Destino: {to_addr} | Assunto: {subject}")
         return
-
-    smtp_port = int(os.getenv("SMTP_PORT", "587"))
-    smtp_user = os.getenv("SMTP_USER", "")
-    smtp_pass = os.getenv("SMTP_PASS", "")
-    from_email = os.getenv("FROM_EMAIL", smtp_user)
-
     msg = MIMEMultipart("alternative")
-    msg["Subject"] = f"PriceRadar: {competitor_name} mudou o pricing!"
-    msg["From"] = from_email
-    msg["To"] = to_email
-
-    body_html = (
-        f"<h2>Mudanca de preco detectada: {competitor_name}</h2>"
-        f"<pre style='background:#111;color:#ccc;padding:12px;border-radius:8px;"
-        f"font-size:13px;'>{diff_text}</pre>"
-        f"<p><b>Sugestao:</b> revise seu posicionamento de preco considerando essas alteracoes.</p>"
-        f"<p>Acesse o dashboard para ver o historico completo.</p>"
-    )
-    msg.attach(MIMEText(body_html, "html"))
-
+    msg["Subject"] = subject
+    msg["From"] = SMTP_USER
+    msg["To"] = to_addr
+    msg.attach(MIMEText(html_body, "html"))
     try:
-        with smtplib.SMTP(smtp_host, smtp_port) as server:
+        with smtplib.SMTP(SMTP_HOST, 587) as server:
             server.starttls()
-            if smtp_user:
-                server.login(smtp_user, smtp_pass)
-            server.send_message(msg)
+            server.login(SMTP_USER, SMTP_PASS)
+            server.sendmail(SMTP_USER, to_addr, msg.as_string())
     except Exception as e:
         print(f"[EMAIL ERROR] {e}")
 
 
-# ---------------------------------------------------------------------------
-# Snapshot logic
-# ---------------------------------------------------------------------------
+# ── Background Monitor ────────────────────────────────────────────────────────
 
-def take_snapshot(comp_id, db=None):
-    own_conn = db is None
-    if own_conn:
-        db = sqlite3.connect(DATABASE)
-        db.row_factory = sqlite3.Row
-        db.execute("PRAGMA foreign_keys=ON")
-
-    comp = db.execute(
-        "SELECT c.*, u.email as user_email FROM competitors c "
-        "JOIN users u ON c.user_id = u.id WHERE c.id = ?",
-        (comp_id,),
-    ).fetchone()
-    if not comp:
-        if own_conn:
-            db.close()
-        return None
-
-    try:
-        resp = requests.get(
-            comp["pricing_url"],
-            timeout=20,
-            headers={"User-Agent": "Mozilla/5.0 (compatible; PriceRadar/1.0)"},
-        )
-        resp.raise_for_status()
-        html = resp.text
-    except Exception as e:
-        if own_conn:
-            db.close()
-        raise
-
-    plans = extract_prices_from_html(html)
-    if not plans:
-        llm_plans = try_llm_extraction(html)
-        if llm_plans:
-            plans = llm_plans
-
-    extracted_json = json.dumps(plans, ensure_ascii=False)
-    db.execute(
-        "INSERT INTO snapshots (competitor_id, raw_html, extracted_json) VALUES (?, ?, ?)",
-        (comp_id, html, extracted_json),
-    )
-    db.commit()
-
-    snapshots = db.execute(
-        "SELECT id, extracted_json, captured_at FROM snapshots "
-        "WHERE competitor_id = ? ORDER BY id DESC LIMIT 2",
-        (comp_id,),
-    ).fetchall()
-
-    changed = False
-    diff_text = ""
-    if len(snapshots) == 2:
-        new_data = json.loads(snapshots[0]["extracted_json"] or "[]")
-        old_data = json.loads(snapshots[1]["extracted_json"] or "[]")
-        diffs = compute_diff(old_data, new_data)
-        if diffs:
-            changed = True
-            diff_text = "\n".join(diffs)
-            db.execute(
-                "INSERT INTO alerts (competitor_id, diff_summary) VALUES (?, ?)",
-                (comp_id, diff_text),
-            )
-            db.commit()
-            threading.Thread(
-                target=send_alert_email,
-                args=(comp["user_email"], comp["name"], diff_text),
-                daemon=True,
-            ).start()
-
-    if own_conn:
-        db.close()
-    return {"changed": changed, "diff": diff_text, "plans": plans}
+def run_monitor():
+    time.sleep(10)
+    while True:
+        try:
+            _check_all_competitors()
+        except Exception as e:
+            print(f"[MONITOR ERROR] {e}")
+        time.sleep(CHECK_INTERVAL * 3600)
 
 
-def run_scheduled_checks():
+def _check_all_competitors():
     db = sqlite3.connect(DATABASE)
     db.row_factory = sqlite3.Row
     db.execute("PRAGMA foreign_keys=ON")
-
-    competitors = db.execute("SELECT * FROM competitors").fetchall()
+    competitors = db.execute(
+        "SELECT c.*, u.email FROM competitors c JOIN users u ON c.user_id = u.id"
+    ).fetchall()
 
     for comp in competitors:
-        last = db.execute(
-            "SELECT captured_at FROM snapshots WHERE competitor_id = ? ORDER BY id DESC LIMIT 1",
-            (comp["id"],),
-        ).fetchone()
+        try:
+            html = fetch_page_text(comp["pricing_url"])
+            content = strip_tags(html)
+            h = compute_hash(content)
 
-        should_run = True
-        if last:
-            try:
-                last_time = datetime.fromisoformat(last["captured_at"])
-                if datetime.utcnow() - last_time < timedelta(hours=comp["check_interval_hours"]):
-                    should_run = False
-            except Exception:
-                pass
+            last = db.execute(
+                "SELECT * FROM snapshots WHERE competitor_id = ? ORDER BY captured_at DESC LIMIT 1",
+                (comp["id"],)
+            ).fetchone()
 
-        if should_run:
-            try:
-                take_snapshot(comp["id"], db)
-            except Exception as e:
-                print(f"[SCAN ERROR] competitor {comp['id']}: {e}")
+            snap_id = db.execute(
+                "INSERT INTO snapshots (competitor_id, html_hash, content_text) VALUES (?, ?, ?)",
+                (comp["id"], h, content)
+            ).lastrowid
+
+            if last and last["html_hash"] != h:
+                diff_html = make_diff_html(last["content_text"], content)
+                db.execute(
+                    "INSERT INTO changes (snapshot_id, diff_html, notified_at) VALUES (?, ?, CURRENT_TIMESTAMP)",
+                    (snap_id, diff_html)
+                )
+                body = (
+                    f"<h2>Mudanca de preco detectada: {comp['name']}</h2>"
+                    f"<p>URL: {comp['pricing_url']}</p>"
+                    f"<div style='background:#0a0a0f;padding:16px;border-radius:8px;font-family:monospace;font-size:13px'>{diff_html}</div>"
+                    f"<p style='margin-top:16px'>Acesse o dashboard para ver o historico completo.</p>"
+                )
+                send_email(comp["email"], f"[PriceRadar] Mudanca detectada: {comp['name']}", body)
+
+            db.commit()
+        except Exception as e:
+            print(f"[SCRAPE ERROR] {comp['name']}: {e}")
 
     db.close()
 
 
-# ---------------------------------------------------------------------------
-# Routes: Landing & Auth
-# ---------------------------------------------------------------------------
+# ── Routes: Auth ──────────────────────────────────────────────────────────────
 
 @app.route("/")
 def landing():
@@ -378,7 +238,6 @@ def register():
 
     email = request.form.get("email", "").strip().lower()
     password = request.form.get("password", "")
-    company = request.form.get("company_name", "").strip()
 
     if not email or not password:
         flash("Email e senha sao obrigatorios.", "error")
@@ -394,8 +253,7 @@ def register():
 
     pw_hash = generate_password_hash(password)
     cur = db.execute(
-        "INSERT INTO users (email, password_hash, company_name) VALUES (?, ?, ?)",
-        (email, pw_hash, company or None),
+        "INSERT INTO users (email, password_hash) VALUES (?, ?)", (email, pw_hash)
     )
     db.commit()
 
@@ -431,9 +289,7 @@ def logout():
     return redirect(url_for("landing"))
 
 
-# ---------------------------------------------------------------------------
-# Routes: Dashboard
-# ---------------------------------------------------------------------------
+# ── Routes: Dashboard ─────────────────────────────────────────────────────────
 
 @app.route("/dashboard")
 @login_required
@@ -449,24 +305,19 @@ def dashboard():
         FROM competitors c WHERE c.user_id = ? ORDER BY c.created_at DESC
     """, (uid,)).fetchall()
 
-    alerts = db.execute("""
-        SELECT a.*, c.name as competitor_name
-        FROM alerts a
-        JOIN competitors c ON a.competitor_id = c.id
-        WHERE c.user_id = ? AND a.seen = 0
-        ORDER BY a.created_at DESC LIMIT 10
+    recent_changes = db.execute("""
+        SELECT ch.*, s.competitor_id, comp.name as competitor_name
+        FROM changes ch
+        JOIN snapshots s ON ch.snapshot_id = s.id
+        JOIN competitors comp ON s.competitor_id = comp.id
+        WHERE comp.user_id = ?
+        ORDER BY ch.created_at DESC LIMIT 20
     """, (uid,)).fetchall()
 
-    unseen = len(alerts)
-
-    return render_template(
-        "dashboard.html", competitors=competitors, alerts=alerts, unseen=unseen
-    )
+    return render_template("dashboard.html", competitors=competitors, recent_changes=recent_changes)
 
 
-# ---------------------------------------------------------------------------
-# Routes: Competitors
-# ---------------------------------------------------------------------------
+# ── Routes: Competitors ───────────────────────────────────────────────────────
 
 @app.route("/competitors", methods=["POST"])
 @login_required
@@ -476,30 +327,35 @@ def add_competitor():
 
     name = request.form.get("name", "").strip()
     pricing_url = request.form.get("pricing_url", "").strip()
-    interval = request.form.get("check_interval_hours", "24")
+    notes = request.form.get("notes", "").strip()
 
     if not name or not pricing_url:
         flash("Nome e URL sao obrigatorios.", "error")
         return redirect(url_for("dashboard"))
-
     if not pricing_url.startswith(("http://", "https://")):
         pricing_url = "https://" + pricing_url
 
-    try:
-        interval = max(1, int(interval))
-    except ValueError:
-        interval = 24
-
     db.execute(
-        "INSERT INTO competitors (user_id, name, pricing_url, check_interval_hours) VALUES (?, ?, ?, ?)",
-        (uid, name, pricing_url, interval),
+        "INSERT INTO competitors (user_id, name, pricing_url, notes) VALUES (?, ?, ?, ?)",
+        (uid, name, pricing_url, notes),
     )
     db.commit()
     flash(f"Concorrente '{name}' adicionado!", "success")
+
+    if request.headers.get("HX-Request"):
+        competitors = db.execute("""
+            SELECT c.*,
+                (SELECT COUNT(*) FROM snapshots WHERE competitor_id = c.id) as snap_count,
+                (SELECT captured_at FROM snapshots WHERE competitor_id = c.id
+                 ORDER BY captured_at DESC LIMIT 1) as last_check
+            FROM competitors c WHERE c.user_id = ? ORDER BY c.created_at DESC
+        """, (uid,)).fetchall()
+        return render_template("_competitors_list.html", competitors=competitors)
+
     return redirect(url_for("dashboard"))
 
 
-@app.route("/competitors/<int:id>", methods=["GET"])
+@app.route("/competitors/<int:id>")
 @login_required
 def competitor_detail(id):
     db = get_db()
@@ -511,30 +367,20 @@ def competitor_detail(id):
     if not comp:
         abort(404)
 
-    snapshots_raw = db.execute(
-        "SELECT id, extracted_json, captured_at FROM snapshots "
-        "WHERE competitor_id = ? ORDER BY captured_at DESC LIMIT 30",
+    snapshots = db.execute(
+        "SELECT * FROM snapshots WHERE competitor_id = ? ORDER BY captured_at DESC LIMIT 50",
         (id,),
     ).fetchall()
 
-    snapshots = []
-    for s in snapshots_raw:
-        plans = []
-        if s["extracted_json"]:
-            try:
-                plans = json.loads(s["extracted_json"])
-            except json.JSONDecodeError:
-                pass
-        snapshots.append({"id": s["id"], "captured_at": s["captured_at"], "plans": plans})
+    changes = db.execute("""
+        SELECT ch.*, s.captured_at as snapshot_time
+        FROM changes ch
+        JOIN snapshots s ON ch.snapshot_id = s.id
+        WHERE s.competitor_id = ?
+        ORDER BY ch.created_at DESC
+    """, (id,)).fetchall()
 
-    alerts = db.execute(
-        "SELECT * FROM alerts WHERE competitor_id = ? ORDER BY created_at DESC LIMIT 30",
-        (id,),
-    ).fetchall()
-
-    return render_template(
-        "competitor_detail.html", competitor=comp, snapshots=snapshots, alerts=alerts
-    )
+    return render_template("competitor_detail.html", competitor=comp, snapshots=snapshots, changes=changes)
 
 
 @app.route("/competitors/<int:id>", methods=["DELETE"])
@@ -560,7 +406,7 @@ def delete_competitor(id):
 
 @app.route("/competitors/<int:id>/check", methods=["POST"])
 @login_required
-def manual_check(id):
+def check_now(id):
     db = get_db()
     uid = session["user_id"]
 
@@ -571,88 +417,70 @@ def manual_check(id):
         abort(404)
 
     try:
-        result = take_snapshot(id, db)
-        if result and result["changed"]:
-            diff_html = result["diff"].replace("\n", "<br>")
-            return (
-                f'<div class="mt-2 p-3 rounded-lg bg-yellow-900/30 border border-yellow-800 text-sm">'
-                f'<span class="text-yellow-400 font-semibold">Mudanca detectada!</span>'
-                f'<div class="text-yellow-200/80 mt-1 text-xs">{diff_html}</div>'
-                f'</div>'
+        html = fetch_page_text(comp["pricing_url"])
+        content = strip_tags(html)
+        h = compute_hash(content)
+
+        last = db.execute(
+            "SELECT * FROM snapshots WHERE competitor_id = ? ORDER BY captured_at DESC LIMIT 1",
+            (id,)
+        ).fetchone()
+
+        snap_id = db.execute(
+            "INSERT INTO snapshots (competitor_id, html_hash, content_text) VALUES (?, ?, ?)",
+            (id, h, content)
+        ).lastrowid
+
+        if last and last["html_hash"] != h:
+            diff_html = make_diff_html(last["content_text"], content)
+            db.execute(
+                "INSERT INTO changes (snapshot_id, diff_html) VALUES (?, ?)",
+                (snap_id, diff_html)
             )
-        plans_count = len(result["plans"]) if result else 0
-        return (
-            f'<span class="text-green-400 text-sm">'
-            f'Verificado — sem mudancas ({plans_count} plano{"s" if plans_count != 1 else ""} encontrado{"s" if plans_count != 1 else ""}).'
-            f'</span>'
-        )
+            db.commit()
+            return (
+                '<div class="mt-2 p-3 rounded-lg bg-yellow-900/30 border border-yellow-800 text-sm">'
+                '<span class="text-yellow-400 font-semibold">Mudanca detectada!</span>'
+                '<p class="text-yellow-200/80 mt-1 text-xs">Diff salvo. Veja na timeline.</p>'
+                '</div>'
+            )
+        db.commit()
+        if not last:
+            return '<span class="text-green-400 text-sm">Primeiro snapshot capturado.</span>'
+        return '<span class="text-green-400 text-sm">Verificado — sem mudancas.</span>'
     except Exception as e:
         return f'<span class="text-red-400 text-sm">Erro: {e}</span>'
 
 
-# ---------------------------------------------------------------------------
-# Routes: Alerts
-# ---------------------------------------------------------------------------
+# ── Routes: Changes ───────────────────────────────────────────────────────────
 
-@app.route("/alerts")
+@app.route("/changes/<int:id>")
 @login_required
-def alerts_list():
+def change_diff(id):
     db = get_db()
     uid = session["user_id"]
-    filter_seen = request.args.get("seen")
 
-    query = """
-        SELECT a.*, c.name as competitor_name
-        FROM alerts a
-        JOIN competitors c ON a.competitor_id = c.id
-        WHERE c.user_id = ?
-    """
-    params = [uid]
+    change = db.execute("""
+        SELECT ch.*, s.competitor_id, s.content_text, s.captured_at,
+               comp.name as competitor_name, comp.pricing_url
+        FROM changes ch
+        JOIN snapshots s ON ch.snapshot_id = s.id
+        JOIN competitors comp ON s.competitor_id = comp.id
+        WHERE ch.id = ? AND comp.user_id = ?
+    """, (id, uid)).fetchone()
+    if not change:
+        abort(404)
 
-    if filter_seen == "0":
-        query += " AND a.seen = 0"
-    elif filter_seen == "1":
-        query += " AND a.seen = 1"
-
-    query += " ORDER BY a.created_at DESC LIMIT 50"
-    alerts = db.execute(query, params).fetchall()
-    return render_template("alerts.html", alerts=alerts, filter_seen=filter_seen)
+    return render_template("change_diff.html", change=change)
 
 
-@app.route("/alerts/<int:id>/seen", methods=["POST"])
-@login_required
-def mark_seen(id):
-    db = get_db()
-    uid = session["user_id"]
-    db.execute(
-        "UPDATE alerts SET seen = 1 WHERE id = ? AND competitor_id IN "
-        "(SELECT id FROM competitors WHERE user_id = ?)",
-        (id, uid),
-    )
-    db.commit()
-    return '<span class="text-xs text-gray-500">Lido</span>'
-
-
-# ---------------------------------------------------------------------------
-# Template context
-# ---------------------------------------------------------------------------
-
-@app.context_processor
-def inject_user():
-    return {"user": current_user()}
-
-
-# ---------------------------------------------------------------------------
-# Init & Run
-# ---------------------------------------------------------------------------
+# ── Init & Run ────────────────────────────────────────────────────────────────
 
 init_db()
 
+if os.environ.get("ENABLE_MONITOR", "1") == "1":
+    monitor_thread = threading.Thread(target=run_monitor, daemon=True)
+    monitor_thread.start()
+
 if __name__ == "__main__":
-    from apscheduler.schedulers.background import BackgroundScheduler
-
-    scheduler = BackgroundScheduler()
-    scheduler.add_job(run_scheduled_checks, "interval", minutes=30)
-    scheduler.start()
-
-    app.run(debug=True, host="0.0.0.0", port=5000, use_reloader=False)
+    app.run(debug=True, host="0.0.0.0", port=5000)

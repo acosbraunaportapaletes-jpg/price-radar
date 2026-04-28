@@ -1,15 +1,16 @@
 ```html
-<div id="cookie-banner" style="position:fixed;bottom:0;width:100%;background:#1a1a2e;color:#eee;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;font:14px sans-serif;z-index:9999;gap:12px">
-  <p style="margin:0">O PriceRadar usa cookies essenciais para o funcionamento do site e cookies de analytics para melhorar sua experiência. Saiba mais na nossa <a href="/politica-de-privacidade" style="color:#4fc3f7">Política de Privacidade</a>.</p>
-  <div style="display:flex;gap:8px;flex-shrink:0">
-    <button onclick="document.getElementById('cookie-banner').remove()" style="padding:8px 16px;border:1px solid #888;background:transparent;color:#eee;border-radius:4px;cursor:pointer">Apenas essenciais</button>
+<div id="cookie-banner" style="position:fixed;bottom:0;width:100%;background:#1a1a2e;color:#fff;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;font:14px sans-serif;z-index:9999">
+  <span>O PriceRadar usa cookies essenciais para o funcionamento do site e cookies analíticos para melhorar sua experiência. Saiba mais na nossa <a href="/politica-de-privacidade" style="color:#4fc3f7">Política de Privacidade</a>.</span>
+  <span style="display:flex;gap:8px;flex-shrink:0">
+    <button onclick="document.getElementById('cookie-banner').remove()" style="padding:8px 16px;border:1px solid #fff;background:transparent;color:#fff;border-radius:4px;cursor:pointer">Apenas essenciais</button>
     <button onclick="document.getElementById('cookie-banner').remove()" style="padding:8px 16px;border:none;background:#4fc3f7;color:#1a1a2e;border-radius:4px;cursor:pointer;font-weight:bold">Aceitar todos</button>
-  </div>
+  </span>
 </div>
 ```
 
-**Notas rápidas:**
+**O que cobre (LGPD):**
+- **Art. 7º** — Informa a finalidade (essenciais vs analíticos)
+- **Art. 9º** — Dá acesso à política de privacidade completa
+- **Art. 8º** — Consentimento granular com duas opções claras
 
-- **LGPD**: informa a finalidade (essenciais vs analytics), oferece escolha granular e linka a política completa — cobre os requisitos do Art. 7º e 8º.
-- Os `onclick` removem o banner; na implementação real, salve a escolha em `localStorage` e dispare/bloqueie os scripts de analytics conforme a resposta.
-- Responsividade: adicione um `flex-wrap:wrap` no container se precisar suportar telas estreitas.
+Para produção, troque os `onclick` por funções que de fato configurem/bloqueiem os cookies analíticos e persistam a escolha (ex: `localStorage` ou cookie de consentimento).

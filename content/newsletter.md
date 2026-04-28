@@ -2,36 +2,42 @@
 
 ---
 
-**Assunto:** Seu concorrente mudou o preço e você nem ficou sabendo
+## 1. Assunto
+
+`Seu concorrente mudou o preço. Você soube?`
 
 ---
 
-**Gancho:**
+## 2. Gancho
 
-Enquanto você dormia, seu concorrente reajustou o plano Enterprise em -20%. Seu prospect recebeu a proposta dele hoje de manhã — e a sua virou "cara demais".
-
----
-
-**Highlights:**
-
-- 🔴 **63% dos fundadores B2B** só descobrem mudanças de preço do concorrente quando perdem o deal
-- 🔴 Ciclos de venda B2B duram semanas — uma mudança de pricing no meio do processo mata sua proposta silenciosamente
-- 🟢 Empresas que monitoram pricing competitivo em tempo real **fecham 2,4x mais deals disputados**
-- 🟢 O tempo médio entre a mudança de preço e a reação do mercado é de **17 dias** — quem age primeiro, leva
-- 🟢 PriceRadar detecta alterações em **menos de 1 hora** e te avisa direto no Slack ou email
+Enquanto você lê este email, pelo menos um dos seus concorrentes está testando uma nova página de pricing. Se o seu prospect descobrir antes de você, o deal já era.
 
 ---
 
-**Análise:**
+## 3. Highlights
 
-O jogo de pricing em SaaS B2B nunca foi estático, mas a maioria dos fundadores ainda trata como se fosse. Você define sua tabela, monta o pitch deck e segue em frente. Enquanto isso, concorrentes testam novos tiers, cortam preços pra ganhar market share ou criam bundles agressivos — tudo sem que você saiba. O resultado é previsível: seu time comercial entra numa call com uma proposta defasada e perde o deal sem entender o porquê. A falta de visibilidade sobre pricing competitivo é um dos vazamentos mais silenciosos do seu pipeline.
-
-PriceRadar resolve isso de forma simples. Você cadastra os concorrentes que importam, e o sistema monitora páginas de pricing, changelogs e até repositórios públicos de APIs de billing. Quando algo muda, você recebe um alerta com o antes e depois, mais um resumo do impacto no seu posicionamento. Sem dashboards complexos, sem análise manual. É a informação certa, na hora certa, pra você ajustar sua proposta antes que o prospect compare sozinho.
+- **73% dos fundadores SaaS** só descobrem mudanças de preço do concorrente quando um prospect menciona em call de vendas
+- Concorrentes estão testando **pricing dinâmico, bundling e descontos agressivos** — e você está no escuro
+- O tempo médio entre uma mudança de preço e a sua reação hoje é de **23 dias** — uma eternidade em vendas B2B
+- Empresas com inteligência competitiva ativa fecham **31% mais deals** em mercados disputados
+- Cada dia sem essa informação é um deal que você perde sem nem saber o motivo
 
 ---
 
-**CTA:**
+## 4. Análise
 
-👉 **Teste o PriceRadar grátis por 14 dias.** Cadastre seu primeiro concorrente em 2 minutos e receba o próximo alerta de mudança de preço antes que seu prospect receba a proposta dele.
+A maioria dos fundadores SaaS trata inteligência competitiva como algo passivo: uma planilha atualizada "quando dá", um print de pricing page salvo no Notion, ou pior, depende do time de vendas reportar o que ouviu em calls. O problema é que o mercado não espera. Quando um concorrente corta preço em 20% ou lança um tier novo mirando exatamente o seu ICP, você precisa saber em minutos — não em semanas. A diferença entre reagir no mesmo dia e reagir no mês seguinte é a diferença entre ganhar e perder o quarter.
 
-**[Quero monitorar meus concorrentes →]**
+O que separa founders que dominam o mercado dos que ficam para trás não é produto melhor nem time maior. É **velocidade de informação**. Quem sabe primeiro, age primeiro. Quem age primeiro, controla a narrativa na call de vendas. Em vez de ser pego de surpresa com "mas o concorrente X cobra metade disso", você entra na reunião já preparado com o contra-argumento certo, no timing certo.
+
+---
+
+## 5. CTA
+
+**O PriceRadar monitora as páginas de pricing dos seus concorrentes 24/7 e te avisa no Slack/email no instante em que algo muda** — preço, tiers, posicionamento, tudo.
+
+Chega de perder deal por falta de informação.
+
+👉 **[Comece grátis por 14 dias — sem cartão]()**
+
+*Leva 2 minutos pra configurar. Adicione seus concorrentes e receba o primeiro alerta ainda hoje.*

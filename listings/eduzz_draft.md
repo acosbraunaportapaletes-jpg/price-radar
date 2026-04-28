@@ -4,12 +4,12 @@ Acessar [sun.eduzz.com → Produtos → Novo Produto]
 
 - **Nome**: PriceRadar
 - **Preço principal**: R$ 47.00
-- **Pitch**: Saiba quando seu concorrente muda de preço antes do seu prospect.
+- **Pitch**: Saiba quando seu concorrente muda o preço antes do seu prospect.
 - **Descrição**:
 
-Saiba quando seu concorrente muda de preço antes do seu prospect.
+Saiba quando seu concorrente muda o preço antes do seu prospect.
 
-SaaS founders não têm processo para detectar mudanças de preço de concorrentes e perdem deals por falta de inteligência competitiva
+Fundadores SaaS B2B não sabem quando concorrentes mudam preços, perdendo deals por falta de posicionamento atualizado
 
 - **Suporte email**: nathanferjr@gmail.com
 - **Área de membros**: Hospedar externamente (deploy Vercel)

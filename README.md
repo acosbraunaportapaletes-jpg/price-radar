@@ -15,17 +15,17 @@ Acesse `http://localhost:5000`.
 ## Features implementadas
 
 - **Auth** — Cadastro e login com email+senha (hash Werkzeug), sessao via cookie seguro
-- **Concorrentes** — Cadastro com URL de pricing, nome e intervalo de verificacao configuravel
-- **Scraper inteligente** — Extrai precos com BeautifulSoup (regex de precos) + fallback via OpenAI LLM para paginas complexas
-- **Deteccao de mudancas** — Diff entre snapshots: detecta preco alterado, plano novo ou plano removido
-- **Alertas por email** — Notificacao via SMTP quando mudanca e detectada, com sugestao de posicionamento
-- **Dashboard** — Lista concorrentes monitorados + alertas recentes + verificacao manual via htmx
-- **Job agendado** — APScheduler roda a cada 30 min, respeita intervalo configurado por concorrente
-- **htmx** — Verificacao manual inline, delete inline, marcar alerta como lido sem reload
+- **Concorrentes** — CRUD completo: nome, URL da pagina de pricing, notas. Delete inline via htmx
+- **Price Monitor** — Job agendado (thread) que faz scrape da pagina de pricing, extrai texto, calcula hash e detecta diff vs versao anterior
+- **Alertas por email** — Notificacao via SMTP quando mudanca e detectada, com diff visual (antes/depois) destacado em cores
+- **Timeline** — Historico de snapshots por concorrente com timeline visual de todas as mudancas detectadas
+- **Diff visual** — Pagina dedicada mostrando o diff unificado com linhas adicionadas (verde) e removidas (vermelho)
+- **Verificacao manual** — Botao "Verificar agora" inline via htmx, sem reload da pagina
+- **htmx** — Delete inline, verificacao manual inline, feedback instantaneo
 
 ## Stack
 
-Flask + SQLite + htmx + Tailwind CDN + BeautifulSoup + APScheduler
+Flask + SQLite + htmx + Tailwind CDN (zero dependencias externas alem de Flask)
 
 ## Env vars
 
@@ -33,18 +33,17 @@ Flask + SQLite + htmx + Tailwind CDN + BeautifulSoup + APScheduler
 |---|---|
 | `SECRET_KEY` | Chave secreta Flask para sessoes |
 | `DATABASE_URL` | Caminho do arquivo SQLite (default: priceradar.db) |
-| `OPENAI_API_KEY` | Chave da OpenAI para fallback LLM na extracao de precos |
 | `SMTP_HOST` | Host do servidor SMTP |
-| `SMTP_PORT` | Porta SMTP (default: 587) |
 | `SMTP_USER` | Usuario SMTP |
 | `SMTP_PASS` | Senha SMTP |
-| `FROM_EMAIL` | Email remetente |
+| `CHECK_INTERVAL_HOURS` | Intervalo entre verificacoes automaticas em horas (default: 6) |
+| `ENABLE_MONITOR` | 1 para ativar monitor em background, 0 para desativar |
 
 ## Proximos passos
 
 - Webhook/Slack integration para alertas
+- Seletor CSS customizado por concorrente para extrair precos especificos
+- Playwright/Selenium para paginas com JS rendering
 - Dashboard com graficos de evolucao de preco
 - Multi-user com planos (free/pro) e limites
-- Seletor CSS customizado por concorrente
-- Playwright para paginas com JS rendering
 - Deploy com Docker + Gunicorn

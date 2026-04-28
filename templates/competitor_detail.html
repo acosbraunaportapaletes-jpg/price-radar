@@ -9,7 +9,10 @@
     <div>
         <h1 class="text-2xl font-bold">{{ competitor.name }}</h1>
         <p class="text-sm text-gray-500 mt-1 truncate">{{ competitor.pricing_url }}</p>
-        <p class="text-xs text-gray-600 mt-1">Intervalo: {{ competitor.check_interval_hours }}h &middot; Desde {{ competitor.created_at[:10] if competitor.created_at else '' }}</p>
+        {% if competitor.notes %}
+        <p class="text-xs text-gray-600 mt-1">{{ competitor.notes }}</p>
+        {% endif %}
+        <p class="text-xs text-gray-600 mt-1">Desde {{ competitor.created_at[:10] if competitor.created_at else '' }}</p>
     </div>
     <span id="check-live">
         <button hx-post="/competitors/{{ competitor.id }}/check"
@@ -22,27 +25,18 @@
     </span>
 </div>
 
-<!-- Alerts -->
-{% if alerts %}
-<h2 class="text-xl font-semibold mb-4 text-yellow-400">Mudancas detectadas ({{ alerts|length }})</h2>
+<!-- Timeline of changes -->
+{% if changes %}
+<h2 class="text-xl font-semibold mb-4 text-yellow-400">Mudancas detectadas ({{ changes|length }})</h2>
 <div class="space-y-3 mb-10">
-    {% for alert in alerts %}
-    <div class="card p-4">
-        <div class="flex items-center justify-between mb-2">
-            <span class="text-xs text-gray-500">{{ alert.created_at[:19] if alert.created_at else '' }}</span>
-            {% if not alert.seen %}
-            <span id="seen-{{ alert.id }}">
-                <button hx-post="/alerts/{{ alert.id }}/seen"
-                        hx-target="#seen-{{ alert.id }}"
-                        hx-swap="innerHTML"
-                        class="btn-secondary text-xs">Marcar lido</button>
-            </span>
-            {% else %}
-            <span class="text-xs text-gray-600">Lido</span>
-            {% endif %}
+    {% for ch in changes %}
+    <a href="/changes/{{ ch.id }}" class="card p-4 block hover:border-yellow-800 transition">
+        <div class="flex items-center justify-between">
+            <span class="text-yellow-400 font-medium text-sm">Mudanca detectada</span>
+            <span class="text-xs text-gray-500">{{ ch.snapshot_time[:19] if ch.snapshot_time else ch.created_at[:19] if ch.created_at else '' }}</span>
         </div>
-        <pre class="text-xs text-gray-300 whitespace-pre-wrap font-mono bg-gray-900/50 p-3 rounded-lg">{{ alert.diff_summary }}</pre>
-    </div>
+        <p class="text-xs text-gray-500 mt-1">Clique para ver o diff completo</p>
+    </a>
     {% endfor %}
 </div>
 {% else %}
@@ -54,30 +48,14 @@
 <!-- Snapshots -->
 <h2 class="text-xl font-semibold mb-4">Historico de snapshots ({{ snapshots|length }})</h2>
 {% if snapshots %}
-<div class="space-y-4">
+<div class="space-y-3">
     {% for snap in snapshots %}
     <div class="card p-4">
-        <p class="text-xs text-gray-500 mb-2">{{ snap.captured_at[:19] if snap.captured_at else '' }}</p>
-        {% if snap.plans %}
-        <table class="w-full text-sm">
-            <thead>
-                <tr class="text-gray-500 text-xs border-b border-gray-800">
-                    <th class="text-left pb-1">Plano</th>
-                    <th class="text-left pb-1">Preco</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for p in snap.plans %}
-                <tr class="border-b border-gray-800/50">
-                    <td class="py-1.5 text-gray-300">{{ p.plan }}</td>
-                    <td class="py-1.5 text-emerald-400">{{ p.price }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        {% else %}
-        <p class="text-gray-500 text-sm">Nenhum preco extraido neste snapshot.</p>
-        {% endif %}
+        <div class="flex items-center justify-between">
+            <span class="text-xs text-gray-500">{{ snap.captured_at[:19] if snap.captured_at else '' }}</span>
+            <span class="text-xs text-gray-600 font-mono">{{ snap.html_hash[:12] }}...</span>
+        </div>
+        <p class="text-xs text-gray-400 mt-2 line-clamp-3">{{ snap.content_text[:300] }}{% if snap.content_text|length > 300 %}...{% endif %}</p>
     </div>
     {% endfor %}
 </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
         .flash-success { background: #065f46; border: 1px solid #10b981; color: #6ee7b7; }
         .flash-error { background: #7f1d1d; border: 1px solid #ef4444; color: #fca5a5; }
         .flash-warning { background: #78350f; border: 1px solid #f59e0b; color: #fde68a; }
-        .badge-unseen { background: #f59e0b; color: #1a1a2e; font-size: 11px; padding: 2px 8px; border-radius: 9999px; font-weight: 600; }
+        .flash-info { background: #1e3a5f; border: 1px solid #3b82f6; color: #93c5fd; }
         .htmx-indicator { display: none; }
         .htmx-request .htmx-indicator, .htmx-request.htmx-indicator { display: inline; }
     </style>
@@ -32,7 +32,6 @@
             <div class="flex items-center gap-4">
                 {% if session.get('user_id') %}
                     <a href="/dashboard" class="text-sm text-gray-400 hover:text-white">Dashboard</a>
-                    <a href="/alerts" class="text-sm text-gray-400 hover:text-white">Alertas</a>
                     <span class="text-sm text-gray-600">{{ session.get('user_email') }}</span>
                     <a href="/logout" class="text-sm text-gray-500 hover:text-red-400">Sair</a>
                 {% else %}

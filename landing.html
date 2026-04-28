@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PriceRadar — Saiba quando seu concorrente muda o preço antes do seu prospect.</title>
-<meta name="description" content="Saiba quando seu concorrente muda o preço antes do seu prospect."/>
+<title>PriceRadar — Saiba quando seu concorrente muda preços antes do seu prospect.</title>
+<meta name="description" content="Saiba quando seu concorrente muda preços antes do seu prospect."/>
 <meta property="og:title" content="PriceRadar"/>
-<meta property="og:description" content="Saiba quando seu concorrente muda o preço antes do seu prospect."/>
+<meta property="og:description" content="Saiba quando seu concorrente muda preços antes do seu prospect."/>
 <meta property="og:image" content="og_image.png"/>
 <meta property="og:type" content="product"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="PriceRadar"/>
-<meta name="twitter:description" content="Saiba quando seu concorrente muda o preço antes do seu prospect."/>
+<meta name="twitter:description" content="Saiba quando seu concorrente muda preços antes do seu prospect."/>
 <meta name="twitter:image" content="og_image.png"/>
 <link rel="icon" href="logo.png"/>
 <script src="https://cdn.tailwindcss.com"></script>
@@ -43,8 +43,8 @@ body { background: #0b0d10; color: #d7dde3; font-family: 'Inter', system-ui, san
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
     <div class="fade-in">
       <span class="inline-block bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-semibold mb-6">LANÇAMENTO</span>
-      <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">Saiba quando seu concorrente muda o preço antes do seu prospect.</h1>
-      <p class="text-xl text-gray-300 mb-8 leading-relaxed">Saiba quando seu concorrente muda o preço antes do seu prospect.</p>
+      <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">Saiba quando seu concorrente muda preços antes do seu prospect.</h1>
+      <p class="text-xl text-gray-300 mb-8 leading-relaxed">Saiba quando seu concorrente muda preços antes do seu prospect.</p>
       <div class="flex flex-col sm:flex-row gap-4">
         <a href="#comprar" class="bg-primary text-dark px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition inline-block text-center">Comprar por R$ 47</a>
         <a href="#como-funciona" class="border border-gray-700 text-white px-8 py-4 rounded-lg font-semibold hover:border-primary transition inline-block text-center">Como funciona</a>
@@ -65,7 +65,7 @@ body { background: #0b0d10; color: #d7dde3; font-family: 'Inter', system-ui, san
 <section class="py-20 px-6 border-t border-gray-800">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Você reconhece isso?</h2>
-    <p class="text-xl text-gray-400">Fundadores SaaS B2B não sabem quando concorrentes mudam preços, perdendo deals por falta de posicionamento atualizado</p>
+    <p class="text-xl text-gray-400">Fundadores SaaS não sabem quando concorrentes mudam preços/posicionamento, perdendo deals por falta de inteligência competitiva</p>
   </div>
 </section>
 
@@ -74,11 +74,11 @@ body { background: #0b0d10; color: #d7dde3; font-family: 'Inter', system-ui, san
   <div class="max-w-6xl mx-auto">
     <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-14">O que você recebe</h2>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">login com email+senha, hash bcrypt, sessão via Flask-Login</p></div>
-<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">cadastro de concorrentes com URL da página de pricing para monitorar</p></div>
-<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">job agendado que scrapa páginas de pricing, extrai valores com BeautifulSoup + fallback LLM, e salva snapshot</p></div>
-<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">diff entre snapshots consecutivos; detecta mudança de preço, plano novo ou plano removido e gera alerta</p></div>
-<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">notificação por email (SendGrid/SMTP) quando mudança é detectada, com resumo do que mudou e sugestão de posicionamento</p></div>
+      <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">login com email+senha, hash bcrypt, sessão flask-login</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">CRUD de concorrentes: nome, URL da página de pricing, notas</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">job agendado que faz scrape da página de pricing, extrai snapshot HTML e detecta diff vs versão anterior</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">notificação por email quando mudança é detectada, com diff visual (antes/depois) destacado</p></div>
+<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-primary transition"><div class="text-primary text-3xl mb-3">✓</div><p class="text-white">histórico de snapshots por concorrente com timeline visual de todas as mudanças detectadas</p></div>
     </div>
   </div>
 </section>
@@ -88,17 +88,17 @@ body { background: #0b0d10; color: #d7dde3; font-family: 'Inter', system-ui, san
   <div class="max-w-2xl mx-auto">
     <div class="bg-gray-900/80 backdrop-blur border border-gray-800 rounded-2xl p-10 text-center">
       <h2 class="text-2xl font-bold text-white mb-2">PriceRadar</h2>
-      <p class="text-gray-400 mb-8">Saiba quando seu concorrente muda o preço antes do seu prospect.</p>
+      <p class="text-gray-400 mb-8">Saiba quando seu concorrente muda preços antes do seu prospect.</p>
       <div class="text-5xl font-extrabold text-primary mb-2">R$ 47</div>
       <p class="text-sm text-gray-500 mb-8">Pagamento único · Acesso vitalício</p>
       <ul class="text-left space-y-3 mb-10">
-        <li class="flex items-start gap-3 text-gray-300"><span class="text-primary mt-1">✓</span><span>login com email+senha, hash bcrypt, sessão via Flask-Login</span></li>
-<li class="flex items-start gap-3 text-gray-300"><span class="text-primary mt-1">✓</span><span>cadastro de concorrentes com URL da página de pricing para monitorar</span></li>
-<li class="flex items-start gap-3 text-gray-300"><span class="text-primary mt-1">✓</span><span>job agendado que scrapa páginas de pricing, extrai valores com BeautifulSoup + fallback LLM, e salva snapshot</span></li>
-<li class="flex items-start gap-3 text-gray-300"><span class="text-primary mt-1">✓</span><span>diff entre snapshots consecutivos; detecta mudança de preço, plano novo ou plano removido e gera alerta</span></li>
-<li class="flex items-start gap-3 text-gray-300"><span class="text-primary mt-1">✓</span><span>notificação por email (SendGrid/SMTP) quando mudança é detectada, com resumo do que mudou e sugestão de posicionamento</span></li>
+        <li class="flex items-start gap-3 text-gray-300"><span class="text-primary mt-1">✓</span><span>login com email+senha, hash bcrypt, sessão flask-login</span></li>
+<li class="flex items-start gap-3 text-gray-300"><span class="text-primary mt-1">✓</span><span>CRUD de concorrentes: nome, URL da página de pricing, notas</span></li>
+<li class="flex items-start gap-3 text-gray-300"><span class="text-primary mt-1">✓</span><span>job agendado que faz scrape da página de pricing, extrai snapshot HTML e detecta diff vs versão anterior</span></li>
+<li class="flex items-start gap-3 text-gray-300"><span class="text-primary mt-1">✓</span><span>notificação por email quando mudança é detectada, com diff visual (antes/depois) destacado</span></li>
+<li class="flex items-start gap-3 text-gray-300"><span class="text-primary mt-1">✓</span><span>histórico de snapshots por concorrente com timeline visual de todas as mudanças detectadas</span></li>
       </ul>
-      <a href="https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-79a9c782-572e-456b-8c93-1b4b3bde8824" class="block w-full bg-primary text-dark py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition">💳 Comprar agora — PIX, cartão, boleto</a>
+      <a href="https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-6a931f24-66c8-45c5-a9e0-35267389d020" class="block w-full bg-primary text-dark py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition">💳 Comprar agora — PIX, cartão, boleto</a>
       <p class="text-xs text-gray-500 mt-4">Processado pelo Mercado Pago · Garantia incondicional de 7 dias</p>
     </div>
   </div>
