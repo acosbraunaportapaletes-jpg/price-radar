@@ -1,49 +1,38 @@
-# PriceRadar — 3 Variantes de Ad Copy
+# PriceRadar — Ad Copy Variants
 
 ---
 
 ## Variante A — DOR
 
-**Headline (38 chars)**
-`Cansou de perder deal pro concorrente?`
+**Headline:** Cansou de perder deal pro concorrente?
 
-**Primary Text (124 chars)**
-`Seu concorrente mudou o preço e você só soube depois que perdeu o deal. PriceRadar te alerta em tempo real. Nunca mais no escuro.`
+**Primary Text:** Seu prospect fechou com outro porque ele baixou o preço e você nem ficou sabendo. PriceRadar monitora cada mudança de preço da concorrência em tempo real.
 
-**CTA:** `Quero monitorar agora`
+**CTA:** `Quero Monitorar Agora`
 
 ---
 
 ## Variante B — RESULTADO
 
-**Headline (40 chars)**
-`Em 2 min, monitore todo concorrente seu`
+**Headline:** Saiba o preço do rival em 30 seg
 
-**Primary Text (122 chars)**
-`Configure uma vez. Receba alertas sempre que um concorrente mudar preço. Ajuste sua proposta antes do prospect comparar.`
+**Primary Text:** PriceRadar detecta mudanças de preço dos concorrentes e te avisa antes que seu prospect veja. Mais deals fechados com inteligência competitiva real.
 
-**CTA:** `Começar em 2 minutos`
+**CTA:** `Testar Grátis`
 
 ---
 
 ## Variante C — CURIOSIDADE
 
-**Headline (39 chars)**
-`O alerta que SaaS founders escondem 🤫`
+**Headline:** O alerta de 2 min que salva deals
 
-**Primary Text (125 chars)**
-`Tem founder fechando deal porque sabe na hora que o concorrente mexeu no preço. A vantagem? Uma ferramenta de R$ 0 pra testar.`
+**Primary Text:** Founders de SaaS estão usando um truque simples para descobrir quando o concorrente muda o preço — e ajustar a proposta antes do prospect decidir.
 
-**CTA:** `Descobrir como funciona`
+**CTA:** `Descobrir Como`
 
 ---
 
-### Notas de uso
-
-| Campo | Meta Ads | Google Ads |
-|---|---|---|
-| Headline | Aparece abaixo da imagem | Título do anúncio (Headline 1 + 2) |
-| Primary Text | Texto acima da imagem | Descrição |
-| CTA | Botão nativo (selecionar o mais próximo) | Extensão de CTA / sitelink |
-
-> **Dica:** No Meta, o CTA é pré-definido — use **"Saiba mais"** como fallback se o texto customizado não estiver disponível. No Google, encaixe o CTA como extensão de chamada ou no final da descrição.
+**Notas rápidas:**
+- Headlines: 39, 36 e 38 chars respectivamente — todos dentro do limite.
+- Primary Texts: todos ≤125 chars.
+- CTAs curtos e orientados a ação, compatíveis com botões de Meta e Google.

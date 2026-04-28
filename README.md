@@ -15,17 +15,16 @@ Acesse `http://localhost:5000`.
 ## Features implementadas
 
 - **Auth** -- Cadastro e login com email+senha (hash Werkzeug), sessao via cookie seguro
-- **Concorrentes** -- Cadastre URLs de pricing pages para monitoramento
-- **Snapshots** -- Crawler captura texto da pricing page, gera hash e detecta diff vs versao anterior
-- **Alertas por email** -- Notificacao automatica via SMTP quando mudanca e detectada, com diff
-- **Dashboard** -- Timeline de mudancas por concorrente com contadores e marcacao lido/nao-lido via htmx
-- **Historico** -- Timeline de snapshots por concorrente com diffs visuais lado a lado
-- **Verificacao manual** -- Force um snapshot a qualquer momento com 1 clique
-- **htmx** -- Delete inline, marcar alerta como lido sem reload
+- **Concorrentes** -- CRUD de concorrentes com URL da pagina de pricing e nome
+- **Price Monitor** -- Job agendado (APScheduler, 1h) que faz scrape da pagina de pricing, extrai texto, compara hash com snapshot anterior; se mudou, cria alerta
+- **Alertas** -- Quando snapshot muda, envia email via SMTP e mostra badge na dashboard com diff lado-a-lado (antes/depois)
+- **Battle Card** -- Prompt pre-pronto enviado a OpenAI API que recebe diff de pricing e gera battle card resumida com talking points para vendas
+- **htmx** -- Verificacao manual inline, delete inline, marcar alerta como lido sem reload
+- **Diff visual** -- Comparacao lado a lado (HTML diff) e diff unificado texto
 
 ## Stack
 
-Flask + SQLite + htmx + Tailwind CDN + BeautifulSoup
+Flask + SQLite + htmx + Tailwind CDN + BeautifulSoup + APScheduler + OpenAI API
 
 ## Env vars
 
@@ -33,6 +32,7 @@ Flask + SQLite + htmx + Tailwind CDN + BeautifulSoup
 |---|---|
 | `SECRET_KEY` | Chave secreta Flask para sessoes |
 | `DATABASE_URL` | Caminho do arquivo SQLite |
+| `OPENAI_API_KEY` | Chave da API OpenAI para gerar battle cards |
 | `SMTP_HOST` | Host do servidor SMTP |
 | `SMTP_PORT` | Porta SMTP (default 587) |
 | `SMTP_USER` | Usuario SMTP |
@@ -41,9 +41,8 @@ Flask + SQLite + htmx + Tailwind CDN + BeautifulSoup
 
 ## Proximos passos
 
-- Scheduler automatico (cron ou APScheduler) para checks periodicos
-- Webhook/Slack notifications
 - Seletor CSS para monitorar apenas a secao de precos
 - Puppeteer/Playwright para paginas com JS rendering
+- Webhook/Slack notifications
 - Multi-user com planos (free/pro) e limites
 - Deploy com Docker

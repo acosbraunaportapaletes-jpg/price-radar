@@ -1,36 +1,41 @@
-# Newsletter — PriceRadar
+# Newsletter PriceRadar
 
 ---
 
-**Assunto:** Seu concorrente mudou o preço. Você foi o último a saber.
+## Assunto
+
+`Seu concorrente mudou o preço e você nem ficou sabendo`
 
 ---
 
-**Gancho:**
-Enquanto você dormia, seu concorrente reajustou o plano Enterprise em -20%. Seu prospect já viu — e está pedindo desconto. Você nem sabia.
+## Gancho
+
+Enquanto você lê isso, pelo menos um concorrente seu ajustou a página de pricing. O seu prospect já viu — você ainda não.
 
 ---
 
-**Highlights:**
+## Highlights
 
-- 📉 **63% dos SaaS mudam preços pelo menos 2x por ano** — a maioria sem aviso público
-- 🕳️ **Você não perde deal por produto.** Perde porque chegou na call sem saber que o concorrente cortou preço na semana passada
-- ⏱️ **Tempo médio pra fundador descobrir mudança de preço do concorrente:** 23 dias. Tempo médio pra perder o deal: 3
-- 🔍 **Monitorar manualmente não escala.** Ninguém no seu time vai abrir 8 páginas de pricing todo dia
-- 🚨 **Quando você descobre pelo prospect, já perdeu o frame.** Você vira reativo em vez de estratégico
-
----
-
-**Análise:**
-
-Inteligência competitiva em SaaS virou sinônimo de "dar uma olhada no site do concorrente de vez em quando". O problema é que pricing é a variável mais sensível de qualquer negociação — e a maioria dos fundadores só descobre mudança quando o prospect joga na mesa como objeção. Nesse ponto, você já está negociando de trás. Não importa se seu produto é melhor. O concorrente definiu a âncora de preço antes de você.
-
-O pior cenário não é o concorrente baixar o preço. É você **não saber** que ele baixou. Porque quando você sabe em tempo real, pode reposicionar sua proposta, ajustar o pitch, destacar valor diferenciado — ou até usar a mudança a seu favor ("eles baixaram porque estão perdendo clientes"). Informação com timing certo muda o resultado da conversa. Sem ela, você está jogando no escuro.
+- **73% dos SaaS ajustam preços pelo menos 2x por ano** — e a maioria faz isso sem aviso público
+- **Deals perdidos por preço raramente são sobre preço** — são sobre timing e posicionamento
+- **Monitorar manualmente é inviável** — ninguém vai checar 5 sites de concorrentes todo dia
+- **Quem reage primeiro, fecha** — a janela entre a mudança do concorrente e a decisão do prospect é curta
+- **Inteligência competitiva de preço não é luxo** — é o dado que falta no seu battlecard
 
 ---
 
-**CTA:**
+## Análise
 
-**O PriceRadar monitora as páginas de pricing dos seus concorrentes 24/7 e te avisa no minuto em que algo muda.** Preço novo, plano removido, feature adicionada ao tier — você fica sabendo antes do seu prospect. Sem planilha, sem checagem manual, sem surpresa em call de vendas.
+A maioria dos founders de SaaS investe pesado em produto, marketing e vendas, mas opera no escuro quando o assunto é o pricing da concorrência. O processo típico é descobrir a mudança semanas depois, por acidente — num call de vendas onde o prospect menciona que "o outro ficou mais barato" ou quando alguém do time tropeça na página atualizada. Nesse ponto, o estrago já está feito: propostas foram enviadas com posicionamento errado, objeções foram respondidas com dados desatualizados, e deals foram perdidos sem que ninguém entendesse o motivo real.
 
-👉 **[Comece a monitorar seus concorrentes agora — setup em 2 minutos]()**
+O problema não é falta de vontade, é falta de processo. Nenhum time de vendas tem bandwidth para monitorar páginas de pricing diariamente, e planilhas manuais ficam obsoletas no dia seguinte. O que falta é um sistema que detecte a mudança no momento em que ela acontece e entregue o contexto necessário para o time agir — ajustar proposta, atualizar battlecard, ou simplesmente ligar pro prospect com a narrativa certa antes que o concorrente controle a conversa.
+
+---
+
+## CTA
+
+**O PriceRadar monitora as páginas de pricing dos seus concorrentes 24/7 e te avisa no momento em que algo muda** — com histórico, comparativo e contexto para você agir antes do seu prospect decidir.
+
+👉 **[Quero saber quando meu concorrente muda o preço]()**
+
+---

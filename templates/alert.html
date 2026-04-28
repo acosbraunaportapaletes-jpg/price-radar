@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Alerta — {{ alert.competitor_name }} — PriceRadar{% endblock %}
+{% block content %}
+<div class="mb-6">
+    <a href="/dashboard" class="text-sm text-gray-500 hover:text-gray-300">&larr; Dashboard</a>
+</div>
+
+<div class="flex items-center justify-between mb-8">
+    <div>
+        <h1 class="text-2xl font-bold">Alerta: {{ alert.competitor_name }}</h1>
+        <p class="text-sm text-gray-500 mt-1">{{ alert.pricing_url }}</p>
+        <p class="text-xs text-gray-600 mt-1">Detectado em {{ alert.created_at[:19] if alert.created_at else '' }}</p>
+    </div>
+    <span class="badge badge-read">Lido</span>
+</div>
+
+<!-- Battle Card -->
+{% if alert.battlecard_md %}
+<div class="card p-6 mb-6">
+    <h2 class="text-lg font-semibold mb-4 text-indigo-400">Battle Card</h2>
+    <div class="prose prose-invert text-sm text-gray-300 whitespace-pre-wrap leading-relaxed">{{ alert.battlecard_md }}</div>
+</div>
+{% endif %}
+
+<!-- Diff side-by-side -->
+{% if diff_html %}
+<div class="card p-6 mb-6">
+    <h2 class="text-lg font-semibold mb-4">Diff visual (lado a lado)</h2>
+    <div class="overflow-x-auto max-h-[600px] overflow-y-auto text-xs">
+        {{ diff_html | safe }}
+    </div>
+</div>
+{% endif %}
+
+<!-- Diff text -->
+{% if diff_text %}
+<div class="card p-6 mb-6">
+    <details>
+        <summary class="text-sm text-indigo-400 cursor-pointer hover:underline font-medium">Ver diff (texto unificado)</summary>
+        <pre class="text-xs text-gray-400 mt-3 p-4 bg-gray-900 rounded-lg overflow-x-auto whitespace-pre-wrap max-h-96 overflow-y-auto">{{ diff_text }}</pre>
+    </details>
+</div>
+{% endif %}
+
+<!-- Raw snapshots -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {% if old_snap %}
+    <div class="card p-4">
+        <h3 class="text-sm font-semibold text-red-400 mb-2">Antes ({{ old_snap.captured_at[:16] if old_snap.captured_at else '' }})</h3>
+        <pre class="text-xs text-gray-400 p-3 bg-gray-900 rounded-lg whitespace-pre-wrap max-h-80 overflow-y-auto">{{ old_snap.content_text[:5000] }}</pre>
+    </div>
+    {% endif %}
+    {% if new_snap %}
+    <div class="card p-4">
+        <h3 class="text-sm font-semibold text-green-400 mb-2">Depois ({{ new_snap.captured_at[:16] if new_snap.captured_at else '' }})</h3>
+        <pre class="text-xs text-gray-400 p-3 bg-gray-900 rounded-lg whitespace-pre-wrap max-h-80 overflow-y-auto">{{ new_snap.content_text[:5000] }}</pre>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

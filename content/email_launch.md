@@ -4,39 +4,51 @@
 
 ---
 
-Fala, {nome}.
+Fala, [NOME].
 
-Vou ser direto: semana passada um founder me mandou mensagem dizendo que perdeu um deal de R$ 48k/ano porque o concorrente dele baixou o preço do plano enterprise — e ele só ficou sabendo quando o prospect jogou na cara dele durante a negociação.
+Vou direto: quantas vezes você perdeu um deal e só depois descobriu que o concorrente tinha baixado o preço na semana anterior?
 
-Isso me incomodou. Porque eu já passei por isso.
+Eu passei por isso. Rodava um SaaS B2B, competia com 4 players diretos, e minha "inteligência competitiva" era abrir o site deles de vez em quando pra ver se algo tinha mudado. Spoiler: quando eu percebia, já era tarde. O prospect já tinha assinado com o outro.
 
-**Foi assim que nasceu o PriceRadar.**
+Foi dessa dor que nasceu o **PriceRadar**.
 
-Eu cansei de abrir pricing page de concorrente no navegador, comparar print antigo com print novo, e ainda assim perder mudança. Cansei de depender de "alguém me avisa" ou de descobrir no pior momento possível — na call com o cliente. Então construí a ferramenta que eu queria ter.
+Ele monitora os preços dos seus concorrentes e te avisa **antes** que o seu prospect descubra sozinho. Simples assim.
 
-**O PriceRadar monitora as páginas de preço dos seus concorrentes e te avisa antes que seu prospect perceba.**
+---
 
-O que ele resolve na prática:
+**O que o PriceRadar resolve na prática:**
 
-- **Você nunca mais é pego de surpresa.** Mudou preço, mudou plano, sumiu uma feature do tier — você recebe alerta em minutos, não em semanas.
-- **Seu time comercial negocia com informação real.** Em vez de chutar o que o concorrente cobra, você sabe. E sabe desde quando mudou.
-- **Você toma decisão de pricing com contexto.** Concorrente subiu 20%? Talvez seja hora de reposicionar. Baixou? Talvez seja hora de mostrar valor, não de entrar em guerra de preço.
+- **Você para de ser pego de surpresa.** Receba alertas quando qualquer concorrente muda preço, plano ou modelo de cobrança. Em tempo real, não "quando der".
 
-**Quem deve usar:**
+- **Seu time de vendas entra na call preparado.** Em vez de adivinhar objeções de preço, seu vendedor sabe exatamente como o mercado está posicionado naquele dia.
 
-Founder ou Head de Revenue de SaaS B2B que compete com 3+ players diretos e não quer depender de sorte pra saber o que tá acontecendo no mercado. Se você tem entre 5 e 50 pessoas no time, isso foi feito pra você.
+- **Você toma decisões de pricing com dados, não com achismo.** Histórico completo de mudanças, tendências e movimentos de mercado dos seus concorrentes num dashboard que você abre em 2 minutos.
 
-**Quem NÃO deve usar:**
+---
 
-Se você é monopolista e não tem concorrente relevante — parabéns, você não precisa disso. Se você não compete por preço de nenhuma forma, talvez também não faça sentido agora.
+**Quem deve comprar:**
 
-**Preço:** acesso completo por um valor que cabe no cartão corporativo sem precisar de aprovação do board. E se em 7 dias você sentir que não vale, peço desculpa e devolvo cada centavo. Sem pergunta, sem formulário.
+Fundadores e heads de vendas de SaaS B2B com 5 a 50 pessoas, que competem em mercado com 3 ou mais concorrentes diretos e estão cansados de perder deal por falta de informação.
 
-**→ [Quero começar a monitorar agora](https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-5861dce7-c0bc-4393-a9bb-09b6b279f610)**
+**Quem NÃO deve comprar:**
 
-Só esse link acima. Sem trial de 14 dias que te enche de email. Sem demo de 30 minutos. Você paga, configura os concorrentes, e começa a receber alertas.
+Se você é o único player do mercado ou não compete por preço, o PriceRadar não vai mudar sua vida. Simples assim — prefiro ser honesto.
+
+---
+
+**Investimento:** acesso completo por **R$ 297/mês**.
+
+Sem contrato anual. Sem setup fee. Sem pegadinha.
+
+E você tem **7 dias de garantia incondicional**. Se não fizer sentido pro seu processo, pede o dinheiro de volta. Sem pergunta, sem formulário, sem atrito.
+
+---
+
+**👉 [QUERO COMEÇAR AGORA](https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-75397a52-de99-4685-baf4-97bb949af7be)**
+
+---
 
 Um abraço,
-{seu nome}
+[SEU NOME]
 
-P.S. — Se você tá pensando "ah, eu dou um jeito manual de acompanhar" — é exatamente o que eu falava. Até o dia que não dei.
+P.S. — Semana passada um usuário beta me mandou mensagem: "Fechei um deal de R$ 48k porque entrei na call sabendo que o concorrente tinha subido 20% no dia anterior." Eu não prometo isso. Mas prometo que você nunca mais vai ser o último a saber.

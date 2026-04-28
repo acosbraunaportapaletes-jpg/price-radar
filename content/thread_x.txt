@@ -3,44 +3,26 @@ Here's the thread:
 ---
 
 **1/8**
-Perdi um deal de R$180k porque o concorrente baixou o preço 2 semanas antes e eu nem fiquei sabendo.
-
-O prospect só me disse no "não": "achamos uma opção mais em conta."
-
-Isso nunca mais aconteceu. Explico 👇
+Semana passada um founder perdeu um deal de R$18k/mês porque o concorrente baixou o preço 3 dias antes da reunião de fechamento. Ele só descobriu quando o prospect mandou o print.
 
 **2/8**
-O problema real: a maioria dos founders de SaaS não tem processo nenhum pra monitorar preço de concorrente.
-
-Você descobre que mudaram quando já perdeu o deal. Ou quando alguém posta no LinkedIn.
+Isso acontece mais do que você imagina. Seu concorrente muda o pricing page, ajusta planos, cria um desconto agressivo — e você continua vendendo como se nada tivesse mudado.
 
 **3/8**
-Pensa no absurdo: você gasta milhares em ads, SDR, conteúdo pra gerar demanda.
-
-Aí perde o deal porque não sabia que o concorrente mudou o pricing na terça passada.
+O problema não é o preço do concorrente. É você ser o último a saber. Seu prospect já comparou, já viu a diferença, já formou opinião. Você entra na call em desvantagem sem saber por quê.
 
 **4/8**
-Inteligência competitiva de preço não é luxo. É o básico que ninguém faz.
-
-Quem compete em mercado com 3, 5, 10 players diretos e não monitora isso tá jogando no escuro.
+A maioria dos SaaS B2B resolve isso com "alguém do time checa de vez em quando". Ou seja, não resolve. Ninguém tem processo real pra isso.
 
 **5/8**
-Criei o PriceRadar exatamente pra resolver isso.
-
-Ele detecta mudanças de preço dos seus concorrentes e te avisa antes que seu prospect descubra sozinho.
+PriceRadar monitora as páginas de preço dos seus concorrentes e te avisa quando qualquer coisa muda. Plano novo, valor diferente, feature adicionada ou removida de um tier.
 
 **6/8**
-Na prática: você recebe um alerta, ajusta seu posicionamento e entra na call preparado.
-
-Em vez de reagir ao "não", você antecipa a objeção.
+Você recebe o alerta antes do seu prospect perceber a mudança. Dá tempo de ajustar o pitch, reposicionar a proposta ou preparar uma objeção que ainda nem chegou.
 
 **7/8**
-Isso muda o jogo pra quem é Head de Revenue ou founder tocando vendas.
-
-Não é sobre copiar preço. É sobre nunca mais ser pego de surpresa numa negociação.
+Se você compete em mercado com 3+ players diretos e tem entre 5-50 pessoas no time, a diferença entre ganhar e perder deal muitas vezes é informação. Não esforço 🎯
 
 **8/8**
-Se você tem um SaaS B2B e compete com pelo menos 3 players diretos, o PriceRadar foi feito pra você.
-
-Garanta acesso aqui 🔗
-https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-5861dce7-c0bc-4393-a9bb-09b6b279f610
+Quer parar de ser surpreendido pelo pricing do concorrente? Ativa o PriceRadar e transforma inteligência competitiva em rotina, não sorte. Link aqui 👇
+https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=197881458-75397a52-de99-4685-baf4-97bb949af7be

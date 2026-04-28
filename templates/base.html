@@ -9,9 +9,9 @@
     <style>
         body { background: #0a0a0f; color: #e2e8f0; font-family: 'Inter', system-ui, sans-serif; }
         .card { background: #12121a; border: 1px solid #1e1e2e; border-radius: 12px; }
-        .btn-primary { background: #6366f1; color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; transition: background 0.2s; cursor: pointer; }
+        .btn-primary { background: #6366f1; color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; transition: background 0.2s; cursor: pointer; border: none; }
         .btn-primary:hover { background: #4f46e5; }
-        .btn-danger { background: #dc2626; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+        .btn-danger { background: #dc2626; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; }
         .btn-danger:hover { background: #b91c1c; }
         .btn-secondary { background: #1e1e2e; color: #94a3b8; padding: 8px 16px; border-radius: 8px; border: 1px solid #2e2e3e; cursor: pointer; }
         .btn-secondary:hover { background: #2e2e3e; color: #e2e8f0; }
@@ -21,9 +21,9 @@
         .flash-error { background: #7f1d1d; border: 1px solid #ef4444; color: #fca5a5; }
         .flash-warning { background: #78350f; border: 1px solid #f59e0b; color: #fde68a; }
         .flash-info { background: #1e3a5f; border: 1px solid #3b82f6; color: #93c5fd; }
-        .badge { font-size: 11px; padding: 2px 8px; border-radius: 9999px; }
+        .badge { font-size: 11px; padding: 2px 8px; border-radius: 9999px; font-weight: 600; }
         .badge-alert { background: #6366f1; color: white; }
-        .badge-unread { background: #f59e0b; color: #1a1a2e; }
+        .badge-unseen { background: #f59e0b; color: #1a1a2e; }
         .badge-read { background: #065f46; color: #6ee7b7; }
         .diff-table { width: 100%; font-size: 12px; border-collapse: collapse; }
         .diff-table td { padding: 2px 6px; font-family: monospace; }
@@ -39,8 +39,6 @@
             <div class="flex items-center gap-4">
                 {% if session.get('user_id') %}
                     <a href="/dashboard" class="text-sm text-gray-400 hover:text-white">Dashboard</a>
-                    <a href="/competitors" class="text-sm text-gray-400 hover:text-white">Concorrentes</a>
-                    <a href="/alerts" class="text-sm text-gray-400 hover:text-white">Alertas</a>
                     <span class="text-sm text-gray-600">{{ session.get('user_email') }}</span>
                     <a href="/logout" class="text-sm text-gray-400 hover:text-red-400">Sair</a>
                 {% else %}

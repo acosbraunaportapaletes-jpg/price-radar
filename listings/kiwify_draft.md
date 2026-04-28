@@ -4,12 +4,12 @@
 
 - **Nome do produto**: PriceRadar
 - **Preço**: R$ 47.00
-- **Descrição curta**: Saiba quando seu concorrente muda o preço antes do seu prospect.
+- **Descrição curta**: Saiba quando seu concorrente muda o preço. Antes do seu prospect.
 - **Descrição longa**:
 
-Saiba quando seu concorrente muda o preço antes do seu prospect.
+Saiba quando seu concorrente muda o preço. Antes do seu prospect.
 
-Fundadores SaaS não têm processo sistemático para detectar mudanças de preço/posicionamento de concorrentes, perdendo deals por falta de inteligência competitiva atualizada
+SaaS founders não têm processo para detectar quando concorrentes mudam preços, perdendo deals por falta de inteligência competitiva
 
 - **Categoria**: Tecnologia / Educação Digital
 - **Tipo**: Pagamento único
